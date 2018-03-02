@@ -1,0 +1,10 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+/docs
+/figs
+/munge
+/output
+/raw
+/old_code
