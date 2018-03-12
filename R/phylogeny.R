@@ -1,6 +1,25 @@
-phylogeny <- function (t_mean) {
+#' Produce phylogeny outputs
+#'
+#' @param df dataframe of mean trait values
+#' @param genbank_accessions_file file path for genbank accession codes
+#' @param nwk_file file path for .nwk file
+#' @param figure_folder folder path for plot output
+#' @param table_folder folder path for table output
+#' @return saved phylogeny files
+#' @importFrom xtable xtable
+#' @importFrom reshape2 dcast
+#' @importFrom ape read.tree
+#' @importFrom stats dist
+#' @importFrom adephylo distTips
+#' @importFrom ade4 mantel.rtest
+#' @importFrom phytools contMap
+#' @importFrom grDevices colorRampPalette
+#'
+#' @export
+
+phylogeny <- function (df, genbank_accessions_file, nwk_file, figure_folder, table_folder) {
   
-  accessions <- read.table('raw/GenBankAccessions.txt', header = TRUE)
+  accessions <- read.table(genbank_accessions_file, header = TRUE)
   accessions$Species <- paste(accessions$Species, accessions$Name)
   accessions$Gene <- NA
   accessions[1:25, 'Gene'] <- 'rbcl'
@@ -13,7 +32,7 @@ phylogeny <- function (t_mean) {
   rownames(codes) <- codes$Species
   codes <- codes[, - which(names(codes) %in% 'Species')]
   
-  codes <- xtable(codes)
+  codes <- xtable::xtable(codes)
   print(codes,
         include.rownames = TRUE,
         include.colnames = FALSE,
@@ -21,9 +40,9 @@ phylogeny <- function (t_mean) {
         comment = FALSE,
         sanitize.rownames.function = identity,
         hline.after = NULL,
-        file = 'docs/GenBankAccessions.tex')
+        file = paste0(table_folder, 'GenBankAccessions.tex'))
   
-  phylo <- read.tree("raw/phylo_tree.nwk")
+  phylo <- ape::read.tree(nwk_file)
   
   phylo$tip.label <- c('Meuhlenbeckia', 'Rumex crispus', 'Persicaria decipiens', 
                        'Alternanthera', 'Lycopus', 'Myriophyllum', 'Crassula helmsii', 
@@ -56,10 +75,10 @@ phylogeny <- function (t_mean) {
   }
   
   trt <- trt[is.na(trt$tip_label), -which(names(trt) %in% 'tip_label')]
-  trt_matrix <- dist(trt)
+  trt_matrix <- stats::dist(trt)
   
   # this one uses patristic
-  tre_matrix <- distTips(phylo)
+  tre_matrix <- adephylo::distTips(phylo)
   
   # this one uses nNodes >> mantel results differ
   # tre_matrix <- distTips(phylo, tips = phylo$tip.label, method = 'nNodes')
@@ -68,8 +87,8 @@ phylogeny <- function (t_mean) {
   for (i in unique(trait_list)) {
     x <- unique(trait_list)
     index <- which(x %in% i)
-    trt_matrix <- dist(trt[, which(names(trt) %in% i)])
-    result <- mantel.rtest(trt_matrix, tre_matrix, nrepet = 9999)
+    trt_matrix <- stats::dist(trt[, which(names(trt) %in% i)])
+    result <- ade4::mantel.rtest(trt_matrix, tre_matrix, nrepet = 9999)
     mantel_tests[index, 'Trait'] <- i
     mantel_tests[index, 'Mantel test observation'] <- round(result$obs, 2)
     mantel_tests[index, 'p-value'] <- round(result$pvalue, 2)
@@ -86,7 +105,7 @@ phylogeny <- function (t_mean) {
   mantel_tests[mantel_tests$Trait == 'Specific litter area',] <- 
     paste0('\\textbf{', mantel_tests[mantel_tests$Trait == 'Specific litter area',], '}')
   
-  mantel_results <- xtable(mantel_tests)
+  mantel_results <- xtable::xtable(mantel_tests)
   print(mantel_results,
         include.rownames = FALSE,
         include.colnames = FALSE,
@@ -94,21 +113,12 @@ phylogeny <- function (t_mean) {
         comment = FALSE,
         sanitize.text.function = identity,
         hline.after = NULL,
-        file = 'docs/mantel_results.tex')
-  
-  # trt$Species <- rownames(trt)
-  # trt <- trt[,c(8,1:7)]
-  # ggtree::ggtree(phylo) + ggtree::geom_tiplab()
-  # library(ggtree)
-  # p <- ggtree(phylo) %<+% trt + geom_tiplab(aes(color = SLA)) +
-  #   geom_tippoint(aes(color = SLA), alpha=0.25)
-  # p + theme(legend.position="right")
-  # 
+        file = paste0(table_folder, 'mantel_results.tex'))
   
   for (i in trait_list) {
     trt_obj <- as.matrix(trt)[,i]
-    png(paste0('figs/phylo_', i, '.png'))
-    obj <- contMap(phylo, trt_obj)
+    png(paste0(figure_folder, 'phylo_', i, '.png'))
+    obj <- phytools::contMap(phylo, trt_obj)
     
     # length of the required color ramp
     n <- length(obj$cols)
@@ -117,11 +127,10 @@ phylogeny <- function (t_mean) {
               '#d9f0d3', '#7fbf7b', '#1b7837')
     
     # change colour scheme
-    obj$cols[1:n] <- colorRampPalette(PRGn)(n)
+    obj$cols[1:n] <- grDevices::colorRampPalette(PRGn)(n)
     
     plot(obj)
     dev.off()
   }
-  
   
 }
