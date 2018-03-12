@@ -1,5 +1,12 @@
+#' Produce pair plot of traits
+#'
+#' @param df dataframe of traits
+#' @param output_file file path for output plot
+#' @return saved pair plot
+#'
+#' @export
 
-pair_plot <- function (df) {
+pair_plot <- function (df, output_file) {
 
   panel.cor <- function(x, y, digits = 2, prefix = "", cex.cor, ...)
   {
@@ -32,11 +39,10 @@ pair_plot <- function (df) {
     
   }
   # Create the plots
-  png('figs/pairplot.png', 8, 8, 'in', res = 100)
+  png(output_file, 8, 8, 'in', res = 100)
   pairs(df, 
         lower.panel = panel.cor,
-        upper.panel = upper.panel 
-        )
+        upper.panel = upper.panel)
   dev.off()
 
 }
