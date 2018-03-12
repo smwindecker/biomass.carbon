@@ -1,6 +1,16 @@
-pca_gf <- function (df) {
+#' Produce pca plot and loadings table
+#'
+#' @param df dataframe of traits
+#' @param figure_folder folder path for pca plot
+#' @param table_folder folder path for pca table
+#' @return saved pca plot and loadings table
+#' @importFrom xtable xtable
+#' @importFrom vegan envfit
+#'
+#' @export
+
+pca_gf <- function (df, figure_folder, table_folder) {
   
-  library(xtable)
   prin <- princomp((na.omit(df)), cor = TRUE, scores = TRUE)
   
   loadings <- as.data.frame(prin$loadings[,1:2])
@@ -14,7 +24,7 @@ pca_gf <- function (df) {
   
   loadings <- loadings[,c('trait', 'Comp.1', 'Comp.2')]
   
-  pca_loadings <- xtable(loadings)
+  pca_loadings <- xtable::xtable(loadings)
   print(pca_loadings,
         include.rownames = FALSE,
         include.colnames = FALSE,
@@ -22,17 +32,14 @@ pca_gf <- function (df) {
         comment = FALSE,
         #sanitize.text.function = identity,
         hline.after = NULL,
-        file = 'docs/pca_loadings.tex')
-  
-  pc12 <- prin$scores[,1:2]
-  write.csv(pc12, '../THESIS.bioassay/raw/pca_species.csv')
+        file = paste0(table_folder, 'pca_loadings.tex'))
   
   pc12 <- prin$scores[,1:2]
   df_pc12 <- data.frame(pc12)
   df_pc12$sp_abrev <- rownames(pc12)
   pc12_labeled <- merge(df_pc12, log_traits[,c('sp_abrev', 'gf')])
   rownames(pc12_labeled) <- pc12_labeled[,'sp_abrev']
-  require(vegan)
+
   fit <- vegan::envfit(pc12, na.omit(df)) # use envfit for drawing arrows, can be also done using trait loadings
   
   vars <- prin$sdev^2
@@ -41,7 +48,7 @@ pca_gf <- function (df) {
   png("output/pca.png", width = 1000, height = 950)
   
   plot(pc12_labeled[, c('Comp.1', 'Comp.2')], ylab='', xlab='', xaxt = 'n', yaxt = 'n', ylim=c(-4, 4), xlim=c(-4.2, 5), 
-       cex.axis = 1, cex = 1.2, pch = c(2, 20, 3, 8, 0)[as.numeric(pc12_labeled$gf)])
+       cex.axis = 1, cex = 1.8, pch = c(2, 20, 3, 8, 0)[as.numeric(pc12_labeled$gf)])
   
   plot(fit, cex = 2, col = 1, labels = list(vectors = c('SLA', 'DMC', 'N', 'C', 'HC', 'CL', 'LG')))
   
