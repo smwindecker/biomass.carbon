@@ -1,4 +1,13 @@
-boxplot <- function (df, trait) {
+#' Produce boxplot
+#'
+#' @param df dataframe of traits
+#' @param trait trait of interest
+#' @param output_folder file path for folder for output plot
+#' @return saved box plot
+#'
+#' @export
+
+boxplot <- function (df, trait, output_folder) {
   
   mfloor <- function (x, base) { 
     base*floor(x/base) 
@@ -12,7 +21,7 @@ boxplot <- function (df, trait) {
   
   if (trait == 'SLA') {
     
-    png('figs/SLA_boxplot.png', width = 500, height = 480)
+    png(paste0(output_folder, 'SLA_boxplot.png'), width = 500, height = 480)
     
     par(mar = c(4,6,1,1))
     low <- mfloor(min(df$SLA), .05)
@@ -32,7 +41,7 @@ boxplot <- function (df, trait) {
   
   if (trait == 'DMC') {
     
-    png('figs/DMC_boxplot.png', width = 500, height = 480)
+    png(paste0(output_folder, 'DMC_boxplot.png'), width = 500, height = 480)
     
     par(mar = c(4,6,1,1))
     low <- mfloor(min(df$DMC), 5)
@@ -52,7 +61,7 @@ boxplot <- function (df, trait) {
   
   if (trait == 'N') {
     
-    png('figs/N_boxplot.png', width = 500, height = 480)
+    png(paste0(output_folder, 'N_boxplot.png'), width = 500, height = 480)
     
     par(mar = c(4,6,1,1))
     low <- mfloor(min(df$N), .05)
@@ -72,7 +81,7 @@ boxplot <- function (df, trait) {
   
   if (trait == 'C') {
     
-    png('figs/C_boxplot.png', width = 500, height = 480)
+    png(paste0(output_folder, 'C_boxplot.png'), width = 500, height = 480)
     
     par(mar = c(4,6,1,1))
     low <- mfloor(min(df$C), 1)
@@ -92,7 +101,7 @@ boxplot <- function (df, trait) {
 
   if (trait == 'HC') {
     
-    png('figs/HC_boxplot.png', width = 500, height = 480)
+    png(paste0(output_folder, 'HC_boxplot.png'), width = 500, height = 480)
     
     par(mar = c(4,6,1,1))
     low <- mfloor(min(df$HC), .05)
@@ -112,7 +121,7 @@ boxplot <- function (df, trait) {
 
   if (trait == 'CL') {
     
-    png('figs/CL_boxplot.png', width = 500, height = 480)
+    png(paste0(output_folder, 'CL_boxplot.png'), width = 500, height = 480)
     
     par(mar = c(4,6,1,1))
     low <- mfloor(min(df$CL), .05)
@@ -132,7 +141,7 @@ boxplot <- function (df, trait) {
 
   if (trait == 'LG') {
     
-    png('figs/LG_boxplot.png', width = 500, height = 480)
+    png(paste0(output_folder, 'LG_boxplot.png'), width = 500, height = 480)
     
     par(mar = c(4,6,1,1))
     low <- mfloor(min(df$LG), .05)
