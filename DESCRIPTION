@@ -2,8 +2,13 @@ Package: biomass_traits
 Title: 
 Version: 0.0.0.9000
 Date: 2017-09-10
-Authors@R: person("Saras", "Windecker", role = c("aut", "cre"), 
-                  email = "saras.windecker@gmail.com")
+Authors@R: person(c("Saras", "Windecker", role = c("aut", "cre"), 
+email = "saras.windecker@gmail.com"),
+"Stacey", "Trevathan-Tackett", role = c("aut"),
+email = "s.trevathantackett@deakin.edu.au"),
+"Nick", "Golding", role = c("aut"),
+email = "nick.golding.research@gmail.com"))
+                  
 Description: This package contains the code and analysis steps for S. Windecker's thesis chapter on 
             thermogravimetric analysis and mixture modelling for biomass trait estimation. 
 Depends: R (>= 3.4.1)
