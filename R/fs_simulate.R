@@ -1,7 +1,13 @@
+#' Produce parameter simulation of Fraser-Suzuki function
+#'
+#' @param output_folder file path for output plot
+#' @return saved simulated Fraser-Suzuki plot
+#'
+#' @export
 
-fs_simulate <- function () {
+
+fs_simulate <- function (output_folder) {
   
-  source('R/fs_function.R')
   x <- seq(200, 700)
   h1 <- fs_function(x, 0.004, -0.25, 400, 60)
   h2 <- fs_function(x, 0.006, -0.25, 400, 60)
@@ -23,7 +29,7 @@ fs_simulate <- function () {
   w3 <- fs_function(x, 0.010, -0.25, 400, 90)
   w4 <- fs_function(x, 0.010, -0.25, 400, 120)
   
-  png('figs/fs_simulate.png', width = 800, height = 700)
+  png(paste0(output_folder, 'fs_simulate.png'), width = 800, height = 700)
   par(mfrow = c(2, 2))
   
   par(mar = c(1,6,6,1))
