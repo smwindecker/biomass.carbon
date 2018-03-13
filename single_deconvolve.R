@@ -1,6 +1,6 @@
 #' Deconvolve a single TGA curve
 #'
-#' @param raw_file_path TGA raw data
+#' @param raw_file TGA raw data
 #' @param subfig sub figure label ID
 #' @param output_file output file name
 #' @return saved deconvolved plot and weight
@@ -9,10 +9,7 @@
 
 single_deconvolve <- function (raw_file, subfig, output_file) {
 
-  df <- read.csv(raw_file, header = FALSE, skip = 29)
-  names(df) <- c('temp', 'time', 'mass_loss')
-  init_mass <- read.csv(raw_file, nrwos = 1, header = FALSE, skip = 17)[1,2]
-  munge <- deconvolve::process(df, 'temp', 'mass_loss', init_mass)
+  munge <- process_raw_tga(raw_file)
   
   mod_df <- munge$data
 
