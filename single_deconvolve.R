@@ -1,4 +1,13 @@
-single_deconvolve <- function (process_object, subfig, png_name) {
+#' Deconvolve a single TGA curve
+#'
+#' @param process_object deconvolve process object
+#' @param subfig sub figure label ID
+#' @param output_file output file name
+#' @return saved deconvolved plot and weight
+#'
+#' @export
+
+single_deconvolve <- function (process_object, subfig, output_file) {
 
   mod_df <- process_object$data
 
@@ -17,11 +26,6 @@ single_deconvolve <- function (process_object, subfig, png_name) {
   start_vec <- c(0.003, -0.15, 390, 200)
   lb <- c(0, -0.3, 0, 0)
   ub <- c(0.1, 0.3, 900, 900)
-
-  source('R/fs_model.R')
-  source('R/fs_function.R')
-  library(minpack.lm)
-  library(nloptr)
 
   fit <- fs_model(mod_df, start_vec, lb, ub)
 
@@ -42,7 +46,7 @@ single_deconvolve <- function (process_object, subfig, png_name) {
   mass_frac <- (integrate(Vectorize(f_j), lower = 120,
                              upper = 650)$value) * 100
 
-  png(paste0('figs/', png_name, '.png'), width = 760, height = 760)
+  png(output_folder, width = 760, height = 760)
   par(mar=c(5,8,4,1)+.1)
   plot(temp, obs, xlab = 'Temperature (C)', ylab = expression(paste('Rate of mass loss (-dm/dT) (C'^'-1', ')')),
        yaxs = 'i', ylim = c(0, 0.012),
@@ -50,7 +54,6 @@ single_deconvolve <- function (process_object, subfig, png_name) {
   y <- fs_function(temp, h, s, p, w)
   lines(temp, y, lty = 1, lwd = 2)
 
-  
   legend('topright',
          legend = c('DTG data', 'DTG modelled'), 
          ncol = 1,
@@ -64,7 +67,6 @@ single_deconvolve <- function (process_object, subfig, png_name) {
          bty = 'n', 
          cex = 1.8)
 
-  
   legend
   
   dev.off()
