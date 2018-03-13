@@ -48,7 +48,7 @@ single_deconvolve <- function (raw_file, subfig, output_file) {
   mass_frac <- (integrate(Vectorize(f_j), lower = 120,
                              upper = 650)$value) * 100
 
-  png(output_folder, width = 760, height = 760)
+  png(output_file, width = 760, height = 760)
   par(mar=c(5,8,4,1)+.1)
   plot(temp, obs, xlab = 'Temperature (C)', ylab = expression(paste('Rate of mass loss (-dm/dT) (C'^'-1', ')')),
        yaxs = 'i', ylim = c(0, 0.012),
