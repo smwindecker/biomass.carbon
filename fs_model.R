@@ -1,14 +1,13 @@
-#' Produce pca plot and loadings table
+#' Run frase-suzuki model
 #'
-#' @param dataframe dataframe of traits
+#' @param dataframe dataframe with derivative and temperature data
 #' @param params parameter vector of starting values for h, s, p, and w
 #' @param lb lower bound
 #' @param ub upper bound
-#' @return saved pca plot and loadings table
+#' @return model predictions
 #' @importFrom minpack.lm nlsLM
 #'
 #' @export
-
 
 # function to do the nls fit with the correct starting values
 fs_model <- function (dataframe, params, lb, ub) {
