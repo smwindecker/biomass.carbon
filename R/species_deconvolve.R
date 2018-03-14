@@ -145,9 +145,14 @@ species_deconvolve <- function (x, species_data, output_folder,
     colnames(weights)[1] <- 'HC_2'
   }
   
+  params$species_code <- x
+  params$parameter <- row.names(params)
+  colnames(params) <- c('coefficient', 'species_code', 'parameter')
+  params <- reshape2::dcast(params, species_code ~ parameter, value.var = 'coefficient')
+  
   weights$species_code <- x
   weights <- weights[, c('species_code', 'HC_1', 'HC_2', 'CL', 'LG', 'wt_type')]
   
-  return(list(weights, params))
+  return(list(weights = weights, params = params))
   
 }
