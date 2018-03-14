@@ -21,20 +21,19 @@ species_deconvolve <- function (x, species_data, output_folder,
   
   output <- deconvolve::deconvolve(munge, upper_temp = 650, n_curves = n_curves)
   
-  species_data$species_name <- gsub(' ', '_', species_data$species)
-  data <- merge(output$data, species_data)
-  sp_name <- data$species_name[data$species_code == x][1]
-  spname <- data$sp_abrev[data$species_code == x][1]
-  gf <- species_df$gf[species_df$species_code == x][1]
+  sp_name <- gsub(' ', '_', species_data$species[species_data$species_code == x][1])
+  spname <- species_data$sp_abrev[species_data$species_code == x][1]
+  gf <- species_data$gf[species_data$species_code == x][1]
   
   fit <- output$minpack.lm  
   params <- as.data.frame(summary(fit)$coefficients[,1])
   
   temp <- seq(output$bounds[1], output$bounds[2], length.out = nrow(output$data))
-
+  data <- output$data
+  
   png(paste0(output_folder, gf, '/', sp_name, '.png'), width = 560, height = 480, 'px', bg = 'transparent')
   
-  if (isFALSE(xaxis) && isFALSE(yaxis)) {
+  if (!isTRUE(xaxis) && !isTRUE(yaxis)) {
     
     plot(data$temp_C, data$deriv, yaxs = 'i', ylim = c(0, 0.01),
          ylab = '', xlab = '', xaxt = 'n', yaxt = 'n', pch = 20, cex = 0.3, cex.axis = 1.8)
@@ -44,7 +43,7 @@ species_deconvolve <- function (x, species_data, output_folder,
     axis(side = 2, at = c(0, 0.005, 0.01), labels = FALSE)
     axis(side = 1, at = c(150, 400, 650), cex.axis = 2.2, labels = c(150, 400, 650))
     
-  } else if (isFALSE(xaxis) && isTRUE(yaxis)) {
+  } else if (!isTRUE(xaxis) && isTRUE(yaxis)) {
     
     plot(data$temp_C, data$deriv, yaxs = 'i', ylim = c(0, 0.01),
          ylab = '', xlab = '', xaxt = 'n', yaxt = 'n', pch = 20, cex = 0.3, cex.axis = 1.8)
@@ -87,14 +86,14 @@ species_deconvolve <- function (x, species_data, output_folder,
                      p2 = params['p2',], w2 = params['w2',],
                      h3 = params['h3',], s3 = params['s3',],
                      p3 = params['p3',], w3 = params['w3',],
-                     h4 = params['h4',], s4 = params['s4',],
-                     p4 = params['p4',], w4 = params['w4',])
+                     h0 = params['h0',], s0 = params['s0',],
+                     p0 = params['p0',], w0 = params['w0',])
     
     y5 <- fs_function(x = temp,
-                      h = params['h4',], s = params['s4',],
-                      p = params['p4',], w = params['w4',])
+                      h = params['h0',], s = params['s0',],
+                      p = params['p0',], w = params['w0',])
 
-    lines(temp, y5, lty = 5, lwd = 2.5, col = 'blue')
+    lines(temp, y5, lty = 5, lwd = 2.5, col = 'orange')
     
   } 
   
@@ -114,7 +113,7 @@ species_deconvolve <- function (x, species_data, output_folder,
   y2 <- fs_function(x = temp,
                     h = params['h1',], s = params['s1',],
                     p = params['p1',], w = params['w1',])
-  lines(temp, y2, lty = 6, lwd = 3.5, col = 'orange')
+  lines(temp, y2, lty = 6, lwd = 3.5, col = 'blue')
   
   y3 <- fs_function(x = temp,
                     h = params['h2',], s = params['s2',],
