@@ -2,12 +2,14 @@
 #'
 #' @param df dataframe of traits
 #' @param output_folder file path for folder for output plot
+#' @importFrom grDevices png plot dev.off points axis legend par
 #' @return saved box plot
 #'
 #' @export
 
 boxplot <- function (df, output_folder) {
   
+  # create functions to specify how to round
   mfloor <- function (x, base) { 
     base*floor(x/base) 
   } 
@@ -18,7 +20,7 @@ boxplot <- function (df, output_folder) {
     base*ceiling(x/base) 
   } 
   
-  png(paste0(output_folder, 'SLA_boxplot.png'), width = 500, height = 480)
+  png(paste0(output_folder, 'boxplot_SLA.png'), width = 500, height = 480)
   par(mar = c(4,6,1,1))
   low <- mfloor(min(df$SLA), .05)
   high <- mceiling(max(df$SLA), .05)
@@ -33,7 +35,7 @@ boxplot <- function (df, output_folder) {
   legend('topleft', '(a)', bty = 'n', cex = 1.8)
   dev.off()
   
-  png(paste0(output_folder, 'DMC_boxplot.png'), width = 500, height = 480)
+  png(paste0(output_folder, 'boxplot_DMC.png'), width = 500, height = 480)
   par(mar = c(4,6,1,1))
   low <- mfloor(min(df$DMC), 5)
   high <- mceiling(max(df$DMC), 5)
@@ -48,7 +50,7 @@ boxplot <- function (df, output_folder) {
   legend('topleft', '(b)', bty = 'n', cex = 1.8)
   dev.off()
   
-  png(paste0(output_folder, 'N_boxplot.png'), width = 500, height = 480)
+  png(paste0(output_folder, 'boxplot_N.png'), width = 500, height = 480)
   par(mar = c(4,6,1,1))
   low <- mfloor(min(df$N), .05)
   high <- mceiling(max(df$N), .05)
@@ -63,7 +65,7 @@ boxplot <- function (df, output_folder) {
   legend('topleft', '(c)', bty = 'n', cex = 1.8)     
   dev.off()
   
-  png(paste0(output_folder, 'C_boxplot.png'), width = 500, height = 480)
+  png(paste0(output_folder, 'boxplot_C.png'), width = 500, height = 480)
   par(mar = c(4,6,1,1))
   low <- mfloor(min(df$C), 1)
   high <- mceiling(max(df$C), 1)
@@ -78,7 +80,7 @@ boxplot <- function (df, output_folder) {
   legend('topleft', '(d)', bty = 'n', cex = 1.8)
   dev.off()
 
-  png(paste0(output_folder, 'HC_boxplot.png'), width = 500, height = 480)
+  png(paste0(output_folder, 'boxplot_HC.png'), width = 500, height = 480)
   par(mar = c(4,6,1,1))
   low <- mfloor(min(df$HC), .05)
   high <- mceiling(max(df$HC), .05)
@@ -93,7 +95,7 @@ boxplot <- function (df, output_folder) {
   legend('topleft', '(e)', bty = 'n', cex = 1.8) 
   dev.off()
 
-  png(paste0(output_folder, 'CL_boxplot.png'), width = 500, height = 480)
+  png(paste0(output_folder, 'boxplot_CL.png'), width = 500, height = 480)
   par(mar = c(4,6,1,1))
   low <- mfloor(min(df$CL), .05)
   high <- mceiling(max(df$CL), .05)
@@ -108,7 +110,7 @@ boxplot <- function (df, output_folder) {
   legend('topleft', '(f)', bty = 'n', cex = 1.8)
   dev.off()
 
-  png(paste0(output_folder, 'LG_boxplot.png'), width = 500, height = 480)
+  png(paste0(output_folder, 'boxplot_LG.png'), width = 500, height = 480)
   par(mar = c(4,6,1,1))
   low <- mfloor(min(df$LG), .05)
   high <- mceiling(max(df$LG), .05)
