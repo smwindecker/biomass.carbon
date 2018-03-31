@@ -1,35 +1,37 @@
 #' Produce parameter simulation of Fraser-Suzuki function
 #'
-#' @param output_folder file path for output plot
+#' @param output_file file path for output plot
+#' @importFrom deconvolve fs_function
+#' @importFrom grDevices png plot axis lines par legend dev.off
 #' @return saved simulated Fraser-Suzuki plot
 #'
 #' @export
 
 
-fs_simulate <- function (output_folder) {
+fs_simulate <- function (output_file) {
   
   x <- seq(200, 700)
-  h1 <- fs_function(x, 0.004, -0.25, 400, 60)
-  h2 <- fs_function(x, 0.006, -0.25, 400, 60)
-  h3 <- fs_function(x, 0.008, -0.25, 400, 60)
-  h4 <- fs_function(x, 0.010, -0.25, 400, 60)
+  h1 <- deconvolve::fs_function(x, 0.004, -0.25, 400, 60)
+  h2 <- deconvolve::fs_function(x, 0.006, -0.25, 400, 60)
+  h3 <- deconvolve::fs_function(x, 0.008, -0.25, 400, 60)
+  h4 <- deconvolve::fs_function(x, 0.010, -0.25, 400, 60)
   
-  s1 <- fs_function(x, 0.010, -0.55, 400, 60)
-  s2 <- fs_function(x, 0.010, -0.25, 400, 60)
-  s3 <- fs_function(x, 0.010, 0.25, 400, 60)
-  s4 <- fs_function(x, 0.010, 0.55, 400, 60)
+  s1 <- deconvolve::fs_function(x, 0.010, -0.55, 400, 60)
+  s2 <- deconvolve::fs_function(x, 0.010, -0.25, 400, 60)
+  s3 <- deconvolve::fs_function(x, 0.010, 0.25, 400, 60)
+  s4 <- deconvolve::fs_function(x, 0.010, 0.55, 400, 60)
   
-  p1 <- fs_function(x, 0.010, -0.25, 350, 60)
-  p2 <- fs_function(x, 0.010, -0.25, 400, 60)
-  p3 <- fs_function(x, 0.010, -0.25, 450, 60)
-  p4 <- fs_function(x, 0.010, -0.25, 500, 60)
+  p1 <- deconvolve::fs_function(x, 0.010, -0.25, 350, 60)
+  p2 <- deconvolve::fs_function(x, 0.010, -0.25, 400, 60)
+  p3 <- deconvolve::fs_function(x, 0.010, -0.25, 450, 60)
+  p4 <- deconvolve::fs_function(x, 0.010, -0.25, 500, 60)
   
-  w1 <- fs_function(x, 0.010, -0.25, 400, 30)
-  w2 <- fs_function(x, 0.010, -0.25, 400, 60)
-  w3 <- fs_function(x, 0.010, -0.25, 400, 90)
-  w4 <- fs_function(x, 0.010, -0.25, 400, 120)
+  w1 <- deconvolve::fs_function(x, 0.010, -0.25, 400, 30)
+  w2 <- deconvolve::fs_function(x, 0.010, -0.25, 400, 60)
+  w3 <- deconvolve::fs_function(x, 0.010, -0.25, 400, 90)
+  w4 <- deconvolve::fs_function(x, 0.010, -0.25, 400, 120)
   
-  png(paste0(output_folder, 'fs_simulate.png'), width = 800, height = 700)
+  png(output_file, width = 800, height = 700)
   par(mfrow = c(2, 2))
   
   par(mar = c(1,6,6,1))

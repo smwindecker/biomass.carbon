@@ -25,12 +25,7 @@ species_deconvolute <- function (list_item, species_data, output_folder) {
   
   # read raw TGA
   file <- paste0('data-raw/TGA/', x, '_TGA.csv')
-  df <- read.csv(file, header = FALSE, skip = 29)
-  names(df) <- c('temp', 'time', 'mass_loss')
-  init_mass <- read.csv(file, nrows = 1, header = FALSE, skip = 17)[1,2]
-  
-  # process TGA data
-  tmp <- deconvolve::process(df, 'temp', 'mass_loss', init_mass)
+  tmp <- process_raw_tga(file)
   
   # deconvolute TGA data
   output <- deconvolve::deconvolve(tmp, upper_temp = 650, n_curves = n_curves)
