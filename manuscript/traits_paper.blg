@@ -1,0 +1,47 @@
+This is BibTeX, Version 0.99d (TeX Live 2017)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: traits_paper.aux
+The style file: besjournals.bst
+Database file #1: ../../../bibtex/traits_paper.bib
+Database file #2: ../../../bibtex/R_packages.bib
+You've used 38 entries,
+            2805 wiz_defined-function locations,
+            1274 strings with 21234 characters,
+and the built_in function-call counts, 28465 in all, are:
+= -- 2229
+> -- 1766
+< -- 12
++ -- 682
+- -- 634
+* -- 2542
+:= -- 4552
+add.period$ -- 76
+call.type$ -- 38
+change.case$ -- 400
+chr.to.int$ -- 39
+cite$ -- 38
+duplicate$ -- 1788
+empty$ -- 1741
+format.name$ -- 763
+if$ -- 5373
+int.to.chr$ -- 2
+int.to.str$ -- 1
+missing$ -- 432
+newline$ -- 118
+num.names$ -- 152
+pop$ -- 804
+preamble$ -- 1
+purify$ -- 363
+quote$ -- 0
+skip$ -- 629
+stack$ -- 0
+substring$ -- 1282
+swap$ -- 1069
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 342
+warning$ -- 0
+while$ -- 179
+width$ -- 0
+write$ -- 418

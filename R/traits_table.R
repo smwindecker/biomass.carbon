@@ -1,40 +1,40 @@
 #' Produce output trait table
 #'
-#' @param df dataframe of traits
+#' @param traits_df dataframe of traits
 #' @param output_file file path for output plot
 #' @return saved trait table
 #' @importFrom xtable xtable
 #'
 #' @export
 
-traits_table <- function (df, output_file) {
+traits_table <- function (traits_df, output_file) {
   
-  df$SLA <- sprintf("%.2f", round(df$SLA, 2))
-  df$DMC <- sprintf("%.0f", round(df$DMC, 0))
-  df[,c(8,9)] <- lapply(round(df[,c(8,9)], 1), sprintf, fmt = "%.1f")
+  traits_df$SLA <- sprintf("%.2f", round(traits_df$SLA, 2))
+  traits_df$DMC <- sprintf("%.0f", round(traits_df$DMC, 0))
+  traits_df[,c(8,9)] <- lapply(round(traits_df[,c(8,9)], 1), sprintf, fmt = "%.1f")
   
-  df$gf <- as.character(df$gf)
-  df$gf[df$gf == 'G'] <- 'graminoid'
-  df$gf[df$gf == 'F'] <- 'forb'
-  df$gf[df$gf == 'NV'] <- 'nonvascular'
-  df$gf[df$gf == 'S'] <- 'shrub'
-  df$gf[df$gf == 'T'] <- 'tree'
+  traits_df$gf <- as.character(traits_df$gf)
+  traits_df$gf[traits_df$gf == 'G'] <- 'graminoid'
+  traits_df$gf[traits_df$gf == 'F'] <- 'forb'
+  traits_df$gf[traits_df$gf == 'NV'] <- 'nonvascular'
+  traits_df$gf[traits_df$gf == 'S'] <- 'shrub'
+  traits_df$gf[traits_df$gf == 'T'] <- 'tree'
   
-  df[,c(10:13)] <- round(df[,c(10:13)], 1)
+  traits_df[,c(10:13)] <- round(traits_df[,c(10:13)], 1)
   for (i in c('HC_1', 'HC_2', 'CL', 'LG')) {
-    for (j in unique(as.character(df$species))) {
+    for (j in unique(as.character(traits_df$species))) {
       
-      if (!is.na(df[(df$wt_type == 'mean' & df$species == j), i])) {
+      if (!is.na(traits_df[(traits_df$wt_type == 'mean' & traits_df$species == j), i])) {
         
-        df[(df$wt_type == 'mean' & df$species == j), i] <- paste0(
-          df[(df$wt_type == 'mean' & df$species == j), i], ' [',
-          df[(df$wt_type == '2.5%' & df$species == j), i], ', ',
-          df[(df$wt_type == '97.5%' & df$species == j), i], ']')
+        traits_df[(traits_df$wt_type == 'mean' & traits_df$species == j), i] <- paste0(
+          traits_df[(traits_df$wt_type == 'mean' & traits_df$species == j), i], ' [',
+          traits_df[(traits_df$wt_type == '2.5%' & traits_df$species == j), i], ', ',
+          traits_df[(traits_df$wt_type == '97.5%' & traits_df$species == j), i], ']')
       }
     }
   }
   
-  traits_table <- df[df$wt_type == 'mean', 3:13]
+  traits_table <- traits_df[traits_df$wt_type == 'mean', 3:13]
   traits_table$species <- paste0('\\textit{', traits_table$species, '}')
   traits_table <- xtable::xtable(traits_table)
   

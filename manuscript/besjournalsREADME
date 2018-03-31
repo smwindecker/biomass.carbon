@@ -1,0 +1,51 @@
+This is the BibTeX style (.bst) file for the 
+following journals by The British Ecological Society:
+
+Functional Ecology
+Journal of Animal Ecology
+Journal of Ecology
+Journal of Applied Ecology
+
+Simply include it in your .tex file with command 
+
+  \bibliography{myreferences}
+  \bibliographystyle{besjournals}
+
+where 'myreferences' is actually the file 
+'myreferences.bib', which should be your bibliographic 
+databank in BibTeX format, of course!  
+
+Please, be aware that this style was pro­duced in­de­pen­dently 
+of the British Ecol. So­ci­ety, and has no for­mal ap­proval 
+from the Society.
+
+--------------- if you feel like doing a hackers' job:
+I have included here also the file 
+
+besjournals.dbj
+
+which is the one used originally to generate functional_ecol.bst 
+but should serve for all 4 BES journals. If 
+you spot any mistake in the .bst file, you'd better fixing 
+it in the .dbj file, instead of trying to fix the .bst file.
+
+Then, make sure you have custom-bib installed and run:
+
+latex besjournals.dbj 
+
+to produce besjournals.bst, and please, let me know!!!
+
+Cheers
+
+Og DeSouza <og.souza@ufv.br>
+http://www.isoptera.ufv.br
+
+PS: if you publish a paper using this bst file, please be 
+kind to mention it in the acknowledgments, and send me a 
+pdf of your paper for my records. It may improve the chances
+to get my next research grant!
+
+--------------- changelog
+2014-10-21 fixing typos in README file
+2014-10-21 eliminating the inclusion of URL’s for each reference
+2014-10-22 renaming README.txt to README to comply with CTAN standards
