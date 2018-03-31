@@ -47,7 +47,7 @@ species_deconvolute <- function (list_item, species_data, output_folder) {
   # isolate data
   data <- output$data
   
-  png(paste0(output_folder, gf, '/', sp_name, '.png'), width = 560, height = 480, 'px', bg = 'transparent')
+  png(paste0(output_folder, 'tga_', gf, '_', sp_name, '.png'), width = 560, height = 480, 'px', bg = 'transparent')
   
   if (!isTRUE(xaxis) && !isTRUE(yaxis)) {
     
