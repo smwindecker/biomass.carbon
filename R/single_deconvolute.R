@@ -10,7 +10,7 @@
 #'
 #' @export
 
-single_deconvolve <- function (raw_file, subfig, output_file) {
+single_deconvolute <- function (raw_file, subfig, output_file) {
 
   # load and process TGA data
   tmp <- process_raw_tga(raw_file)
