@@ -4,10 +4,10 @@
 \alias{fs_simulate}
 \title{Produce parameter simulation of Fraser-Suzuki function}
 \usage{
-fs_simulate(output_folder)
+fs_simulate(output_file)
 }
 \arguments{
-\item{output_folder}{file path for output plot}
+\item{output_file}{file path for output plot}
 }
 \value{
 saved simulated Fraser-Suzuki plot

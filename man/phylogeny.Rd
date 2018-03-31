@@ -13,9 +13,7 @@ phylogeny(df, genbank_accessions_file, nwk_file, figure_folder, table_folder)
 
 \item{nwk_file}{file path for .nwk file}
 
-\item{figure_folder}{folder path for plot output}
-
-\item{table_folder}{folder path for table output}
+\item{output_folder}{folder path for plot output}
 }
 \value{
 saved phylogeny files

@@ -4,14 +4,12 @@
 \alias{pca_gf}
 \title{Produce pca plot and loadings table}
 \usage{
-pca_gf(df, figure_folder, table_folder)
+pca_gf(df, species_data, output_folder)
 }
 \arguments{
 \item{df}{dataframe of traits}
 
-\item{figure_folder}{folder path for pca plot}
-
-\item{table_folder}{folder path for pca table}
+\item{output_folder}{folder path for pca plot}
 }
 \value{
 saved pca plot and loadings table

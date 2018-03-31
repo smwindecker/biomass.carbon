@@ -18,6 +18,7 @@ Imports:
     adephylo,
     ape,
     grDevices,
+    graphics,
     deconvolve,
     plyr,
     phytools,
