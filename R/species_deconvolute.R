@@ -1,8 +1,9 @@
 #' Deconvolute species' TGA data
 #'
+#' @param list_item split species row as list item
 #' @param species_data species detail file with growth form and full species name info
 #' @param output_folder output folder
-#' @return saved deconvolved plot and weight
+#' @return saved deconvolved plot and list of parameters and weights
 #' @importFrom deconvolve process deconvolve
 #' @importFrom reshape2 dcast
 #'
