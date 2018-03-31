@@ -4,10 +4,10 @@
 \alias{traits_table}
 \title{Produce output trait table}
 \usage{
-traits_table(df, output_file)
+traits_table(traits_df, output_file)
 }
 \arguments{
-\item{df}{dataframe of traits}
+\item{traits_df}{dataframe of traits}
 
 \item{output_file}{file path for output plot}
 }

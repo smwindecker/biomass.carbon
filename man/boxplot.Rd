@@ -4,12 +4,10 @@
 \alias{boxplot}
 \title{Produce boxplot}
 \usage{
-boxplot(df, trait, output_folder)
+boxplot(df, output_folder)
 }
 \arguments{
 \item{df}{dataframe of traits}
-
-\item{trait}{trait of interest}
 
 \item{output_folder}{file path for folder for output plot}
 }
