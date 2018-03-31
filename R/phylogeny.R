@@ -12,8 +12,8 @@
 #' @importFrom adephylo distTips
 #' @importFrom ade4 mantel.rtest
 #' @importFrom phytools contMap
-#' @importFrom grDevices png dev.off
-#' @importFrom graphics colorRampPalette plot
+#' @importFrom grDevices png dev.off colorRampPalette 
+#' @importFrom graphics plot
 #' @importFrom utils read.table
 #'
 #' @export
