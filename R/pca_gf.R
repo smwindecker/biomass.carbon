@@ -1,19 +1,24 @@
 #' Produce pca plot and loadings table
 #'
 #' @param df dataframe of traits
-#' @param figure_folder folder path for pca plot
-#' @param table_folder folder path for pca table
+#' @param output_folder folder path for pca plot
 #' @return saved pca plot and loadings table
 #' @importFrom xtable xtable
 #' @importFrom vegan envfit
+#' @importFrom stats princomp na.omit
+#' @importFrom grDevices png dev.off plot mtext legend text
 #'
 #' @export
 
-pca_gf <- function (df, figure_folder, table_folder) {
+pca_gf <- function (df, species_data, output_folder) {
   
-  prin <- princomp((na.omit(df)), cor = TRUE, scores = TRUE)
+  # calculate loadins 
+  prin <- stats::princomp((stats::na.omit(df)), cor = TRUE, scores = TRUE)
   
+  # isolate first two axes 
   loadings <- as.data.frame(prin$loadings[,1:2])
+  
+  # expand trait names 
   loadings$trait[row.names(loadings) == 'SLA'] <- 'Specific litter area'
   loadings$trait[row.names(loadings) == 'DMC'] <- 'Litter dry matter content'
   loadings$trait[row.names(loadings) == 'N'] <- 'Litter nitrogen'
@@ -24,7 +29,9 @@ pca_gf <- function (df, figure_folder, table_folder) {
   
   loadings <- loadings[,c('trait', 'Comp.1', 'Comp.2')]
   
+  # create xtable
   pca_loadings <- xtable::xtable(loadings)
+  
   print(pca_loadings,
         include.rownames = FALSE,
         include.colnames = FALSE,
@@ -32,26 +39,28 @@ pca_gf <- function (df, figure_folder, table_folder) {
         comment = FALSE,
         #sanitize.text.function = identity,
         hline.after = NULL,
-        file = paste0(table_folder, 'pca_loadings.tex'))
+        file = paste0(output_folder, 'pca_loadings.tex'))
   
-  pc12 <- prin$scores[,1:2]
+  # first two axes' scores
+  pc12 <- prin$scores[, 1:2]
   df_pc12 <- data.frame(pc12)
   df_pc12$sp_abrev <- rownames(pc12)
-  pc12_labeled <- merge(df_pc12, log_traits[,c('sp_abrev', 'gf')])
-  rownames(pc12_labeled) <- pc12_labeled[,'sp_abrev']
+  
+  # label with abreviations
+  pc12_labeled <- merge(df_pc12, species_data[,c('sp_pca_label', 'gf')])
+  rownames(pc12_labeled) <- pc12_labeled[,'sp_pca_label']
 
-  fit <- vegan::envfit(pc12, na.omit(df)) # use envfit for drawing arrows, can be also done using trait loadings
+  # get length of axes
+  fit <- vegan::envfit(pc12, na.omit(df)) 
   
   vars <- prin$sdev^2
   prop_vars <- vars/sum(vars)
   
-  png("output/pca.png", width = 1000, height = 950)
+  png(paste0(output_folder, 'pca.png'), width = 1000, height = 950)
   
   plot(pc12_labeled[, c('Comp.1', 'Comp.2')], ylab='', xlab='', xaxt = 'n', yaxt = 'n', ylim=c(-4, 4), xlim=c(-4.2, 5), 
        cex.axis = 1, cex = 1.8, pch = c(2, 20, 3, 8, 0)[as.numeric(pc12_labeled$gf)])
-  
   plot(fit, cex = 2, col = 1, labels = list(vectors = c('SLA', 'DMC', 'N', 'C', 'HC', 'CL', 'LG')))
-  
   mtext(text = paste0('Axis 1 (', (100*round(prop_vars[[1]], 2)), '%)'), side = 1, 
         cex = 2, padj = 1)
   mtext(text = paste0('Axis 2 (', (100*round(prop_vars[[2]], 2)), '%)'), side = 2, 
@@ -61,6 +70,9 @@ pca_gf <- function (df, figure_folder, table_folder) {
          bty = 'n',
          pch = c(2, 20, 3, 8, 0), 
          cex = 1.8)
+  text(x = pc12_labeled[, 'Comp.1'], y = pc12_labeled[, 'Comp.2'],
+       labels = row.names(pc12_labeled), vfont = c('sans serif', 'italic'),
+       cex = 1.5, pos = 4)
   
   dev.off()
 }
