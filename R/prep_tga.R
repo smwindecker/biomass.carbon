@@ -4,7 +4,6 @@
 #' @param output_folder output folder
 #' @importFrom dplyr bind_rows
 #' @return saved deconvolved plot and weight
-#' @import deconvolve
 #'
 #' @export
 

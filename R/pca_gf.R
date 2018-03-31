@@ -6,7 +6,8 @@
 #' @importFrom xtable xtable
 #' @importFrom vegan envfit
 #' @importFrom stats princomp na.omit
-#' @importFrom grDevices png dev.off plot mtext legend text
+#' @importFrom grDevices png dev.off 
+#' @importFrom graphics plot mtext legend text
 #'
 #' @export
 

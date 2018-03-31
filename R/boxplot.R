@@ -2,7 +2,8 @@
 #'
 #' @param df dataframe of traits
 #' @param output_folder file path for folder for output plot
-#' @importFrom grDevices png plot dev.off points axis legend par
+#' @importFrom grDevices png dev.off 
+#' @importFrom graphics points axis legend par plot 
 #' @return saved box plot
 #'
 #' @export

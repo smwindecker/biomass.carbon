@@ -2,7 +2,8 @@
 #'
 #' @param output_file file path for output plot
 #' @importFrom deconvolve fs_function
-#' @importFrom grDevices png plot axis lines par legend dev.off
+#' @importFrom grDevices png dev.off
+#' @importFrom graphics plot axis lines par legend 
 #' @return saved simulated Fraser-Suzuki plot
 #'
 #' @export

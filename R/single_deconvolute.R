@@ -5,7 +5,8 @@
 #' @param output_file output file name
 #' @importFrom deconvolve fs_model fs_function
 #' @importFrom stats integrate
-#' @importFrom grDevices png par plot dev.off legend lines
+#' @importFrom grDevices png dev.off 
+#' @importFrom graphics legend lines par plot 
 #' @return saved deconvolved plot and weight
 #'
 #' @export

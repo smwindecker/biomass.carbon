@@ -3,7 +3,8 @@
 #' @param df dataframe of traits
 #' @param output_file file path for output plot
 #' @importFrom stats cor lm cor.test
-#' @importFrom grDevices png par text dev.off points abline strwidth
+#' @importFrom grDevices png dev.off 
+#' @importFrom graphics par text points abline strwidth
 #' @return saved pair plot
 #'
 #' @export

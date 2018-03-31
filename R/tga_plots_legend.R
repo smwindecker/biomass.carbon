@@ -4,7 +4,8 @@
 #' @param output_file file path for output plot
 #' @importFrom utils read.csv
 #' @importFrom deconvolve process deconvolve
-#' @importFrom grDevices png plot rect legend dev.off
+#' @importFrom grDevices png dev.off
+#' @importFrom graphics plot rect legend 
 #' @return saved TGA legend
 #'
 #' @export
