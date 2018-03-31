@@ -2,18 +2,27 @@
 #'
 #' @param sample_data_file file path to sample tga csv data for legend construction
 #' @param output_file file path for output plot
+#' @importFrom utils read.csv
+#' @importFrom deconvolve process deconvolve
+#' @importFrom grDevices png plot rect legend dev.off
 #' @return saved TGA legend
 #'
 #' @export
 
 tga_plots_legend <- function (sample_data_file, output_file) {
   
+  # read sample TGA data
   dat <- read.csv(sample_data_file, header = F, skip = 29)
   names(dat) <- c('temp', 'time', 'mass_loss')
-  munge <- process(dat, 'temp', 'mass_loss', 16)
-  output <- deconvolve(munge, n_curves = 4)
+  
+  # process and deconvolute
+  tmp <- deconvolve::process(dat, 'temp', 'mass_loss', 16)
+  output <- deconvolve::deconvolve(tmp, n_curves = 4)
+  
+  # extract data
   data <- output$data
   
+  # create plot so can extract legend
   png(output_file, width = 560, height = 480, 'px', bg = 'transparent')
   par(xpd = TRUE, mar = c(10, 2, 2, 2))
   plot(data$temp_C, data$deriv, yaxs = 'i', ylim = c(0, max(data$deriv) + 0.06*max(data$deriv)),

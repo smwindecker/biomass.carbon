@@ -2,14 +2,13 @@
 #'
 #' @param species_data species detail file with growth form and full species name info
 #' @param output_folder output folder
+#' @importFrom dplyr bind_rows
 #' @return saved deconvolved plot and weight
 #' @import deconvolve
 #'
 #' @export
 
 prep_tga <- function (species_data, output_folder) {
-  
-  # add option so this creates a 3 panel demonstrative? which ones would I choose?
   
   #species_data <- species
   species <- as.data.frame(unique(as.character(species_data$species_code))) %>%
@@ -42,7 +41,7 @@ prep_tga <- function (species_data, output_folder) {
   # collate parameters and save tables
   tga_param_table(species_deconvolved_list = spp_deconvolve, 
                   species_data = species_data, 
-                  output_folder = 'docs/')
+                  output_folder = output_folder)
   
   # combine weight estimates from all deconvoluted species data
   weight_estimates <- dplyr::bind_rows(lapply(1:length(spp_deconvolve), function(x) {

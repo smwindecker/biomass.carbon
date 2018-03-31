@@ -4,6 +4,7 @@
 #' @param species_data file with species data
 #' @return prepared trait data
 #' @importFrom plyr ddply
+#' @importFrom utils read.csv
 #'
 #' @export
 
@@ -23,7 +24,7 @@ prep_les <- function(trait_file, species_data) {
   trait$longDMC <- (trait$dry_weight*1000)/trait$wet_weight
   
   # calculate mean SLA and DMC of ten samples
-  trait_1 <- ddply(trait, ~ species_code, summarise, SLA = mean(longSLA), DMC = mean(longDMC))
+  trait_1 <- plyr::ddply(trait, ~ species_code, summarise, SLA = mean(longSLA), DMC = mean(longDMC))
   
   # merge with species data
   trt <- merge(trait_1, unique(trait[,c('species_code', 'sp_abrev', 'species', 'family', 'gf')]))

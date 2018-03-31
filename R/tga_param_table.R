@@ -5,6 +5,8 @@
 #' @param output_folder folder path for output plot
 #' @return saved parameters tables
 #' @importFrom xtable xtable
+#' @importFrom dplyr bind_rows
+#' @importFrom utils write.table
 #'
 #' @export
 

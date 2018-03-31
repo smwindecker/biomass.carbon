@@ -6,6 +6,9 @@
 #' @return saved deconvolved plot and list of parameters and weights
 #' @importFrom deconvolve process deconvolve
 #' @importFrom reshape2 dcast
+#' @importFrom grDevices dev.off png
+#' @importFrom graphics axis legend plot rect
+#' @importFrom utils read.csv
 #'
 #' @export
 

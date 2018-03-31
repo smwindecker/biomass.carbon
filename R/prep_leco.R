@@ -2,6 +2,7 @@
 #'
 #' @param leco_data raw leco data
 #' @return prepared leco data
+#' @importFrom utils read.csv
 #'
 #' @export
 
