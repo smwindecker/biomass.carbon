@@ -1,8 +1,11 @@
 
 # ALL TRAITS
 
+# set output folder
+output_folder = 'manuscript/figs/'
+
 # load raw species data
-species <- read.csv('data-raw/species.csv', header = T)
+species <- utils::read.csv('data-raw/species.csv', header = T)
 
 # remove unused species
 species <- species[!species$species_code == 'AA',]
@@ -16,7 +19,7 @@ trt <- prep_les(trait_data = 'data-raw/traits.csv',
 
 # load prepared TGA data
 tga <- prep_tga(species_data = species,
-                output_folder = 'manuscript/figs/')
+                output_folder)
 
 # create legend for TGA plots
 tga_plots_legend(sample_data_file = 'data-raw/TGA/T_TGA.csv', 
@@ -36,45 +39,46 @@ t_3 <- t_2[, c(1,4:7,2,3,9,8,10:14)]
 traits_table(traits_df = t_3, 
              output_file = 'manuscript/figs/traits_table.tex')
 
-
 t_mean <- t_3[t_3$wt_type == 'mean',]
 t_mean$HC <- t_mean$HC_1 + t_mean$HC_2
 t_mean$HC[is.na(t_mean$HC)] <- t_mean$HC_2[is.na(t_mean$HC)]
-write.table(t_mean, 'data/all_traits.txt')
+utils::write.table(t_mean, 'data/all_traits.txt')
 
+# create phylogeny plots and tables
+phylogeny(df = t_mean, 
+          genbank_accessions_file = 'data-raw/GenBankAccessions.txt', 
+          nwk_file = 'data-raw/phylo_tree.nwk', 
+          output_folder)
 
-library(dplyr)
-
-t_mean <- read.table('raw/all_traits.txt')
-phylogeny(t_mean, 
-          genbank_accessions_file = 'raw/GenBankAccessions.txt', 
-          nwk_file = 'raw/phylo_tree.nwk', 
-          output_folder = 'docs/')
-
-# prep log traits for pairplot and pca
+# create covariate matrix of traits
 cov <- t_mean %>%
-  set_rownames(t_mean[, 'sp_abrev']) %>%
-  select(SLA, DMC, N, C, HC, CL, LG)
-boxplot(cov, output_folder = 'figs/')
+  dplyr::set_rownames(t_mean[, 'sp_abrev']) %>%
+  dplyr::select(SLA, DMC, N, C, HC, CL, LG)
 
+# create boxplots
+trait_boxplot(df = cov, 
+        output_folder)
+
+# log all columns of covariates dataframe
 cov[] <- sapply(cov, log)
 
-pca_gf(cov, 
-       figure_folder = 'output/',
-       table_folder = 'docs/')
+# create PCA
+pca_gf(df = cov, 
+       species_data = species,
+       output_folder)
 
-pair_plot(cov, 
-          output_file = 'figs/pairplot.png')
+# create pair plot
+pair_plot(df = cov, 
+          output_file = 'manuscript/figs/pairplot.png')
 
 # Fraser-Suzuki parameter simulation
-fs_simulate(output_folder = 'figs/')
+fs_simulate(output_folder)
 
-######################
-single_deconvolve(raw_file = 'raw/raw_biomass/CL.csv', 
+# test deconvolve on raw samples
+single_deconvolve(raw_file = 'data-raw/raw_biomass/CL.csv', 
                   subfig = 'a', 
-                  output_file = 'figs/raw_CL.png')
-single_deconvolve(raw_file = 'raw/raw_biomass/CL.csv', 
+                  output_file = 'manuscript/figs/raw_CL.png')
+single_deconvolve(raw_file = 'data-raw/raw_biomass/CL.csv', 
                   subfig = 'b', 
-                  output_file = 'figs/raw_LG.png')
+                  output_file = 'manuscript/figs/raw_LG.png')
 
-species_df <- read.csv('raw/species.csv', header = TRUE)
