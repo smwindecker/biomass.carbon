@@ -1,17 +1,17 @@
 #' Prepare LES traits
 #'
-#' @param trait_file file path for raw trait data
+#' @param trait_data file path for raw trait data
 #' @param species_data file with species data
 #' @return prepared trait data
-#' @importFrom plyr ddply
+#' @importFrom plyr ddply summarise
 #' @importFrom utils read.csv
 #'
 #' @export
 
-prep_les <- function(trait_file, species_data) {
+prep_les <- function(trait_data, species_data) {
   
   # read raw trait data
-  traits <- read.csv(trait_file, header = T)
+  traits <- read.csv(trait_data, header = T)
   
   # merge with the species data file
   trait <- merge(traits[!traits$species_code == 'AA',],
@@ -24,7 +24,10 @@ prep_les <- function(trait_file, species_data) {
   trait$longDMC <- (trait$dry_weight*1000)/trait$wet_weight
   
   # calculate mean SLA and DMC of ten samples
-  trait_1 <- plyr::ddply(trait, ~ species_code, summarise, SLA = mean(longSLA), DMC = mean(longDMC))
+  trait_1 <- plyr::ddply(trait, 'species_code', 
+                         plyr::summarise, 
+                         SLA = mean(longSLA), 
+                         DMC = mean(longDMC))
   
   # merge with species data
   trt <- merge(trait_1, unique(trait[,c('species_code', 'sp_abrev', 'species', 'family', 'gf')]))
