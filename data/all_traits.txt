@@ -1,88 +1,30 @@
-"sp_abrev" "species" "family" "gf" "SLA" "LDMC" "LNC" "LCC" "HC_1" "HC_2" "CL" "LG" "wt_type"
-"67" "A. dealbata" "Acacia dealbata" "Fabaceae" "tree" 0.6 365 3.6 50.2 NA 7.8 8 55.7 "mean"
-"68" "A. dealbata" "Acacia dealbata" "Fabaceae" "tree" 0.6 365 3.6 50.2 NA 4.7 4.7 53.3 "2.5%"
-"69" "A. dealbata" "Acacia dealbata" "Fabaceae" "tree" 0.6 365 3.6 50.2 NA 12.4 12.5 58 "97.5%"
-"49" "A. denticulata" "Alternanthera denticulata" "Amaranthaceae" "forb" 0.54 275 1.3 41.2 NA 15.6 17.4 32.7 "mean"
-"50" "A. denticulata" "Alternanthera denticulata" "Amaranthaceae" "forb" 0.54 275 1.3 41.2 NA 8.4 13.1 26.3 "2.5%"
-"51" "A. denticulata" "Alternanthera denticulata" "Amaranthaceae" "forb" 0.54 275 1.3 41.2 NA 26.1 22.4 39.1 "97.5%"
-"37" "B. articulata" "Baumea articulata" "Cyperaceae" "graminoid" 0.2 322 0.6 44.9 NA 21.7 21.5 28.4 "mean"
-"38" "B. articulata" "Baumea articulata" "Cyperaceae" "graminoid" 0.2 322 0.6 44.9 NA 20 20.1 26.7 "2.5%"
-"39" "B. articulata" "Baumea articulata" "Cyperaceae" "graminoid" 0.2 322 0.6 44.9 NA 23.7 23.2 30 "97.5%"
-"85" "B. rubiginosa" "Baumea rubiginosa" "Cyperaceae" "graminoid" 0.24 405 0.2 42.1 NA 24.5 17 27 "mean"
-"86" "B. rubiginosa" "Baumea rubiginosa" "Cyperaceae" "graminoid" 0.24 405 0.2 42.1 NA 22.8 16.3 25.6 "2.5%"
-"87" "B. rubiginosa" "Baumea rubiginosa" "Cyperaceae" "graminoid" 0.24 405 0.2 42.1 NA 26.1 17.8 28.3 "97.5%"
-"10" "C. appressa" "Carex appressa" "Cyperaceae" "graminoid" 0.26 396 0.5 42.3 NA 20.6 20 27.7 "mean"
-"11" "C. appressa" "Carex appressa" "Cyperaceae" "graminoid" 0.26 396 0.5 42.3 NA 18.9 18.6 25.9 "2.5%"
-"12" "C. appressa" "Carex appressa" "Cyperaceae" "graminoid" 0.26 396 0.5 42.3 NA 22.3 21.6 29.5 "97.5%"
-"22" "C. fascicularis" "Carex fascicularis" "Cyperaceae" "graminoid" 0.45 300 0.8 42.2 NA 15.9 18.5 27.1 "mean"
-"23" "C. fascicularis" "Carex fascicularis" "Cyperaceae" "graminoid" 0.45 300 0.8 42.2 NA 13.5 16.8 24.9 "2.5%"
-"24" "C. fascicularis" "Carex fascicularis" "Cyperaceae" "graminoid" 0.45 300 0.8 42.2 NA 18.3 20.6 29.3 "97.5%"
-"19" "C. helmsii" "Crassula helmsii" "Crassulaceae" "forb" 1.48 97 0.8 36.4 NA 14.2 8.7 31.3 "mean"
-"20" "C. helmsii" "Crassula helmsii" "Crassulaceae" "forb" 1.48 97 0.8 36.4 NA 0.6 0 29.5 "2.5%"
-"21" "C. helmsii" "Crassula helmsii" "Crassulaceae" "forb" 1.48 97 0.8 36.4 NA 29.7 29.8 33.3 "97.5%"
-"13" "C. procerum" "Cycnogeton procerum" "Juncaginaceae" "graminoid" 0.9 101 3.2 37.6 NA 9 11.6 37.9 "mean"
-"14" "C. procerum" "Cycnogeton procerum" "Juncaginaceae" "graminoid" 0.9 101 3.2 37.6 NA 7.9 10.7 36.1 "2.5%"
-"15" "C. procerum" "Cycnogeton procerum" "Juncaginaceae" "graminoid" 0.9 101 3.2 37.6 NA 10.2 12.5 39.7 "97.5%"
-"4" "C. eragrostis" "Cyperus eragrostis" "Cyperaceae" "graminoid" 0.42 253 0.6 40.5 5.7 25.3 13 22.9 "mean"
-"5" "C. eragrostis" "Cyperus eragrostis" "Cyperaceae" "graminoid" 0.42 253 0.6 40.5 4.9 21.5 12.1 18.3 "2.5%"
-"6" "C. eragrostis" "Cyperus eragrostis" "Cyperaceae" "graminoid" 0.42 253 0.6 40.5 6.7 29.4 14 27.5 "97.5%"
-"43" "E. acuta" "Eleocharis acuta" "Cyperaceae" "graminoid" 0.94 158 1.6 41 NA 14.5 18.2 31.9 "mean"
-"44" "E. acuta" "Eleocharis acuta" "Cyperaceae" "graminoid" 0.94 158 1.6 41 NA 12.5 16.4 30.3 "2.5%"
-"45" "E. acuta" "Eleocharis acuta" "Cyperaceae" "graminoid" 0.94 158 1.6 41 NA 16.5 20.1 33.6 "97.5%"
-"70" "E. camaldulensis" "Eucalyptus camaldulensis" "Myrtaceae" "tree" 0.72 453 1.4 48.5 NA 15.1 7.2 44 "mean"
-"71" "E. camaldulensis" "Eucalyptus camaldulensis" "Myrtaceae" "tree" 0.72 453 1.4 48.5 NA 10 5.2 37.2 "2.5%"
-"72" "E. camaldulensis" "Eucalyptus camaldulensis" "Myrtaceae" "tree" 0.72 453 1.4 48.5 NA 21.5 9.7 49.5 "97.5%"
-"61" "G. filum" "Gahnia filum" "Cyperaceae" "graminoid" 0.22 433 0.2 44.1 NA 22 21.8 27.9 "mean"
-"62" "G. filum" "Gahnia filum" "Cyperaceae" "graminoid" 0.22 433 0.2 44.1 NA 0.9 1.8 25.9 "2.5%"
-"63" "G. filum" "Gahnia filum" "Cyperaceae" "graminoid" 0.22 433 0.2 44.1 NA 57.7 68.5 29.9 "97.5%"
-"1" "J. amabilis" "Juncus amabilis" "Juncaceae" "graminoid" 0.15 451 0.8 45.3 NA 21.6 17.7 30.5 "mean"
-"2" "J. amabilis" "Juncus amabilis" "Juncaceae" "graminoid" 0.15 451 0.8 45.3 NA 20.4 16.7 29.3 "2.5%"
-"3" "J. amabilis" "Juncus amabilis" "Juncaceae" "graminoid" 0.15 451 0.8 45.3 NA 22.7 18.7 31.6 "97.5%"
-"34" "J. procerus" "Juncus procerus" "Juncaceae" "graminoid" 0.26 352 0.5 43.1 NA 20.5 13.3 32.1 "mean"
-"35" "J. procerus" "Juncus procerus" "Juncaceae" "graminoid" 0.26 352 0.5 43.1 NA 18.3 12.4 30 "2.5%"
-"36" "J. procerus" "Juncus procerus" "Juncaceae" "graminoid" 0.26 352 0.5 43.1 NA 22.9 14.2 34 "97.5%"
-"82" "L. australis" "Lycopus australis" "Lamiaceae" "forb" 0.88 326 0.9 45.3 NA 14.4 18.8 34.1 "mean"
-"83" "L. australis" "Lycopus australis" "Lamiaceae" "forb" 0.88 326 0.9 45.3 NA 0.9 0 21 "2.5%"
-"84" "L. australis" "Lycopus australis" "Lamiaceae" "forb" 0.88 326 0.9 45.3 NA 63 45.3 45.9 "97.5%"
-"28" "M. drumondii" "Marsilea drummondii" "Marsileaceae" "forb" 2.27 209 1 42.5 4.8 13.8 13.8 30.8 "mean"
-"29" "M. drumondii" "Marsilea drummondii" "Marsileaceae" "forb" 2.27 209 1 42.5 2.8 6.1 6.7 26 "2.5%"
-"30" "M. drumondii" "Marsilea drummondii" "Marsileaceae" "forb" 2.27 209 1 42.5 6.9 23.6 25.1 35.8 "97.5%"
-"7" "M. ericifolia" "Melaleuca ericifolia" "Myrtaceae" "tree" 0.22 456 0.8 46.7 NA 13.2 7.2 46.2 "mean"
-"8" "M. ericifolia" "Melaleuca ericifolia" "Myrtaceae" "tree" 0.22 456 0.8 46.7 NA 10.3 6.2 43.4 "2.5%"
-"9" "M. ericifolia" "Melaleuca ericifolia" "Myrtaceae" "tree" 0.22 456 0.8 46.7 NA 16.7 8.3 48.8 "97.5%"
-"46" "M. squarrosa" "Melaleuca squarrosa" "Myrtaceae" "tree" 0.18 489 0.7 49.2 1.4 8.1 7 52.8 "mean"
-"47" "M. squarrosa" "Melaleuca squarrosa" "Myrtaceae" "tree" 0.18 489 0.7 49.2 0.1 5.4 6.2 25.3 "2.5%"
-"48" "M. squarrosa" "Melaleuca squarrosa" "Myrtaceae" "tree" 0.18 489 0.7 49.2 34.7 25.1 8.4 59.1 "97.5%"
-"64" "M. florulenta" "Meuhlenbeckia florulenta" "Polygonaceae" "shrub" 0.09 546 0.9 45 1.5 19.3 16.1 29.6 "mean"
-"65" "M. florulenta" "Meuhlenbeckia florulenta" "Polygonaceae" "shrub" 0.09 546 0.9 45 0.1 10.8 14 18.4 "2.5%"
-"66" "M. florulenta" "Meuhlenbeckia florulenta" "Polygonaceae" "shrub" 0.09 546 0.9 45 8 30.7 18.5 39.3 "97.5%"
-"55" "M. crispatum" "Myriophyllum crispatum" "Haloragaceae" "forb" 0.53 180 1.1 39.3 6.9 14.2 9.2 23.5 "mean"
-"56" "M. crispatum" "Myriophyllum crispatum" "Haloragaceae" "forb" 0.53 180 1.1 39.3 0.2 1.1 5.7 17.9 "2.5%"
-"57" "M. crispatum" "Myriophyllum crispatum" "Haloragaceae" "forb" 0.53 180 1.1 39.3 31 23.6 12.8 28.5 "97.5%"
-"76" "N. alba" "Nymphaea alba" "Nymphaeaceae" "forb" 1.5 186 2.8 42.7 NA 13 12.3 35.1 "mean"
-"77" "N. alba" "Nymphaea alba" "Nymphaeaceae" "forb" 1.5 186 2.8 42.7 NA 9.9 10.4 30 "2.5%"
-"78" "N. alba" "Nymphaea alba" "Nymphaeaceae" "forb" 1.5 186 2.8 42.7 NA 16.5 14.6 40.1 "97.5%"
-"31" "P. distichum" "Paspalum distichum" "Poaceae" "graminoid" 0.07 283 0.3 40.4 NA 17.9 26.5 22.2 "mean"
-"32" "P. distichum" "Paspalum distichum" "Poaceae" "graminoid" 0.07 283 0.3 40.4 NA 7.1 16.3 20.2 "2.5%"
-"33" "P. distichum" "Paspalum distichum" "Poaceae" "graminoid" 0.07 283 0.3 40.4 NA 30.6 39.8 24.4 "97.5%"
-"79" "P. decipiens" "Persicaria decipiens" "Polygonaceae" "forb" 0.95 176 0.6 43.7 NA 17.2 13 29.8 "mean"
-"80" "P. decipiens" "Persicaria decipiens" "Polygonaceae" "forb" 0.95 176 0.6 43.7 NA 2.2 0.7 27.2 "2.5%"
-"81" "P. decipiens" "Persicaria decipiens" "Polygonaceae" "forb" 0.95 176 0.6 43.7 NA 36.4 36.5 32.8 "97.5%"
-"58" "P. prostrata" "Persicaria prostrata" "Polygonaceae" "forb" 0.97 227 1.1 44.8 NA 20.6 12.8 31.5 "mean"
-"59" "P. prostrata" "Persicaria prostrata" "Polygonaceae" "forb" 0.97 227 1.1 44.8 NA 5.7 1.4 27.2 "2.5%"
-"60" "P. prostrata" "Persicaria prostrata" "Polygonaceae" "forb" 0.97 227 1.1 44.8 NA 35.6 34.8 35.6 "97.5%"
-"73" "P. australis" "Phragmites australis" "Poaceae" "graminoid" 0.19 480 1.2 44.6 NA 18.9 18.3 33.1 "mean"
-"74" "P. australis" "Phragmites australis" "Poaceae" "graminoid" 0.19 480 1.2 44.6 NA 17.1 17.2 31.7 "2.5%"
-"75" "P. australis" "Phragmites australis" "Poaceae" "graminoid" 0.19 480 1.2 44.6 NA 20.9 19.5 34.6 "97.5%"
-"52" "R. tetraphyllus" "Restio tetraphyllus" "Restionaceae" "graminoid" 0.35 443 0.1 46.2 NA 22.4 18.5 31.1 "mean"
-"53" "R. tetraphyllus" "Restio tetraphyllus" "Restionaceae" "graminoid" 0.35 443 0.1 46.2 NA 21.4 17.8 30 "2.5%"
-"54" "R. tetraphyllus" "Restio tetraphyllus" "Restionaceae" "graminoid" 0.35 443 0.1 46.2 NA 23.4 19.1 32.3 "97.5%"
-"25" "R. crispus" "Rumex crispus" "Polygonaceae" "forb" 2.25 87 2.1 39.1 NA 15.4 9.3 31.6 "mean"
-"26" "R. crispus" "Rumex crispus" "Polygonaceae" "forb" 2.25 87 2.1 39.1 NA 11.9 7 26 "2.5%"
-"27" "R. crispus" "Rumex crispus" "Polygonaceae" "forb" 2.25 87 2.1 39.1 NA 19.8 11.7 36.3 "97.5%"
-"40" "Sphagnum" "Sphagnum sp" "Sphagnaceae" "nonvascular" 0.54 519 0.4 43 NA 17.9 18.4 30.6 "mean"
-"41" "Sphagnum" "Sphagnum sp" "Sphagnaceae" "nonvascular" 0.54 519 0.4 43 NA 13.5 15.3 28.6 "2.5%"
-"42" "Sphagnum" "Sphagnum sp" "Sphagnaceae" "nonvascular" 0.54 519 0.4 43 NA 22.8 22.2 32.5 "97.5%"
-"16" "T. domingensis" "Typha domingensis" "Typhaceae" "graminoid" 0.45 288 1 43.9 NA 14.3 15.5 35.7 "mean"
-"17" "T. domingensis" "Typha domingensis" "Typhaceae" "graminoid" 0.45 288 1 43.9 NA 12.8 14.7 34.4 "2.5%"
-"18" "T. domingensis" "Typha domingensis" "Typhaceae" "graminoid" 0.45 288 1 43.9 NA 15.9 16.4 37.1 "97.5%"
+"species_code" "sp_abrev" "species" "family" "gf" "SLA" "DMC" "N" "C" "HC_1" "HC_2" "CL" "LG" "wt_type" "HC"
+"1" "Q" "A. dealbata" "Acacia dealbata" "Fabaceae" "T" 0.595844851652611 364.585613973081 3.6029 50.19 NA 7.79574725974771 8.03253528511081 55.7019492309593 "mean" 7.79574725974771
+"2" "L" "A. denticulata" "Alternanthera denticulata" "Amaranthaceae" "F" 0.538221808862305 274.999773536507 1.3268 41.203 NA 15.6022593634047 17.3883490792321 32.7046891494877 "mean" 15.6022593634047
+"3" "J" "B. articulata" "Baumea articulata" "Cyperaceae" "G" 0.19896320110037 321.556374418688 0.60412 44.915 NA 21.7124326844088 21.5239742593382 28.3886751299977 "mean" 21.7124326844088
+"4" "Z" "B. rubiginosa" "Baumea rubiginosa" "Cyperaceae" "G" 0.235143184297362 405.043401119272 0.20344 42.147 NA 24.5112488494272 17.0177606960195 26.9691958715554 "mean" 24.5112488494272
+"5" "C" "C. appressa" "Carex appressa" "Cyperaceae" "G" 0.259127435182722 395.987484522958 0.50178 42.335 NA 20.5627663535972 20.0321040561923 27.6840798909037 "mean" 20.5627663535972
+"6" "FF" "C. fascicularis" "Carex fascicularis" "Cyperaceae" "G" 0.450999641004295 299.763271870152 0.77494 42.209 NA 15.8771222193772 18.4963786572553 27.1205527251466 "mean" 15.8771222193772
+"7" "E" "C. helmsii" "Crassula helmsii" "Crassulaceae" "F" 1.47604258986488 96.6332147485297 0.77765 36.411 NA 14.2127150058626 8.65806325799208 31.314119019686 "mean" 14.2127150058626
+"8" "CC" "C. procerum" "Cycnogeton procerum" "Juncaginaceae" "G" 0.901826181909068 100.813597851095 3.1817 37.636 6.19406786616442 9.32705756876046 10.9508920636667 33.799561232232 "mean" 15.5211254349249
+"9" "B" "C. eragrostis" "Cyperus eragrostis" "Cyperaceae" "G" 0.418844753470615 253.473501840945 0.58545 40.458 5.72723541269181 25.3486952843375 13.0057101589514 22.9342413029772 "mean" 31.0759306970293
+"10" "K" "E. acuta" "Eleocharis acuta" "Cyperaceae" "G" 0.941192751574301 158.370383253877 1.6467 41.006 NA 14.4654842803741 18.1694160694771 31.8682554218577 "mean" 14.4654842803741
+"11" "R" "E. camaldulensis" "Eucalyptus camaldulensis" "Myrtaceae" "T" 0.717535906298268 452.871211754151 1.4169 48.45 NA 15.1065690305195 7.16536038751897 43.9907460295356 "mean" 15.1065690305195
+"12" "N" "G. filum" "Gahnia filum" "Cyperaceae" "G" 0.223590140849285 432.987955686212 0.23394 44.13 NA 21.9873341214805 21.7719419272915 27.8712054632027 "mean" 21.9873341214805
+"13" "A" "J. amabilis" "Juncus amabilis" "Juncaceae" "G" 0.152139386483157 450.972256407078 0.77926 45.282 NA 21.5534446122918 17.6841508781817 30.4854847859814 "mean" 21.5534446122918
+"14" "II" "J. procerus" "Juncus procerus" "Juncaceae" "G" 0.262291208446106 352.04002054626 0.46373 43.119 NA 20.4732056327726 13.2877986536965 32.109756545444 "mean" 20.4732056327726
+"15" "X" "L. australis" "Lycopus australis" "Lamiaceae" "F" 0.877197312736989 325.894841588592 0.9427 45.314 NA 14.4157380768355 18.7964776540565 34.1034626836425 "mean" 14.4157380768355
+"16" "H" "M. drumondii" "Marsilea drummondii" "Marsileaceae" "F" 2.27047766592922 208.77896827539 1.0208 42.538 4.81500081280734 13.8351953388124 13.8300674040545 30.7797434554009 "mean" 18.6501961516198
+"17" "BB" "M. ericifolia" "Melaleuca ericifolia" "Myrtaceae" "T" 0.220674310106925 456.115148687168 0.81639 46.652 NA 13.234266139045 7.19002609119995 46.2423712828252 "mean" 13.234266139045
+"18" "KK" "M. squarrosa" "Melaleuca squarrosa" "Myrtaceae" "T" 0.178704032531646 488.554451095381 0.6708 49.183 NA 8.41095037141963 7.24468466339567 53.3337318368856 "mean" 8.41095037141963
+"19" "NN" "M. florulenta" "Meuhlenbeckia florulenta" "Polygonaceae" "S" 0.0934537886583894 546.462071812594 0.86048 45.023 1.54754549865386 19.2966220919269 16.0678879103366 29.6467788876181 "mean" 20.8441675905808
+"20" "M" "M. crispatum" "Myriophyllum crispatum" "Haloragaceae" "F" 0.527694601648947 180.466748389566 1.0957 39.333 NA 14.4557652229886 10.5677122276095 27.692327506892 "mean" 14.4557652229886
+"21" "T" "N. alba" "Nymphaea alba" "Nymphaeaceae" "F" 1.50150430074451 185.529670074484 2.7909 42.716 NA 13.810192561609 12.6133252344927 34.1673040903972 "mean" 13.810192561609
+"22" "I" "P. distichum" "Paspalum distichum" "Poaceae" "G" 0.0726908972933552 283.177451619033 0.30087 40.36 NA 17.9465212793798 26.4771630846271 22.2274825924274 "mean" 17.9465212793798
+"23" "V" "P. decipiens" "Persicaria decipiens" "Polygonaceae" "F" 0.952830908761277 175.60867545498 0.60748 43.681 NA 17.1506936207661 12.9569878932481 29.8422592826603 "mean" 17.1506936207661
+"24" "MM" "P. prostrata" "Persicaria prostrata" "Polygonaceae" "F" 0.966116311912715 227.087130023176 1.1063 44.779 NA 20.6068560248928 12.798902834459 31.4876845482992 "mean" 20.6068560248928
+"25" "S" "P. australis" "Phragmites australis" "Poaceae" "G" 0.186555469948932 479.858886254049 1.1903 44.618 NA 18.8755619236091 18.3102617113555 33.1442077061742 "mean" 18.8755619236091
+"26" "LL" "R. tetraphyllus" "Restio tetraphyllus" "Restionaceae" "G" 0.349637015219855 442.604677742663 0.14089 46.153 NA 22.4070324630883 18.4755515222033 31.1301486655082 "mean" 22.4070324630883
+"27" "G" "R. crispus" "Rumex crispus" "Polygonaceae" "F" 2.24978304540746 87.0256341385453 2.1205 39.073 NA 15.4145658330621 9.31257607822337 31.5788462936573 "mean" 15.4145658330621
+"28" "JJ" "Sphagnum" "Sphagnum sp" "Sphagnaceae" "NV" 0.541287645467026 519.189942322359 0.37045 42.989 NA 17.897516029788 18.4375432699624 30.6411450639554 "mean" 17.897516029788
+"29" "DD" "T. domingensis" "Typha domingensis" "Typhaceae" "G" 0.454874366743695 287.666892942827 0.99687 43.894 NA 14.5096436767024 15.3843024738877 35.6784505170603 "mean" 14.5096436767024
