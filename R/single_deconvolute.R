@@ -3,7 +3,8 @@
 #' @param raw_file TGA raw data
 #' @param subfig sub figure label ID
 #' @param output_file output file name
-#' @importFrom deconvolve fs_model fs_function
+#' @importFrom deconvolve fs_function
+#' @importFrom minpack.lm nlsLM nls.lm.control
 #' @importFrom stats integrate
 #' @importFrom grDevices png dev.off 
 #' @importFrom graphics legend lines par plot 
@@ -38,8 +39,19 @@ single_deconvolute <- function (raw_file, subfig, output_file) {
   ub <- c(0.1, 0.3, 900, 900)
 
   # fit model
-  fit <- deconvolve::fs_model(mod_df, start_vec, lb, ub)
-
+  frm <- deriv ~ deconvolve::fs_function(temp_C, h, s, p, w)
+  start_list <- list(h = start_vec[1], 
+                     s = start_vec[2], 
+                     p = start_vec[3], 
+                     w = start_vec[4])
+  
+  fit <- minpack.lm::nlsLM(frm, 
+               start = start_list, 
+               data = mod_df, 
+               control = minpack.lm::nls.lm.control(maxiter = 1024, maxfev = 1e+06), 
+               lower = lb, 
+               upper = ub)
+  
   # extract 
   params <- as.data.frame(summary(fit)$coefficients[,1])
 
