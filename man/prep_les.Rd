@@ -4,10 +4,10 @@
 \alias{prep_les}
 \title{Prepare LES traits}
 \usage{
-prep_les(trait_file, species_data)
+prep_les(trait_data, species_data)
 }
 \arguments{
-\item{trait_file}{file path for raw trait data}
+\item{trait_data}{file path for raw trait data}
 
 \item{species_data}{file with species data}
 }

@@ -4,10 +4,10 @@
 \alias{tga_param_table}
 \title{Produce parameter values table}
 \usage{
-tga_param_table(species_deconvolved_list, species_data, output_folder)
+tga_param_table(species_deconvoluted_list, species_data, output_folder)
 }
 \arguments{
-\item{species_deconvolved_list}{list of deconvolved}
+\item{species_deconvoluted_list}{list of deconvolved}
 
 \item{species_data}{dataframe with species info}
 
