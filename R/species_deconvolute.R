@@ -4,7 +4,7 @@
 #' @param species_data species detail file with growth form and full species name info
 #' @param output_folder output folder
 #' @return saved deconvolved plot and list of parameters and weights
-#' @importFrom deconvolve process deconvolve
+#' @importFrom deconvolve process deconvolve fs_mixture
 #' @importFrom reshape2 dcast
 #' @importFrom grDevices dev.off png
 #' @importFrom graphics axis legend plot rect
@@ -15,7 +15,7 @@
 species_deconvolute <- function (list_item, species_data, output_folder) {
   
   # extract species code, axis label option, and number of curves
-  x <- list_item$species_code
+  x <- as.character(list_item$species_code)
   xaxis <- list_item$xaxis
   yaxis <- list_item$yaxis
   n_curves <- list_item$n_curves
@@ -93,7 +93,7 @@ species_deconvolute <- function (list_item, species_data, output_folder) {
   
   if (output$n_peaks == 4) {
     
-    y1 <- fs_mixture(x = temp,
+    y1 <- deconvolve::fs_mixture(x = temp,
                      h1 = params['h1',], s1 = params['s1',],
                      p1 = params['p1',], w1 = params['w1',],
                      h2 = params['h2',], s2 = params['s2',],
@@ -113,7 +113,7 @@ species_deconvolute <- function (list_item, species_data, output_folder) {
   
   if (output$n_peaks == 3) {
     
-    y1 <- fs_mixture(x = temp,
+    y1 <- deconvolve::fs_mixture(x = temp,
                      h1 = params['h1',], s1 = params['s1',],
                      p1 = params['p1',], w1 = params['w1',],
                      h2 = params['h2',], s2 = params['s2',],
