@@ -1,6 +1,6 @@
 #' Produce parameter values table
 #'
-#' @param species_deconvolved_list list of deconvolved 
+#' @param species_deconvoluted_list list of deconvolved 
 #' @param species_data dataframe with species info
 #' @param output_folder folder path for output plot
 #' @return saved parameters tables
@@ -10,11 +10,11 @@
 #'
 #' @export
 
-tga_param_table <- function(species_deconvolved_list, species_data, output_folder) {
+tga_param_table <- function(species_deconvoluted_list, species_data, output_folder) {
   
   # bind parameter outputs of species_deconvolved function
-  parameter_estimates <- dplyr::bind_rows(lapply(1:length(species_deconvolved_list), function(x) {
-    return(species_deconvolved_list[[x]]$params)
+  parameter_estimates <- dplyr::bind_rows(lapply(1:length(species_deconvoluted_list), function(x) {
+    return(species_deconvoluted_list[[x]]$params)
   }))
   
   # save parameter output
@@ -27,7 +27,7 @@ tga_param_table <- function(species_deconvolved_list, species_data, output_folde
   parameter_estimates[, c('w1', 'w2', 'w3', 'w0')] <- signif(parameter_estimates[, c('w1', 'w2', 'w3', 'w0')], 2)
   
   # combine with species data
-  parameters <- merge(parameter_estimates, species_df[,c('species_code', 'species')])
+  parameters <- merge(parameter_estimates, species_data[,c('species_code', 'species')])
   
   # add italics latex code
   parameters$species <- paste0('\\textit{', parameters$species, '}')
