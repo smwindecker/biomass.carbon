@@ -45,10 +45,10 @@ pca_gf <- function (df, species_data, output_folder) {
   # first two axes' scores
   pc12 <- prin$scores[, 1:2]
   df_pc12 <- data.frame(pc12)
-  df_pc12$sp_abrev <- rownames(pc12)
+  df_pc12$sp_abrev <- rownames(df_pc12)
   
   # label with abreviations
-  pc12_labeled <- merge(df_pc12, species_data[,c('sp_pca_label', 'gf')])
+  pc12_labeled <- merge(df_pc12, species_data[,c('sp_abrev', 'sp_pca_label', 'gf')])
   rownames(pc12_labeled) <- pc12_labeled[,'sp_pca_label']
 
   # get length of axes
@@ -57,7 +57,7 @@ pca_gf <- function (df, species_data, output_folder) {
   vars <- prin$sdev^2
   prop_vars <- vars/sum(vars)
   
-  png(paste0(output_folder, 'pca.png'), width = 1000, height = 950)
+  png(paste0(output_folder, 'raw_pca.png'), width = 1000, height = 950)
   
   plot(pc12_labeled[, c('Comp.1', 'Comp.2')], ylab='', xlab='', xaxt = 'n', yaxt = 'n', ylim=c(-4, 4), xlim=c(-4.2, 5), 
        cex.axis = 1, cex = 1.8, pch = c(2, 20, 3, 8, 0)[as.numeric(pc12_labeled$gf)])
