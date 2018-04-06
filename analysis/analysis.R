@@ -1,44 +1,23 @@
 
-# ALL TRAITS
 
-# set output folder
-output_folder = 'manuscript/figs/'
-
-# load raw species data
-species <- utils::read.csv('data-raw/species.csv', header = T)
-
-# remove unused species
-species <- species[!species$species_code == 'AA',]
-
-# load prepared C and N trait data
-cn <- prep_leco(leco_file = 'data-raw/leco.csv')
-
-# load prepared LES trait data
-trt <- prep_les(trait_data = 'data-raw/traits.csv', 
-                species_data = species)
-
-# load prepared TGA data
-tga <- prep_tga(species_data = species,
-                output_folder)
-
-# create legend for TGA plots
+# create legend for TGA plot
 tga_plots_legend(sample_data_file = 'data-raw/TGA/T_TGA.csv', 
                  output_file = 'manuscript/figs/tga_legend.png')
 
 # combine traits
-t <- merge(trt, cn, by = 'species_code')
-t_1 <- merge(t, tga, by = 'species_code')
-
-# order by species
-t_2 <- t_1[order(t_1$species),]
-
-# check this is right
-t_3 <- t_2[, c(1,4:7,2,3,9,8,10:14)]
+t <- dplyr::full_join(trt, cn, by = 'species_code') %>%
+  dplyr::full_join(., tga, by = 'species_code') %>%
+  arrange(., species) %>%
+  .[, c(1,4:7,2,3,9,8,10:14)]
 
 # tidy this function 
-traits_table(traits_df = t_3, 
+traits_table(traits_df = t, 
              output_file = 'manuscript/figs/traits_table.tex')
 
+### change t_3 to t!!!
+write.csv(t, 'temp.csv')
+
+t <- read.csv('temp.csv')
 t_mean <- t_3[t_3$wt_type == 'mean',]
 t_mean$HC <- t_mean$HC_1 + t_mean$HC_2
 t_mean$HC[is.na(t_mean$HC)] <- t_mean$HC_2[is.na(t_mean$HC)]
@@ -73,6 +52,10 @@ pair_plot(df = cov,
 
 # Fraser-Suzuki parameter simulation
 fs_simulate(output_folder)
+
+# J. amabilis theory curves
+j_amabilis(species_code = 'A', 
+           output_folder)
 
 # test deconvolve on raw samples
 single_deconvolve(raw_file = 'data-raw/raw_biomass/CL.csv', 
