@@ -3,8 +3,8 @@
 .RData
 .Ruserdata
 /docs
-/figs
-/munge
+/manuscript
+/data
 /output
-/raw
+/data-raw
 /old_code
