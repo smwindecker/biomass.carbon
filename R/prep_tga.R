@@ -2,7 +2,7 @@
 #'
 #' @param species_data species detail file with growth form and full species name info
 #' @param output_folder output folder
-#' @importFrom dplyr bind_rows
+#' @importFrom dplyr bind_rows %>%
 #' @return saved deconvolved plot and weight
 #'
 #' @export
@@ -33,18 +33,18 @@ prep_tga <- function (species_data, output_folder) {
   species_list <- lapply(split(species, seq(nrow(species))), as.list)
   
   # apply species_deconvolute function to each list item 
-  spp_deconvolve <- lapply(species_list[[1:2]], species_deconvolve, 
+  spp_deconvolute <- lapply(species_list[1:length(species_list)], species_deconvolute, 
                            species_data = species_data,
                            output_folder = output_folder)
   
   # collate parameters and save tables
-  tga_param_table(species_deconvolved_list = spp_deconvolve, 
+  tga_param_table(species_deconvoluted_list = spp_deconvolute, 
                   species_data = species_data, 
                   output_folder = output_folder)
   
   # combine weight estimates from all deconvoluted species data
-  weight_estimates <- dplyr::bind_rows(lapply(1:length(spp_deconvolve), function(x) {
-    return(spp_deconvolve[[x]]$weights)
+  weight_estimates <- dplyr::bind_rows(lapply(1:length(spp_deconvolute), function(x) {
+    return(spp_deconvolute[[x]]$weights)
   }))
   
   weight_estimates
