@@ -12,7 +12,7 @@
 #'
 #' @export
 
-species_deconvolute <- function (list_item, species_data, output_folder) {
+species_deconvolute <- function (list_item, species_data, tga_folder, output_folder) {
   
   # extract species code, axis label option, and number of curves
   x <- as.character(list_item$species_code)
@@ -24,7 +24,7 @@ species_deconvolute <- function (list_item, species_data, output_folder) {
   if (is.na(n_curves)) n_curves = NULL
   
   # read raw TGA
-  file <- paste0('data-raw/TGA/', x, '_TGA.csv')
+  file <- paste0(tga_folder, x, '_TGA.csv')
   tmp <- process_raw_tga(file)
   
   # deconvolute TGA data
