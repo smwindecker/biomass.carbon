@@ -7,7 +7,7 @@
 #'
 #' @export
 
-prep_tga <- function (species_data, output_folder) {
+prep_tga <- function (tga_folder, species_data, output_folder) {
   
   #species_data <- species
   species <- as.data.frame(unique(as.character(species_data$species_code))) %>%
@@ -34,6 +34,7 @@ prep_tga <- function (species_data, output_folder) {
   
   # apply species_deconvolute function to each list item 
   spp_deconvolute <- lapply(species_list[1:length(species_list)], species_deconvolute, 
+                           tga_folder = tga_folder, 
                            species_data = species_data,
                            output_folder = output_folder)
   
