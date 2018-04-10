@@ -9,7 +9,7 @@
 #' @export
 
 
-fs_simulate <- function (output_file) {
+simulate_fraser_suzuki <- function (output_file) {
   
   x <- seq(200, 700)
   h1 <- deconvolve::fs_function(x, 0.004, -0.25, 400, 60)
