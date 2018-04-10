@@ -1,20 +1,18 @@
-#' J. amabilis individual curves for TGA explanation figure
+#' Individual curves for TGA theory explanation figure
 #'
-#' @param list_item split species row as list item
-#' @param species_data species detail file with growth form and full species name info
-#' @param output_folder output folder
-#' @return saved deconvolved plot and list of parameters and weights
-#' @importFrom deconvolve fs_function fs_mixture
+#' @param species_code species code to use in theory plot
+#' @param output_folder output folder to save plots
+#' @return three theory plots
+#' @importFrom deconvolve deconvolve fs_function fs_mixture
 #' @importFrom grDevices dev.off png
-#' @importFrom graphics par axis legend plot
+#' @importFrom graphics par axis legend plot lines
 #'
 #' @export
 
-j_amabilis <- function (species_code, output_folder) {
+tga_theory_plots <- function (tga_data, output_folder) {
   
   # read raw TGA
-  file <- paste0('data-raw/TGA/', species_code, '_TGA.csv')
-  tmp <- process_raw_tga(file)
+  tmp <- process_raw_tga(tga_data)
   
   # plot TG curve
   png(paste0(output_folder, 'theory_TG.png'), width = 560, height = 480, 'px', bg = 'transparent')
@@ -62,25 +60,25 @@ j_amabilis <- function (species_code, output_folder) {
   axis(side = 2, at = c(0, 0.004, 0.008), cex.axis = 1.8,
        labels = c(0, 0.004, 0.008))
   
-  y1 <- fs_mixture(x = temp,
-                   h1 = params['h1',], s1 = params['s1',],
-                   p1 = params['p1',], w1 = params['w1',],
-                   h2 = params['h2',], s2 = params['s2',],
-                   p2 = params['p2',], w2 = params['w2',],
-                   h3 = params['h3',], s3 = params['s3',],
-                   p3 = params['p3',], w3 = params['w3',])
-
-  y2 <- fs_function(x = temp,
-                    h = params['h1',], s = params['s1',],
-                    p = params['p1',], w = params['w1',])
+  y1 <- deconvolve::fs_mixture(x = temp,
+                               h1 = params['h1',], s1 = params['s1',],
+                               p1 = params['p1',], w1 = params['w1',],
+                               h2 = params['h2',], s2 = params['s2',],
+                               p2 = params['p2',], w2 = params['w2',],
+                               h3 = params['h3',], s3 = params['s3',],
+                               p3 = params['p3',], w3 = params['w3',])
   
-  y3 <- fs_function(x = temp,
-                    h = params['h2',], s = params['s2',],
-                    p = params['p2',], w = params['w2',])
+  y2 <- deconvolve::fs_function(x = temp,
+                                h = params['h1',], s = params['s1',],
+                                p = params['p1',], w = params['w1',])
   
-  y4 <- fs_function(x = temp,
-                    h = params['h3',], s = params['s3',],
-                    p = params['p3',], w = params['w3',])
+  y3 <- deconvolve::fs_function(x = temp,
+                                h = params['h2',], s = params['s2',],
+                                p = params['p2',], w = params['w2',])
+  
+  y4 <- deconvolve::fs_function(x = temp,
+                                h = params['h3',], s = params['s3',],
+                                p = params['p3',], w = params['w3',])
   
   lines(temp, y1, lty = 1, lwd = 2)
   lines(temp, y2, lty = 3, lwd = 3.5, col = 'red')
