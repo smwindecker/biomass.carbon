@@ -3,13 +3,14 @@
 #' @param species_data raw species data
 #' @return prepared species data
 #' @importFrom utils read.csv
+#' @importFrom dplyr filter
 #'
 #' @export
 
-prep_species <- function(species_data) {
+load_species <- function(species_data) {
   
   species <- read.csv(species_data, header = T) %>%
-    filter(species_code != 'AA')
+    dplyr::filter(species_code != 'AA')
   
   species
   
