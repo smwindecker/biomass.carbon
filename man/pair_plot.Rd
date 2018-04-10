@@ -7,7 +7,7 @@
 pair_plot(df, output_file)
 }
 \arguments{
-\item{df}{dataframe of traits}
+\item{df}{logged trait matrix}
 
 \item{output_file}{file path for output plot}
 }

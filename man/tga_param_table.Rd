@@ -4,7 +4,7 @@
 \alias{tga_param_table}
 \title{Produce parameter values table}
 \usage{
-tga_param_table(species_deconvoluted_list, species_data, output_folder)
+tga_param_table(species_deconvoluted_list, species_data, output_file)
 }
 \arguments{
 \item{species_deconvoluted_list}{list of deconvolved}

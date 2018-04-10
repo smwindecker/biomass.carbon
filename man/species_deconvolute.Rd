@@ -4,14 +4,12 @@
 \alias{species_deconvolute}
 \title{Deconvolute species' TGA data}
 \usage{
-species_deconvolute(list_item, species_data, output_folder)
+species_deconvolute(list_item, tga_folder)
 }
 \arguments{
 \item{list_item}{split species row as list item}
 
-\item{species_data}{species detail file with growth form and full species name info}
-
-\item{output_folder}{output folder}
+\item{tga_folder}{source folder for tga data}
 }
 \value{
 saved deconvolved plot and list of parameters and weights
