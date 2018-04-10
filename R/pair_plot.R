@@ -1,6 +1,6 @@
 #' Produce pair plot of traits
 #'
-#' @param df dataframe of traits
+#' @param df logged trait matrix
 #' @param output_file file path for output plot
 #' @importFrom stats cor lm cor.test
 #' @importFrom grDevices png dev.off 
