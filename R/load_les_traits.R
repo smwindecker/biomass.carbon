@@ -8,7 +8,7 @@
 #'
 #' @export
 
-prep_les <- function(trait_data, species_data) {
+load_les_traits <- function(trait_data, species_data) {
   
   # read raw trait data
   traits <- read.csv(trait_data, header = T)
