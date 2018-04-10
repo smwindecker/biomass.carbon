@@ -10,7 +10,7 @@
 #'
 #' @export
 
-tga_param_table <- function(species_deconvoluted_list, species_data, output_folder) {
+tga_param_table <- function(species_deconvoluted_list, species_data, output_file) {
   
   # bind parameter outputs of species_deconvolved function
   parameter_estimates <- dplyr::bind_rows(lapply(1:length(species_deconvoluted_list), function(x) {
@@ -43,6 +43,6 @@ tga_param_table <- function(species_deconvoluted_list, species_data, output_fold
         comment = FALSE,
         sanitize.text.function = identity,
         hline.after = NULL,
-        file = paste0(output_folder, 'tga_param_table.tex'))
+        file = output_file)
   
 }
