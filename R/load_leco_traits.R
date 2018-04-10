@@ -6,7 +6,7 @@
 #'
 #' @export
 
-prep_leco <- function (leco_data) {
+load_leco_traits <- function (leco_data) {
   
   # read leco data
   leco <- read.csv(leco_data, header = F, skip = 12)
