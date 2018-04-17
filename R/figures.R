@@ -1,12 +1,6 @@
-# Figures
+## Figures
 
-#' Produce boxplot
-#'
-#' @param df dataframe of traits
-#' @importFrom graphics points axis legend par plot 
-#' @return saved box plot
-#'
-#' @export
+# Produce boxplot
 
 box_plot <- function (df) {
   
@@ -109,13 +103,7 @@ box_plot <- function (df) {
   
 }
 
-#' deconvolve raw materials plot
-#'
-#' @param item_1 first deconvolve raw object
-#' @param item_2 second deconvolve raw object
-#' @return saved deconvolved plot of both raw materials
-#'
-#' @export
+# Deconvolve raw materials plot
 
 tga_raw_plots <- function (item_1, item_2) {
   
@@ -194,15 +182,7 @@ tga_raw_plots <- function (item_1, item_2) {
   
 }
 
-#' Produce pair plot of traits
-#'
-#' @param df logged trait matrix
-#' @importFrom stats cor lm cor.test
-#' @importFrom grDevices png dev.off 
-#' @importFrom graphics par text points abline strwidth
-#' @return saved pair plot
-#'
-#' @export
+# Produce pair plot of traits
 
 pair_plot <- function (df) {
   
@@ -243,18 +223,7 @@ pair_plot <- function (df) {
   
 }
 
-#' Produce phylo plot 
-#'
-#' @param phylo phylogenetic tree data
-#' @param tips phylogenetic traits
-#' @return saved pca plot
-#' @importFrom vegan envfit
-#' @importFrom phytools phylo.heatmap
-#' @importFrom stats na.omit
-#' @importFrom grDevices png dev.off 
-#' @importFrom graphics plot mtext legend text
-#'
-#' @export
+# Produce phylo plot 
 
 phylo_plot <- function (phylo, tips) {
   
@@ -270,14 +239,7 @@ phylo_plot <- function (phylo, tips) {
   
 }
 
-#' Produce parameter simulation of Fraser-Suzuki function
-#'
-#' @importFrom deconvolve fs_function
-#' @importFrom grDevices png dev.off
-#' @importFrom graphics plot axis lines par legend 
-#' @return saved simulated Fraser-Suzuki plot
-#'
-#' @export
+# Produce parameter simulation of Fraser-Suzuki function
 
 simulate_fraser_suzuki <- function () {
   
@@ -396,14 +358,7 @@ simulate_fraser_suzuki <- function () {
   
 }
 
-#' Individual curves for TGA theory explanation figure
-#'
-#' @param tga_data species code to use in theory plot
-#' @return three theory plots
-#' @importFrom deconvolve deconvolve fs_function fs_mixture
-#' @importFrom graphics par axis legend plot lines
-#'
-#' @export
+# Individual curves for TGA theory explanation figure
 
 tga_theory_plots <- function (tga_data) {
   
@@ -498,15 +453,7 @@ tga_theory_plots <- function (tga_data) {
   
 }
 
-#' Call TGA plot for graminoids
-#'
-#' @param species_deconvolved_list deconvolved species data list item
-#' @param species_data species detail file with growth form and full species name info
-#' @param subfig subfig label
-#' @param gf growth form to plot species of
-#' @return saved multi-panel TGA plot
-#'
-#' @export
+# Call TGA plot for graminoids
 
 tga_plot_gram <- function (species_deconvolved_list, species_data, subfig, gf) {
   
@@ -558,15 +505,7 @@ tga_plot_gram <- function (species_deconvolved_list, species_data, subfig, gf) {
   
 }
 
-#' Call TGA plot for forbs
-#'
-#' @param species_deconvolved_list deconvolved species data list item
-#' @param species_data species detail file with growth form and full species name info
-#' @param subfig subfig label
-#' @param gf growth form to plot species of
-#' @return saved multi-panel TGA plot
-#'
-#' @export
+# Call TGA plot for forbs
 
 tga_plot_forb <- function (species_deconvolved_list, species_data, subfig, gf) {
   
@@ -614,14 +553,7 @@ tga_plot_forb <- function (species_deconvolved_list, species_data, subfig, gf) {
   
 }
 
-#' Call TGA plot for tree, nonvascular, and shrub
-#'
-#' @param species_deconvolved_list deconvolved species data list item
-#' @param species_data species detail file with growth form and full species name info
-#' @param subfigs subfigure labels
-#' @return saved multi-panel TGA plot
-#'
-#' @export
+# Call TGA plot for tree, nonvascular, and shrub
 
 tga_plot_others <- function (species_deconvolved_list, species_data, subfigs) {
   
@@ -667,14 +599,7 @@ tga_plot_others <- function (species_deconvolved_list, species_data, subfigs) {
   
 }
 
-#' Call TGA plot for three emblem species
-#'
-#' @param species_deconvolved_list deconvolved species data list item
-#' @param species_data species detail file with growth form and full species name info
-#' @param species_names to plot
-#' @return saved multi-panel TGA plot
-#'
-#' @export
+# Call TGA plot for three emblem species
 
 tga_plot_three <- function (species_deconvolved_list, species_data, species_names) {
   
@@ -709,19 +634,7 @@ tga_plot_three <- function (species_deconvolved_list, species_data, species_name
   
 }
 
-#' Plot single species' TGA data
-#'
-#' @param species_code code of species to plot
-#' @param species_deconvolved_list deconvolved species data list item
-#' @param species_data species detail file with growth form and full species name info
-#' @param legend_species logical when to add species name to plot
-#' @return saved deconvolved plot
-#' @importFrom deconvolve process deconvolve fs_mixture fs_function
-#' @importFrom reshape2 dcast
-#' @importFrom grDevices png dev.off
-#' @importFrom graphics plot axis lines par legend rect
-#'
-#' @export
+# Plot single species' TGA data
 
 tga_plot <- function (species_code, species_deconvolved_list, species_data, legend_species = TRUE) {
   
@@ -799,19 +712,7 @@ tga_plot <- function (species_code, species_deconvolved_list, species_data, lege
   
 }
 
-
-#' Produce pca plot and loadings table
-#'
-#' @param prin pca data output
-#' @param df logged traits matrix
-#' @param species_data species dataframe so can get the abreviated species labels
-#' @return saved pca plot
-#' @importFrom vegan envfit
-#' @importFrom stats na.omit
-#' @importFrom grDevices png dev.off 
-#' @importFrom graphics plot mtext legend text
-#'
-#' @export
+# Produce pca plot and loadings table
 
 pca <- function (prin, df, species_data) {
   
@@ -881,11 +782,9 @@ pca <- function (prin, df, species_data) {
 
 }
 
-#' Custom legends
-#'
-#' @param spname species name for legend
-#'
-#' @export
+## Custom legends
+
+# Species name legend
 
 legend_species <- function (spname) {
   
@@ -898,7 +797,7 @@ legend_species <- function (spname) {
   
 }
 
-#' @export
+# Three curves legend
 
 legend_three_curves <- function () {
   
@@ -915,10 +814,7 @@ legend_three_curves <- function () {
   
 }
 
-#' Subfigure legend
-#' @param subfig subfig label
-#' @param cex size of subfigure label
-#' @export
+# Subfigure legend
 
 legend_subfig <- function (subfig, cex = 2.2) {
   
@@ -926,7 +822,7 @@ legend_subfig <- function (subfig, cex = 2.2) {
   
 }
 
-#' @export 
+# Three curves horizontal legend
 
 legend_three_curves_horizontal <- function () {
   
@@ -943,4 +839,3 @@ legend_three_curves_horizontal <- function () {
          lwd = 2) 
   
 }
-

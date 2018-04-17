@@ -1,12 +1,6 @@
-# Load data
+## Load data
 
-#' Prepare C and N trait data
-#'
-#' @param leco_data raw leco data
-#' @return prepared leco data
-#' @importFrom utils read.csv
-#'
-#' @export
+# Prepare C and N trait data
 
 load_leco_traits <- function (leco_data) {
   
@@ -20,15 +14,7 @@ load_leco_traits <- function (leco_data) {
   
 }
 
-#' Prepare LES traits
-#'
-#' @param trait_data file path for raw trait data
-#' @param species_data file with species data
-#' @return prepared trait data
-#' @importFrom plyr ddply summarise
-#' @importFrom utils read.csv
-#'
-#' @export
+# Prepare LES traits
 
 load_les_traits <- function (trait_data, species_data) {
   
@@ -57,14 +43,7 @@ load_les_traits <- function (trait_data, species_data) {
   
 }
 
-#' Prepare species data
-#'
-#' @param species_data raw species data
-#' @return prepared species data
-#' @importFrom utils read.csv
-#' @importFrom dplyr filter
-#'
-#' @export
+# Prepare species data
 
 load_species <- function (species_data) {
   
@@ -75,14 +54,7 @@ load_species <- function (species_data) {
   
 }
 
-#' Wrapper for all species for TGA functions
-#'
-#' @param species_data species data
-#' @param function_name function to apply
-#' @param ... optional arguments
-#' @return output of internal function
-#'
-#' @export
+# Wrapper for all species for TGA functions
 
 tga_wrapper <- function (species_data, function_name, ...) {
 
@@ -91,13 +63,7 @@ tga_wrapper <- function (species_data, function_name, ...) {
 
 }
 
-#' @param species_code species code to deconvolve
-#' @param data_folder where raw data is saved
-#' @importFrom deconvolve process deconvolve fs_mixture
-#' @importFrom reshape2 dcast
-#' @importFrom utils read.csv
-#' 
-#' @export
+# Function to deconvolve species' TGA data
 
 tga_deconvolve <- function (species_code, data_folder) {
   
@@ -159,13 +125,7 @@ tga_deconvolve <- function (species_code, data_folder) {
   
 }
 
-#' Prepare weights
-#'
-#' @param species_deconvolved_list deconvolved species data
-#' @importFrom dplyr bind_rows
-#' @return weights
-#'
-#' @export
+# Prepare weights
 
 load_tga_traits <- function (species_deconvolved_list) {
   
@@ -178,14 +138,7 @@ load_tga_traits <- function (species_deconvolved_list) {
   
 }
 
-#' Load and process raw TGA data
-#'
-#' @param raw_file TGA raw data
-#' @return processed TGA data
-#' @importFrom deconvolve process
-#' @importFrom utils read.csv
-#'
-#' @export
+# Load and process raw TGA data
 
 process_raw_tga <- function (raw_file) {
   

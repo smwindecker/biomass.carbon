@@ -1,17 +1,8 @@
-# Analyse data
+## Analyse data
 
-#' Merge trait datasets
-#'
-#' @param species species info dataframe
-#' @param trt les trait data
-#' @param cn carbon and nitrogen leco data
-#' @param tga tga data
-#' @return merged trait datasets
-#' @importFrom dplyr full_join arrange
-#'
-#' @export
+# Merge trait datasets
 
-traits_combine <- function (species, trt, cn, tga) {
+traits_combine <- function (species_data, trt, cn, tga) {
   
   t <- dplyr::full_join(trt, cn, by = 'species_code') %>%
     dplyr::full_join(., tga, by = 'species_code') %>%
@@ -22,19 +13,11 @@ traits_combine <- function (species, trt, cn, tga) {
   
 }
 
-#' Select mean of traits
-#'
-#' @param all_traits dataframe of traits
-#' @param output_file file path for output plot
-#' @return mean traits only
-#' @importFrom dplyr filter mutate
-#' @importFrom utils write.table
-#'
-#' @export
+# Select mean of traits
 
-traits_mean_only <- function(all_traits, output_file) {
+traits_mean_only <- function(traits, output_file) {
   
-  t_mean <- all_traits %>%
+  t_mean <- traits %>%
     dplyr::filter(wt_type == 'mean') %>%
     dplyr::mutate(HC = HC_1 + HC_2)
   
@@ -45,14 +28,7 @@ traits_mean_only <- function(all_traits, output_file) {
   t_mean
 }
 
-#' Produce matrix of logged traits
-#'
-#' @param t_mean mean traits dataframe
-#' @return matrix of logged traits
-#' @importFrom magrittr set_rownames
-#' @importFrom dplyr select
-#'
-#' @export
+# Produce matrix of logged traits
 
 traits_log <- function (t_mean) {
   
@@ -64,13 +40,7 @@ traits_log <- function (t_mean) {
   cov
 }
 
-#' Conduct PCA
-#'
-#' @param df logged traits matrix
-#' @return pca output
-#' @importFrom stats princomp na.omit
-#'
-#' @export
+# Conduct PCA
 
 pca_data <- function(df) {
   
@@ -80,13 +50,7 @@ pca_data <- function(df) {
   prin
 }
 
-#' Read phylogenetic tree data
-#'
-#' @param nwk_file file path for tree
-#' @importFrom ape read.tree
-#' @return tree as phylogeny
-#'
-#' @export
+# Read phylogenetic tree data
 
 phylo_readtree <- function (nwk_file) {
   
@@ -107,13 +71,7 @@ phylo_readtree <- function (nwk_file) {
   
 }
 
-#' Add functional trait data to phylogenetic tree data
-#'
-#' @param phylo phylogenetic tree object
-#' @param t_mean mean traits dataframe
-#' @return phylogenetic data with traits
-#'
-#' @export
+# Add functional trait data to phylogenetic tree data
 
 phylo_traits <- function (phylo, t_mean) {
   
@@ -153,17 +111,7 @@ phylo_traits <- function (phylo, t_mean) {
   
 }
 
-#' Deconvolve a single TGA curve
-#'
-#' @param raw_file TGA raw data
-#' @importFrom deconvolve fs_function
-#' @importFrom minpack.lm nlsLM nls.lm.control
-#' @importFrom stats integrate
-#' @importFrom grDevices png dev.off 
-#' @importFrom graphics legend lines par plot 
-#' @return saved deconvolved plot and weight
-#'
-#' @export
+# Deconvolve a single TGA curve
 
 single_deconvolve <- function (raw_file) {
   

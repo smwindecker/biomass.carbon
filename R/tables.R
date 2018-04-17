@@ -1,13 +1,6 @@
-# Tables
+## Tables
 
-#' Produce pca plot and loadings table
-#'
-#' @param prin pca output
-#' @param output_file file path for loadings table
-#' @return saved loadings table
-#' @importFrom xtable xtable
-#'
-#' @export
+# Produce pca plot and loadings table
 
 pca_loadings <- function (prin, output_file) {
   
@@ -38,16 +31,7 @@ pca_loadings <- function (prin, output_file) {
   
 }
 
-#' Produce table of GenBank Accessions
-#'
-#' @param genbank_accessions_file file path for accessions info
-#' @param output_file file path to save table
-#' @importFrom utils read.table
-#' @importFrom reshape2 dcast
-#' @importFrom xtable xtable
-#' @return saved table file
-#'
-#' @export
+# Produce table of GenBank Accessions
 
 phylo_accessions <- function (genbank_accessions_file, output_file) {
   
@@ -86,18 +70,7 @@ phylo_accessions <- function (genbank_accessions_file, output_file) {
   
 }
 
-#' Produce table of estimates of Mantel test of tree distance and trait distance 
-#'
-#' @param phylo phylogenetic tree
-#' @param tips traits
-#' @param output_file where to save mantel table
-#' @importFrom adephylo distTips
-#' @importFrom ade4 mantel.rtest
-#' @importFrom stats dist
-#' @importFrom xtable xtable
-#' @return saved mantel table results
-#'
-#' @export
+# Produce table of estimates of Mantel test of tree distance and trait distance 
 
 phylo_mantel <- function (phylo, tips, output_file) {
   
@@ -151,17 +124,7 @@ phylo_mantel <- function (phylo, tips, output_file) {
   
 }
 
-#' Produce parameter values table
-#'
-#' @param species_deconvolved_list list of deconvolved 
-#' @param species_data dataframe with species info
-#' @param output_file file path for output plot
-#' @return saved parameters tables
-#' @importFrom xtable xtable
-#' @importFrom dplyr bind_rows
-#' @importFrom utils write.table
-#'
-#' @export
+# Produce parameter values table
 
 tga_param_table <- function(species_deconvolved_list, species_data, output_file) {
   
@@ -205,14 +168,7 @@ tga_param_table <- function(species_deconvolved_list, species_data, output_file)
   
 }
 
-#' Produce output trait table
-#'
-#' @param traits_df dataframe of traits
-#' @param output_file file path for output plot
-#' @return saved trait table
-#' @importFrom xtable xtable
-#'
-#' @export
+# Produce output trait table
 
 traits_table <- function (traits_df, output_file) {
   
@@ -223,31 +179,32 @@ traits_table <- function (traits_df, output_file) {
   traits_df$gf[traits_df$gf == 'NV'] <- 'nonvascular'
   traits_df$gf[traits_df$gf == 'S'] <- 'shrub'
   traits_df$gf[traits_df$gf == 'T'] <- 'tree'
-  
-  # # round trait values
-  # traits_df$SLA <- sprintf("%.2f", round(traits_df$SLA, 2))
-  # traits_df$DMC <- sprintf("%.0f", round(traits_df$DMC, 0))
-  # traits_df[,c(8,9)] <- lapply(round(traits_df[,c(8,9)], 1), sprintf, fmt = "%.1f")
-  # traits_df[,c(10:13)] <- round(traits_df[,c(10:13)], 1)
-  # 
-  # # for each biomass trait, paste mean and ci of weights together
-  # for (i in c('HC_1', 'HC_2', 'CL', 'LG')) {
-  #   
-  #   for (j in unique(as.character(traits_df$species))) {
-  #     
-  #     if (!is.na(traits_df[(traits_df$wt_type == 'mean' & traits_df$species == j), i])) {
-  #       
-  #       traits_df[(traits_df$wt_type == 'mean' & traits_df$species == j), i] <- paste0(
-  #         traits_df[(traits_df$wt_type == 'mean' & traits_df$species == j), i], ' [',
-  #         traits_df[(traits_df$wt_type == '2.5%' & traits_df$species == j), i], ', ',
-  #         traits_df[(traits_df$wt_type == '97.5%' & traits_df$species == j), i], ']')
-  #       
-  #     }
-  #   }
-  # }
-  # 
+ 
+  # round trait values
+  traits_df$SLA <- sprintf("%.2f", round(traits_df$SLA, 2))
+  traits_df$DMC <- sprintf("%.0f", round(traits_df$DMC, 0))
+  traits_df[,c('N', 'C')] <- lapply(round(traits_df[,c('N', 'C')], 1), sprintf, fmt = "%.1f")
+  traits_df[,c('HC_1', 'HC_2', 'CL', 'LG')] <- round(traits_df[,c('HC_1', 'HC_2', 'CL', 'LG')], 1)
+
+  # for each biomass trait, paste mean and ci of weights together
+  for (i in c('HC_1', 'HC_2', 'CL', 'LG')) {
+
+    for (j in unique(as.character(traits_df$species))) {
+
+      if (!is.na(traits_df[(traits_df$wt_type == 'mean' & traits_df$species == j), i])) {
+
+        traits_df[(traits_df$wt_type == 'mean' & traits_df$species == j), i] <- paste0(
+          traits_df[(traits_df$wt_type == 'mean' & traits_df$species == j), i], ' [',
+          traits_df[(traits_df$wt_type == '2.5%' & traits_df$species == j), i], ', ',
+          traits_df[(traits_df$wt_type == '97.5%' & traits_df$species == j), i], ']')
+
+      }
+    }
+  }
+
   # subset to only include modified mean rows
-  trt_table <- traits_df[traits_df$wt_type == 'mean', 3:13]
+  exclude_rows <- c('species_code', 'sp_abrev', 'wt_type')
+  trt_table <- traits_df[traits_df$wt_type == 'mean', -which(names(traits_df) %in% exclude_rows)]
 
   # add italics specification for latex
   trt_table$species <- paste0('\\textit{', trt_table$species, '}')
