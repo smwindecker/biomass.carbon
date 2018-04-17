@@ -109,7 +109,7 @@ box_plot <- function (df) {
   
 }
 
-#' Deconvolute raw materials plot
+#' deconvolve raw materials plot
 #'
 #' @param item_1 first deconvolve raw object
 #' @param item_2 second deconvolve raw object
@@ -437,7 +437,7 @@ tga_theory_plots <- function (tga_data) {
          bty = 'n', 
          cex = 2.5)
   
-  # deconvolute data
+  # deconvolve data
   output <- deconvolve::deconvolve(tmp, upper_temp = 650, n_curves = NULL)
   temp <- seq(output$bounds[1], output$bounds[2], length.out = nrow(output$data))
   fit <- output$minpack.lm  
@@ -500,7 +500,7 @@ tga_theory_plots <- function (tga_data) {
 
 #' Call TGA plot for graminoids
 #'
-#' @param species_deconvoluted_list deconvoluted species data list item
+#' @param species_deconvolved_list deconvolved species data list item
 #' @param species_data species detail file with growth form and full species name info
 #' @param subfig subfig label
 #' @param gf growth form to plot species of
@@ -508,7 +508,7 @@ tga_theory_plots <- function (tga_data) {
 #'
 #' @export
 
-tga_plot_gram <- function (species_deconvoluted_list, species_data, subfig, gf) {
+tga_plot_gram <- function (species_deconvolved_list, species_data, subfig, gf) {
   
   sorted_species <- species_data[order(species_data$species),]
   gram_species <- as.character(unique(sorted_species$species_code[sorted_species$gf == gf]))
@@ -516,30 +516,30 @@ tga_plot_gram <- function (species_deconvoluted_list, species_data, subfig, gf) 
   layout(matrix(c(1,2,3,4,5,6,7,8,9,10,11,0,12,12,12), nrow = 5, ncol = 3, byrow = TRUE), heights = c(0.8, 0.8, 0.8, 0.8, 0.2))
   par(oma = c(3, 8, 0, 2), mar = c(3, 3, 2, 0))
   
-  tga_plot(gram_species[1], species_deconvoluted_list, species_data)
+  tga_plot(gram_species[1], species_deconvolved_list, species_data)
   axis(side = 2, at = c(0.001, 0.005, 0.009), cex.axis = 2.5,
        labels = c(sprintf("%.3f", c(0.001, 0.005, 0.009))))
   legend_subfig(subfig, cex = 2.8)
-  tga_plot(gram_species[2], species_deconvoluted_list, species_data)
-  tga_plot(gram_species[3], species_deconvoluted_list, species_data)
+  tga_plot(gram_species[2], species_deconvolved_list, species_data)
+  tga_plot(gram_species[3], species_deconvolved_list, species_data)
   
-  tga_plot(gram_species[4], species_deconvoluted_list, species_data)
+  tga_plot(gram_species[4], species_deconvolved_list, species_data)
   axis(side = 2, at = c(0.001, 0.005, 0.009), cex.axis = 2.5,
        labels = c(sprintf("%.3f", c(0.001, 0.005, 0.009))))
-  tga_plot(gram_species[5], species_deconvoluted_list, species_data)
-  tga_plot(gram_species[6], species_deconvoluted_list, species_data)
+  tga_plot(gram_species[5], species_deconvolved_list, species_data)
+  tga_plot(gram_species[6], species_deconvolved_list, species_data)
   
-  tga_plot(gram_species[7], species_deconvoluted_list, species_data)
+  tga_plot(gram_species[7], species_deconvolved_list, species_data)
   axis(side = 2, at = c(0.001, 0.005, 0.009), cex.axis = 2.5,
        labels = c(sprintf("%.3f", c(0.001, 0.005, 0.009))))
-  tga_plot(gram_species[8], species_deconvoluted_list, species_data)
-  tga_plot(gram_species[9], species_deconvoluted_list, species_data)
+  tga_plot(gram_species[8], species_deconvolved_list, species_data)
+  tga_plot(gram_species[9], species_deconvolved_list, species_data)
   
-  tga_plot(gram_species[10], species_deconvoluted_list, species_data)
+  tga_plot(gram_species[10], species_deconvolved_list, species_data)
   axis(side = 1, at = c(150, 400, 650), cex.axis = 2.5, labels = c(150, 400, 650))
   axis(side = 2, at = c(0.001, 0.005, 0.009), cex.axis = 2.5,
        labels = c(sprintf("%.3f", c(0.001, 0.005, 0.009))))
-  tga_plot(gram_species[11], species_deconvoluted_list, species_data)
+  tga_plot(gram_species[11], species_deconvolved_list, species_data)
   axis(side = 1, at = c(150, 400, 650), cex.axis = 2.5, labels = c(150, 400, 650))
   
   mtext(text = 'Temperature (C)', 
@@ -560,7 +560,7 @@ tga_plot_gram <- function (species_deconvoluted_list, species_data, subfig, gf) 
 
 #' Call TGA plot for forbs
 #'
-#' @param species_deconvoluted_list deconvoluted species data list item
+#' @param species_deconvolved_list deconvolved species data list item
 #' @param species_data species detail file with growth form and full species name info
 #' @param subfig subfig label
 #' @param gf growth form to plot species of
@@ -568,7 +568,7 @@ tga_plot_gram <- function (species_deconvoluted_list, species_data, subfig, gf) 
 #'
 #' @export
 
-tga_plot_forb <- function (species_deconvoluted_list, species_data, subfig, gf) {
+tga_plot_forb <- function (species_deconvolved_list, species_data, subfig, gf) {
   
   sorted_species <- species_data[order(species_data$species),]
   forb_species <- as.character(unique(sorted_species$species_code[sorted_species$gf == gf]))
@@ -576,26 +576,26 @@ tga_plot_forb <- function (species_deconvoluted_list, species_data, subfig, gf) 
   layout(matrix(c(1,2,3,4,5,6,7,8,9,10,10,10), nrow = 4, ncol = 3, byrow = TRUE), heights = c(0.8, 0.8, 0.8, 0.2))
   par(oma = c(3, 6, 0, 2), mar = c(3, 3, 2, 0))
   
-  tga_plot(forb_species[1], species_deconvoluted_list, species_data)
+  tga_plot(forb_species[1], species_deconvolved_list, species_data)
   axis(side = 2, at = c(0.001, 0.005, 0.009), cex.axis = 2.2,
        labels = c(sprintf("%.3f", c(0.001, 0.005, 0.009))))
   legend_subfig(subfig, cex = 2.5)
-  tga_plot(forb_species[2], species_deconvoluted_list, species_data)
-  tga_plot(forb_species[3], species_deconvoluted_list, species_data)
+  tga_plot(forb_species[2], species_deconvolved_list, species_data)
+  tga_plot(forb_species[3], species_deconvolved_list, species_data)
   
-  tga_plot(forb_species[4], species_deconvoluted_list, species_data)
+  tga_plot(forb_species[4], species_deconvolved_list, species_data)
   axis(side = 2, at = c(0.001, 0.005, 0.009), cex.axis = 2.2,
        labels = c(sprintf("%.3f", c(0.001, 0.005, 0.009))))
-  tga_plot(forb_species[5], species_deconvoluted_list, species_data)
-  tga_plot(forb_species[6], species_deconvoluted_list, species_data)
+  tga_plot(forb_species[5], species_deconvolved_list, species_data)
+  tga_plot(forb_species[6], species_deconvolved_list, species_data)
   
-  tga_plot(forb_species[7], species_deconvoluted_list, species_data)
+  tga_plot(forb_species[7], species_deconvolved_list, species_data)
   axis(side = 1, at = c(150, 400, 650), cex.axis = 2.2, labels = c(150, 400, 650))
   axis(side = 2, at = c(0.001, 0.005, 0.009), cex.axis = 2.2,
        labels = c(sprintf("%.3f", c(0.001, 0.005, 0.009))))
-  tga_plot(forb_species[8], species_deconvoluted_list, species_data)
+  tga_plot(forb_species[8], species_deconvolved_list, species_data)
   axis(side = 1, at = c(150, 400, 650), cex.axis = 2.2, labels = c(150, 400, 650))
-  tga_plot(forb_species[9], species_deconvoluted_list, species_data)
+  tga_plot(forb_species[9], species_deconvolved_list, species_data)
   axis(side = 1, at = c(150, 400, 650), cex.axis = 2.2, labels = c(150, 400, 650))
   
   mtext(text = 'Temperature (C)', 
@@ -616,14 +616,14 @@ tga_plot_forb <- function (species_deconvoluted_list, species_data, subfig, gf) 
 
 #' Call TGA plot for tree, nonvascular, and shrub
 #'
-#' @param species_deconvoluted_list deconvoluted species data list item
+#' @param species_deconvolved_list deconvolved species data list item
 #' @param species_data species detail file with growth form and full species name info
 #' @param subfigs subfigure labels
 #' @return saved multi-panel TGA plot
 #'
 #' @export
 
-tga_plot_others <- function (species_deconvoluted_list, species_data, subfigs) {
+tga_plot_others <- function (species_deconvolved_list, species_data, subfigs) {
   
   sorted_species <- species_data[order(species_data$species),]
   tree_species <- as.character(unique(sorted_species$species_code[sorted_species$gf == 'T']))
@@ -633,21 +633,21 @@ tga_plot_others <- function (species_deconvoluted_list, species_data, subfigs) {
   layout(matrix(c(1,2,3,4,5,6,7,7,7), nrow = 3, ncol = 3, byrow = TRUE), heights = c(0.8, 0.8, 0.2))
   par(oma = c(3, 6, 0, 2), mar = c(3, 3, 2, 0))
   
-  tga_plot(tree_species[1], species_deconvoluted_list, species_data)
+  tga_plot(tree_species[1], species_deconvolved_list, species_data)
   axis(side = 2, at = c(0.001, 0.005, 0.009), cex.axis = 2.2,
        labels = c(sprintf("%.3f", c(0.001, 0.005, 0.009))))
   legend_subfig(subfigs[1])
-  tga_plot(tree_species[2], species_deconvoluted_list, species_data)
-  tga_plot(nv, species_deconvoluted_list, species_data)
+  tga_plot(tree_species[2], species_deconvolved_list, species_data)
+  tga_plot(nv, species_deconvolved_list, species_data)
   legend_subfig(subfigs[2])
   
-  tga_plot(tree_species[3], species_deconvoluted_list, species_data)
+  tga_plot(tree_species[3], species_deconvolved_list, species_data)
   axis(side = 1, at = c(150, 400, 650), cex.axis = 2.2, labels = c(150, 400, 650))
   axis(side = 2, at = c(0.001, 0.005, 0.009), cex.axis = 2.2,
        labels = c(sprintf("%.3f", c(0.001, 0.005, 0.009))))
-  tga_plot(tree_species[4], species_deconvoluted_list, species_data)
+  tga_plot(tree_species[4], species_deconvolved_list, species_data)
   axis(side = 1, at = c(150, 400, 650), cex.axis = 2.2, labels = c(150, 400, 650))
-  tga_plot(s, species_deconvoluted_list, species_data)
+  tga_plot(s, species_deconvolved_list, species_data)
   axis(side = 1, at = c(150, 400, 650), cex.axis = 2.2, labels = c(150, 400, 650))
   legend_subfig(subfigs[3])
   
@@ -669,27 +669,27 @@ tga_plot_others <- function (species_deconvoluted_list, species_data, subfigs) {
 
 #' Call TGA plot for three emblem species
 #'
-#' @param species_deconvoluted_list deconvoluted species data list item
+#' @param species_deconvolved_list deconvolved species data list item
 #' @param species_data species detail file with growth form and full species name info
 #' @param species_names to plot
 #' @return saved multi-panel TGA plot
 #'
 #' @export
 
-tga_plot_three <- function (species_deconvoluted_list, species_data, species_names) {
+tga_plot_three <- function (species_deconvolved_list, species_data, species_names) {
   
   layout(matrix(c(1,2,3,4,4,4), nrow = 2, ncol = 3, byrow = TRUE), heights = c(0.8, 0.2))
   par(oma = c(3, 6, 0, 2), mar = c(3, 3, 2, 0))
   
-  tga_plot(species_names[1], species_deconvoluted_list, species_data, legend_species = FALSE)
+  tga_plot(species_names[1], species_deconvolved_list, species_data, legend_species = FALSE)
   axis(side = 1, at = c(150, 400, 650), cex.axis = 2.2, labels = c(150, 400, 650))
   axis(side = 2, at = c(0.001, 0.005, 0.009), cex.axis = 2.2,
        labels = c(sprintf("%.3f", c(0.001, 0.005, 0.009))))
   legend_subfig('a', cex = 2.6)
-  tga_plot(species_names[2], species_deconvoluted_list, species_data, legend_species = FALSE)
+  tga_plot(species_names[2], species_deconvolved_list, species_data, legend_species = FALSE)
   axis(side = 1, at = c(150, 400, 650), cex.axis = 2.2, labels = c(150, 400, 650))
   legend_subfig('b', cex = 2.6)
-  tga_plot(species_names[3], species_deconvoluted_list, species_data, legend_species = FALSE)
+  tga_plot(species_names[3], species_deconvolved_list, species_data, legend_species = FALSE)
   axis(side = 1, at = c(150, 400, 650), cex.axis = 2.2, labels = c(150, 400, 650))
   legend_subfig('c', cex = 2.6)
   
@@ -712,7 +712,7 @@ tga_plot_three <- function (species_deconvoluted_list, species_data, species_nam
 #' Plot single species' TGA data
 #'
 #' @param species_code code of species to plot
-#' @param species_deconvoluted_list deconvoluted species data list item
+#' @param species_deconvolved_list deconvolved species data list item
 #' @param species_data species detail file with growth form and full species name info
 #' @param legend_species logical when to add species name to plot
 #' @return saved deconvolved plot
@@ -723,11 +723,11 @@ tga_plot_three <- function (species_deconvoluted_list, species_data, species_nam
 #'
 #' @export
 
-tga_plot <- function (species_code, species_deconvoluted_list, species_data, legend_species = TRUE) {
+tga_plot <- function (species_code, species_deconvolved_list, species_data, legend_species = TRUE) {
   
   x <- species_code
   
-  list_item <- species_deconvoluted_list[[x]]
+  list_item <- species_deconvolved_list[[x]]
   spname <- species_data$sp_abrev[species_data$species_code == x][1]
   
   output <- list_item$output

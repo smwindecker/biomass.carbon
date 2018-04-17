@@ -91,7 +91,7 @@ tga_wrapper <- function (species_data, function_name, ...) {
 
 }
 
-#' @param species_code species code to deconvolute
+#' @param species_code species code to deconvolve
 #' @param data_folder where raw data is saved
 #' @importFrom deconvolve process deconvolve fs_mixture
 #' @importFrom reshape2 dcast
@@ -99,7 +99,7 @@ tga_wrapper <- function (species_data, function_name, ...) {
 #' 
 #' @export
 
-tga_deconvolute <- function (species_code, data_folder) {
+tga_deconvolve <- function (species_code, data_folder) {
   
   # extract species code
   x <- species_code
@@ -118,7 +118,7 @@ tga_deconvolute <- function (species_code, data_folder) {
   file <- paste0(data_folder, x, '_TGA.csv')
   tmp <- process_raw_tga(file)
   
-  # deconvolute TGA data
+  # deconvolve TGA data
   output <- deconvolve::deconvolve(tmp, upper_temp = 650, n_curves = n_curves)
   
   # extract weights of components
@@ -161,17 +161,17 @@ tga_deconvolute <- function (species_code, data_folder) {
 
 #' Prepare weights
 #'
-#' @param species_deconvoluted_list deconvoluted species data
+#' @param species_deconvolved_list deconvolved species data
 #' @importFrom dplyr bind_rows
 #' @return weights
 #'
 #' @export
 
-load_tga_traits <- function (species_deconvoluted_list) {
+load_tga_traits <- function (species_deconvolved_list) {
   
-  # combine weight estimates from all deconvoluted species data
-  weight_estimates <- dplyr::bind_rows(lapply(1:length(species_deconvoluted_list), function(x) {
-    return(species_deconvoluted_list[[x]]$weights)
+  # combine weight estimates from all deconvolved species data
+  weight_estimates <- dplyr::bind_rows(lapply(1:length(species_deconvolved_list), function(x) {
+    return(species_deconvolved_list[[x]]$weights)
   }))
   
   weight_estimates

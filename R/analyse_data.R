@@ -165,7 +165,7 @@ phylo_traits <- function (phylo, t_mean) {
 #'
 #' @export
 
-single_deconvolute <- function (raw_file) {
+single_deconvolve <- function (raw_file) {
   
   # load and process TGA data
   tmp <- process_raw_tga(raw_file)

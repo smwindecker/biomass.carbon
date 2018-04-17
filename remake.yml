@@ -61,7 +61,7 @@ targets:
     
   tga_output:
     command: tga_wrapper(species_data = species, 
-                         function_name = I(tga_deconvolute), 
+                         function_name = I(tga_deconvolve), 
                          data_folder = 'data-raw/tga/')
     cleanup_level: purge
     check: exists
@@ -93,9 +93,9 @@ targets:
     command: phylo_traits(phylo_tree, mean_traits)
   
   raw_cl_sample:
-    command: single_deconvolute("data-raw/raw_biomass/CL.csv")
+    command: single_deconvolve("data-raw/raw_biomass/CL.csv")
   raw_lg_sample:
-    command: single_deconvolute("data-raw/raw_biomass/LG.csv")
+    command: single_deconvolve("data-raw/raw_biomass/LG.csv")
     
   
   # -------- figures -------------

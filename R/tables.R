@@ -153,7 +153,7 @@ phylo_mantel <- function (phylo, tips, output_file) {
 
 #' Produce parameter values table
 #'
-#' @param species_deconvoluted_list list of deconvolved 
+#' @param species_deconvolved_list list of deconvolved 
 #' @param species_data dataframe with species info
 #' @param output_file file path for output plot
 #' @return saved parameters tables
@@ -163,11 +163,11 @@ phylo_mantel <- function (phylo, tips, output_file) {
 #'
 #' @export
 
-tga_param_table <- function(species_deconvoluted_list, species_data, output_file) {
+tga_param_table <- function(species_deconvolved_list, species_data, output_file) {
   
   # bind parameter outputs of species_deconvolved function
-  parameter_estimates <- dplyr::bind_rows(lapply(1:length(species_deconvoluted_list), function(x) {
-    return(species_deconvoluted_list[[x]]$params)
+  parameter_estimates <- dplyr::bind_rows(lapply(1:length(species_deconvolved_list), function(x) {
+    return(species_deconvolved_list[[x]]$params)
   }))
   
   # save parameter output
