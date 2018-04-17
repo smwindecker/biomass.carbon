@@ -1,10 +1,23 @@
 
 packages:
-  - biomass.traits
+  - ade4
+  - adephylo
+  - ape
   - deconvolve
   - dplyr
-  - tools
+  - grDevices
+  - graphics
   - knitr
+  - magrittr
+  - minpack.lm
+  - phytools
+  - plyr
+  - reshape2
+  - stats
+  - tools
+  - utils
+  - vegan
+  - xtable
 
 sources:
   - 'R/analyse_data.R'
@@ -73,12 +86,14 @@ targets:
     
 # ------- combine data -----------------
   
-  all_traits:
+  combined_traits:
     command: traits_combine(species, carbon_nitrogen, economic_traits, biomass_traits)
+    cleanup_level: purge
+    check: exists
     
   mean_traits: 
-    command: traits_mean_only(all_traits, 
-                              output_file = I("data/all_traits.txt"))
+    command: traits_mean_only(combined_traits, 
+                              output_file = I("data/mean_traits.txt"))
   
   logged_trait_matrix:
     command: traits_log(mean_traits)
@@ -171,7 +186,7 @@ targets:
     command: tga_param_table(tga_output, species, target_name)
   
   figs/traits_table.tex:
-    command: traits_table(all_traits, target_name)
+    command: traits_table(combined_traits, target_name)
   
   figs/gen_bank_accessions.tex:
     command: phylo_accessions("data-raw/GenBankAccessions.txt", target_name)
@@ -182,8 +197,6 @@ targets:
   figs/pca_loadings.tex:
     command: pca_loadings(pca_output, target_name)
 
-  
-  
   # ------ report ---------
   manuscript.tex:
     depends:
@@ -192,7 +205,7 @@ targets:
       - economic_traits
       - tga_output
       - biomass_traits
-      - all_traits
+      - combined_traits
       - mean_traits
       - logged_trait_matrix
       - pca_output
