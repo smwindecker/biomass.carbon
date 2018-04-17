@@ -1,46 +1,45 @@
-# can my remake file have plots that are created multiple in same function? 
-# or must they be unique functions? 
 
 packages:
   - biomass.traits
   - deconvolve
   - dplyr
+  - tools
+  - knitr
 
 sources:
   - 'R/analyse_data.R'
   - 'R/figures.R'
   - 'R/load_data.R'
   - 'R/tables.R'
-  - 'R/build.R'
 
 targets:
   all:
     depends:
       - figures
       - tables
-      - manuscript/Biomass_Traits.pdf
+      - Biomass_Traits.pdf
       
   figures:
     depends:
-      - manuscript/figs/boxplot.png
-      - manuscript/figs/fs_simulate.png
-      - manuscript/figs/pairplot.png
-      - manuscript/figs/phylo_all.png
-      - manuscript/figs/raw_pca.png
-      - manuscript/figs/tga_pure_samples.png
-      - manuscript/figs/tga_F.png
-      - manuscript/figs/tga_G.png
-      - manuscript/figs/raw_tga_three.png
-      - manuscript/figs/tga_TNVS.png
-      - manuscript/figs/theory_plot.png
+      - figs/boxplot.png
+      - figs/fs_simulate.png
+      - figs/pairplot.png
+      - figs/phylo_all.png
+      - figs/raw_pca.png
+      - figs/tga_pure_samples.png
+      - figs/tga_F.png
+      - figs/tga_G.png
+      - figs/raw_tga_three.png
+      - figs/tga_TNVS.png
+      - figs/theory_plot.png
       
   tables:
     depends:
-      - manuscript/figs/gen_bank_accessions.tex
-      - manuscript/figs/mantel_results.tex
-      - manuscript/figs/pca_loadings.tex
-      - manuscript/figs/tga_param_table.tex
-      - manuscript/figs/traits_table.tex
+      - figs/gen_bank_accessions.tex
+      - figs/mantel_results.tex
+      - figs/pca_loadings.tex
+      - figs/tga_param_table.tex
+      - figs/traits_table.tex
 
   # --------- data ------------------------
   
@@ -101,94 +100,92 @@ targets:
   
   # -------- figures -------------
 
-
-  manuscript/figs/theory_plot.png:
+  figs/theory_plot.png:
     plot: 
       width: 1500
       height: 480
     command: tga_theory_plots('data-raw/TGA/A_TGA.csv')
   
-  manuscript/figs/raw_tga_three.png:
+  figs/raw_tga_three.png:
     plot: 
       width: 1500
       height: 500
     command: tga_plot_three(tga_output, species, species_names = I(c('LL', 'MM', 'KK')))
   
-  manuscript/figs/tga_G.png:
+  figs/tga_G.png:
     plot: 
       width: 1500
       height: 1940
     command: tga_plot_gram(tga_output, species, subfig = I('a'), gf = I('G'))
     
-  manuscript/figs/tga_F.png:
+  figs/tga_F.png:
     plot: 
       width: 1500
       height: 1460
     command: tga_plot_forb(tga_output, species, subfig = I('b'), gf = I('F'))
   
-  manuscript/figs/tga_TNVS.png:
+  figs/tga_TNVS.png:
     plot: 
       width: 1500
       height: 980
     command: tga_plot_others(tga_output, species, subfigs = I(c('c', 'd', 'e')))
 
-  manuscript/figs/boxplot.png:
+  figs/boxplot.png:
     plot: 
       width: 1200
       height: 950
     command: box_plot(mean_traits)
   
-  manuscript/figs/raw_pca.png:
+  figs/raw_pca.png:
     plot: 
       width: 1000
       height: 950
     command: pca(pca_output, logged_trait_matrix, species)
     
-  manuscript/figs/pairplot.png:
+  figs/pairplot.png:
     plot: 
       width: 1500
       height: 1500
     command: pair_plot(logged_trait_matrix)
     
-  manuscript/figs/fs_simulate.png:
+  figs/fs_simulate.png:
     plot: 
       width: 800
       height: 700
     command: simulate_fraser_suzuki()
   
-  manuscript/figs/tga_pure_samples.png:
+  figs/tga_pure_samples.png:
     plot: 
       width: 1200
       height: 600
     command: tga_raw_plots(raw_cl_sample, raw_lg_sample)
   
-  manuscript/figs/phylo_all.png:
+  figs/phylo_all.png:
     plot: 
       width: 1500
       height: 1000
     command: phylo_plot(phylo_tree, phylo_trts)
   
   # --------- tables ---------
-  manuscript/figs/tga_param_table.tex:
+  figs/tga_param_table.tex:
     command: tga_param_table(tga_output, species, target_name)
   
-  manuscript/figs/traits_table.tex:
+  figs/traits_table.tex:
     command: traits_table(all_traits, target_name)
   
-  manuscript/figs/gen_bank_accessions.tex:
+  figs/gen_bank_accessions.tex:
     command: phylo_accessions("data-raw/GenBankAccessions.txt", target_name)
   
-  manuscript/figs/mantel_results.tex:
-    command: phylo_mantel(phylo_tree, phylo_traits, target_name)
+  figs/mantel_results.tex:
+    command: phylo_mantel(phylo_tree, phylo_trts, target_name)
   
-  manuscript/figs/pca_loadings.tex:
+  figs/pca_loadings.tex:
     command: pca_loadings(pca_output, target_name)
 
   
   
   # ------ report ---------
-  manuscript/Biomass_Traits.tex:
-    knitr: TRUE
+  Biomass_Traits.tex:
     depends:
       - species
       - carbon_nitrogen
@@ -203,11 +200,10 @@ targets:
       - phylo_trts
       - raw_cl_sample
       - raw_lg_sample
+    knitr: TRUE
 
-  manuscript/Biomass_Traits.pdf:
-    command: latex_build("manuscript/Biomass_Traits.tex", "manuscript/bibliography.bib", clean = TRUE)
+  Biomass_Traits.pdf:
+    command: texi2pdf("Biomass_Traits.tex", clean = TRUE)
     depends:
       - figures
       - tables
-      - manuscript/besjournals.bst
-      - manuscript/besjournals.dbj
