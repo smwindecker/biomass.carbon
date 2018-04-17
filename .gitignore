@@ -9,8 +9,10 @@
 besjournalsREADME
 besjournals.dbj
 besjournals.bst
-Biomass_Traits.tex
-Biomass_Traits.pdf
-Biomass_Traits.Rnw
+manuscript.tex
+manuscript.pdf
+manuscript.Rnw
 /.remake
 /figs
+/manuscript
+/analysis
