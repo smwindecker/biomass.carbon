@@ -1,0 +1,16 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+/data
+/output
+/data-raw
+/deprecated
+besjournalsREADME
+besjournals.dbj
+besjournals.bst
+Biomass_Traits.tex
+Biomass_Traits.pdf
+Biomass_Traits.Rnw
+/.remake
+/figs
