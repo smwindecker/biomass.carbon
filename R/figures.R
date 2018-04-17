@@ -206,7 +206,7 @@ tga_raw_plots <- function (item_1, item_2) {
 
 pair_plot <- function (df) {
   
-  panel.cor <- function(x, y, digits = 2, prefix = "", 2, ...)
+  panel.cor <- function(x, y, digits = 2, prefix = "", cex.cor = 2, ...)
   {
     usr <- par("usr"); on.exit(par(usr))
     par(usr = c(0, 1, 0, 1))
