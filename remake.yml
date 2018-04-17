@@ -17,7 +17,7 @@ targets:
     depends:
       - figures
       - tables
-      - Biomass_Traits.pdf
+      - manuscript.pdf
       
   figures:
     depends:
@@ -185,7 +185,7 @@ targets:
   
   
   # ------ report ---------
-  Biomass_Traits.tex:
+  manuscript.tex:
     depends:
       - species
       - carbon_nitrogen
@@ -202,8 +202,8 @@ targets:
       - raw_lg_sample
     knitr: TRUE
 
-  Biomass_Traits.pdf:
-    command: texi2pdf("Biomass_Traits.tex", clean = TRUE)
+  manuscript.pdf:
+    command: texi2pdf("manuscript.tex", clean = TRUE)
     depends:
       - figures
       - tables
