@@ -10,20 +10,17 @@ traits_combine <- function (species_data, trt, cn, tga) {
     .[, c(1,4:7,2,3,9,8,10:14)]
   
   t
-  
 }
 
 # Select mean of traits
 
-traits_mean_only <- function(traits, output_file) {
+traits_mean_only <- function(traits) {
   
   t_mean <- traits %>%
     dplyr::filter(wt_type == 'mean') %>%
     dplyr::mutate(HC = HC_1 + HC_2)
   
   t_mean$HC[is.na(t_mean$HC)] <- t_mean$HC_2[is.na(t_mean$HC)]
-  
-  utils::write.table(t_mean, output_file)
   
   t_mean
 }
@@ -165,14 +162,11 @@ single_deconvolve <- function (raw_file) {
     deconvolve::fs_function(x, h, s, p, w)
   }
   
-  # initialise weights
-  weights <- list('HC' = NA, 'CL' = NA, 'LG' = NA)
-  
   # area under the curves
-  weights <- (stats::integrate(Vectorize(f_j), lower = 120,
+  weight <- (stats::integrate(Vectorize(f_j), lower = 120,
                                upper = 650)$value) * 100
   
-  return(list(weights = weights,
+  return(list(weight = weight,
               temp = temp, 
               obs = obs, 
               h = h, 
@@ -180,4 +174,31 @@ single_deconvolve <- function (raw_file) {
               p = p, 
               w = w))
   
+}
+
+# TGA parameters
+
+extract_parameters <- function (species_deconvolved_list, species_data) {
+  
+  # bind parameter outputs of species_deconvolved function
+  parameter_estimates <- dplyr::bind_rows(lapply(1:length(species_deconvolved_list), function(x) {
+    return(species_deconvolved_list[[x]]$params)
+  }))
+  
+  # set significant digits
+  parameter_estimates[, c('h1', 'h2', 'h3', 'h0')] <- round(parameter_estimates[, c('h1', 'h2', 'h3', 'h0')], 4)
+  parameter_estimates[, c('p1', 'p2', 'p3', 'p0')] <- round(parameter_estimates[, c('p1', 'p2', 'p3', 'p0')], 0)
+  parameter_estimates[, c('s1', 's2', 's3', 's0')] <- round(parameter_estimates[, c('s1', 's2', 's3', 's0')], 3)
+  parameter_estimates[, c('w1', 'w2', 'w3', 'w0')] <- round(parameter_estimates[, c('w1', 'w2', 'w3', 'w0')], 0)
+  
+  # combine with species data
+  parameters <- merge(parameter_estimates, species_data[,c('species_code', 'species', 'gf')])
+  
+  parameters <- parameters[ ,c('species', 'gf', 
+                               'h0', 'h1', 'h2', 'h3', 
+                               'p0', 'p1', 'p2', 'p3', 
+                               's0', 's1', 's2', 's3', 
+                               'w0', 'w1', 'w2', 'w3')]
+  
+  parameters
 }
