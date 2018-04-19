@@ -24,6 +24,7 @@ sources:
   - 'R/figures.R'
   - 'R/load_data.R'
   - 'R/tables.R'
+  - 'R/manuscript_functions.R'
 
 targets:
   all:
@@ -90,10 +91,9 @@ targets:
     command: traits_combine(species, carbon_nitrogen, economic_traits, biomass_traits)
     cleanup_level: purge
     check: exists
-    
+  
   mean_traits: 
-    command: traits_mean_only(combined_traits, 
-                              output_file = I("data/mean_traits.txt"))
+    command: traits_mean_only(combined_traits)
   
   logged_trait_matrix:
     command: traits_log(mean_traits)
@@ -107,11 +107,13 @@ targets:
   phylo_trts:
     command: phylo_traits(phylo_tree, mean_traits)
   
-  raw_cl_sample:
+  raw_cl:
     command: single_deconvolve("data-raw/raw_biomass/CL.csv")
-  raw_lg_sample:
+  raw_lg:
     command: single_deconvolve("data-raw/raw_biomass/LG.csv")
     
+  tga_params:
+    command: extract_parameters(tga_output, species)
   
   # -------- figures -------------
 
@@ -173,7 +175,7 @@ targets:
     plot: 
       width: 1200
       height: 600
-    command: tga_raw_plots(raw_cl_sample, raw_lg_sample)
+    command: tga_raw_plots(raw_cl, raw_lg)
   
   figs/phylo_all.png:
     plot: 
@@ -183,7 +185,7 @@ targets:
   
   # --------- tables ---------
   figs/tga_param_table.tex:
-    command: tga_param_table(tga_output, species, target_name)
+    command: tga_param_table(tga_params, target_name)
   
   figs/traits_table.tex:
     command: traits_table(combined_traits, target_name)
@@ -211,8 +213,9 @@ targets:
       - pca_output
       - phylo_tree
       - phylo_trts
-      - raw_cl_sample
-      - raw_lg_sample
+      - raw_cl
+      - raw_lg
+      - tga_params
     knitr: TRUE
 
   manuscript.pdf:
