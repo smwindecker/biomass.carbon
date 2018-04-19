@@ -1,0 +1,2472 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="297mm"
+   height="210mm"
+   viewBox="0 0 1052.3622 744.09448"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="traits_flowchart.svg">
+  <defs
+     id="defs4">
+    <marker
+       inkscape:stockid="Arrow2Mend"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="marker7279"
+       style="overflow:visible;"
+       inkscape:isstock="true">
+      <path
+         id="path7281"
+         style="fill-rule:evenodd;stroke-width:0.625;stroke-linejoin:round;stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z "
+         transform="scale(0.6) rotate(180) translate(0,0)" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible;"
+       id="marker6889"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow2Mend"
+       inkscape:collect="always">
+      <path
+         transform="scale(0.6) rotate(180) translate(0,0)"
+         d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z "
+         style="fill-rule:evenodd;stroke-width:0.625;stroke-linejoin:round;stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         id="path6891" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow2Mend"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="marker6733"
+       style="overflow:visible;"
+       inkscape:isstock="true"
+       inkscape:collect="always">
+      <path
+         id="path6735"
+         style="fill-rule:evenodd;stroke-width:0.625;stroke-linejoin:round;stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z "
+         transform="scale(0.6) rotate(180) translate(0,0)" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible;"
+       id="marker6229"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow2Mend">
+      <path
+         transform="scale(0.6) rotate(180) translate(0,0)"
+         d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z "
+         style="fill-rule:evenodd;stroke-width:0.625;stroke-linejoin:round;stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         id="path6231" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible;"
+       id="marker5869"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow2Mend"
+       inkscape:collect="always">
+      <path
+         transform="scale(0.6) rotate(180) translate(0,0)"
+         d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z "
+         style="fill-rule:evenodd;stroke-width:0.625;stroke-linejoin:round;stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         id="path5871" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow2Mend"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="marker5815"
+       style="overflow:visible;"
+       inkscape:isstock="true"
+       inkscape:collect="always">
+      <path
+         id="path5817"
+         style="fill-rule:evenodd;stroke-width:0.625;stroke-linejoin:round;stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z "
+         transform="scale(0.6) rotate(180) translate(0,0)" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible;"
+       id="marker5517"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow2Mend">
+      <path
+         transform="scale(0.6) rotate(180) translate(0,0)"
+         d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z "
+         style="fill-rule:evenodd;stroke-width:0.625;stroke-linejoin:round;stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         id="path5519" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow2Mend"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow2Mend"
+       style="overflow:visible;"
+       inkscape:isstock="true">
+      <path
+         id="path4565"
+         style="fill-rule:evenodd;stroke-width:0.62500000;stroke-linejoin:round;"
+         d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z "
+         transform="scale(0.6) rotate(180) translate(0,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow2Mend"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="marker5143"
+       style="overflow:visible;"
+       inkscape:isstock="true"
+       inkscape:collect="always">
+      <path
+         id="path5145"
+         style="fill-rule:evenodd;stroke-width:0.625;stroke-linejoin:round;stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z "
+         transform="scale(0.6) rotate(180) translate(0,0)" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible;"
+       id="marker5090"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow2Mend"
+       inkscape:collect="always">
+      <path
+         transform="scale(0.6) rotate(180) translate(0,0)"
+         d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z "
+         style="fill-rule:evenodd;stroke-width:0.625;stroke-linejoin:round;stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         id="path5092" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow2Lend"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow2Lend"
+       style="overflow:visible;"
+       inkscape:isstock="true">
+      <path
+         id="path4559"
+         style="fill-rule:evenodd;stroke-width:0.625;stroke-linejoin:round;stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z "
+         transform="scale(1.1) rotate(180) translate(1,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow2Mend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="marker7279-9"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         inkscape:connector-curvature="0"
+         id="path7281-6"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         transform="scale(-0.6,-0.6)" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
+       id="marker6229-3"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow2Mend">
+      <path
+         inkscape:connector-curvature="0"
+         transform="scale(-0.6,-0.6)"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         id="path6231-6" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
+       id="marker5517-0"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow2Mend">
+      <path
+         inkscape:connector-curvature="0"
+         transform="scale(-0.6,-0.6)"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         id="path5519-0" />
+    </marker>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.49497475"
+     inkscape:cx="1711.6836"
+     inkscape:cy="358.06117"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="true"
+     inkscape:window-width="1280"
+     inkscape:window-height="751"
+     inkscape:window-x="34"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     showguides="true"
+     inkscape:guide-bbox="true"
+     objecttolerance="10000"
+     inkscape:snap-bbox="true"
+     inkscape:snap-nodes="true">
+    <sodipodi:guide
+       position="445.71429,570"
+       orientation="0,1"
+       id="guide8015" />
+    <sodipodi:guide
+       position="1240.4673,517.1981"
+       orientation="-0.0010883327,0.99999941"
+       id="guide8017" />
+    <sodipodi:guide
+       position="252.85715,721.42857"
+       orientation="0,1"
+       id="guide8019" />
+    <sodipodi:guide
+       position="361.42858,675.71428"
+       orientation="0,1"
+       id="guide8021" />
+    <sodipodi:guide
+       position="450.00001,417.14286"
+       orientation="0,1"
+       id="guide8023" />
+    <sodipodi:guide
+       position="344.28572,370"
+       orientation="0,1"
+       id="guide8025" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-308.26772)"
+     style="display:inline">
+    <ellipse
+       style="opacity:0.5;fill:#e4da57;fill-opacity:0.99215686;fill-rule:evenodd;stroke:#000000;stroke-width:2.04523611;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="ellipse4340"
+       cx="590.91443"
+       cy="405.57001"
+       rx="56.123848"
+       ry="37.265717"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/THESIS.traits/figs/flowchart.png" />
+    <ellipse
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-xdpi="78.905212"
+       ry="37.265717"
+       rx="56.123848"
+       cy="485.57001"
+       cx="719.77161"
+       id="ellipse4338"
+       style="opacity:0.5;fill:#e4da57;fill-opacity:0.99215686;fill-rule:evenodd;stroke:#000000;stroke-width:2.04523611;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/THESIS.traits/figs/flowchart.png" />
+    <ellipse
+       style="opacity:0.5;fill:#e4da57;fill-opacity:0.99215686;fill-rule:evenodd;stroke:#000000;stroke-width:2.04523611;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="ellipse4336"
+       cx="994.05731"
+       cy="725.57001"
+       rx="56.123848"
+       ry="37.265717"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/THESIS.traits/figs/flowchart.png" />
+    <ellipse
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-xdpi="78.905212"
+       ry="37.265717"
+       rx="56.123848"
+       cy="959.85571"
+       cx="795.4859"
+       id="ellipse4334"
+       style="opacity:0.5;fill:#e4da57;fill-opacity:0.99215686;fill-rule:evenodd;stroke:#000000;stroke-width:2.04523611;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/THESIS.traits/figs/flowchart.png" />
+    <ellipse
+       style="opacity:0.5;fill:#e4da57;fill-opacity:0.99215686;fill-rule:evenodd;stroke:#000000;stroke-width:2.04523611;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="ellipse4332"
+       cx="668.34308"
+       cy="896.9986"
+       rx="56.123848"
+       ry="37.265717"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/THESIS.traits/figs/flowchart.png" />
+    <ellipse
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-xdpi="78.905212"
+       ry="37.265717"
+       rx="56.123848"
+       cy="825.57001"
+       cx="524.05737"
+       id="ellipse4330"
+       style="opacity:0.5;fill:#e4da57;fill-opacity:0.99215686;fill-rule:evenodd;stroke:#000000;stroke-width:2.04523611;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/THESIS.traits/figs/flowchart.png" />
+    <ellipse
+       style="opacity:0.5;fill:#e4da57;fill-opacity:0.99215686;fill-rule:evenodd;stroke:#000000;stroke-width:2.04523611;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="ellipse4221"
+       cx="58.628845"
+       cy="721.2843"
+       rx="56.123848"
+       ry="37.265717"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/THESIS.traits/figs/flowchart.png" />
+    <rect
+       style="opacity:0.52899996;fill:#57bfde;fill-opacity:0.9921568;fill-rule:evenodd;stroke:#000000;stroke-width:1.59323382;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect4320"
+       width="102.34491"
+       height="48.091423"
+       x="855.70233"
+       y="873.35669"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/THESIS.traits/figs/flowchart.png" />
+    <rect
+       y="740.46252"
+       x="579.89557"
+       height="47.9744"
+       width="206.28975"
+       id="rect4355"
+       style="opacity:0.52899996;fill:#57bfde;fill-opacity:0.9921568;fill-rule:evenodd;stroke:#000000;stroke-width:1.59323382;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/THESIS.traits/figs/flowchart.png" />
+    <rect
+       y="809.61755"
+       x="733.91559"
+       height="48.036934"
+       width="146.22755"
+       id="rect4362"
+       style="opacity:0.52899996;fill:#57bfde;fill-opacity:0.9921568;fill-rule:evenodd;stroke:#000000;stroke-width:1.59323382;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/THESIS.traits/figs/flowchart.png" />
+    <rect
+       y="636.86169"
+       x="104.61826"
+       height="44.429379"
+       width="205.79916"
+       id="rect4184"
+       style="opacity:0.494;fill:#57a746;fill-opacity:0.99215686;fill-rule:evenodd;stroke:#000000;stroke-width:1.6412456;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/THESIS.traits/figs/flowchart.png" />
+    <rect
+       y="636.40277"
+       x="501.46033"
+       height="46.567913"
+       width="209.21985"
+       id="rect4327"
+       style="opacity:0.494;fill:#57a746;fill-opacity:0.99215686;fill-rule:evenodd;stroke:#000000;stroke-width:1.56981504;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/THESIS.traits/figs/flowchart.png" />
+    <rect
+       y="635.98169"
+       x="337.12836"
+       height="46.641048"
+       width="138.16653"
+       id="rect4341"
+       style="opacity:0.494;fill:#57a746;fill-opacity:0.99215686;fill-rule:evenodd;stroke:#000000;stroke-width:1.56989455;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/THESIS.traits/figs/flowchart.png" />
+    <rect
+       y="636.55109"
+       x="743.2619"
+       height="45.13028"
+       width="186.6216"
+       id="rect4348"
+       style="opacity:0.494;fill:#57a746;fill-opacity:0.99215686;fill-rule:evenodd;stroke:#000000;stroke-width:1.61617208;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/THESIS.traits/figs/flowchart.png" />
+    <rect
+       style="opacity:0.37300002;fill:#6069b9;fill-opacity:0.99215686;fill-rule:evenodd;stroke:#000000;stroke-width:1.64747345;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect4138"
+       width="243.38884"
+       height="44.393375"
+       x="223.22418"
+       y="332.50766"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/THESIS.traits/figs/flowchart.png" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:24.38939476px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.98720825;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       x="228.20949"
+       y="381.28979"
+       id="text4180"
+       sodipodi:linespacing="125%"
+       transform="scale(1.0487034,0.95355846)"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/THESIS.traits/figs/flowchart.png"><tspan
+         sodipodi:role="line"
+         id="tspan4182"
+         x="228.20949"
+         y="381.28979">Litter Fresh Mass</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:24.38939476px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="108.27323"
+       y="701.58765"
+       id="text4148"
+       sodipodi:linespacing="125%"
+       transform="scale(1.0487034,0.95355846)"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/THESIS.traits/figs/flowchart.png"><tspan
+         sodipodi:role="line"
+         id="tspan4150"
+         x="108.27323"
+         y="701.58765">Litter Nitrogen</tspan></text>
+    <rect
+       style="opacity:0.61379999;fill:#57a7b9;fill-opacity:0.99215686;fill-rule:evenodd;stroke:#000000;stroke-width:1.38035667;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect4186"
+       width="207.66356"
+       height="47.621983"
+       x="93.468346"
+       y="483.34442"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/THESIS.traits/figs/flowchart.png" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:24.38939476px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#0b0f10;fill-opacity:0.99215686;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="99.782257"
+       y="542.17169"
+       id="text4140"
+       sodipodi:linespacing="125%"
+       transform="scale(1.0487034,0.95355846)"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/THESIS.traits/figs/flowchart.png"><tspan
+         sodipodi:role="line"
+         id="tspan4142"
+         x="99.782257"
+         y="542.17169">Water Content</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="-180"
+       y="612.36218"
+       id="text4196"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4198"
+         x="-180"
+         y="612.36218" /></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:24.38939476px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="685.76678"
+       y="500.33487"
+       id="text4188"
+       sodipodi:linespacing="125%"
+       transform="scale(1.0487034,0.95355842)"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/THESIS.traits/figs/flowchart.png"><tspan
+         sodipodi:role="line"
+         id="tspan4190"
+         x="685.76678"
+         y="500.33487"
+         style="text-align:center;text-anchor:middle">SLA</tspan><tspan
+         sodipodi:role="line"
+         x="685.76678"
+         y="530.82159"
+         id="tspan4313"
+         style="text-align:center;text-anchor:middle">(m<tspan
+   style="font-size:64.99999762%;baseline-shift:super"
+   id="tspan4315">2</tspan>/g)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:24.38939476px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="563.57513"
+       y="417.0162"
+       id="text4192"
+       sodipodi:linespacing="125%"
+       transform="scale(1.0487034,0.95355846)"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/THESIS.traits/figs/flowchart.png"><tspan
+         sodipodi:role="line"
+         id="tspan4194"
+         x="563.57513"
+         y="417.0162"
+         style="text-align:center;text-anchor:middle">LDMC</tspan><tspan
+         sodipodi:role="line"
+         x="563.57513"
+         y="447.50296"
+         id="tspan4317"
+         style="text-align:center;text-anchor:middle">(mg/g)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:24.38939476px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="947.76453"
+       y="751.33057"
+       id="text4213"
+       sodipodi:linespacing="125%"
+       transform="scale(1.0487034,0.95355846)"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/THESIS.traits/figs/flowchart.png"><tspan
+         sodipodi:role="line"
+         id="tspan4215"
+         x="947.76453"
+         y="751.33057"
+         style="text-align:center;text-anchor:middle">LCC</tspan><tspan
+         sodipodi:role="line"
+         x="947.76453"
+         y="781.81732"
+         id="tspan4311"
+         style="text-align:center;text-anchor:middle">(wt%)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:24.38939476px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="55.940762"
+       y="747.68884"
+       id="text4217"
+       sodipodi:linespacing="125%"
+       transform="scale(1.0487034,0.95355846)"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/THESIS.traits/figs/flowchart.png"><tspan
+         sodipodi:role="line"
+         id="tspan4219"
+         x="55.940762"
+         y="747.68884"
+         style="text-align:center;text-anchor:middle">LNC</tspan><tspan
+         sodipodi:role="line"
+         x="55.940762"
+         y="778.1756"
+         id="tspan4319"
+         style="text-align:center;text-anchor:middle">(wt%)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:24.38939476px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="499.64523"
+       y="856.44733"
+       id="text4242"
+       sodipodi:linespacing="125%"
+       transform="scale(1.0487034,0.95355845)"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/THESIS.traits/figs/flowchart.png"><tspan
+         sodipodi:role="line"
+         id="tspan4244"
+         x="499.64523"
+         y="856.44733"
+         style="text-align:center;text-anchor:middle">HC</tspan><tspan
+         sodipodi:role="line"
+         x="499.64523"
+         y="886.93408"
+         id="tspan4305"
+         style="text-align:center;text-anchor:middle">(wt%)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:24.38939476px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="638.60437"
+       y="931.76508"
+       id="text4246"
+       sodipodi:linespacing="125%"
+       transform="scale(1.0487034,0.95355846)"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/THESIS.traits/figs/flowchart.png"><tspan
+         sodipodi:role="line"
+         id="tspan4248"
+         x="638.60437"
+         y="931.76508"
+         style="text-align:center;text-anchor:middle">CL</tspan><tspan
+         sodipodi:role="line"
+         x="638.60437"
+         y="962.25183"
+         id="tspan4307"
+         style="text-align:center;text-anchor:middle">(wt%)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:24.38939476px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="758.99976"
+       y="998.26056"
+       id="text4250"
+       sodipodi:linespacing="125%"
+       transform="scale(1.0487034,0.95355845)"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/THESIS.traits/figs/flowchart.png"><tspan
+         sodipodi:role="line"
+         id="tspan4252"
+         x="758.99976"
+         y="998.26056"
+         style="text-align:center;text-anchor:middle">LG</tspan><tspan
+         sodipodi:role="line"
+         x="758.99976"
+         y="1028.7473"
+         id="tspan4309"
+         style="text-align:center;text-anchor:middle">(wt%)</tspan></text>
+    <rect
+       y="483.03494"
+       x="410.72916"
+       height="48.010361"
+       width="170.48209"
+       id="rect4313"
+       style="opacity:0.61379999;fill:#57a7b9;fill-opacity:0.99215686;fill-rule:evenodd;stroke:#000000;stroke-width:1.59323382;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/THESIS.traits/figs/flowchart.png" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:24.38939476px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#101414;fill-opacity:0.99215686;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="408.22726"
+       y="539.68616"
+       id="text4144"
+       sodipodi:linespacing="125%"
+       transform="scale(1.0487034,0.95355842)"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/THESIS.traits/figs/flowchart.png"><tspan
+         sodipodi:role="line"
+         id="tspan4146"
+         x="408.22726"
+         y="539.68616">Dry Weight</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:24.38939476px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="830.52563"
+       y="951.11481"
+       id="text4164"
+       sodipodi:linespacing="125%"
+       transform="scale(1.0487034,0.95355842)"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/THESIS.traits/figs/flowchart.png"><tspan
+         sodipodi:role="line"
+         id="tspan4166"
+         x="830.52563"
+         y="951.11481">Lignin</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:24.38939476px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="489.34467"
+       y="700.26855"
+       id="text4156"
+       sodipodi:linespacing="125%"
+       transform="scale(1.0487034,0.95355842)"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/THESIS.traits/figs/flowchart.png"><tspan
+         sodipodi:role="line"
+         id="tspan4158"
+         x="489.34467"
+         y="700.26855">Other Minerals</tspan></text>
+    <rect
+       y="331.7052"
+       x="652.87323"
+       height="45.703094"
+       width="188.62299"
+       id="rect4334"
+       style="opacity:0.37300002;fill:#6069b9;fill-opacity:0.99215686;fill-rule:evenodd;stroke:#000000;stroke-width:1.6348542;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/THESIS.traits/figs/flowchart.png" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:24.38939476px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="636.90564"
+       y="380.72278"
+       id="text4176"
+       sodipodi:linespacing="125%"
+       transform="scale(1.0487034,0.95355846)"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/THESIS.traits/figs/flowchart.png"><tspan
+         sodipodi:role="line"
+         id="tspan4178"
+         x="636.90564"
+         y="380.72278">Litter Shape</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:24.38939476px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="335.93829"
+       y="701.28699"
+       id="text4152"
+       sodipodi:linespacing="125%"
+       transform="scale(1.0487034,0.95355845)"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/THESIS.traits/figs/flowchart.png"><tspan
+         sodipodi:role="line"
+         id="tspan4154"
+         x="335.93829"
+         y="701.28699">Residual</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:24.38939476px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="721.0968"
+       y="701.22003"
+       id="text4160"
+       sodipodi:linespacing="125%"
+       transform="scale(1.0487034,0.95355842)"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/THESIS.traits/figs/flowchart.png"><tspan
+         sodipodi:role="line"
+         id="tspan4162"
+         x="721.0968"
+         y="701.22003">Litter Carbon</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:24.38939476px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="558.1134"
+       y="810.80945"
+       id="text4172"
+       sodipodi:linespacing="125%"
+       transform="scale(1.0487034,0.95355846)"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/THESIS.traits/figs/flowchart.png"><tspan
+         sodipodi:role="line"
+         id="tspan4174"
+         x="558.1134"
+         y="810.80945">Hemicelluloses</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:24.38939476px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="715.95715"
+       y="882.46448"
+       id="text4168"
+       sodipodi:linespacing="125%"
+       transform="scale(1.0487034,0.95355842)"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/THESIS.traits/figs/flowchart.png"><tspan
+         sodipodi:role="line"
+         id="tspan4170"
+         x="715.95715"
+         y="882.46448">Cellulose</tspan></text>
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 348.85714,383.79077 0,40"
+       id="path4862"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/THESIS.traits/figs/flowchart.png" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 198.91806,423.68924 300,0"
+       id="path4864"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/THESIS.traits/figs/flowchart.png" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path5070"
+       d="m 199.42672,422.61529 0,40"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker5090)"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/THESIS.traits/figs/flowchart.png" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker5143)"
+       d="m 497.92172,422.89086 0,40"
+       id="path5141"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/THESIS.traits/figs/flowchart.png" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path5509"
+       d="m 497.20743,540.36441 0,40"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/THESIS.traits/figs/flowchart.png" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path5511"
+       d="m 216.09065,580.92958 617.1879,0"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.22202659;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/THESIS.traits/figs/flowchart.png" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker5815)"
+       d="m 216.59931,581.18893 0,40"
+       id="path5513"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/THESIS.traits/figs/flowchart.png" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path5515"
+       d="m 832.28221,580.47465 0,40"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker5517)"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/THESIS.traits/figs/flowchart.png" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path5867"
+       d="m 601.46743,581.20924 0,40"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker5869)"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/THESIS.traits/figs/flowchart.png" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path6227"
+       d="m 403.47754,581.20924 0,40"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker6229)"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/THESIS.traits/figs/flowchart.png" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker6733)"
+       d="m 764.32457,691.20924 0,40"
+       id="path6731"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/THESIS.traits/figs/flowchart.png" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path6887"
+       d="m 832.896,689.78068 0,101.09593"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker6889)"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/THESIS.traits/figs/flowchart.png" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker7279)"
+       d="m 905.75314,694.06639 0,163.51476"
+       id="path7277"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/THESIS.traits/figs/flowchart.png" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:8, 8;stroke-dashoffset:0;stroke-opacity:1"
+       d="M 92.29563,659.05944 57.333836,678.52211"
+       id="path7813"
+       inkscape:connector-curvature="0"
+       inkscape:transform-center-x="0.84175766"
+       inkscape:transform-center-y="9.2593601"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/THESIS.traits/figs/flowchart.png" />
+    <path
+       inkscape:transform-center-y="9.2593601"
+       inkscape:transform-center-x="0.84175766"
+       inkscape:connector-curvature="0"
+       id="path7815"
+       d="M 567.7242,764.77373 532.76241,784.2364"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:8, 8;stroke-dashoffset:0;stroke-opacity:1"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/THESIS.traits/figs/flowchart.png" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:8, 8;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 720.58134,831.91659 -34.96179,19.46267"
+       id="path7817"
+       inkscape:connector-curvature="0"
+       inkscape:transform-center-x="0.84175766"
+       inkscape:transform-center-y="9.2593601"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/THESIS.traits/figs/flowchart.png" />
+    <path
+       inkscape:transform-center-y="9.2593601"
+       inkscape:transform-center-x="0.84175766"
+       inkscape:connector-curvature="0"
+       id="path7819"
+       d="m 843.43848,896.2023 -34.96179,19.46267"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:8, 8;stroke-dashoffset:0;stroke-opacity:1"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/THESIS.traits/figs/flowchart.png" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:8, 8;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 934.19098,657.63087 34.96179,19.46267"
+       id="path7823"
+       inkscape:connector-curvature="0"
+       inkscape:transform-center-x="-0.84175766"
+       inkscape:transform-center-y="9.2593601"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/THESIS.traits/figs/flowchart.png" />
+    <path
+       inkscape:transform-center-y="-0.23608986"
+       inkscape:transform-center-x="9.2945423"
+       inkscape:connector-curvature="0"
+       id="path7825"
+       d="m 548.93994,441.63029 -23.38015,32.47293"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:8, 8;stroke-dashoffset:0;stroke-opacity:1"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/THESIS.traits/figs/flowchart.png" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:8, 8;stroke-dashoffset:0;stroke-opacity:1"
+       d="M 526.43404,387.00794 472.31435,357.8705"
+       id="path7827"
+       inkscape:connector-curvature="0"
+       inkscape:transform-center-x="1.4930694"
+       inkscape:transform-center-y="-14.203535"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/THESIS.traits/figs/flowchart.png" />
+    <path
+       inkscape:transform-center-y="-1.6110816"
+       inkscape:transform-center-x="-37.001059"
+       inkscape:connector-curvature="0"
+       id="path7829"
+       d="m 709.75291,435.8402 14.3668,-46.6857"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:8, 8;stroke-dashoffset:0;stroke-opacity:1"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/THESIS.traits/figs/flowchart.png" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:8, 8;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 589.41252,514.98239 62.6967,-20.1003"
+       id="path7831"
+       inkscape:connector-curvature="0"
+       inkscape:transform-center-x="-30.302645"
+       inkscape:transform-center-y="39.671873"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/THESIS.traits/figs/flowchart.png" />
+    <rect
+       style="opacity:0.48600003;fill:#000000;fill-opacity:0.39215686;fill-rule:evenodd;stroke:#000000;stroke-width:1.59323382;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect4320-7"
+       width="102.34491"
+       height="48.091423"
+       x="2062.9841"
+       y="946.03534"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/THESIS/biomass_traits/figs/trait_flowchart.png" />
+    <rect
+       y="813.16748"
+       x="1787.2036"
+       height="47.921791"
+       width="220.37927"
+       id="rect4355-0"
+       style="opacity:0.48600003;fill:#000000;fill-opacity:0.39215686;fill-rule:evenodd;stroke:#000000;stroke-width:1.64584076;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/THESIS/biomass_traits/figs/trait_flowchart.png" />
+    <rect
+       y="882.2962"
+       x="1941.1974"
+       height="48.036934"
+       width="146.22755"
+       id="rect4362-2"
+       style="opacity:0.48600003;fill:#000000;fill-opacity:0.39215686;fill-rule:evenodd;stroke:#000000;stroke-width:1.59323382;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/THESIS/biomass_traits/figs/trait_flowchart.png" />
+    <rect
+       y="709.54822"
+       x="1336.0297"
+       height="44.4137"
+       width="209.8241"
+       id="rect4184-8"
+       style="opacity:0.48600003;fill:#000000;fill-opacity:0.39215686;fill-rule:evenodd;stroke:#000000;stroke-width:1.65692484;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/THESIS/biomass_traits/figs/trait_flowchart.png" />
+    <rect
+       y="709.08881"
+       x="1718.7494"
+       height="46.553135"
+       width="213.24568"
+       id="rect4327-7"
+       style="opacity:0.48600003;fill:#000000;fill-opacity:0.39215686;fill-rule:evenodd;stroke:#000000;stroke-width:1.58459485;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/THESIS/biomass_traits/figs/trait_flowchart.png" />
+    <rect
+       y="708.66034"
+       x="1564.4102"
+       height="46.641048"
+       width="138.16653"
+       id="rect4341-0"
+       style="opacity:0.48600003;fill:#000000;fill-opacity:0.39215686;fill-rule:evenodd;stroke:#000000;stroke-width:1.56989455;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/THESIS/biomass_traits/figs/trait_flowchart.png" />
+    <rect
+       y="709.23401"
+       x="1948.548"
+       height="45.121746"
+       width="188.63336"
+       id="rect4348-7"
+       style="opacity:0.48600003;fill:#000000;fill-opacity:0.39215686;fill-rule:evenodd;stroke:#000000;stroke-width:1.62470627;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/THESIS/biomass_traits/figs/trait_flowchart.png" />
+    <rect
+       style="opacity:0.48600003;fill:#000000;fill-opacity:0.39215686;fill-rule:evenodd;stroke:#000000;stroke-width:1.66079819;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect4138-9"
+       width="247.41612"
+       height="44.380051"
+       x="1448.4314"
+       y="405.19305"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/THESIS/biomass_traits/figs/trait_flowchart.png" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:24.38939476px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.98720825;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       x="1394.7576"
+       y="457.50821"
+       id="text4180-2"
+       sodipodi:linespacing="125%"
+       transform="scale(1.0487034,0.95355846)"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/THESIS/biomass_traits/figs/trait_flowchart.png"><tspan
+         sodipodi:role="line"
+         id="tspan4182-6"
+         x="1394.7576"
+         y="457.50821">Litter fresh mass</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:24.38939476px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="1288.0938"
+       y="777.80603"
+       id="text4148-6"
+       sodipodi:linespacing="125%"
+       transform="scale(1.0487034,0.95355846)"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/THESIS/biomass_traits/figs/trait_flowchart.png"><tspan
+         sodipodi:role="line"
+         id="tspan4150-5"
+         x="1288.0938"
+         y="777.80603">Litter nitrogen</tspan></text>
+    <rect
+       style="opacity:0.48600003;fill:#000000;fill-opacity:0.39215686;fill-rule:evenodd;stroke:#000000;stroke-width:1.60529113;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect4186-4"
+       width="282.18988"
+       height="47.397045"
+       x="1282.9437"
+       y="556.13562"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/THESIS/biomass_traits/figs/trait_flowchart.png" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:24.38939476px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#0b0f10;fill-opacity:0.99215686;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="1235.739"
+       y="618.39008"
+       id="text4140-3"
+       sodipodi:linespacing="125%"
+       transform="scale(1.0487034,0.95355846)"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/THESIS/biomass_traits/figs/trait_flowchart.png"><tspan
+         sodipodi:role="line"
+         id="tspan4142-2"
+         x="1235.739"
+         y="618.39008">Litter water content</tspan></text>
+    <rect
+       y="555.85718"
+       x="1601.464"
+       height="47.72327"
+       width="238.88538"
+       id="rect4313-2"
+       style="opacity:0.48600003;fill:#000000;fill-opacity:0.39215686;fill-rule:evenodd;stroke:#000000;stroke-width:1.88032329;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/THESIS/biomass_traits/figs/trait_flowchart.png" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:24.38939476px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#101414;fill-opacity:0.99215686;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="1539.7113"
+       y="615.88324"
+       id="text4144-4"
+       sodipodi:linespacing="125%"
+       transform="scale(1.0487034,0.95355846)"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/THESIS/biomass_traits/figs/trait_flowchart.png"><tspan
+         sodipodi:role="line"
+         id="tspan4146-4"
+         x="1539.7113"
+         y="615.88324">Litter dry weight</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:24.38939476px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="1981.7394"
+       y="1027.3333"
+       id="text4164-6"
+       sodipodi:linespacing="125%"
+       transform="scale(1.0487034,0.95355846)"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/THESIS/biomass_traits/figs/trait_flowchart.png"><tspan
+         sodipodi:role="line"
+         id="tspan4166-5"
+         x="1981.7394"
+         y="1027.3333">Lignin</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:24.38939476px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="1650.0939"
+       y="776.48694"
+       id="text4156-1"
+       sodipodi:linespacing="125%"
+       transform="scale(1.0487034,0.95355846)"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/THESIS/biomass_traits/figs/trait_flowchart.png"><tspan
+         sodipodi:role="line"
+         id="tspan4158-8"
+         x="1650.0939"
+         y="776.48694">Other minerals</tspan></text>
+    <rect
+       y="404.37851"
+       x="1924.2308"
+       height="43.693611"
+       width="194.69472"
+       id="rect4334-6"
+       style="opacity:0.48600003;fill:#000000;fill-opacity:0.39215686;fill-rule:evenodd;stroke:#000000;stroke-width:1.62403345;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/THESIS/biomass_traits/figs/trait_flowchart.png" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:24.38939476px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="1853.0773"
+       y="456.94119"
+       id="text4176-9"
+       sodipodi:linespacing="125%"
+       transform="scale(1.0487034,0.95355846)"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/THESIS/biomass_traits/figs/trait_flowchart.png"><tspan
+         sodipodi:role="line"
+         id="tspan4178-2"
+         x="1853.0773"
+         y="456.94119">Area of litter</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:24.38939476px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="1506.2231"
+       y="775.40796"
+       id="text4152-0"
+       sodipodi:linespacing="125%"
+       transform="scale(1.0487034,0.95355846)"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/THESIS/biomass_traits/figs/trait_flowchart.png"><tspan
+         sodipodi:role="line"
+         id="tspan4154-9"
+         x="1506.2231"
+         y="775.40796">Residual</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:24.38939476px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="1870.4034"
+       y="777.43842"
+       id="text4160-4"
+       sodipodi:linespacing="125%"
+       transform="scale(1.0487034,0.95355846)"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/THESIS/biomass_traits/figs/trait_flowchart.png"><tspan
+         sodipodi:role="line"
+         id="tspan4162-7"
+         x="1870.4034"
+         y="777.43842">Litter carbon</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:24.38939476px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="1718.8627"
+       y="887.02783"
+       id="text4172-7"
+       sodipodi:linespacing="125%"
+       transform="scale(1.0487034,0.95355846)"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/THESIS/biomass_traits/figs/trait_flowchart.png"><tspan
+         sodipodi:role="line"
+         id="tspan4174-7"
+         x="1718.8627"
+         y="887.02783">Hemicelluloses</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:24.38939476px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="1867.1709"
+       y="958.68292"
+       id="text4168-6"
+       sodipodi:linespacing="125%"
+       transform="scale(1.0487034,0.95355846)"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/THESIS/biomass_traits/figs/trait_flowchart.png"><tspan
+         sodipodi:role="line"
+         id="tspan4170-1"
+         x="1867.1709"
+         y="958.68292">Cellulose</tspan></text>
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 1574.1388,456.4695 0,40"
+       id="path4862-0"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/THESIS/biomass_traits/figs/trait_flowchart.png" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 1424.1997,496.36797 300,0"
+       id="path4864-0"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/THESIS/biomass_traits/figs/trait_flowchart.png" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path5070-5"
+       d="m 1424.7084,495.29402 0,40"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/THESIS/biomass_traits/figs/trait_flowchart.png" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 1723.2034,495.56959 0,40"
+       id="path5141-4"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/THESIS/biomass_traits/figs/trait_flowchart.png" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path5509-8"
+       d="m 1722.4891,613.04314 0,40"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/THESIS/biomass_traits/figs/trait_flowchart.png" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path5511-6"
+       d="m 1441.3723,653.60831 601.0255,0"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.19273925;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/THESIS/biomass_traits/figs/trait_flowchart.png" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 1441.881,653.86766 0,40"
+       id="path5513-4"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/THESIS/biomass_traits/figs/trait_flowchart.png" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path5515-4"
+       d="m 2043.5639,653.15338 0,40"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/THESIS/biomass_traits/figs/trait_flowchart.png" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path5867-9"
+       d="m 1826.7491,653.88797 0,40"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/THESIS/biomass_traits/figs/trait_flowchart.png" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path6227-3"
+       d="m 1634.7592,653.88797 0,40"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/THESIS/biomass_traits/figs/trait_flowchart.png" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 1971.6063,763.88797 0,40"
+       id="path6731-9"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/THESIS/biomass_traits/figs/trait_flowchart.png" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path6887-3"
+       d="m 2040.1777,762.45941 0,101.09593"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/THESIS/biomass_traits/figs/trait_flowchart.png" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 2113.0348,766.74512 0,163.51476"
+       id="path7277-6"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/THESIS/biomass_traits/figs/trait_flowchart.png" />
+    <ellipse
+       style="opacity:0.5;fill:#57a746;fill-opacity:0.99215686;fill-rule:evenodd;stroke:#000000;stroke-width:2.04523611;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="ellipse4340-5"
+       cx="1836.3788"
+       cy="473.31943"
+       rx="56.123848"
+       ry="37.265717"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/THESIS/biomass_traits/figs/trait_flowchart.png" />
+    <ellipse
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-xdpi="78.905212"
+       ry="37.265717"
+       rx="56.123848"
+       cy="553.31946"
+       cx="1985.236"
+       id="ellipse4338-5"
+       style="opacity:0.5;fill:#57a746;fill-opacity:0.99215686;fill-rule:evenodd;stroke:#000000;stroke-width:2.04523611;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/THESIS/biomass_traits/figs/trait_flowchart.png" />
+    <ellipse
+       style="opacity:0.5;fill:#57a746;fill-opacity:0.99215686;fill-rule:evenodd;stroke:#000000;stroke-width:2.04523611;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="ellipse4336-3"
+       cx="2221.522"
+       cy="793.31946"
+       rx="56.123848"
+       ry="37.265717"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/THESIS/biomass_traits/figs/trait_flowchart.png" />
+    <ellipse
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-xdpi="78.905212"
+       ry="37.265717"
+       rx="56.123848"
+       cy="1027.6051"
+       cx="2004.9503"
+       id="ellipse4334-6"
+       style="opacity:0.5;fill:#57bfde;fill-opacity:0.99215686;fill-rule:evenodd;stroke:#000000;stroke-width:2.04523611;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/THESIS/biomass_traits/figs/trait_flowchart.png" />
+    <ellipse
+       style="opacity:0.5;fill:#57bfde;fill-opacity:0.99215686;fill-rule:evenodd;stroke:#000000;stroke-width:2.04523611;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="ellipse4332-0"
+       cx="1877.8075"
+       cy="964.74799"
+       rx="56.123848"
+       ry="37.265717"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/THESIS/biomass_traits/figs/trait_flowchart.png" />
+    <ellipse
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-xdpi="78.905212"
+       ry="37.265717"
+       rx="56.123848"
+       cy="893.31946"
+       cx="1733.5219"
+       id="ellipse4330-5"
+       style="opacity:0.5;fill:#57bfde;fill-opacity:0.99215686;fill-rule:evenodd;stroke:#000000;stroke-width:2.04523611;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/THESIS/biomass_traits/figs/trait_flowchart.png" />
+    <ellipse
+       style="opacity:0.5;fill:#57a746;fill-opacity:0.99215686;fill-rule:evenodd;stroke:#000000;stroke-width:2.04523611;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="ellipse4221-3"
+       cx="1268.0933"
+       cy="795.03375"
+       rx="56.123848"
+       ry="37.265717"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/THESIS/biomass_traits/figs/trait_flowchart.png" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:24.38939476px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="1892.4611"
+       y="588.16315"
+       id="text4188-6"
+       sodipodi:linespacing="125%"
+       transform="scale(1.0487034,0.95355846)"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/THESIS/biomass_traits/figs/trait_flowchart.png"><tspan
+         sodipodi:role="line"
+         x="1892.4611"
+         y="588.16315"
+         id="tspan4313-4"
+         style="text-align:center;text-anchor:middle">SLA</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:24.38939476px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="1751.1984"
+       y="502.74716"
+       id="text4192-8"
+       sodipodi:linespacing="125%"
+       transform="scale(1.0487034,0.95355846)"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/THESIS/biomass_traits/figs/trait_flowchart.png"><tspan
+         sodipodi:role="line"
+         x="1751.1984"
+         y="502.74716"
+         id="tspan4317-1"
+         style="text-align:center;text-anchor:middle">DMC</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:24.38939476px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="2118.2239"
+       y="839.15887"
+       id="text4213-0"
+       sodipodi:linespacing="125%"
+       transform="scale(1.0487034,0.95355846)"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/THESIS/biomass_traits/figs/trait_flowchart.png"><tspan
+         sodipodi:role="line"
+         x="2118.2239"
+         y="839.15887"
+         id="tspan4311-4"
+         style="text-align:center;text-anchor:middle">C</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:24.38939476px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="1209.2361"
+       y="841.80939"
+       id="text4217-1"
+       sodipodi:linespacing="125%"
+       transform="scale(1.0487034,0.95355846)"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/THESIS/biomass_traits/figs/trait_flowchart.png"><tspan
+         sodipodi:role="line"
+         x="1209.2361"
+         y="841.80939"
+         id="tspan4319-0"
+         style="text-align:center;text-anchor:middle">N</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:24.38939476px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="1652.9406"
+       y="946.37305"
+       id="text4242-3"
+       sodipodi:linespacing="125%"
+       transform="scale(1.0487034,0.95355846)"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/THESIS/biomass_traits/figs/trait_flowchart.png"><tspan
+         sodipodi:role="line"
+         x="1652.9406"
+         y="946.37305"
+         id="tspan4305-5"
+         style="text-align:center;text-anchor:middle">HC</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:24.38939476px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="1791.8998"
+       y="1017.4959"
+       id="text4246-8"
+       sodipodi:linespacing="125%"
+       transform="scale(1.0487034,0.95355846)"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/THESIS/biomass_traits/figs/trait_flowchart.png"><tspan
+         sodipodi:role="line"
+         x="1791.8998"
+         y="1017.4959"
+         id="tspan4307-6"
+         style="text-align:center;text-anchor:middle">CL</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:24.38939476px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="1912.295"
+       y="1086.0889"
+       id="text4250-9"
+       sodipodi:linespacing="125%"
+       transform="scale(1.0487034,0.95355846)"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/THESIS/biomass_traits/figs/trait_flowchart.png"><tspan
+         sodipodi:role="line"
+         x="1912.295"
+         y="1086.0889"
+         id="tspan4309-6"
+         style="text-align:center;text-anchor:middle">LG</tspan></text>
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:8, 8;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 1319.7601,726.80887 -34.9618,19.46267"
+       id="path7813-1"
+       inkscape:connector-curvature="0"
+       inkscape:transform-center-x="0.84175766"
+       inkscape:transform-center-y="9.2593601"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/THESIS/biomass_traits/figs/trait_flowchart.png" />
+    <path
+       inkscape:transform-center-y="9.2593601"
+       inkscape:transform-center-x="0.84175766"
+       inkscape:connector-curvature="0"
+       id="path7815-1"
+       d="m 1777.1887,832.52316 -34.9618,19.46267"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:8, 8;stroke-dashoffset:0;stroke-opacity:1"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/THESIS/biomass_traits/figs/trait_flowchart.png" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:8, 8;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 1930.0458,899.66602 -34.9618,19.4627"
+       id="path7817-0"
+       inkscape:connector-curvature="0"
+       inkscape:transform-center-x="0.84175766"
+       inkscape:transform-center-y="9.2593601"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/THESIS/biomass_traits/figs/trait_flowchart.png" />
+    <path
+       inkscape:transform-center-y="9.2593601"
+       inkscape:transform-center-x="0.84175766"
+       inkscape:connector-curvature="0"
+       id="path7819-3"
+       d="m 2052.9029,963.95172 -34.9618,19.4627"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:8, 8;stroke-dashoffset:0;stroke-opacity:1"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/THESIS/biomass_traits/figs/trait_flowchart.png" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:8, 8;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 2161.6554,725.3803 34.9618,19.46267"
+       id="path7823-4"
+       inkscape:connector-curvature="0"
+       inkscape:transform-center-x="-0.84175766"
+       inkscape:transform-center-y="9.2593601"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/THESIS/biomass_traits/figs/trait_flowchart.png" />
+    <path
+       inkscape:transform-center-y="-0.23608986"
+       inkscape:transform-center-x="9.2945423"
+       inkscape:connector-curvature="0"
+       id="path7825-9"
+       d="m 1776.4044,509.37972 -23.3802,32.47293"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:8, 8;stroke-dashoffset:0;stroke-opacity:1"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/THESIS/biomass_traits/figs/trait_flowchart.png" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:8, 8;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 1757.8985,454.75737 -54.1197,-29.13744"
+       id="path7827-6"
+       inkscape:connector-curvature="0"
+       inkscape:transform-center-x="1.4930694"
+       inkscape:transform-center-y="-14.203535"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/THESIS/biomass_traits/figs/trait_flowchart.png" />
+    <path
+       inkscape:transform-center-y="-1.6110816"
+       inkscape:transform-center-x="-37.001059"
+       inkscape:connector-curvature="0"
+       id="path7829-4"
+       d="m 1975.2174,503.58963 14.3668,-46.6857"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:8, 8;stroke-dashoffset:0;stroke-opacity:1"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/THESIS/biomass_traits/figs/trait_flowchart.png" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:8, 8;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 1854.877,582.73182 62.6967,-20.1003"
+       id="path7831-7"
+       inkscape:connector-curvature="0"
+       inkscape:transform-center-x="-30.302645"
+       inkscape:transform-center-y="39.671873"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/THESIS/biomass_traits/figs/trait_flowchart.png" />
+    <rect
+       style="display:inline;opacity:0.48600003;fill:#000000;fill-opacity:0.39215686;fill-rule:evenodd;stroke:#000000;stroke-width:1.59323382;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect4320-7-3"
+       width="102.34491"
+       height="48.091423"
+       x="1669.5779"
+       y="1970.7744"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/Conferences/Griffith_talk/trait_flowchart_minimal.png" />
+    <rect
+       y="1837.8802"
+       x="1393.7711"
+       height="47.9744"
+       width="206.28975"
+       id="rect4355-0-2"
+       style="display:inline;opacity:0.48600003;fill:#000000;fill-opacity:0.39215686;fill-rule:evenodd;stroke:#000000;stroke-width:1.59323382;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/Conferences/Griffith_talk/trait_flowchart_minimal.png" />
+    <rect
+       y="1907.0353"
+       x="1547.7911"
+       height="48.036934"
+       width="146.22755"
+       id="rect4362-2-1"
+       style="display:inline;opacity:0.48600003;fill:#000000;fill-opacity:0.39215686;fill-rule:evenodd;stroke:#000000;stroke-width:1.59323382;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/Conferences/Griffith_talk/trait_flowchart_minimal.png" />
+    <rect
+       y="1734.2554"
+       x="930.59155"
+       height="44.47739"
+       width="193.72534"
+       id="rect4184-8-3"
+       style="display:inline;opacity:0.48600003;fill:#000000;fill-opacity:0.39215686;fill-rule:evenodd;stroke:#000000;stroke-width:1.59323382;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/Conferences/Griffith_talk/trait_flowchart_minimal.png" />
+    <rect
+       y="1733.8204"
+       x="1315.3358"
+       height="46.567913"
+       width="209.21985"
+       id="rect4327-7-1"
+       style="display:inline;opacity:0.48600003;fill:#000000;fill-opacity:0.39215686;fill-rule:evenodd;stroke:#000000;stroke-width:1.56981504;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/Conferences/Griffith_talk/trait_flowchart_minimal.png" />
+    <rect
+       y="1733.3994"
+       x="1151.0039"
+       height="46.641048"
+       width="138.16653"
+       id="rect4341-0-9"
+       style="display:inline;opacity:0.48600003;fill:#000000;fill-opacity:0.39215686;fill-rule:evenodd;stroke:#000000;stroke-width:1.56989455;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/Conferences/Griffith_talk/trait_flowchart_minimal.png" />
+    <rect
+       y="1733.9337"
+       x="1557.1024"
+       height="45.200333"
+       width="170.52921"
+       id="rect4348-7-5"
+       style="display:inline;opacity:0.48600003;fill:#000000;fill-opacity:0.39215686;fill-rule:evenodd;stroke:#000000;stroke-width:1.54611874;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/Conferences/Griffith_talk/trait_flowchart_minimal.png" />
+    <rect
+       style="display:inline;opacity:0.48600003;fill:#000000;fill-opacity:0.39215686;fill-rule:evenodd;stroke:#000000;stroke-width:1.59300005;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect4138-9-8"
+       width="227.28087"
+       height="44.447849"
+       x="1049.1943"
+       y="1429.8982"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/Conferences/Griffith_talk/trait_flowchart_minimal.png" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:24.38939476px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.98720825;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       x="1011.9932"
+       y="1532.1555"
+       id="text4180-2-9"
+       sodipodi:linespacing="125%"
+       transform="scale(1.0487034,0.95355846)"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/Conferences/Griffith_talk/trait_flowchart_minimal.png"><tspan
+         sodipodi:role="line"
+         id="tspan4182-6-0"
+         x="1011.9932"
+         y="1532.1555">Leaf Fresh Mass</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:24.38939476px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="901.51514"
+       y="1852.4534"
+       id="text4148-6-6"
+       sodipodi:linespacing="125%"
+       transform="scale(1.0487034,0.95355846)"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/Conferences/Griffith_talk/trait_flowchart_minimal.png"><tspan
+         sodipodi:role="line"
+         id="tspan4150-5-4"
+         x="901.51514"
+         y="1852.4534">Leaf Nitrogen</tspan></text>
+    <rect
+       style="display:inline;opacity:0.48600003;fill:#000000;fill-opacity:0.39215686;fill-rule:evenodd;stroke:#000000;stroke-width:1.57685232;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect4186-4-8"
+       width="272.11679"
+       height="47.425484"
+       x="883.52332"
+       y="1580.8605"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/Conferences/Griffith_talk/trait_flowchart_minimal.png" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:24.38939476px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;display:inline;fill:#0b0f10;fill-opacity:0.99215686;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="854.88171"
+       y="1695.1348"
+       id="text4140-3-4"
+       sodipodi:linespacing="125%"
+       transform="scale(1.0487034,0.95355846)"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/Conferences/Griffith_talk/trait_flowchart_minimal.png"><tspan
+         sodipodi:role="line"
+         id="tspan4142-2-1"
+         x="854.88171"
+         y="1695.1348">Leaf Water Content</tspan></text>
+    <rect
+       y="1580.4526"
+       x="1224.6046"
+       height="48.010361"
+       width="170.48209"
+       id="rect4313-2-0"
+       style="display:inline;opacity:0.48600003;fill:#000000;fill-opacity:0.39215686;fill-rule:evenodd;stroke:#000000;stroke-width:1.59323382;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/Conferences/Griffith_talk/trait_flowchart_minimal.png" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:24.38939476px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;display:inline;fill:#101414;fill-opacity:0.99215686;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="1184.3051"
+       y="1690.5519"
+       id="text4144-4-6"
+       sodipodi:linespacing="125%"
+       transform="scale(1.0487034,0.95355846)"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/Conferences/Griffith_talk/trait_flowchart_minimal.png"><tspan
+         sodipodi:role="line"
+         id="tspan4146-4-7"
+         x="1184.3051"
+         y="1690.5519">Dry Weight</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:24.38939476px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="1606.6034"
+       y="2101.9805"
+       id="text4164-6-7"
+       sodipodi:linespacing="125%"
+       transform="scale(1.0487034,0.95355846)"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/Conferences/Griffith_talk/trait_flowchart_minimal.png"><tspan
+         sodipodi:role="line"
+         id="tspan4166-5-6"
+         x="1606.6034"
+         y="2101.9805">Lignin</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:24.38939476px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="1265.4224"
+       y="1851.1343"
+       id="text4156-1-7"
+       sodipodi:linespacing="125%"
+       transform="scale(1.0487034,0.95355846)"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/Conferences/Griffith_talk/trait_flowchart_minimal.png"><tspan
+         sodipodi:role="line"
+         id="tspan4158-8-1"
+         x="1265.4224"
+         y="1851.1343">Other Minerals</tspan></text>
+    <rect
+       y="1429.0664"
+       x="1474.7734"
+       height="43.795853"
+       width="170.5533"
+       id="rect4334-6-5"
+       style="display:inline;opacity:0.48600003;fill:#000000;fill-opacity:0.39215686;fill-rule:evenodd;stroke:#000000;stroke-width:1.52179265;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/Conferences/Griffith_talk/trait_flowchart_minimal.png" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:24.38939476px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="1424.5424"
+       y="1531.5885"
+       id="text4176-9-1"
+       sodipodi:linespacing="125%"
+       transform="scale(1.0487034,0.95355846)"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/Conferences/Griffith_talk/trait_flowchart_minimal.png"><tspan
+         sodipodi:role="line"
+         id="tspan4178-2-5"
+         x="1424.5424"
+         y="1531.5885">Leaf Shape</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:24.38939476px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="1115.8303"
+       y="1852.1527"
+       id="text4152-0-8"
+       sodipodi:linespacing="125%"
+       transform="scale(1.0487034,0.95355846)"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/Conferences/Griffith_talk/trait_flowchart_minimal.png"><tspan
+         sodipodi:role="line"
+         id="tspan4154-9-9"
+         x="1115.8303"
+         y="1852.1527">Residual</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:24.38939476px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="1497.1746"
+       y="1852.0857"
+       id="text4160-4-7"
+       sodipodi:linespacing="125%"
+       transform="scale(1.0487034,0.95355846)"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/Conferences/Griffith_talk/trait_flowchart_minimal.png"><tspan
+         sodipodi:role="line"
+         id="tspan4162-7-7"
+         x="1497.1746"
+         y="1852.0857">Leaf Carbon</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:24.38939476px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="1343.7267"
+       y="1961.6752"
+       id="text4172-7-5"
+       sodipodi:linespacing="125%"
+       transform="scale(1.0487034,0.95355846)"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/Conferences/Griffith_talk/trait_flowchart_minimal.png"><tspan
+         sodipodi:role="line"
+         id="tspan4174-7-7"
+         x="1343.7267"
+         y="1961.6752">Hemicellulose</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:24.38939476px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="1492.0349"
+       y="2033.3302"
+       id="text4168-6-9"
+       sodipodi:linespacing="125%"
+       transform="scale(1.0487034,0.95355846)"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/Conferences/Griffith_talk/trait_flowchart_minimal.png"><tspan
+         sodipodi:role="line"
+         id="tspan4170-1-4"
+         x="1492.0349"
+         y="2033.3302">Cellulose</tspan></text>
+    <path
+       style="display:inline;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 1162.7325,1481.2085 0,40"
+       id="path4862-0-5"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/Conferences/Griffith_talk/trait_flowchart_minimal.png" />
+    <path
+       style="display:inline;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 1012.7934,1521.107 300,0"
+       id="path4864-0-9"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/Conferences/Griffith_talk/trait_flowchart_minimal.png" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path5070-5-7"
+       d="m 1013.3021,1520.033 0,40"
+       style="display:inline;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/Conferences/Griffith_talk/trait_flowchart_minimal.png" />
+    <path
+       style="display:inline;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 1311.7971,1520.3086 0,40"
+       id="path5141-4-1"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/Conferences/Griffith_talk/trait_flowchart_minimal.png" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path5509-8-2"
+       d="m 1311.0828,1637.7821 0,40"
+       style="display:inline;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/Conferences/Griffith_talk/trait_flowchart_minimal.png" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path5511-6-7"
+       d="m 1029.966,1678.3473 617.1879,0"
+       style="display:inline;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.22202659;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/Conferences/Griffith_talk/trait_flowchart_minimal.png" />
+    <path
+       style="display:inline;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 1030.4747,1678.6067 0,40"
+       id="path5513-4-6"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/Conferences/Griffith_talk/trait_flowchart_minimal.png" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path5515-4-9"
+       d="m 1646.1576,1677.8924 0,40"
+       style="display:inline;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/Conferences/Griffith_talk/trait_flowchart_minimal.png" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path5867-9-4"
+       d="m 1415.3428,1678.627 0,40"
+       style="display:inline;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/Conferences/Griffith_talk/trait_flowchart_minimal.png" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path6227-3-8"
+       d="m 1217.3529,1678.627 0,40"
+       style="display:inline;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/Conferences/Griffith_talk/trait_flowchart_minimal.png" />
+    <path
+       style="display:inline;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 1578.2,1788.627 0,40"
+       id="path6731-9-3"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/Conferences/Griffith_talk/trait_flowchart_minimal.png" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path6887-3-8"
+       d="m 1646.7714,1787.1984 0,101.0959"
+       style="display:inline;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/Conferences/Griffith_talk/trait_flowchart_minimal.png" />
+    <path
+       style="display:inline;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 1719.6285,1791.4841 0,163.5148"
+       id="path7277-6-8"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/Conferences/Griffith_talk/trait_flowchart_minimal.png" />
+    <rect
+       y="1570.6106"
+       x="2371.0691"
+       height="44.47739"
+       width="193.72534"
+       id="rect4184-8-0"
+       style="display:inline;opacity:0.48600003;fill:#000000;fill-opacity:0.39215686;fill-rule:evenodd;stroke:#000000;stroke-width:1.59323382;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/visuals/LES_flowchart.png" />
+    <rect
+       y="1570.1757"
+       x="2755.8132"
+       height="46.567913"
+       width="209.21985"
+       id="rect4327-7-18"
+       style="display:inline;opacity:0.48600003;fill:#000000;fill-opacity:0.39215686;fill-rule:evenodd;stroke:#000000;stroke-width:1.56981504;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/visuals/LES_flowchart.png" />
+    <rect
+       y="1569.7546"
+       x="2591.4814"
+       height="46.641048"
+       width="138.16653"
+       id="rect4341-0-6"
+       style="display:inline;opacity:0.48600003;fill:#000000;fill-opacity:0.39215686;fill-rule:evenodd;stroke:#000000;stroke-width:1.56989455;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/visuals/LES_flowchart.png" />
+    <rect
+       y="1570.2889"
+       x="2997.5798"
+       height="45.200333"
+       width="170.52921"
+       id="rect4348-7-1"
+       style="display:inline;opacity:0.48600003;fill:#000000;fill-opacity:0.39215686;fill-rule:evenodd;stroke:#000000;stroke-width:1.54611874;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/visuals/LES_flowchart.png" />
+    <rect
+       style="display:inline;opacity:0.48600003;fill:#000000;fill-opacity:0.39215686;fill-rule:evenodd;stroke:#000000;stroke-width:1.59300005;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect4138-9-6"
+       width="227.28087"
+       height="44.447849"
+       x="2489.6719"
+       y="1266.2534"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/visuals/LES_flowchart.png" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:24.38939476px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.98720825;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       x="2385.5728"
+       y="1360.5408"
+       id="text4180-2-5"
+       sodipodi:linespacing="125%"
+       transform="scale(1.0487034,0.95355846)"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/visuals/LES_flowchart.png"><tspan
+         sodipodi:role="line"
+         id="tspan4182-6-9"
+         x="2385.5728"
+         y="1360.5408">Leaf Fresh Mass</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:24.38939476px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="2275.0947"
+       y="1680.8386"
+       id="text4148-6-2"
+       sodipodi:linespacing="125%"
+       transform="scale(1.0487034,0.95355846)"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/visuals/LES_flowchart.png"><tspan
+         sodipodi:role="line"
+         id="tspan4150-5-7"
+         x="2275.0947"
+         y="1680.8386">Leaf Nitrogen</tspan></text>
+    <rect
+       style="display:inline;opacity:0.48600003;fill:#000000;fill-opacity:0.39215686;fill-rule:evenodd;stroke:#000000;stroke-width:1.57685232;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect4186-4-7"
+       width="272.11679"
+       height="47.425484"
+       x="2324.0007"
+       y="1417.2157"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/visuals/LES_flowchart.png" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:24.38939476px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;display:inline;fill:#0b0f10;fill-opacity:0.99215686;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="2228.4612"
+       y="1523.52"
+       id="text4140-3-9"
+       sodipodi:linespacing="125%"
+       transform="scale(1.0487034,0.95355846)"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/visuals/LES_flowchart.png"><tspan
+         sodipodi:role="line"
+         id="tspan4142-2-19"
+         x="2228.4612"
+         y="1523.52">Leaf Water Content</tspan></text>
+    <rect
+       y="1416.808"
+       x="2665.082"
+       height="48.010361"
+       width="170.48209"
+       id="rect4313-2-4"
+       style="display:inline;opacity:0.48600003;fill:#000000;fill-opacity:0.39215686;fill-rule:evenodd;stroke:#000000;stroke-width:1.59323382;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/visuals/LES_flowchart.png" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:24.38939476px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;display:inline;fill:#101414;fill-opacity:0.99215686;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="2557.8845"
+       y="1518.9371"
+       id="text4144-4-69"
+       sodipodi:linespacing="125%"
+       transform="scale(1.0487034,0.95355846)"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/visuals/LES_flowchart.png"><tspan
+         sodipodi:role="line"
+         id="tspan4146-4-3"
+         x="2557.8845"
+         y="1518.9371">Dry Weight</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:24.38939476px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="2639.002"
+       y="1679.5195"
+       id="text4156-1-0"
+       sodipodi:linespacing="125%"
+       transform="scale(1.0487034,0.95355846)"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/visuals/LES_flowchart.png"><tspan
+         sodipodi:role="line"
+         id="tspan4158-8-6"
+         x="2639.002"
+         y="1679.5195">Other Minerals</tspan></text>
+    <rect
+       y="1265.4218"
+       x="2915.251"
+       height="43.795853"
+       width="170.5533"
+       id="rect4334-6-8"
+       style="display:inline;opacity:0.48600003;fill:#000000;fill-opacity:0.39215686;fill-rule:evenodd;stroke:#000000;stroke-width:1.52179265;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/visuals/LES_flowchart.png" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:24.38939476px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="2798.1218"
+       y="1359.9738"
+       id="text4176-9-18"
+       sodipodi:linespacing="125%"
+       transform="scale(1.0487034,0.95355846)"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/visuals/LES_flowchart.png"><tspan
+         sodipodi:role="line"
+         id="tspan4178-2-0"
+         x="2798.1218"
+         y="1359.9738">Leaf Shape</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:24.38939476px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="2489.4099"
+       y="1680.538"
+       id="text4152-0-0"
+       sodipodi:linespacing="125%"
+       transform="scale(1.0487034,0.95355846)"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/visuals/LES_flowchart.png"><tspan
+         sodipodi:role="line"
+         id="tspan4154-9-3"
+         x="2489.4099"
+         y="1680.538">Residual</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:24.38939476px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="2870.7542"
+       y="1680.4709"
+       id="text4160-4-4"
+       sodipodi:linespacing="125%"
+       transform="scale(1.0487034,0.95355846)"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/visuals/LES_flowchart.png"><tspan
+         sodipodi:role="line"
+         id="tspan4162-7-0"
+         x="2870.7542"
+         y="1680.4709">Leaf Carbon</tspan></text>
+    <path
+       style="display:inline;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 2603.21,1317.5638 0,40"
+       id="path4862-0-2"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/visuals/LES_flowchart.png" />
+    <path
+       style="display:inline;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 2453.2709,1357.4623 300,0"
+       id="path4864-0-1"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/visuals/LES_flowchart.png" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path5070-5-6"
+       d="m 2453.7796,1356.3883 0,40"
+       style="display:inline;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/visuals/LES_flowchart.png" />
+    <path
+       style="display:inline;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 2752.2746,1356.6639 0,40"
+       id="path5141-4-7"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/visuals/LES_flowchart.png" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path5509-8-4"
+       d="m 2751.5603,1474.1374 0,40"
+       style="display:inline;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/visuals/LES_flowchart.png" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path5511-6-9"
+       d="m 2470.4435,1514.7026 617.1879,0"
+       style="display:inline;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.22202659;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/visuals/LES_flowchart.png" />
+    <path
+       style="display:inline;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 2470.9522,1514.962 0,40"
+       id="path5513-4-4"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/visuals/LES_flowchart.png" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path5515-4-7"
+       d="m 3086.6351,1514.2477 0,40"
+       style="display:inline;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/visuals/LES_flowchart.png" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path5867-9-0"
+       d="m 2855.8203,1514.9823 0,40"
+       style="display:inline;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/visuals/LES_flowchart.png" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path6227-3-4"
+       d="m 2657.8304,1514.9823 0,40"
+       style="display:inline;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/visuals/LES_flowchart.png" />
+    <ellipse
+       style="display:inline;opacity:0.5;fill:#57a746;fill-opacity:0.99215686;fill-rule:evenodd;stroke:#000000;stroke-width:2.04523611;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="ellipse4340-5-6"
+       cx="2847.45"
+       cy="1334.4137"
+       rx="56.123848"
+       ry="37.265717"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/visuals/LES_flowchart.png" />
+    <ellipse
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-xdpi="78.905212"
+       ry="37.265717"
+       rx="56.123848"
+       cy="1414.4138"
+       cx="2976.3071"
+       id="ellipse4338-5-9"
+       style="display:inline;opacity:0.5;fill:#57a746;fill-opacity:0.99215686;fill-rule:evenodd;stroke:#000000;stroke-width:2.04523611;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/visuals/LES_flowchart.png" />
+    <ellipse
+       style="display:inline;opacity:0.5;fill:#57a746;fill-opacity:0.99215686;fill-rule:evenodd;stroke:#000000;stroke-width:2.04523611;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="ellipse4336-3-3"
+       cx="3250.5933"
+       cy="1654.4137"
+       rx="56.123848"
+       ry="37.265717"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/visuals/LES_flowchart.png" />
+    <ellipse
+       style="display:inline;opacity:0.5;fill:#57a746;fill-opacity:0.99215686;fill-rule:evenodd;stroke:#000000;stroke-width:2.04523611;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="ellipse4221-3-1"
+       cx="2297.1646"
+       cy="1656.1281"
+       rx="56.123848"
+       ry="37.265717"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/visuals/LES_flowchart.png" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:24.38939476px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="2837.5056"
+       y="1491.1957"
+       id="text4188-6-9"
+       sodipodi:linespacing="125%"
+       transform="scale(1.0487034,0.95355846)"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/visuals/LES_flowchart.png"><tspan
+         sodipodi:role="line"
+         x="2837.5056"
+         y="1491.1957"
+         id="tspan4313-4-4"
+         style="text-align:center;text-anchor:middle">SLA</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:24.38939476px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="2715.314"
+       y="1405.7797"
+       id="text4192-8-7"
+       sodipodi:linespacing="125%"
+       transform="scale(1.0487034,0.95355846)"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/visuals/LES_flowchart.png"><tspan
+         sodipodi:role="line"
+         x="2715.314"
+         y="1405.7797"
+         id="tspan4317-1-0"
+         style="text-align:center;text-anchor:middle">LDMC</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:24.38939476px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="3099.5037"
+       y="1742.1914"
+       id="text4213-0-8"
+       sodipodi:linespacing="125%"
+       transform="scale(1.0487034,0.95355846)"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/visuals/LES_flowchart.png"><tspan
+         sodipodi:role="line"
+         x="3099.5037"
+         y="1742.1914"
+         id="tspan4311-4-3"
+         style="text-align:center;text-anchor:middle">C</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:24.38939476px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="2190.5156"
+       y="1744.8419"
+       id="text4217-1-0"
+       sodipodi:linespacing="125%"
+       transform="scale(1.0487034,0.95355846)"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/visuals/LES_flowchart.png"><tspan
+         sodipodi:role="line"
+         x="2190.5156"
+         y="1744.8419"
+         id="tspan4319-0-5"
+         style="text-align:center;text-anchor:middle">N</tspan></text>
+    <path
+       style="display:inline;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:8, 8;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 2348.8313,1587.9032 -34.9618,19.4626"
+       id="path7813-1-9"
+       inkscape:connector-curvature="0"
+       inkscape:transform-center-x="0.84175766"
+       inkscape:transform-center-y="9.2593601"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/visuals/LES_flowchart.png" />
+    <path
+       style="display:inline;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:8, 8;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 3190.7266,1586.4746 34.9618,19.4627"
+       id="path7823-4-3"
+       inkscape:connector-curvature="0"
+       inkscape:transform-center-x="-0.84175766"
+       inkscape:transform-center-y="9.2593601"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/visuals/LES_flowchart.png" />
+    <path
+       inkscape:transform-center-y="-0.23608986"
+       inkscape:transform-center-x="9.2945423"
+       inkscape:connector-curvature="0"
+       id="path7825-9-4"
+       d="m 2805.4756,1370.474 -23.3802,32.4729"
+       style="display:inline;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:8, 8;stroke-dashoffset:0;stroke-opacity:1"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/visuals/LES_flowchart.png" />
+    <path
+       style="display:inline;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:8, 8;stroke-dashoffset:0;stroke-opacity:1"
+       d="M 2782.9697,1315.8517 2728.85,1286.7142"
+       id="path7827-6-9"
+       inkscape:connector-curvature="0"
+       inkscape:transform-center-x="1.4930694"
+       inkscape:transform-center-y="-14.203535"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/visuals/LES_flowchart.png" />
+    <path
+       inkscape:transform-center-y="-1.6110816"
+       inkscape:transform-center-x="-37.001059"
+       inkscape:connector-curvature="0"
+       id="path7829-4-6"
+       d="m 2966.2886,1364.6839 14.3668,-46.6857"
+       style="display:inline;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:8, 8;stroke-dashoffset:0;stroke-opacity:1"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/visuals/LES_flowchart.png" />
+    <path
+       style="display:inline;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:8, 8;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 2845.9482,1443.8261 62.6967,-20.1003"
+       id="path7831-7-5"
+       inkscape:connector-curvature="0"
+       inkscape:transform-center-x="-30.302645"
+       inkscape:transform-center-y="39.671873"
+       inkscape:export-xdpi="78.905212"
+       inkscape:export-ydpi="78.905212"
+       inkscape:export-filename="/Users/windeckers/Dropbox/projects/visuals/LES_flowchart.png" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="hide traits"
+     style="display:inline" />
+</svg>
