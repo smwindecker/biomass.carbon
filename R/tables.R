@@ -126,35 +126,19 @@ phylo_mantel <- function (phylo, tips, output_file) {
 
 # Produce parameter values table
 
-tga_param_table <- function(species_deconvolved_list, species_data, output_file) {
-  
-  # bind parameter outputs of species_deconvolved function
-  parameter_estimates <- dplyr::bind_rows(lapply(1:length(species_deconvolved_list), function(x) {
-    return(species_deconvolved_list[[x]]$params)
-  }))
-  
-  # save parameter output
-  write.table(parameter_estimates, 'data/tga_parameters.txt')
-  
-  # set significant digits
-  parameter_estimates[, c('h1', 'h2', 'h3', 'h0')] <- signif(parameter_estimates[, c('h1', 'h2', 'h3', 'h0')], 4)
-  parameter_estimates[, c('p1', 'p2', 'p3', 'p0')] <- signif(parameter_estimates[, c('p1', 'p2', 'p3', 'p0')], 3)
-  parameter_estimates[, c('s1', 's2', 's3', 's0')] <- signif(parameter_estimates[, c('s1', 's2', 's3', 's0')], 2)
-  parameter_estimates[, c('w1', 'w2', 'w3', 'w0')] <- signif(parameter_estimates[, c('w1', 'w2', 'w3', 'w0')], 2)
-  
-  # combine with species data
-  parameters <- merge(parameter_estimates, species_data[,c('species_code', 'species')])
+tga_param_table <- function (parameters, output_file) {
   
   # add italics latex code
   parameters$species <- paste0('\\textit{', parameters$species, '}')
-  
-  parameters <- parameters[ ,c('species', 'h0', 'h1', 'h2', 'h3', 
-                'p0', 'p1', 'p2', 'p3', 
-                's0', 's1', 's2', 's3', 
-                'w0', 'w1', 'w2', 'w3')]
+  parameters <- parameters[ ,c('species',
+                               'h0', 'h1', 'h2', 'h3', 
+                               'p0', 'p1', 'p2', 'p3', 
+                               's0', 's1', 's2', 's3', 
+                               'w0', 'w1', 'w2', 'w3')]
   
   # produce xtable
   parameters <- xtable::xtable(parameters)
+  digits(parameters) <- c(0, 0, 4, 4, 4, 4, 0, 0, 0, 0, 3, 3, 3, 3, 0, 0, 0, 0)
   
   # save as .tex file
   print(parameters,
@@ -203,9 +187,12 @@ traits_table <- function (traits_df, output_file) {
   }
 
   # subset to only include modified mean rows
+  trt_table <- traits_df[traits_df$wt_type == 'mean', ]
   exclude_rows <- c('species_code', 'sp_abrev', 'wt_type')
-  trt_table <- traits_df[traits_df$wt_type == 'mean', -which(names(traits_df) %in% exclude_rows)]
+  trt_table <- trt_table[, -which(names(trt_table) %in% exclude_rows)]
 
+  trt_table <- trt_table[c('species', 'family', 'gf', 'SLA', 'DMC', 'N', 'C', 'HC_1', 'HC_2', 'CL', 'LG')]
+  
   # add italics specification for latex
   trt_table$species <- paste0('\\textit{', trt_table$species, '}')
 
