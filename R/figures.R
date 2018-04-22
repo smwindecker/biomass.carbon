@@ -107,7 +107,8 @@ box_plot <- function (df) {
 
 tga_raw_plots <- function (item_1, item_2) {
   
-  par(oma = c(2, 3, 0, 2), mar = c(3, 3, 2, 0), mfrow = c(1, 2))
+  layout(matrix(c(1,2,3,3), nrow = 2, ncol = 2, byrow = TRUE), heights = c(0.8, 0.2))
+  par(oma = c(5, 3, 0, 2), mar = c(3, 6, 2, 0))
   
   plot(item_1$temp, item_1$obs, 
        xlab = '', 
@@ -131,9 +132,15 @@ tga_raw_plots <- function (item_1, item_2) {
   
   lines(item_1$temp, y1, lty = 1, lwd = 2)
   
-  legend('topleft',
-         legend = '(a)', 
+  legend_subfig('a')
+  exp <- expression(C^-1)
+  legend('topright', 
+         legend = c(expression(paste('h =', round(item_1$h, digits = 4), )),  
+                    paste('s =', round(item_1$s, digits = 3)),
+                    paste('p =', round(item_1$p, digits = 0), 'C'),
+                    paste('w =', round(item_1$w, digits = 0), 'C')),
          bty = 'n', 
+         ncol = 1,
          cex = 1.8)
   
   plot(item_2$temp, item_2$obs, 
@@ -156,9 +163,14 @@ tga_raw_plots <- function (item_1, item_2) {
   
   lines(item_2$temp, y2, lty = 1, lwd = 2)
   
-  legend('topleft',
-         legend = '(b)', 
+  legend_subfig('b')
+  legend('topright', 
+         legend = c(paste('h =', round(item_2$h, digits = 4), expression(paste('(C'^'-1',')'))), 
+                    paste('s =', round(item_2$s, digits = 3)),
+                    paste('p =', round(item_2$p, digits = 0), 'C'),
+                    paste('w =', round(item_2$w, digits = 0), 'C')),
          bty = 'n', 
+         ncol = 1,
          cex = 1.8)
   
   mtext(text = 'Temperature (C)', 
@@ -171,14 +183,17 @@ tga_raw_plots <- function (item_1, item_2) {
         line = 0,
         outer = TRUE, 
         cex = 2)
-  legend('topright',
-         legend = c('DTG data', 'DTG modelled'), 
-         ncol = 1,
+  
+  # empty plot to get the legend on the bottom
+  plot(1, type = 'n', axes = FALSE, xlab = '', ylab = '')
+  legend(x = "top", inset = 0,
+         legend = c('DTG data', 'DTG modelled'),
+         horiz = TRUE,
          cex = 1.8,
          bty = 'n',
          lty = c(NA, 1),
          pch = c(20, NA),
-         lwd = 2)
+         lwd = 2) 
   
 }
 
