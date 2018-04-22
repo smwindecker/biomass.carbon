@@ -40,10 +40,10 @@ targets:
       - figs/pairplot.png
       - figs/phylo_all.png
       - figs/raw_pca.png
-      - figs/tga_pure_samples.png
+      - figs/raw_tga_three.png
       - figs/tga_F.png
       - figs/tga_G.png
-      - figs/raw_tga_three.png
+      - figs/tga_pure_samples.png
       - figs/tga_TNVS.png
       - figs/theory_plot.png
       
