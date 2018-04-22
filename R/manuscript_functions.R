@@ -29,7 +29,7 @@ extract <- function (df, variable, fxn, gf = NULL) {
 }
 
 # pca axis loading values
-loading <- function (axis, pca = pca_output) {
+loading <- function (pca, axis) {
   
   vars <- pca$sdev^2
   prop_var <- vars/sum(vars)
@@ -38,7 +38,7 @@ loading <- function (axis, pca = pca_output) {
 }
 
 # trait R2 correlation values
-tcor <- function (trait_1, trait_2, df = mean_traits) {
+tcor <- function (df, trait_1, trait_2) {
   
   value <- round(stats::cor(df[trait_1], df[trait_2]), digits = 2)
   value
