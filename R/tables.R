@@ -1,14 +1,13 @@
 ## Tables
 
 # Produce pca plot and loadings table
-
 pca_loadings <- function (prin, output_file) {
   
   # isolate first two axes 
   loadings <- as.data.frame(prin$loadings[,1:2])
   
   # expand trait names 
-  loadings$trait[row.names(loadings) == 'SLA'] <- 'Specific litter area'
+  loadings$trait[row.names(loadings) == 'LAM'] <- 'Specific litter area'
   loadings$trait[row.names(loadings) == 'DMC'] <- 'Litter dry matter content'
   loadings$trait[row.names(loadings) == 'N'] <- 'Litter nitrogen'
   loadings$trait[row.names(loadings) == 'C'] <- 'Litter carbon'
@@ -32,7 +31,6 @@ pca_loadings <- function (prin, output_file) {
 }
 
 # Produce table of GenBank Accessions
-
 phylo_accessions <- function (genbank_accessions_file, output_file) {
   
   # read accessions file
@@ -67,11 +65,9 @@ phylo_accessions <- function (genbank_accessions_file, output_file) {
         sanitize.rownames.function = identity,
         hline.after = NULL,
         file = output_file)
-  
 }
 
 # Produce table of estimates of Mantel test of tree distance and trait distance 
-
 phylo_mantel <- function (phylo, tips, output_file) {
   
   # patristic distance matrix
@@ -84,7 +80,7 @@ phylo_mantel <- function (phylo, tips, output_file) {
   mantel_tests <- data.frame('Trait' = NA)
   
   # list of traits
-  trait_list <- c('SLA', 'DMC', 'N', 'C', 'HC', 'CL', 'LG')
+  trait_list <- c('LAM', 'DMC', 'N', 'C', 'HC', 'CL', 'LG')
   
   # change this so not in for loop?
   for (i in unique(trait_list)) {
@@ -98,7 +94,7 @@ phylo_mantel <- function (phylo, tips, output_file) {
   }
   
   # expand trait names for table
-  mantel_tests$Trait[mantel_tests$Trait == 'SLA'] <- 'Specific litter area'
+  mantel_tests$Trait[mantel_tests$Trait == 'LAM'] <- 'Specific litter area'
   mantel_tests$Trait[mantel_tests$Trait == 'DMC'] <- 'Litter dry matter content'
   mantel_tests$Trait[mantel_tests$Trait == 'N'] <- 'Litter nitrogen'
   mantel_tests$Trait[mantel_tests$Trait == 'C'] <- 'Litter carbon'
@@ -106,7 +102,7 @@ phylo_mantel <- function (phylo, tips, output_file) {
   mantel_tests$Trait[mantel_tests$Trait == 'CL'] <- 'Litter cellulose'
   mantel_tests$Trait[mantel_tests$Trait == 'LG'] <- 'Litter lignin'
   
-  # bold significant SLA
+  # bold significant LAM
   mantel_tests[mantel_tests$Trait == 'Specific litter area',] <- 
     paste0('\\textbf{', mantel_tests[mantel_tests$Trait == 'Specific litter area',], '}')
   
@@ -121,11 +117,9 @@ phylo_mantel <- function (phylo, tips, output_file) {
         sanitize.text.function = identity,
         hline.after = NULL,
         file = output_file)
-  
 }
 
 # Produce parameter values table
-
 tga_param_table <- function (parameters, output_file) {
   
   # add italics latex code
@@ -149,11 +143,9 @@ tga_param_table <- function (parameters, output_file) {
         sanitize.text.function = identity,
         hline.after = NULL,
         file = output_file)
-  
 }
 
 # Produce output trait table
-
 traits_table <- function (traits_df, output_file) {
   
   # modify growth form labels
@@ -165,7 +157,7 @@ traits_table <- function (traits_df, output_file) {
   traits_df$gf[traits_df$gf == 'T'] <- 'tree'
  
   # round trait values
-  traits_df$SLA <- sprintf("%.2f", round(traits_df$SLA, 2))
+  traits_df$LAM <- sprintf("%.2f", round(traits_df$LAM, 2))
   traits_df$DMC <- sprintf("%.0f", round(traits_df$DMC, 0))
   traits_df[,c('N', 'C')] <- lapply(round(traits_df[,c('N', 'C')], 1), sprintf, fmt = "%.1f")
   traits_df[,c('HC_1', 'HC_2', 'CL', 'LG')] <- round(traits_df[,c('HC_1', 'HC_2', 'CL', 'LG')], 1)
@@ -191,7 +183,8 @@ traits_table <- function (traits_df, output_file) {
   exclude_rows <- c('species_code', 'sp_abrev', 'wt_type')
   trt_table <- trt_table[, -which(names(trt_table) %in% exclude_rows)]
 
-  trt_table <- trt_table[c('species', 'family', 'gf', 'SLA', 'DMC', 'N', 'C', 'HC_1', 'HC_2', 'CL', 'LG')]
+  trt_table <- trt_table[c('gf', 'family', 'species', 'LAM', 'DMC', 'N', 'C', 'HC_1', 'HC_2', 'CL', 'LG')]
+  trt_table <- trt_table[with(trt_table, order(gf, family, species)),]
   
   # add italics specification for latex
   trt_table$species <- paste0('\\textit{', trt_table$species, '}')
@@ -207,5 +200,4 @@ traits_table <- function (traits_df, output_file) {
         sanitize.text.function = identity,
         hline.after = NULL,
         file = output_file)
-  
 }

@@ -27,14 +27,14 @@ load_les_traits <- function (trait_data, species_data) {
                               c('species_code', 'sp_abrev', 'species', 'family', 'plant_part', 'gf')],
                  by = c('species_code', 'plant_part'))
   
-  # calculate SLA (m2/g) and DMC (mg/g) for each of ten samples
-  trait$longSLA <- (trait$area/100)/trait$dry_weight
+  # calculate LAM (m2/g) and DMC (mg/g) for each of ten samples
+  trait$longLAM <- (trait$area/100)/trait$dry_weight
   trait$longDMC <- (trait$dry_weight*1000)/trait$wet_weight
   
-  # calculate mean SLA and DMC of ten samples
+  # calculate mean LAM and DMC of ten samples
   trait_1 <- plyr::ddply(trait, 'species_code', 
                          plyr::summarise, 
-                         SLA = mean(longSLA), 
+                         LAM = mean(longLAM), 
                          DMC = mean(longDMC))
   
   # merge with species data

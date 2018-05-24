@@ -31,7 +31,7 @@ traits_log <- function (t_mean) {
   
   cov <- t_mean %>%
     magrittr::set_rownames(t_mean[, 'sp_abrev']) %>%
-    dplyr::select(SLA, DMC, N, C, HC, CL, LG) 
+    dplyr::select(LAM, DMC, N, C, HC, CL, LG) 
   cov[] <- log(cov[])
   
   cov
@@ -76,7 +76,7 @@ phylo_traits <- function (phylo, t_mean) {
   colnames(tips)[1] <- 'tip_label'
   
   # list of traits
-  trait_list <- c('SLA', 'DMC', 'N', 'C', 'HC', 'CL', 'LG')
+  trait_list <- c('LAM', 'DMC', 'N', 'C', 'HC', 'CL', 'LG')
   
   # create empty columns for each traits
   tips[, trait_list] <- NA

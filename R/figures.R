@@ -16,14 +16,14 @@ box_plot <- function (df) {
 
   par(oma = c(2, 3, 0, 2), mar = c(4, 6, 1, 1), mfrow = c(3, 3))
   
-  low <- mfloor(min(df$SLA), .05)
-  high <- mceiling(max(df$SLA), .05)
+  low <- mfloor(min(df$LAM), .05)
+  high <- mceiling(max(df$LAM), .05)
   mid <- mround((low + high)/2, .01)
-  plot(df$gf, df$SLA, ylab = expression(paste('Specific litter area (m'^'2', '/g)')), 
+  plot(df$gf, df$LAM, ylab = expression(paste('Specific litter area (m'^'2', '/g)')), 
        xlab = '', yaxt = 'n', 
        ylim = c(0.99*low, (high + 0.15*(high-low))),
        cex.axis = 1.8, cex.lab = 2.2)
-  points(df$gf, df$SLA)
+  points(df$gf, df$LAM)
   axis(side = 2, at = c(low, mid, high), cex.axis = 2,
        labels = sprintf("%.2f", c(low, mid, high)))
   legend('topleft', '(a)', bty = 'n', cex = 2)
@@ -736,7 +736,7 @@ pca <- function (prin, df, species_data) {
   plot(pc12_labeled[, c('Comp.1', 'Comp.2')], ylab = '', xlab = '', xaxt = 'n', yaxt = 'n', 
        ylim = c(-4, 4), xlim = c(-4.2, 5), 
        cex.axis = 1, cex = 1.8, pch = c(2, 20, 3, 8, 0)[as.numeric(pc12_labeled$gf)])
-  plot(fit, cex = 2, col = 1, labels = list(vectors = c('SLA', 'DMC', 'N', 'C', 'HC', 'CL', 'LG')))
+  plot(fit, cex = 2, col = 1, labels = list(vectors = c('LAM', 'DMC', 'N', 'C', 'HC', 'CL', 'LG')))
   
   mtext(text = paste0('Axis 1 (', (100*round(prop_vars[[1]], 2)), '%)'), 
         side = 1, 

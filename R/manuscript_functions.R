@@ -5,7 +5,7 @@ extract <- function (df, variable, fxn, gf = NULL) {
 
   if (variable %in% c('p0', 'p1', 'p2', 'p3', 'w0', 'w1', 'w2', 'w3', 'DMC')) digits <- 0
   if (variable %in% c('N', 'C', 'HC_1', 'HC_2', 'HC', 'CL', 'LG')) digits <- 1
-  if (variable %in% c('SLA')) digits <- 2
+  if (variable %in% c('LAM')) digits <- 2
   if (variable %in% c('s0', 's1', 's2', 's3')) digits <- 3
   if (variable %in% c('h0', 'h1', 'h2', 'h3')) digits <- 4
   
