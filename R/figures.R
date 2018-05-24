@@ -1,7 +1,6 @@
 ## Figures
 
 # Produce boxplot
-
 box_plot <- function (df) {
   
   # create functions to specify how to round
@@ -14,7 +13,7 @@ box_plot <- function (df) {
   mceiling <- function (x, base) { 
     base*ceiling(x/base) 
   } 
-  
+
   par(oma = c(2, 3, 0, 2), mar = c(4, 6, 1, 1), mfrow = c(3, 3))
   
   low <- mfloor(min(df$SLA), .05)
@@ -104,7 +103,6 @@ box_plot <- function (df) {
 }
 
 # Deconvolve raw materials plot
-
 tga_raw_plots <- function (item_1, item_2) {
   
   layout(matrix(c(1,2,3,3), nrow = 2, ncol = 2, byrow = TRUE), heights = c(0.8, 0.2))
@@ -133,13 +131,12 @@ tga_raw_plots <- function (item_1, item_2) {
   lines(item_1$temp, y1, lty = 1, lwd = 2)
   
   legend_subfig('a')
-  exp <- expression(C^-1)
-  legend('topright', 
-         legend = c(expression(paste('h =', round(item_1$h, digits = 4), )),  
+  legend('topright',
+         legend = c(paste('h =', round(item_1$h, digits = 4)),
                     paste('s =', round(item_1$s, digits = 3)),
-                    paste('p =', round(item_1$p, digits = 0), 'C'),
-                    paste('w =', round(item_1$w, digits = 0), 'C')),
-         bty = 'n', 
+                    paste('p =', round(item_1$p, digits = 0)),
+                    paste('w =', round(item_1$w, digits = 0))),
+         bty = 'n',
          ncol = 1,
          cex = 1.8)
   
@@ -164,12 +161,12 @@ tga_raw_plots <- function (item_1, item_2) {
   lines(item_2$temp, y2, lty = 1, lwd = 2)
   
   legend_subfig('b')
-  legend('topright', 
-         legend = c(paste('h =', round(item_2$h, digits = 4), expression(paste('(C'^'-1',')'))), 
+  legend('topright',
+         legend = c(paste('h =', round(item_2$h, digits = 4)),
                     paste('s =', round(item_2$s, digits = 3)),
-                    paste('p =', round(item_2$p, digits = 0), 'C'),
-                    paste('w =', round(item_2$w, digits = 0), 'C')),
-         bty = 'n', 
+                    paste('p =', round(item_2$p, digits = 0)),
+                    paste('w =', round(item_2$w, digits = 0))),
+         bty = 'n',
          ncol = 1,
          cex = 1.8)
   
@@ -182,7 +179,8 @@ tga_raw_plots <- function (item_1, item_2) {
         side = 2,
         line = 0,
         outer = TRUE, 
-        cex = 2)
+        cex = 2,
+        adj = 0.75)
   
   # empty plot to get the legend on the bottom
   plot(1, type = 'n', axes = FALSE, xlab = '', ylab = '')
@@ -198,17 +196,16 @@ tga_raw_plots <- function (item_1, item_2) {
 }
 
 # Produce pair plot of traits
-
 pair_plot <- function (df) {
   
-  panel.cor <- function(x, y, digits = 2, prefix = "", cex.cor = 2, ...)
+  panel.cor <- function (x, y, digits = 2, prefix = "", cex.cor = 1.8, ...)
   {
     usr <- par("usr"); on.exit(par(usr))
     par(usr = c(0, 1, 0, 1))
     r <- stats::cor(x, y)
     txt <- format(c(r, 0.123456789), digits = digits)[1]
     txt <- paste0(prefix, txt)
-    if(missing(cex.cor)) cex.cor <- 0.8/strwidth(txt)
+    if(missing(cex.cor)) cex.cor <- 0.7/strwidth(txt)
     text(0.5, 0.5, txt, cex = cex.cor * abs(r))
     
     p <- stats::cor.test(x, y)$p.value
@@ -220,26 +217,27 @@ pair_plot <- function (df) {
   
   # Customize upper panel
   upper.panel<-function(x, y){
-    points(x, y, xlab = '', ylab = '', cex = 1.8)
+    points(x, y, xlab = '', ylab = '', cex = 2.2)
     mylm <- lm(y ~ x)
-    abline(mylm, col = 'red', cex = 1.8)
+    abline(mylm, col = 'red', cex = 2.2)
     newx <- seq(min(x), max(x), length.out = 500)
     prd <- predict(mylm, newdata = data.frame(x = newx), interval = c('confidence'),
                    level = 0.90, type = 'response')
-    lines(newx, prd[, 2], col = 'black', lty = 2, cex = 1.8)
-    lines(newx, prd[, 3], col = 'black', lty = 2, cex = 1.8)
+    lines(newx, prd[, 2], col = 'black', lty = 2, cex = 2.2)
+    lines(newx, prd[, 3], col = 'black', lty = 2, cex = 2.2)
     
   }
   
   # Create the plot
-  pairs(df, 
+  par(cex.axis = 2.7)
+  pairs(df,
         lower.panel = panel.cor,
-        upper.panel = upper.panel)
+        upper.panel = upper.panel, 
+        cex.labels = 5)
   
 }
 
 # Produce phylo plot 
-
 phylo_plot <- function (phylo, tips) {
   
   tips[] <- scale(tips)
@@ -251,11 +249,9 @@ phylo_plot <- function (phylo, tips) {
   colors <- grDevices::colorRampPalette(PRGn)(n)
   
   phytools::phylo.heatmap(phylo, tips, fsize = c(1.5, 1.5, 1), colors = colors)
-  
 }
 
 # Produce parameter simulation of Fraser-Suzuki function
-
 simulate_fraser_suzuki <- function () {
   
   x <- seq(200, 700)
@@ -370,11 +366,9 @@ simulate_fraser_suzuki <- function () {
         line = 0.9,
         outer = TRUE, 
         cex = 1.8)
-  
 }
 
 # Individual curves for TGA theory explanation figure
-
 tga_theory_plots <- function (tga_data) {
   
   # read raw TGA
@@ -394,6 +388,9 @@ tga_theory_plots <- function (tga_data) {
          legend = '(a)', 
          bty = 'n', 
          cex = 2.5)
+  arrows(x0 = 266, y0 = 19, x1 = 266, y1 = 17, lwd = 2, length = 0.1)
+  arrows(x0 = 317, y0 = 15, x1 = 317, y1 = 13, lwd = 2, length = 0.1)
+  arrows(x0 = 340, y0 = 12, x1 = 340, y1 = 10, lwd = 2, length = 0.1)
   
   # plot DTG curve
   plot(tmp$data$temp_C, tmp$data$deriv, yaxs = 'i', ylim = c(0, 0.009),
@@ -469,7 +466,6 @@ tga_theory_plots <- function (tga_data) {
 }
 
 # Call TGA plot for graminoids
-
 tga_plot_gram <- function (species_deconvolved_list, species_data, subfig, gf) {
   
   sorted_species <- species_data[order(species_data$species),]
@@ -516,12 +512,11 @@ tga_plot_gram <- function (species_deconvolved_list, species_data, subfig, gf) {
         cex = 2.8, 
         adj = 0.55)
   
-  legend_three_curves_horizontal()
+  legend_four_curves_horizontal()
   
 }
 
 # Call TGA plot for forbs
-
 tga_plot_forb <- function (species_deconvolved_list, species_data, subfig, gf) {
   
   sorted_species <- species_data[order(species_data$species),]
@@ -564,12 +559,10 @@ tga_plot_forb <- function (species_deconvolved_list, species_data, subfig, gf) {
         cex = 2.2, 
         adj = 0.55)
   
-  legend_three_curves_horizontal()
-  
+  legend_four_curves_horizontal()
 }
 
 # Call TGA plot for tree, nonvascular, and shrub
-
 tga_plot_others <- function (species_deconvolved_list, species_data, subfigs) {
   
   sorted_species <- species_data[order(species_data$species),]
@@ -610,12 +603,10 @@ tga_plot_others <- function (species_deconvolved_list, species_data, subfigs) {
         cex = 2.2, 
         adj = 0.6)
   
-  legend_three_curves_horizontal()
-  
+  legend_four_curves_horizontal()
 }
 
 # Call TGA plot for three emblem species
-
 tga_plot_three <- function (species_deconvolved_list, species_data, species_names) {
   
   layout(matrix(c(1,2,3,4,4,4), nrow = 2, ncol = 3, byrow = TRUE), heights = c(0.8, 0.2))
@@ -646,11 +637,9 @@ tga_plot_three <- function (species_deconvolved_list, species_data, species_name
         adj = 0.75)
   
   legend_three_curves_horizontal()
-  
 }
 
 # Plot single species' TGA data
-
 tga_plot <- function (species_code, species_deconvolved_list, species_data, legend_species = TRUE) {
   
   x <- species_code
@@ -690,7 +679,7 @@ tga_plot <- function (species_code, species_deconvolved_list, species_data, lege
                                   h = params['h0',], s = params['s0',],
                                   p = params['p0',], w = params['w0',])
     
-    lines(temp, y5, lty = 5, lwd = 2.5, col = 'orange')
+    lines(temp, y5, lty = 6, lwd = 2.5, col = 'orange')
     
   } 
   
@@ -710,25 +699,22 @@ tga_plot <- function (species_code, species_deconvolved_list, species_data, lege
   y2 <- deconvolve::fs_function(x = temp,
                                 h = params['h1',], s = params['s1',],
                                 p = params['p1',], w = params['w1',])
-  lines(temp, y2, lty = 6, lwd = 3.5, col = 'blue')
+  lines(temp, y2, lty = 3, lwd = 3.5, col = 'red')
   
   y3 <- deconvolve::fs_function(x = temp,
                                 h = params['h2',], s = params['s2',],
                                 p = params['p2',], w = params['w2',])
-  lines(temp, y3, lty = 3, lwd = 3.5, col = 'red')
+  lines(temp, y3, lty = 4, lwd = 3.5, col = 'green3')
   
   y4 <- deconvolve::fs_function(x = temp,
                                 h = params['h3',], s = params['s3',],
                                 p = params['p3',], w = params['w3',])
-  lines(temp, y4, lty = 4, lwd = 3.5, col = 'green3')
+  lines(temp, y4, lty = 5, lwd = 3.5, col = 'blue')
   
-
   if (isTRUE(legend_species)) legend_species(spname)
-  
 }
 
 # Produce pca plot and loadings table
-
 pca <- function (prin, df, species_data) {
   
   # first two axes' scores
@@ -780,42 +766,36 @@ pca <- function (prin, df, species_data) {
                                                             'P.dis'), ]
   
   text(x = reg_labels[, 'Comp.1'], y = reg_labels[, 'Comp.2'],
-       labels = row.names(reg_labels), vfont = c('sans serif', 'italic'),
-       cex = 1.5, pos = 4)
+       labels = row.names(reg_labels), vfont = c('sans serif', 'bold italic'),
+       cex = 1.5, pos = 4, col = 'black')
   
   up_labels <- pc12_labeled[c('A.den', 'M.cri', 'L.aus', 'J.ama', 'P.dis'), ]
   
   text(x = up_labels[, 'Comp.1'], y = up_labels[, 'Comp.2']+0.16, 
-       labels = row.names(up_labels), vfont = c('sans serif', 'italic'), 
-       cex = 1.5, pos = 4)
+       labels = row.names(up_labels), vfont = c('sans serif', 'bold italic'), 
+       cex = 1.5, pos = 4, col = 'black')
  
   down_labels <- pc12_labeled[c('Sph', 'P.pro'), ]
   
   text(x = down_labels[, 'Comp.1'], y = down_labels[, 'Comp.2']-0.16, 
-       labels = row.names(down_labels), vfont = c('sans serif', 'italic'),
-       cex = 1.5, pos = 4)
-
+       labels = row.names(down_labels), vfont = c('sans serif', 'bold italic'),
+       cex = 1.5, pos = 4, col = 'black')
 }
 
 ## Custom legends
 
 # Species name legend
-
 legend_species <- function (spname) {
-  
   legend(650, .01,
          xjust = 1,
          legend = spname, 
          text.font = 3,
          cex = 3.1,
          bty = 'n')
-  
 }
 
-# Three curves legend
-
-legend_three_curves <- function () {
-  
+# Four curves legend
+legend_four_curves <- function () {
   legend(120, 0.008,
          xjust = 0,
          legend = c('data', 'total DTG', 'HC-1', 'HC-2', 'CL', 'LG'),
@@ -826,25 +806,20 @@ legend_three_curves <- function () {
          pch = c(20, NA, NA, NA, NA, NA),
          col = c('black', 'black', 'orange', 'red', 'green3', 'blue'),
          lwd = 2)  
-  
 }
 
 # Subfigure legend
-
 legend_subfig <- function (subfig, cex = 2.2) {
-  
   legend('topleft', paste0('(', subfig, ')'), bty = 'n', cex = cex)
-  
 }
 
-# Three curves horizontal legend
-
-legend_three_curves_horizontal <- function () {
+# Three four horizontal legend
+legend_four_curves_horizontal <- function () {
   
   plot(1, type = 'n', axes = FALSE, xlab = '', ylab = '')
 
   legend(x = "top", inset = 0,
-         legend = c('data', 'total DTG', 'HC-1', 'HC-2', 'CL', 'LG'),
+         legend = c('DTG data', 'DTG modelled', 'HC-1', 'HC-2', 'CL', 'LG'),
          horiz = TRUE,
          cex = 2.4,
          bty = 'n',
@@ -852,5 +827,20 @@ legend_three_curves_horizontal <- function () {
          pch = c(20, NA, NA, NA, NA, NA),
          col = c('black', 'black', 'orange', 'red', 'green3', 'blue'),
          lwd = 2) 
+}
+
+# Three three horizontal legend
+legend_three_curves_horizontal <- function () {
   
+  plot(1, type = 'n', axes = FALSE, xlab = '', ylab = '')
+  
+  legend(x = "top", inset = 0, 
+         legend = c('DTG data', 'DTG modelled', '', 'HC', 'CL', 'LG'),
+         horiz = TRUE,
+         cex = 2.4,
+         bty = 'n',
+         lty = c(NA, 1, NA, 3, 4, 5),
+         pch = c(20, NA, NA, NA, NA, NA),
+         col = c('black', 'black', 'black', 'red', 'green3', 'blue'),
+         lwd = 2) 
 }
