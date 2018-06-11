@@ -7,7 +7,7 @@ traits_combine <- function (species_data, trt, cn, tga) {
   t <- dplyr::full_join(trt, cn, by = 'species_code') %>%
     dplyr::full_join(., tga, by = 'species_code') %>%
     dplyr::arrange(., species) %>%
-    .[, c(1,4:7,2,3,9,8,10:14)]
+    .[, c(1,4:8,2,3,10,9,11:15)]
   
   t
 }
