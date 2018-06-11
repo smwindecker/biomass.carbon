@@ -7,7 +7,7 @@ pca_loadings <- function (prin, output_file) {
   loadings <- as.data.frame(prin$loadings[,1:2])
   
   # expand trait names 
-  loadings$trait[row.names(loadings) == 'LAM'] <- 'Specific litter area'
+  loadings$trait[row.names(loadings) == 'LAM'] <- 'Litter area per mass'
   loadings$trait[row.names(loadings) == 'DMC'] <- 'Litter dry matter content'
   loadings$trait[row.names(loadings) == 'N'] <- 'Litter nitrogen'
   loadings$trait[row.names(loadings) == 'C'] <- 'Litter carbon'
@@ -94,7 +94,7 @@ phylo_mantel <- function (phylo, tips, output_file) {
   }
   
   # expand trait names for table
-  mantel_tests$Trait[mantel_tests$Trait == 'LAM'] <- 'Specific litter area'
+  mantel_tests$Trait[mantel_tests$Trait == 'LAM'] <- 'Litter area per mass'
   mantel_tests$Trait[mantel_tests$Trait == 'DMC'] <- 'Litter dry matter content'
   mantel_tests$Trait[mantel_tests$Trait == 'N'] <- 'Litter nitrogen'
   mantel_tests$Trait[mantel_tests$Trait == 'C'] <- 'Litter carbon'
@@ -103,8 +103,8 @@ phylo_mantel <- function (phylo, tips, output_file) {
   mantel_tests$Trait[mantel_tests$Trait == 'LG'] <- 'Litter lignin'
   
   # bold significant LAM
-  mantel_tests[mantel_tests$Trait == 'Specific litter area',] <- 
-    paste0('\\textbf{', mantel_tests[mantel_tests$Trait == 'Specific litter area',], '}')
+  mantel_tests[mantel_tests$Trait == 'Litter area per mass',] <- 
+    paste0('\\textbf{', mantel_tests[mantel_tests$Trait == 'Litter area per mass',], '}')
   
   # create xtable
   mantel_results <- xtable::xtable(mantel_tests)
@@ -149,12 +149,13 @@ tga_param_table <- function (parameters, output_file) {
 traits_table <- function (traits_df, output_file) {
   
   # modify growth form labels
-  traits_df$gf <- as.character(traits_df$gf)
-  traits_df$gf[traits_df$gf == 'G'] <- 'graminoid'
-  traits_df$gf[traits_df$gf == 'F'] <- 'forb'
-  traits_df$gf[traits_df$gf == 'NV'] <- 'nonvascular'
-  traits_df$gf[traits_df$gf == 'S'] <- 'shrub'
-  traits_df$gf[traits_df$gf == 'T'] <- 'tree'
+  traits_df$gf_old <- as.character(traits_df$gf_old)
+  traits_df$gf_old[traits_df$gf_old == 'G'] <- 'Graminoid'
+  traits_df$gf_old[traits_df$gf_old == 'F'] <- 'Herb'
+  traits_df$gf_old[traits_df$species == 'Marsilea drumondii'] <- 'Fern'
+  traits_df$gf_old[traits_df$gf_old == 'NV'] <- 'Non-vascular'
+  traits_df$gf_old[traits_df$gf_old == 'S'] <- 'Shrub'
+  traits_df$gf_old[traits_df$gf_old == 'T'] <- 'Tree'
  
   # round trait values
   traits_df$LAM <- sprintf("%.2f", round(traits_df$LAM, 2))
@@ -183,8 +184,8 @@ traits_table <- function (traits_df, output_file) {
   exclude_rows <- c('species_code', 'sp_abrev', 'wt_type')
   trt_table <- trt_table[, -which(names(trt_table) %in% exclude_rows)]
 
-  trt_table <- trt_table[c('gf', 'family', 'species', 'LAM', 'DMC', 'N', 'C', 'HC_1', 'HC_2', 'CL', 'LG')]
-  trt_table <- trt_table[with(trt_table, order(gf, family, species)),]
+  trt_table <- trt_table[c('family', 'species', 'gf', 'gf_old', 'LAM', 'DMC', 'N', 'C', 'HC_1', 'HC_2', 'CL', 'LG')]
+  trt_table <- trt_table[with(trt_table, order(family, species)),]
   
   # add italics specification for latex
   trt_table$species <- paste0('\\textit{', trt_table$species, '}')
