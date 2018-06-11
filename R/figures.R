@@ -19,7 +19,7 @@ box_plot <- function (df) {
   low <- mfloor(min(df$LAM), .05)
   high <- mceiling(max(df$LAM), .05)
   mid <- mround((low + high)/2, .01)
-  plot(df$gf, df$LAM, ylab = expression(paste('Specific litter area (m'^'2', '/g)')), 
+  plot(df$gf, df$LAM, ylab = expression(paste('Litter area per mass (m'^'2', '/g)')), 
        xlab = '', yaxt = 'n', 
        ylim = c(0.99*low, (high + 0.15*(high-low))),
        cex.axis = 1.8, cex.lab = 2.2)
@@ -390,7 +390,7 @@ tga_theory_plots <- function (tga_data) {
          cex = 2.5)
   arrows(x0 = 266, y0 = 19, x1 = 266, y1 = 17, lwd = 2, length = 0.1)
   arrows(x0 = 317, y0 = 15, x1 = 317, y1 = 13, lwd = 2, length = 0.1)
-  arrows(x0 = 340, y0 = 12, x1 = 340, y1 = 10, lwd = 2, length = 0.1)
+  arrows(x0 = 340, y0 = 11.5, x1 = 340, y1 = 9.5, lwd = 2, length = 0.1)
   
   # plot DTG curve
   plot(tmp$data$temp_C, tmp$data$deriv, yaxs = 'i', ylim = c(0, 0.009),
@@ -417,6 +417,9 @@ tga_theory_plots <- function (tga_data) {
   axis(side = 1, at = c(200, 400, 600, 800), cex.axis = 2.5, labels = c(200, 400, 600, 800))
   axis(side = 2, at = c(0, 0.004, 0.008), cex.axis = 2.5,
        labels = c(0, 0.004, 0.008))
+  arrows(x0 = 266, y0 = 0.0062, x1 = 266, y1 = 0.0055, lwd = 2, length = 0.1)
+  arrows(x0 = 317, y0 = 0.0087, x1 = 317, y1 = 0.008, lwd = 2, length = 0.1)
+  arrows(x0 = 365, y0 = 0.0022, x1 = 365, y1 = 0.0015, lwd = 2, length = 0.1)
   
   y1 <- deconvolve::fs_mixture(x = temp,
                                h1 = params['h1',], s1 = params['s1',],
@@ -465,39 +468,27 @@ tga_theory_plots <- function (tga_data) {
   
 }
 
-# Call TGA plot for graminoids
-tga_plot_gram <- function (species_deconvolved_list, species_data, subfig, gf) {
+# Call TGA plot for AR
+tga_plot_ar <- function (species_deconvolved_list, species_data, subfig, gf) {
   
   sorted_species <- species_data[order(species_data$species),]
-  gram_species <- as.character(unique(sorted_species$species_code[sorted_species$gf == gf]))
+  arp_species <- as.character(unique(sorted_species$species_code[sorted_species$gf == gf]))
   
-  layout(matrix(c(1,2,3,4,5,6,7,8,9,10,11,0,12,12,12), nrow = 5, ncol = 3, byrow = TRUE), heights = c(0.8, 0.8, 0.8, 0.8, 0.2))
+  layout(matrix(c(1,2,3,4,5,0,6,6,6), nrow = 3, ncol = 3, byrow = TRUE), heights = c(0.8, 0.8, 0.2))
   par(oma = c(3, 8, 0, 2), mar = c(3, 3, 2, 0))
   
-  tga_plot(gram_species[1], species_deconvolved_list, species_data)
+  tga_plot(arp_species[1], species_deconvolved_list, species_data)
   axis(side = 2, at = c(0.001, 0.005, 0.009), cex.axis = 2.5,
        labels = c(sprintf("%.3f", c(0.001, 0.005, 0.009))))
   legend_subfig(subfig, cex = 2.8)
-  tga_plot(gram_species[2], species_deconvolved_list, species_data)
-  tga_plot(gram_species[3], species_deconvolved_list, species_data)
+  tga_plot(arp_species[2], species_deconvolved_list, species_data)
+  tga_plot(arp_species[3], species_deconvolved_list, species_data)
   
-  tga_plot(gram_species[4], species_deconvolved_list, species_data)
+  tga_plot(arp_species[4], species_deconvolved_list, species_data)
   axis(side = 2, at = c(0.001, 0.005, 0.009), cex.axis = 2.5,
        labels = c(sprintf("%.3f", c(0.001, 0.005, 0.009))))
-  tga_plot(gram_species[5], species_deconvolved_list, species_data)
-  tga_plot(gram_species[6], species_deconvolved_list, species_data)
-  
-  tga_plot(gram_species[7], species_deconvolved_list, species_data)
-  axis(side = 2, at = c(0.001, 0.005, 0.009), cex.axis = 2.5,
-       labels = c(sprintf("%.3f", c(0.001, 0.005, 0.009))))
-  tga_plot(gram_species[8], species_deconvolved_list, species_data)
-  tga_plot(gram_species[9], species_deconvolved_list, species_data)
-  
-  tga_plot(gram_species[10], species_deconvolved_list, species_data)
   axis(side = 1, at = c(150, 400, 650), cex.axis = 2.5, labels = c(150, 400, 650))
-  axis(side = 2, at = c(0.001, 0.005, 0.009), cex.axis = 2.5,
-       labels = c(sprintf("%.3f", c(0.001, 0.005, 0.009))))
-  tga_plot(gram_species[11], species_deconvolved_list, species_data)
+  tga_plot(arp_species[5], species_deconvolved_list, species_data)
   axis(side = 1, at = c(150, 400, 650), cex.axis = 2.5, labels = c(150, 400, 650))
   
   mtext(text = 'Temperature (C)', 
@@ -516,111 +507,158 @@ tga_plot_gram <- function (species_deconvolved_list, species_data, subfig, gf) {
   
 }
 
-# Call TGA plot for forbs
-tga_plot_forb <- function (species_deconvolved_list, species_data, subfig, gf) {
+# Call TGA plot for AT
+tga_plot_at <- function (species_deconvolved_list, species_data, subfig, gf) {
   
   sorted_species <- species_data[order(species_data$species),]
-  forb_species <- as.character(unique(sorted_species$species_code[sorted_species$gf == gf]))
+  ate_species <- as.character(unique(sorted_species$species_code[sorted_species$gf == gf]))
   
-  layout(matrix(c(1,2,3,4,5,6,7,8,9,10,10,10), nrow = 4, ncol = 3, byrow = TRUE), heights = c(0.8, 0.8, 0.8, 0.2))
-  par(oma = c(3, 6, 0, 2), mar = c(3, 3, 2, 0))
+  layout(matrix(c(1,2,3,4,5,6,7,8,9,10,0,0,11,11,11), nrow = 5, ncol = 3, byrow = TRUE), heights = c(0.8, 0.8, 0.8, 0.8, 0.2))
+  par(oma = c(3, 8, 0, 2), mar = c(3, 3, 2, 0))
   
-  tga_plot(forb_species[1], species_deconvolved_list, species_data)
-  axis(side = 2, at = c(0.001, 0.005, 0.009), cex.axis = 2.2,
+  tga_plot(ate_species[1], species_deconvolved_list, species_data)
+  axis(side = 2, at = c(0.001, 0.005, 0.009), cex.axis = 2.5,
        labels = c(sprintf("%.3f", c(0.001, 0.005, 0.009))))
-  legend_subfig(subfig, cex = 2.5)
-  tga_plot(forb_species[2], species_deconvolved_list, species_data)
-  tga_plot(forb_species[3], species_deconvolved_list, species_data)
+  legend_subfig(subfig, cex = 2.8)
+  tga_plot(ate_species[2], species_deconvolved_list, species_data)
+  tga_plot(ate_species[3], species_deconvolved_list, species_data)
   
-  tga_plot(forb_species[4], species_deconvolved_list, species_data)
-  axis(side = 2, at = c(0.001, 0.005, 0.009), cex.axis = 2.2,
+  tga_plot(ate_species[4], species_deconvolved_list, species_data)
+  axis(side = 2, at = c(0.001, 0.005, 0.009), cex.axis = 2.5,
        labels = c(sprintf("%.3f", c(0.001, 0.005, 0.009))))
-  tga_plot(forb_species[5], species_deconvolved_list, species_data)
-  tga_plot(forb_species[6], species_deconvolved_list, species_data)
+  tga_plot(ate_species[5], species_deconvolved_list, species_data)
+  tga_plot(ate_species[6], species_deconvolved_list, species_data)
   
-  tga_plot(forb_species[7], species_deconvolved_list, species_data)
-  axis(side = 1, at = c(150, 400, 650), cex.axis = 2.2, labels = c(150, 400, 650))
-  axis(side = 2, at = c(0.001, 0.005, 0.009), cex.axis = 2.2,
+  tga_plot(ate_species[7], species_deconvolved_list, species_data)
+  axis(side = 2, at = c(0.001, 0.005, 0.009), cex.axis = 2.5,
        labels = c(sprintf("%.3f", c(0.001, 0.005, 0.009))))
-  tga_plot(forb_species[8], species_deconvolved_list, species_data)
-  axis(side = 1, at = c(150, 400, 650), cex.axis = 2.2, labels = c(150, 400, 650))
-  tga_plot(forb_species[9], species_deconvolved_list, species_data)
-  axis(side = 1, at = c(150, 400, 650), cex.axis = 2.2, labels = c(150, 400, 650))
+  tga_plot(ate_species[8], species_deconvolved_list, species_data)
+  tga_plot(ate_species[9], species_deconvolved_list, species_data)
+  
+  tga_plot(ate_species[10], species_deconvolved_list, species_data)
+  axis(side = 1, at = c(150, 400, 650), cex.axis = 2.5, labels = c(150, 400, 650))
+  axis(side = 2, at = c(0.001, 0.005, 0.009), cex.axis = 2.5,
+       labels = c(sprintf("%.3f", c(0.001, 0.005, 0.009))))
   
   mtext(text = 'Temperature (C)', 
         side = 1, 
         line = 0, 
         outer = TRUE,
-        cex = 2.2)
+        cex = 2.8)
   mtext(text = expression(paste('Rate of mass loss (-dm/dT) (C'^'-1', ')')), 
         side = 2,
         line = 2,
         outer = TRUE, 
-        cex = 2.2, 
+        cex = 2.8, 
         adj = 0.55)
   
   legend_four_curves_horizontal()
+  
 }
 
-# Call TGA plot for tree, nonvascular, and shrub
-tga_plot_others <- function (species_deconvolved_list, species_data, subfigs) {
+# Call TGA plot for Tda
+tga_plot_tda <- function (species_deconvolved_list, species_data, subfig, gf) {
   
   sorted_species <- species_data[order(species_data$species),]
-  tree_species <- as.character(unique(sorted_species$species_code[sorted_species$gf == 'T']))
-  nv <- as.character(unique(species_data$species_code[species_data$gf == 'NV']))
-  s <- as.character(unique(species_data$species_code[species_data$gf == 'S']))
+  tda_species <- as.character(unique(sorted_species$species_code[sorted_species$gf == gf]))
   
-  layout(matrix(c(1,2,3,4,5,6,7,7,7), nrow = 3, ncol = 3, byrow = TRUE), heights = c(0.8, 0.8, 0.2))
-  par(oma = c(3, 6, 0, 2), mar = c(3, 3, 2, 0))
+  layout(matrix(c(1,2,3,4,5,6,7,8,9,10,10,10), nrow = 4, ncol = 3, byrow = TRUE), heights = c(0.8, 0.8, 0.8, 0.2))
+  par(oma = c(3, 8, 0, 2), mar = c(3, 3, 2, 0))
   
-  tga_plot(tree_species[1], species_deconvolved_list, species_data)
-  axis(side = 2, at = c(0.001, 0.005, 0.009), cex.axis = 2.2,
+  tga_plot(tda_species[1], species_deconvolved_list, species_data)
+  axis(side = 2, at = c(0.001, 0.005, 0.009), cex.axis = 2.5,
        labels = c(sprintf("%.3f", c(0.001, 0.005, 0.009))))
-  legend_subfig(subfigs[1])
-  tga_plot(tree_species[2], species_deconvolved_list, species_data)
-  tga_plot(nv, species_deconvolved_list, species_data)
-  legend_subfig(subfigs[2])
+  legend_subfig(subfig, cex = 2.8)
+  tga_plot(tda_species[2], species_deconvolved_list, species_data)
+  tga_plot(tda_species[3], species_deconvolved_list, species_data)
   
-  tga_plot(tree_species[3], species_deconvolved_list, species_data)
-  axis(side = 1, at = c(150, 400, 650), cex.axis = 2.2, labels = c(150, 400, 650))
-  axis(side = 2, at = c(0.001, 0.005, 0.009), cex.axis = 2.2,
+  tga_plot(tda_species[4], species_deconvolved_list, species_data)
+  axis(side = 2, at = c(0.001, 0.005, 0.009), cex.axis = 2.5,
        labels = c(sprintf("%.3f", c(0.001, 0.005, 0.009))))
-  tga_plot(tree_species[4], species_deconvolved_list, species_data)
-  axis(side = 1, at = c(150, 400, 650), cex.axis = 2.2, labels = c(150, 400, 650))
-  tga_plot(s, species_deconvolved_list, species_data)
-  axis(side = 1, at = c(150, 400, 650), cex.axis = 2.2, labels = c(150, 400, 650))
-  legend_subfig(subfigs[3])
+  tga_plot(tda_species[5], species_deconvolved_list, species_data)
+  tga_plot(tda_species[6], species_deconvolved_list, species_data)
+  
+  tga_plot(tda_species[7], species_deconvolved_list, species_data)
+  axis(side = 1, at = c(150, 400, 650), cex.axis = 2.5, labels = c(150, 400, 650))
+  axis(side = 2, at = c(0.001, 0.005, 0.009), cex.axis = 2.5,
+       labels = c(sprintf("%.3f", c(0.001, 0.005, 0.009))))
+  tga_plot(tda_species[8], species_deconvolved_list, species_data)
+  axis(side = 1, at = c(150, 400, 650), cex.axis = 2.5, labels = c(150, 400, 650))
+  tga_plot(tda_species[9], species_deconvolved_list, species_data)
+  axis(side = 1, at = c(150, 400, 650), cex.axis = 2.5, labels = c(150, 400, 650))
   
   mtext(text = 'Temperature (C)', 
         side = 1, 
         line = 0, 
         outer = TRUE,
-        cex = 2.2)
+        cex = 2.8)
   mtext(text = expression(paste('Rate of mass loss (-dm/dT) (C'^'-1', ')')), 
         side = 2,
         line = 2,
         outer = TRUE, 
-        cex = 2.2, 
-        adj = 0.6)
+        cex = 2.8, 
+        adj = 0.55)
+  
+  legend_three_curves_horizontal()
+  
+}
+
+# Call TGA plot for TDr
+tga_plot_tdr <- function (species_deconvolved_list, species_data, subfig, gf) {
+  
+  sorted_species <- species_data[order(species_data$species),]
+  tdr_species <- as.character(unique(sorted_species$species_code[sorted_species$gf == gf]))
+  
+  layout(matrix(c(1,2,3,4,5,0,6,6,6), nrow = 3, ncol = 3, byrow = TRUE), heights = c(0.8, 0.8, 0.2))
+  par(oma = c(3, 8, 0, 2), mar = c(3, 3, 2, 0))
+  
+  tga_plot(tdr_species[1], species_deconvolved_list, species_data)
+  axis(side = 2, at = c(0.001, 0.005, 0.009), cex.axis = 2.5,
+       labels = c(sprintf("%.3f", c(0.001, 0.005, 0.009))))
+  legend_subfig(subfig, cex = 2.8)
+  tga_plot(tdr_species[2], species_deconvolved_list, species_data)
+  tga_plot(tdr_species[3], species_deconvolved_list, species_data)
+  
+  tga_plot(tdr_species[4], species_deconvolved_list, species_data)
+  axis(side = 2, at = c(0.001, 0.005, 0.009), cex.axis = 2.5,
+       labels = c(sprintf("%.3f", c(0.001, 0.005, 0.009))))
+  axis(side = 1, at = c(150, 400, 650), cex.axis = 2.5, labels = c(150, 400, 650))
+  tga_plot(tdr_species[5], species_deconvolved_list, species_data)
+  axis(side = 1, at = c(150, 400, 650), cex.axis = 2.5, labels = c(150, 400, 650))
+  
+  mtext(text = 'Temperature (C)', 
+        side = 1, 
+        line = 0, 
+        outer = TRUE,
+        cex = 2.8)
+  mtext(text = expression(paste('Rate of mass loss (-dm/dT) (C'^'-1', ')')), 
+        side = 2,
+        line = 2,
+        outer = TRUE, 
+        cex = 2.8, 
+        adj = 0.55)
   
   legend_four_curves_horizontal()
+  
 }
 
 # Call TGA plot for three emblem species
-tga_plot_three <- function (species_deconvolved_list, species_data, species_names) {
+tga_plot_three <- function (species_deconvoluted_list, species_data, species_names) {
   
   layout(matrix(c(1,2,3,4,4,4), nrow = 2, ncol = 3, byrow = TRUE), heights = c(0.8, 0.2))
   par(oma = c(3, 6, 0, 2), mar = c(3, 3, 2, 0))
   
-  tga_plot(species_names[1], species_deconvolved_list, species_data, legend_species = FALSE)
+  tga_plot(species_names[1], species_deconvoluted_list, species_data, legend_species = FALSE)
   axis(side = 1, at = c(150, 400, 650), cex.axis = 2.2, labels = c(150, 400, 650))
   axis(side = 2, at = c(0.001, 0.005, 0.009), cex.axis = 2.2,
        labels = c(sprintf("%.3f", c(0.001, 0.005, 0.009))))
   legend_subfig('a', cex = 2.6)
-  tga_plot(species_names[2], species_deconvolved_list, species_data, legend_species = FALSE)
+  
+  tga_plot(species_names[2], species_deconvoluted_list, species_data, legend_species = FALSE)
   axis(side = 1, at = c(150, 400, 650), cex.axis = 2.2, labels = c(150, 400, 650))
   legend_subfig('b', cex = 2.6)
-  tga_plot(species_names[3], species_deconvolved_list, species_data, legend_species = FALSE)
+  
+  tga_plot(species_names[3], species_deconvoluted_list, species_data, legend_species = FALSE)
   axis(side = 1, at = c(150, 400, 650), cex.axis = 2.2, labels = c(150, 400, 650))
   legend_subfig('c', cex = 2.6)
   
@@ -637,6 +675,7 @@ tga_plot_three <- function (species_deconvolved_list, species_data, species_name
         adj = 0.75)
   
   legend_three_curves_horizontal()
+  
 }
 
 # Plot single species' TGA data
@@ -723,7 +762,7 @@ pca <- function (prin, df, species_data) {
   df_pc12$sp_abrev <- rownames(df_pc12)
   
   # label with abreviations
-  pc12_labeled <- merge(df_pc12, species_data[,c('sp_abrev', 'sp_pca_label', 'gf')])
+  pc12_labeled <- merge(df_pc12, species_data[,c('sp_abrev', 'sp_pca_label', 'gf', 'gf_old')])
   rownames(pc12_labeled) <- pc12_labeled[,'sp_pca_label']
   
   # get length of axes
@@ -735,9 +774,9 @@ pca <- function (prin, df, species_data) {
   par(oma = c(2, 2, 0, 2))
   plot(pc12_labeled[, c('Comp.1', 'Comp.2')], ylab = '', xlab = '', xaxt = 'n', yaxt = 'n', 
        ylim = c(-4, 4), xlim = c(-4.2, 5), 
-       cex.axis = 1, cex = 1.8, pch = c(2, 20, 3, 8, 0)[as.numeric(pc12_labeled$gf)])
+       cex.axis = 1, cex = 1.8, pch = c(2, 20, 8, 0)[as.numeric(pc12_labeled$gf)])
   plot(fit, cex = 2, col = 1, labels = list(vectors = c('LAM', 'DMC', 'N', 'C', 'HC', 'CL', 'LG')))
-  
+
   mtext(text = paste0('Axis 1 (', (100*round(prop_vars[[1]], 2)), '%)'), 
         side = 1, 
         line = 0, 
@@ -751,10 +790,10 @@ pca <- function (prin, df, species_data) {
   
   axis(side = 1, at = c(-4, -2, 0, 2, 4), cex.axis = 1.8, labels = c(-4, -2, 0, 2, 4))
   axis(side = 2, at = c(-4, -2, 0, 2, 4), cex.axis = 1.8, labels = c(-4, -2, 0, 2, 4))
-  legend('topright',
-         c('Forb', 'Graminoid', 'Non-vascular', 'Shrub', 'Tree'), 
+  legend(-4, 4,
+         c('Amph. fluct-responders', 'Amph. fluct-tolerators', 'Terr. damp', 'Terr. dry'), 
          bty = 'n',
-         pch = c(2, 20, 3, 8, 0), 
+         pch = c(2, 20, 8, 0), 
          cex = 1.8)
   
   reg_labels <- pc12_labeled[!rownames(pc12_labeled) %in% c('Sph', 
