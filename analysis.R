@@ -30,8 +30,6 @@ economic_traits <- load_les_traits(trait_data = 'data-raw/traits.csv',
 tga_output <- tga_wrapper(species, tga_deconvolve, 'data-raw/tga/')
 biomass_traits <- load_tga_traits(tga_output)
 
-extract(mean_traits, 'HC', 'min')
-
 # ----- modify data ----
 # combine traits
 combined_traits <- traits_combine(species = species,
@@ -65,20 +63,26 @@ tga_theory_plots('data-raw/TGA/A_TGA.csv')
 dev.off()
 
 png('figs/raw_tga_three.png', width = 1500, height = 500)
-tga_plot_three(tga_output, species, species_names = c('LL', 'MM', 'KK'))
+tga_plot_three(tga_output, species, species_names = c('T', 'LL', 'KK'))
 dev.off()
 
-png('figs/tga_G.png', width = 1500, height = 1940)
-tga_plot_gram(tga_output, species, subfig = 'a', gf = 'G') 
+png('figs/tga_ar.png', width = 1500, height = 980)
+tga_plot_ar(tga_output, species, subfig = 'a', gf = 'AR')
 dev.off()
 
-png('figs/tga_F.png', width = 1500, height = 1460)
-tga_plot_forb(tga_output, species, subfig = 'b', gf = 'F')
+png('figs/tga_at.png', width = 1500, height = 1940)
+tga_plot_at(tga_output, species, subfig = 'b', gf = 'AT')
 dev.off()
 
-png('figs/tga_TNVS.png', width = 1500, height = 980)
-tga_plot_others(tga_output, species, subfigs = c('c', 'd', 'e'))
+png('figs/tga_tda.png', width = 1500, height = 1460)
+tga_plot_tda(tga_output, species, subfig = 'c', gf = 'Tda')
 dev.off()
+
+figs/tga_tdr.png:
+  command: tga_plot_tdr(tga_output, species, subfig = I('d'), gf = I('Tdr'))
+plot: 
+  width: 1500
+height: 980
 
 png('figs/boxplot.png', width = 1200, height = 1050)
 box_plot(mean_traits)
