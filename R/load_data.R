@@ -24,7 +24,7 @@ load_les_traits <- function (trait_data, species_data) {
   # merge with the species data file
   trait <- merge(traits[!traits$species_code == 'AA',],
                  species_data[!species_data$species_code == 'AA', 
-                              c('species_code', 'sp_abrev', 'species', 'family', 'plant_part', 'gf')],
+                              c('species_code', 'sp_abrev', 'species', 'family', 'plant_part', 'gf', 'gf_old')],
                  by = c('species_code', 'plant_part'))
   
   # calculate LAM (m2/g) and DMC (mg/g) for each of ten samples
@@ -38,7 +38,7 @@ load_les_traits <- function (trait_data, species_data) {
                          DMC = mean(longDMC))
   
   # merge with species data
-  trt <- merge(trait_1, unique(trait[,c('species_code', 'sp_abrev', 'species', 'family', 'gf')]))
+  trt <- merge(trait_1, unique(trait[,c('species_code', 'sp_abrev', 'species', 'family', 'gf', 'gf_old')]))
   trt
   
 }
@@ -88,11 +88,11 @@ tga_deconvolve <- function (species_code, data_folder) {
   output <- deconvolve::deconvolve(tmp, upper_temp = 650, n_curves = n_curves)
   
   # extract weights of components
-  mean_weights <- data.frame(t(output$mean_weights))
+  mean_weights <- data.frame(t(output$weights.mean_weights))
   mean_weights$wt_type <- 'mean'
   
   # extract confidence intervals of component weights
-  ci_weights <- data.frame(output$CI_weights)
+  ci_weights <- data.frame(output$weights.CI_weights)
   ci_weights$wt_type <- rownames(ci_weights)
   
   # combine means and confidence intervals of weights
@@ -118,8 +118,8 @@ tga_deconvolve <- function (species_code, data_folder) {
                                 bounds = output$bounds, 
                                 minpack.lm = output$minpack.lm, 
                                 n_peaks = output$n_peaks,
-                                CI_weights = output$CI_weights, 
-                                mean_weights = output$mean_weights), 
+                                CI_weights = output$weights.CI_weights, 
+                                mean_weights = output$weights.mean_weights), 
                   weights = weights, 
                   params = params))
   
