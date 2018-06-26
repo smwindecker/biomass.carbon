@@ -2,17 +2,8 @@
 .Rhistory
 .RData
 .Ruserdata
-/data
-/output
-/data-raw
-/deprecated
-besjournalsREADME
-besjournals.dbj
-besjournals.bst
 manuscript.tex
 manuscript.pdf
 manuscript.Rnw
 /.remake
 /figs
-/manuscript
-/analysis
