@@ -122,6 +122,8 @@ phylo_mantel <- function (phylo, tips, output_file) {
 # Produce parameter values table
 tga_param_table <- function (parameters, output_file) {
   
+  parameters <- parameters[order(parameters$species),]
+  
   # add italics latex code
   parameters$species <- paste0('\\textit{', parameters$species, '}')
   parameters <- parameters[ ,c('species',
@@ -151,7 +153,7 @@ traits_table <- function (traits_df, output_file) {
   # modify growth form labels
   traits_df$gf_old <- as.character(traits_df$gf_old)
   traits_df$gf_old[traits_df$gf_old == 'G'] <- 'Graminoid'
-  traits_df$gf_old[traits_df$gf_old == 'F'] <- 'Herb'
+  traits_df$gf_old[traits_df$gf_old == 'F'] <- 'Forb'
   traits_df$gf_old[traits_df$species == 'Marsilea drumondii'] <- 'Fern'
   traits_df$gf_old[traits_df$gf_old == 'NV'] <- 'Non-vascular'
   traits_df$gf_old[traits_df$gf_old == 'S'] <- 'Shrub'
