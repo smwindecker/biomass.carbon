@@ -32,6 +32,7 @@ targets:
       - figures
       - tables
       - manuscript.pdf
+      - supplement.pdf
       
   figures:
     depends:
@@ -41,10 +42,11 @@ targets:
       - figs/phylo_all.png
       - figs/raw_pca.png
       - figs/raw_tga_three.png
-      - figs/tga_F.png
-      - figs/tga_G.png
+      - figs/tga_ar.png
+      - figs/tga_at.png
       - figs/tga_pure_samples.png
-      - figs/tga_TNVS.png
+      - figs/tga_tda.png
+      - figs/tga_tdr.png
       - figs/theory_plot.png
       
   tables:
@@ -58,17 +60,17 @@ targets:
   # --------- data ------------------------
   
   species:
-    command: load_species(species_data = "data-raw/species.csv")
+    command: load_species(species_data = I("data-raw/species.csv"))
     cleanup_level: purge
     check: exists
     
   carbon_nitrogen:
-    command: load_leco_traits(leco_data = "data-raw/leco.csv")
+    command: load_leco_traits(leco_data = I("data-raw/leco.csv"))
     cleanup_level: purge
     check: exists
     
   economic_traits:
-    command: load_les_traits(trait_data = "data-raw/traits.csv", 
+    command: load_les_traits(trait_data = I("data-raw/traits.csv"), 
                              species_data = species)
     cleanup_level: purge
     check: exists
@@ -76,7 +78,7 @@ targets:
   tga_output:
     command: tga_wrapper(species_data = species, 
                          function_name = I(tga_deconvolve), 
-                         data_folder = 'data-raw/tga/')
+                         data_folder = I('data-raw/tga/'))
     cleanup_level: purge
     check: exists
   
@@ -90,98 +92,114 @@ targets:
   combined_traits:
     command: traits_combine(species, carbon_nitrogen, economic_traits, biomass_traits)
     cleanup_level: purge
-    check: exists
   
   mean_traits: 
     command: traits_mean_only(combined_traits)
+    cleanup_level: purge
   
   logged_trait_matrix:
     command: traits_log(mean_traits)
+    cleanup_level: purge
   
   pca_output:
     command: pca_data(logged_trait_matrix)
+    cleanup_level: purge
   
   phylo_tree:
     command: phylo_readtree("data-raw/phylo_tree.nwk")
+    cleanup_level: purge
+    check: exists
     
   phylo_trts:
     command: phylo_traits(phylo_tree, mean_traits)
+    cleanup_level: purge
   
   raw_cl:
     command: single_deconvolve("data-raw/raw_biomass/CL.csv")
+    cleanup_level: purge
+    
   raw_lg:
     command: single_deconvolve("data-raw/raw_biomass/LG.csv")
+    cleanup_level: purge
     
   tga_params:
     command: extract_parameters(tga_output, species)
+    cleanup_level: purge
   
   # -------- figures -------------
-
+  
   figs/theory_plot.png:
+    command: tga_theory_plots('data-raw/TGA/A_TGA.csv')
     plot: 
       width: 1500
       height: 480
-    command: tga_theory_plots('data-raw/TGA/A_TGA.csv')
   
   figs/raw_tga_three.png:
+    command: tga_plot_three(tga_output, species, 
+                        species_names = I(c('T', 'LL', 'KK')))
     plot: 
       width: 1500
-      height: 500
-    command: tga_plot_three(tga_output, species, species_names = I(c('LL', 'MM', 'KK')))
+      height: 500 
   
-  figs/tga_G.png:
-    plot: 
-      width: 1500
-      height: 1940
-    command: tga_plot_gram(tga_output, species, subfig = I('a'), gf = I('G'))
-    
-  figs/tga_F.png:
-    plot: 
-      width: 1500
-      height: 1460
-    command: tga_plot_forb(tga_output, species, subfig = I('b'), gf = I('F'))
-  
-  figs/tga_TNVS.png:
+  figs/tga_ar.png:
+    command: tga_plot_ar(tga_output, species, subfig = I('a'), gf = I('AR'))
     plot: 
       width: 1500
       height: 980
-    command: tga_plot_others(tga_output, species, subfigs = I(c('c', 'd', 'e')))
+      
+  figs/tga_at.png:
+    command: tga_plot_at(tga_output, species, subfig = I('b'), gf = I('AT'))
+    plot: 
+      width: 1500
+      height: 1940
+    
+  figs/tga_tda.png:
+    command: tga_plot_tda(tga_output, species, subfig = I('c'), gf = I('Tda'))
+    plot: 
+      width: 1500
+      height: 1460
+    
+  figs/tga_tdr.png:
+    command: tga_plot_tdr(tga_output, species, subfig = I('d'), gf = I('Tdr'))
+    plot: 
+      width: 1500
+      height: 980
 
   figs/boxplot.png:
+    command: box_plot(mean_traits)
     plot: 
       width: 1200
       height: 950
-    command: box_plot(mean_traits)
   
   figs/raw_pca.png:
+    command: pca(pca_output, logged_trait_matrix, species)
     plot: 
       width: 1000
       height: 950
-    command: pca(pca_output, logged_trait_matrix, species)
     
   figs/pairplot.png:
+    command: pair_plot(logged_trait_matrix)
     plot: 
       width: 1500
       height: 1500
-    command: pair_plot(logged_trait_matrix)
     
   figs/fs_simulate.png:
+    command: simulate_fraser_suzuki()
     plot: 
       width: 800
       height: 700
-    command: simulate_fraser_suzuki()
   
   figs/tga_pure_samples.png:
+    command: tga_raw_plots(raw_cl, raw_lg)
     plot: 
       width: 1200
       height: 600
-    command: tga_raw_plots(raw_cl, raw_lg)
   
   figs/phylo_all.png:
+    command: phylo_plot(phylo_tree, phylo_trts)
     plot: 
       width: 1500
       height: 1000
-    command: phylo_plot(phylo_tree, phylo_trts)
   
   # --------- tables ---------
   figs/tga_param_table.tex:
@@ -220,6 +238,31 @@ targets:
 
   manuscript.pdf:
     command: texi2pdf("manuscript.tex", clean = TRUE)
+    depends:
+      - figures
+      - tables
+
+  # ------ supplemental material ---------
+  supplement.tex:
+    depends:
+      - species
+      - carbon_nitrogen
+      - economic_traits
+      - tga_output
+      - biomass_traits
+      - combined_traits
+      - mean_traits
+      - logged_trait_matrix
+      - pca_output
+      - phylo_tree
+      - phylo_trts
+      - raw_cl
+      - raw_lg
+      - tga_params
+    knitr: TRUE
+
+  supplement.pdf:
+    command: texi2pdf("supplement.tex", clean = TRUE)
     depends:
       - figures
       - tables
