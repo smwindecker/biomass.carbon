@@ -1,7 +1,6 @@
 ## Load data
 
 # Prepare C and N trait data
-
 load_leco_traits <- function (leco_data) {
   
   # read leco data
@@ -15,7 +14,6 @@ load_leco_traits <- function (leco_data) {
 }
 
 # Prepare LES traits
-
 load_les_traits <- function (trait_data, species_data) {
   
   # read raw trait data
@@ -44,7 +42,6 @@ load_les_traits <- function (trait_data, species_data) {
 }
 
 # Prepare species data
-
 load_species <- function (species_data) {
   
   species <- read.csv(species_data, header = T) %>%
@@ -55,7 +52,6 @@ load_species <- function (species_data) {
 }
 
 # Wrapper for all species for TGA functions
-
 tga_wrapper <- function (species_data, function_name, ...) {
 
   input <- as.character(species_data$species_code)
@@ -64,8 +60,7 @@ tga_wrapper <- function (species_data, function_name, ...) {
 }
 
 # Function to deconvolve species' TGA data
-
-tga_deconvolve <- function (species_code, data_folder) {
+tga_deconvolve <- function (species_code, data_folder, ranseed) {
   
   # extract species code
   x <- species_code
@@ -85,14 +80,14 @@ tga_deconvolve <- function (species_code, data_folder) {
   tmp <- process_raw_tga(file)
   
   # deconvolve TGA data
-  output <- deconvolve::deconvolve(tmp, upper_temp = 650, n_curves = n_curves)
+  output <- deconvolve::deconvolve(tmp, upper_temp = 650, n_curves = n_curves, ranseed = ranseed)
   
   # extract weights of components
-  mean_weights <- data.frame(t(output$weights.mean_weights))
+  mean_weights <- data.frame(t(output$mean_weights))
   mean_weights$wt_type <- 'mean'
   
   # extract confidence intervals of component weights
-  ci_weights <- data.frame(output$weights.CI_weights)
+  ci_weights <- data.frame(output$CI_weights)
   ci_weights$wt_type <- rownames(ci_weights)
   
   # combine means and confidence intervals of weights
@@ -114,19 +109,16 @@ tga_deconvolve <- function (species_code, data_folder) {
   colnames(params) <- c('coefficient', 'species_code', 'parameter')
   params <- reshape2::dcast(params, species_code ~ parameter, value.var = 'coefficient')
   
-  return(x = list(output = list(data = output$data, 
-                                bounds = output$bounds, 
-                                minpack.lm = output$minpack.lm, 
-                                n_peaks = output$n_peaks,
-                                CI_weights = output$weights.CI_weights, 
-                                mean_weights = output$weights.mean_weights), 
-                  weights = weights, 
+  return(x = list(data = output$data,
+                  bounds = output$bounds,
+                  minpack.lm = output$minpack.lm,
+                  n_peaks = output$n_peaks,
+                  weights = weights,
                   params = params))
   
 }
 
 # Prepare weights
-
 load_tga_traits <- function (species_deconvolved_list) {
   
   # combine weight estimates from all deconvolved species data
@@ -139,7 +131,6 @@ load_tga_traits <- function (species_deconvolved_list) {
 }
 
 # Load and process raw TGA data
-
 process_raw_tga <- function (raw_file) {
   
   df <- read.csv(raw_file, header = FALSE, skip = 29)
