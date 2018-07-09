@@ -700,10 +700,8 @@ tga_plot <- function (species_code, species_deconvolved_list, species_data, lege
   
   x <- species_code
   
-  list_item <- species_deconvolved_list[[x]]
+  output <- species_deconvolved_list[[x]]
   spname <- species_data$sp_abrev[species_data$species_code == x][1]
-  
-  output <- list_item$output
   
   # extract parameters from mixture model fit
   fit <- output$minpack.lm
