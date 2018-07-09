@@ -1,4 +1,4 @@
-FROM rocker/tidyverse:3.3.2
+FROM rocker/tidyverse:3.5
 MAINTAINER Saras Windecker <saras.windecker@gmail.com>
 
 # Install latex, git and clang then clean up tmp files
@@ -26,14 +26,14 @@ RUN mkdir -p $HOME/.R/ \
 # Install other dependent R packages
 RUN install2.r -r "https://mran.revolutionanalytics.com/snapshot/2018-07-09/" --error \
     --deps "TRUE" \
-  tools
+  ade4 adephylo ape knitr magrittr minpack.lm phytools plyr reshape2 stats tools utils vegan xtable
 
 # Install deconvolve
 RUN installGithub.r \
     --deps "TRUE" \
     smwindecker/deconvolve
     
-# Install deconvolve
+# Install biomass.carbon
 RUN installGithub.r \
     --deps "TRUE" \
     smwindecker/biomass.carbon
