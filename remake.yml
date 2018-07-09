@@ -78,7 +78,8 @@ targets:
   tga_output:
     command: tga_wrapper(species_data = species, 
                          function_name = I(tga_deconvolve), 
-                         data_folder = I('data-raw/tga/'))
+                         data_folder = I('data-raw/tga/'),
+                         ranseed = I(1))
     cleanup_level: purge
     check: exists
   
@@ -266,3 +267,4 @@ targets:
     depends:
       - figures
       - tables
+      
