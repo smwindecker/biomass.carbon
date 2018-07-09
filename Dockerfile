@@ -24,7 +24,7 @@ RUN mkdir -p $HOME/.R/ \
     && echo "CC=clang\n" >> $HOME/.R/Makevars
 
 # Install other dependent R packages
-RUN install2.r -r "https://mran.revolutionanalytics.com/snapshot/2018-04-017/" --error \
+RUN install2.r -r "https://mran.revolutionanalytics.com/snapshot/2018-07-09/" --error \
     --deps "TRUE" \
   tools
 
@@ -36,7 +36,7 @@ RUN installGithub.r \
 # Install deconvolve
 RUN installGithub.r \
     --deps "TRUE" \
-    smwindecker/biomass.traits
+    smwindecker/biomass.carbon
 
 # Install remake
 RUN installGithub.r \
@@ -47,10 +47,10 @@ RUN installGithub.r \
 RUN rm -rf /tmp/downloaded_packages/ /tmp/*.rds
 
 # Clone biomass traits repository
-RUN git clone https://github.com/smwindecker/Biomass_Traits /home/Biomass_Traits
+RUN git clone https://github.com/smwindecker/biomass.carbon /home/biomass.carbon
 
 # Set working directory
-WORKDIR /home/Biomass_Traits
+WORKDIR /home/biomass.carbon
 
 # Open R
 CMD ["R"]

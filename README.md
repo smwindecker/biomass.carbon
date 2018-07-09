@@ -20,14 +20,14 @@ git clone git@github.com:smwindecker/biomass.carbon.git
 * or manually by clicking [here](https://github.com/smwindecker/biomass.carbon/archive/master.zip).
 
 ## Setting up Docker
-Docker sets up a virtual machine. This ensures you have the appropriate software and package versions installed to rerun this analysis without error. You'll first need to install [docker](https://www.docker.com/products/overview), and then install the image we have created. You can do this in two ways: 
+Docker sets up a virtual machine. This ensures you have the appropriate software and package versions installed to rerun this analysis without error. You'll first need to install [docker](https://www.docker.com/get-docker), and then install the image we have created. You can do this in two ways: 
 
 1. Pull the docker image we have already created:
 ```
 docker pull smwindecker/biomass.carbon
 ```
 
-2. Rebuild the image from scratch (this option is slower). To do this open a terminal, navigate to the repository for this project that you downloaded on your home computer, and run:
+2. Rebuild the image from scratch (this option is slower) from the dockerfile included in this repository. To do this open a terminal, navigate to the repository for this project that you downloaded on your home computer, and run:
 ```
 docker build -t biomass.carbon .
 
