@@ -10,16 +10,7 @@ Understanding variation and covariation in plant morphological and chemical trai
 ## Reproducing analysis 
 In order to aid in the reproducibility of this work, our code was written using a [remake](https://github.com/richfitz/remake) framework. This allows others to reproduce easily our entire workflow by calling `remake()` in R. We have created a Docker image to enable others to reproduce these results using the same software and versions we used to conduct the original analysis. The steps to do so are outlined below.
 
-### Copy repository
-* using the terminal (assuming git is installed)
-
-```
-git clone git@github.com:smwindecker/biomass.carbon.git
-```
-
-* or manually by clicking [here](https://github.com/smwindecker/biomass.carbon/archive/master.zip).
-
-## Setting up Docker
+## Set up Docker
 Docker sets up a virtual machine. This ensures you have the appropriate software and package versions installed to rerun this analysis without error. You'll first need to install [docker](https://www.docker.com/get-docker), and then install the image we have created. You can do this in two ways: 
 
 1. Pull the docker image we have already created:
