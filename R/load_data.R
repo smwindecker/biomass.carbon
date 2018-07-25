@@ -30,10 +30,12 @@ load_les_traits <- function (trait_data, species_data) {
   trait$longDMC <- (trait$dry_weight*1000)/trait$wet_weight
   
   # calculate mean LAM and DMC of ten samples
-  trait_1 <- plyr::ddply(trait, 'species_code', 
-                         plyr::summarise, 
-                         LAM = mean(longLAM), 
-                         DMC = mean(longDMC))
+  trait_1 <- trait %>% 
+    dplyr::group_by(species_code) %>%
+    dplyr::summarize(
+      LAM = mean(longLAM),
+      DMC = mean(longDMC)
+    )
   
   # merge with species data
   trt <- merge(trait_1, unique(trait[,c('species_code', 'sp_abrev', 'species', 'family', 'gf', 'gf_old')]))
@@ -48,7 +50,6 @@ load_species <- function (species_data) {
     dplyr::filter(species_code != 'AA')
   
   species
-  
 }
 
 # Wrapper for all species for TGA functions
@@ -82,17 +83,10 @@ tga_deconvolve <- function (species_code, data_folder, ranseed) {
   # deconvolve TGA data
   output <- deconvolve::deconvolve(tmp, upper_temp = 650, n_curves = n_curves, ranseed = ranseed)
   
-  # extract weights of components
-  mean_weights <- data.frame(t(output$mean_weights))
-  mean_weights$wt_type <- 'mean'
+  # extract weight estimates
+  weights <- output$weights
   
-  # extract confidence intervals of component weights
-  ci_weights <- data.frame(output$CI_weights)
-  ci_weights$wt_type <- rownames(ci_weights)
-  
-  # combine means and confidence intervals of weights
-  weights <- rbind(mean_weights, ci_weights)
-  
+  # if 3-curves, add HC_1 and change name of HC to HC_2
   if (ncol(weights) == 4) {
     weights$HC_1 <- NA
     colnames(weights)[1] <- 'HC_2'
@@ -100,14 +94,14 @@ tga_deconvolve <- function (species_code, data_folder, ranseed) {
   
   # set species of weight outputs
   weights$species_code <- x
-  weights <- weights[, c('species_code', 'HC_1', 'HC_2', 'CL', 'LG', 'wt_type')]
+  weights <- weights[, c('species_code', 'HC_1', 'HC_2', 'CL', 'LG', 'value_type')]
   
   # set species of parameter outputs and make data wide
   params <- as.data.frame(summary(output$minpack.lm)$coefficients[,1])
   params$species_code <- x
   params$parameter <- row.names(params)
   colnames(params) <- c('coefficient', 'species_code', 'parameter')
-  params <- reshape2::dcast(params, species_code ~ parameter, value.var = 'coefficient')
+  params <- tidyr::spread(params, parameter, coefficient)
   
   return(x = list(data = output$data,
                   bounds = output$bounds,
