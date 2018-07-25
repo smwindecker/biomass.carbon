@@ -5,6 +5,7 @@ LABEL email="saras.windecker@gmail.com"
 ## Update and install extra packages
 RUN apt-get update \
   && apt-get install -y --no-install-recommends \
+    clang \
     mesa-common-dev\
     libglu1-mesa-dev \
     libgsl0-dev \
@@ -12,10 +13,16 @@ RUN apt-get update \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/
 
+## Add in opts
+# Global site-wide config for clang
+RUN mkdir -p $HOME/.R/ \
+    && echo "\nCXX=clang++ -ftemplate-depth-256\n" >> $HOME/.R/Makevars \
+    && echo "CC=clang\n" >> $HOME/.R/Makevars
+
 ## Add in required R packages
 RUN . /etc/environment \
   && install2.r --error --repos $MRAN --deps TRUE \
-  dotCall64 spam ape rgl phylobase minpack.lm phytools vegan xtable 
+  dotCall64 spam ape rgl phylobase knitr minpack.lm phytools vegan xtable 
 
 ## Add in required R packages (without suggestions)
 RUN . /etc/environment \
