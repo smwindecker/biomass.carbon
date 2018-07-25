@@ -11,8 +11,6 @@ packages:
   - magrittr
   - minpack.lm
   - phytools
-  - plyr
-  - reshape2
   - stats
   - tools
   - utils
