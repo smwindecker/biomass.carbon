@@ -127,10 +127,10 @@ tga_param_table <- function (parameters, output_file) {
   # add italics latex code
   parameters$species <- paste0('\\textit{', parameters$species, '}')
   parameters <- parameters[ ,c('species',
-                               'h0', 'h1', 'h2', 'h3', 
-                               'p0', 'p1', 'p2', 'p3', 
-                               's0', 's1', 's2', 's3', 
-                               'w0', 'w1', 'w2', 'w3')]
+                               'height_0', 'height_1', 'height_2', 'height_3', 
+                               'position_0', 'position_1', 'position_2', 'position_3', 
+                               'skew_0', 'skew_1', 'skew_2', 'skew_3', 
+                               'width_0', 'width_1', 'width_2', 'width_3')]
   
   # produce xtable
   parameters <- xtable::xtable(parameters)

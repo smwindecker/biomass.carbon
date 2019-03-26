@@ -13,7 +13,7 @@ box_plot <- function (df) {
   mceiling <- function (x, base) { 
     base*ceiling(x/base) 
   } 
-
+  
   par(oma = c(2, 3, 0, 2), mar = c(4, 6, 1, 1), mfrow = c(3, 3))
   
   low <- mfloor(min(df$LAM), .05)
@@ -27,7 +27,7 @@ box_plot <- function (df) {
   axis(side = 2, at = c(low, mid, high), cex.axis = 2,
        labels = sprintf("%.2f", c(low, mid, high)))
   legend('topleft', '(a)', bty = 'n', cex = 2)
-
+  
   low <- mfloor(min(df$DMC), 5)
   high <- mceiling(max(df$DMC), 5)
   mid <- mround((low + high)/2, 1)
@@ -39,7 +39,7 @@ box_plot <- function (df) {
   axis(side = 2, at = c(low, mid, high), cex.axis = 2,
        labels = sprintf("%.0f", c(low, mid, high)))
   legend('topleft', '(b)', bty = 'n', cex = 2)
-
+  
   low <- mfloor(min(df$N), .05)
   high <- mceiling(max(df$N), .05)
   mid <- mround((low + high)/2, .01)
@@ -51,7 +51,7 @@ box_plot <- function (df) {
   axis(side = 2, at = c(low, mid, high), cex.axis = 2,
        labels = sprintf("%.2f", c(low, mid, high)))
   legend('topleft', '(c)', bty = 'n', cex = 2)     
-
+  
   low <- mfloor(min(df$C), 1)
   high <- mceiling(max(df$C), 1)
   mid <- mround((low + high)/2, 1)
@@ -63,7 +63,7 @@ box_plot <- function (df) {
   axis(side = 2, at = c(low, mid, high), cex.axis = 2,
        labels = sprintf("%.0f", c(low, mid, high)))
   legend('topleft', '(d)', bty = 'n', cex = 2)
-
+  
   low <- mfloor(min(df$HC), .05)
   high <- mceiling(max(df$HC), .05)
   mid <- mround((low + high)/2, .01)
@@ -75,7 +75,7 @@ box_plot <- function (df) {
   axis(side = 2, at = c(low, mid, high), cex.axis = 2,
        labels = sprintf("%.2f", c(low, mid, high)))
   legend('topleft', '(e)', bty = 'n', cex = 2) 
-
+  
   low <- mfloor(min(df$CL), .05)
   high <- mceiling(max(df$CL), .05)
   mid <- mround((low + high)/2, .01)
@@ -87,7 +87,7 @@ box_plot <- function (df) {
   axis(side = 2, at = c(low, mid, high), cex.axis = 2,
        labels = sprintf("%.2f", c(low, mid, high)))
   legend('topleft', '(f)', bty = 'n', cex = 2)
-
+  
   low <- mfloor(min(df$LG), .05)
   high <- mceiling(max(df$LG), .05)
   mid <- mround((low + high)/2, .01)
@@ -122,11 +122,11 @@ tga_raw_plots <- function (item_1, item_2) {
   axis(side = 2, at = c(0, 0.002, 0.004, 0.006, 0.008, 0.010), cex.axis = 1.6,
        labels = c(0, 0.002, 0.004, 0.006, 0.008, 0.010))
   
-  y1 <- deconvolve::fs_function(item_1$temp, 
-                               item_1$h, 
-                               item_1$s, 
-                               item_1$p, 
-                               item_1$w)
+  y1 <- mixchar::fs_function(item_1$temp, 
+                             item_1$h, 
+                             item_1$s, 
+                             item_1$p, 
+                             item_1$w)
   
   lines(item_1$temp, y1, lty = 1, lwd = 2)
   
@@ -152,11 +152,11 @@ tga_raw_plots <- function (item_1, item_2) {
   axis(side = 1, at = c(200, 300, 400, 500, 600, 700), cex.axis = 1.6,
        labels = c(200, 300, 400, 500, 600, 700))
   
-  y2 <- deconvolve::fs_function(item_2$temp, 
-                               item_2$h, 
-                               item_2$s, 
-                               item_2$p, 
-                               item_2$w)
+  y2 <- mixchar::fs_function(item_2$temp, 
+                             item_2$h, 
+                             item_2$s, 
+                             item_2$p, 
+                             item_2$w)
   
   lines(item_2$temp, y2, lty = 1, lwd = 2)
   
@@ -247,7 +247,7 @@ phylo_plot <- function (phylo, tips) {
             '#d9f0d3', '#7fbf7b', '#1b7837')
   
   viri <- c('#440154FF', '#453781FF', '#33638DFF', '#238A8DFF', '#20A387FF', '#55C667FF', '#DCE319FF')
-
+  
   # change colour scheme
   colors <- grDevices::colorRampPalette(viri)(n)
   
@@ -258,25 +258,25 @@ phylo_plot <- function (phylo, tips) {
 simulate_fraser_suzuki <- function () {
   
   x <- seq(200, 700)
-  h1 <- deconvolve::fs_function(x, 0.004, -0.25, 400, 60)
-  h2 <- deconvolve::fs_function(x, 0.006, -0.25, 400, 60)
-  h3 <- deconvolve::fs_function(x, 0.008, -0.25, 400, 60)
-  h4 <- deconvolve::fs_function(x, 0.010, -0.25, 400, 60)
+  height_1 <- mixchar::fs_function(x, 0.004, -0.25, 400, 60)
+  height_2 <- mixchar::fs_function(x, 0.006, -0.25, 400, 60)
+  height_3 <- mixchar::fs_function(x, 0.008, -0.25, 400, 60)
+  h4 <- mixchar::fs_function(x, 0.010, -0.25, 400, 60)
   
-  s1 <- deconvolve::fs_function(x, 0.010, -0.55, 400, 60)
-  s2 <- deconvolve::fs_function(x, 0.010, -0.25, 400, 60)
-  s3 <- deconvolve::fs_function(x, 0.010, 0.25, 400, 60)
-  s4 <- deconvolve::fs_function(x, 0.010, 0.55, 400, 60)
+  skew_1 <- mixchar::fs_function(x, 0.010, -0.55, 400, 60)
+  skew_2 <- mixchar::fs_function(x, 0.010, -0.25, 400, 60)
+  skew_3 <- mixchar::fs_function(x, 0.010, 0.25, 400, 60)
+  s4 <- mixchar::fs_function(x, 0.010, 0.55, 400, 60)
   
-  p1 <- deconvolve::fs_function(x, 0.010, -0.25, 350, 60)
-  p2 <- deconvolve::fs_function(x, 0.010, -0.25, 400, 60)
-  p3 <- deconvolve::fs_function(x, 0.010, -0.25, 450, 60)
-  p4 <- deconvolve::fs_function(x, 0.010, -0.25, 500, 60)
+  position_1 <- mixchar::fs_function(x, 0.010, -0.25, 350, 60)
+  position_2 <- mixchar::fs_function(x, 0.010, -0.25, 400, 60)
+  position_3 <- mixchar::fs_function(x, 0.010, -0.25, 450, 60)
+  p4 <- mixchar::fs_function(x, 0.010, -0.25, 500, 60)
   
-  w1 <- deconvolve::fs_function(x, 0.010, -0.25, 400, 30)
-  w2 <- deconvolve::fs_function(x, 0.010, -0.25, 400, 60)
-  w3 <- deconvolve::fs_function(x, 0.010, -0.25, 400, 90)
-  w4 <- deconvolve::fs_function(x, 0.010, -0.25, 400, 120)
+  width_1 <- mixchar::fs_function(x, 0.010, -0.25, 400, 30)
+  width_2 <- mixchar::fs_function(x, 0.010, -0.25, 400, 60)
+  width_3 <- mixchar::fs_function(x, 0.010, -0.25, 400, 90)
+  w4 <- mixchar::fs_function(x, 0.010, -0.25, 400, 120)
   
   par(oma = c(5, 5, 0, 2), mar = c(1, 3, 2, 0), mfrow = c(2, 2))
   
@@ -285,9 +285,9 @@ simulate_fraser_suzuki <- function () {
        ylab = '')
   axis(side = 2, at = c(0, 0.002, 0.004, 0.006, 0.008, 0.010), cex.axis = 1.2,
        labels = c(0, 0.002, 0.004, 0.006, 0.008, 0.010))
-  lines(x, h2, lty = 2)
-  lines(x, h3, lty = 3)
-  lines(x, h1, lty = 1)
+  lines(x, height_2, lty = 2)
+  lines(x, height_3, lty = 3)
+  lines(x, height_1, lty = 1)
   legend('topleft', legend = '(a)', bty = 'n', cex = 1.6)
   legend('topright', legend = c(expression(paste('h = 0.004 C'^'-1')), 
                                 expression(paste('h = 0.006 C'^'-1')),
@@ -300,11 +300,11 @@ simulate_fraser_suzuki <- function () {
          lty = c(1, 2, 3, 4, NA, NA, NA)
   )
   
-  plot(x, s1, type = 'l', lty = 1, xaxt = 'n', yaxt = 'n', cex = 1.6,
+  plot(x, skew_1, type = 'l', lty = 1, xaxt = 'n', yaxt = 'n', cex = 1.6,
        xlab = '', 
        ylab = '')
-  lines(x, s2, lty = 2)
-  lines(x, s3, lty = 3)
+  lines(x, skew_2, lty = 2)
+  lines(x, skew_3, lty = 3)
   lines(x, s4, lty = 4)
   legend('topleft', legend = '(b)', bty = 'n', cex = 1.6)
   legend('topright', legend = c(expression(paste('h = 0.010 C'^'-1')), 
@@ -318,15 +318,15 @@ simulate_fraser_suzuki <- function () {
          lty = c(NA, 1, 2, 3, 4, NA, NA)
   )
   
-  plot(x, p1, type = 'l', lty = 1, xaxt = 'n', yaxt = 'n', cex = 1.6,
+  plot(x, position_1, type = 'l', lty = 1, xaxt = 'n', yaxt = 'n', cex = 1.6,
        xlab = '', 
        ylab = '')
   axis(side = 1, at = c(200, 300, 400, 500, 600, 700), cex.axis = 1.2,
        labels = c(200, 300, 400, 500, 600, 700))
   axis(side = 2, at = c(0, 0.002, 0.004, 0.006, 0.008, 0.010), cex.axis = 1.2,
        labels = c(0, 0.002, 0.004, 0.006, 0.008, 0.010))
-  lines(x, p2, lty = 2)
-  lines(x, p3, lty = 3)
+  lines(x, position_2, lty = 2)
+  lines(x, position_3, lty = 3)
   lines(x, p4, lty = 4)
   legend('topleft', legend = '(c)', bty = 'n', cex = 1.6)
   legend('topright', legend = c(expression(paste('h = 0.010 C'^'-1')), 
@@ -340,13 +340,13 @@ simulate_fraser_suzuki <- function () {
          lty = c(NA, NA, 1, 2, 3, 4, NA)
   )
   
-  plot(x, w1, type = 'l', lty = 1, xaxt = 'n', yaxt = 'n', cex = 1.6,
+  plot(x, width_1, type = 'l', lty = 1, xaxt = 'n', yaxt = 'n', cex = 1.6,
        xlab = '', 
        ylab = '')
   axis(side = 1, at = c(200, 300, 400, 500, 600, 700), cex.axis = 1.2,
        labels = c(200, 300, 400, 500, 600, 700))
-  lines(x, w2, lty = 2)
-  lines(x, w3, lty = 3)
+  lines(x, width_2, lty = 2)
+  lines(x, width_3, lty = 3)
   lines(x, w4, lty = 4)
   legend('topleft', legend = '(d)', bty = 'n', cex = 1.6)
   legend('topright', legend = c(expression(paste('h = 0.010 C'^'-1')), 
@@ -358,7 +358,7 @@ simulate_fraser_suzuki <- function () {
                                 'w = 120'),
          bty = 'n', cex = 1.2,
          lty = c(NA, NA, NA, 1, 2, 3, 4))
-
+  
   mtext(text = 'Temperature (C)', 
         side = 1, 
         line = 2.1, 
@@ -380,7 +380,7 @@ tga_theory_plots <- function (tga_data) {
   # plot TG curve
   layout(matrix(c(1,2,3), nrow = 1, ncol = 3, byrow = TRUE), heights = c(0.8, 0.2))
   par(oma = c(5, 3, 0, 2), mar = c(3, 6, 3, 3))
-
+  
   plot(tmp$data$temp_C, tmp$data$mass_T, yaxs = 'i', ylim = c(0, 22), xlim = c(0, 900),
        xaxs = 'i', ylab = 'Mass (mg)', xlab = '', xaxt = 'n', yaxt = 'n', 
        pch = 20, cex = 0.3, cex.lab = 3)
@@ -422,9 +422,9 @@ tga_theory_plots <- function (tga_data) {
   text(x = ((790-650)/2+650), y = 0.0014, '3', cex = 3, col = 'darkgrey')
   
   # deconvolve data
-  output <- deconvolve::deconvolve(tmp, upper_temp = 650, n_curves = NULL)
-  temp <- seq(output$bounds[1], output$bounds[2], length.out = nrow(output$data))
-  fit <- output$minpack.lm  
+  output <- mixchar::deconvolve(tmp, upper_temp = 650, n_peaks = NULL)
+  temp <- seq(output$temp_bounds[1], output$temp_bounds[2], length.out = nrow(output$data))
+  fit <- output$model_fit  
   params <- as.data.frame(summary(fit)$coefficients[,1])
   
   # plot mixture model outcome on DTG data
@@ -438,25 +438,25 @@ tga_theory_plots <- function (tga_data) {
   arrows(x0 = 317, y0 = 0.0087, x1 = 317, y1 = 0.008, lwd = 2, length = 0.1)
   arrows(x0 = 365, y0 = 0.0022, x1 = 365, y1 = 0.0015, lwd = 2, length = 0.1)
   
-  y1 <- deconvolve::fs_mixture(x = temp,
-                               h1 = params['h1',], s1 = params['s1',],
-                               p1 = params['p1',], w1 = params['w1',],
-                               h2 = params['h2',], s2 = params['s2',],
-                               p2 = params['p2',], w2 = params['w2',],
-                               h3 = params['h3',], s3 = params['s3',],
-                               p3 = params['p3',], w3 = params['w3',])
+  y1 <- mixchar::fs_mixture(temp = temp,
+                            height_1 = params['height_1',], skew_1 = params['skew_1',],
+                            position_1 = params['position_1',], width_1 = params['width_1',],
+                            height_2 = params['height_2',], skew_2 = params['skew_2',],
+                            position_2 = params['position_2',], width_2 = params['width_2',],
+                            height_3 = params['height_3',], skew_3 = params['skew_3',],
+                            position_3 = params['position_3',], width_3 = params['width_3',])
   
-  y2 <- deconvolve::fs_function(x = temp,
-                                h = params['h1',], s = params['s1',],
-                                p = params['p1',], w = params['w1',])
+  y2 <- mixchar::fs_function(temp = temp,
+                             height = params['height_1',], skew = params['skew_1',],
+                             position = params['position_1',], width = params['width_1',])
   
-  y3 <- deconvolve::fs_function(x = temp,
-                                h = params['h2',], s = params['s2',],
-                                p = params['p2',], w = params['w2',])
+  y3 <- mixchar::fs_function(temp = temp,
+                             height = params['height_2',], skew = params['skew_2',],
+                             position = params['position_2',], width = params['width_2',])
   
-  y4 <- deconvolve::fs_function(x = temp,
-                                h = params['h3',], s = params['s3',],
-                                p = params['p3',], w = params['w3',])
+  y4 <- mixchar::fs_function(temp = temp,
+                             height = params['height_3',], skew = params['skew_3',],
+                             position = params['position_3',], width = params['width_3',])
   
   lines(temp, y1, lty = 1, lwd = 2)
   lines(temp, y2, lty = 3, lwd = 3.5, col = '#440154FF')
@@ -704,11 +704,11 @@ tga_plot <- function (species_code, species_deconvolved_list, species_data, lege
   spname <- species_data$sp_abrev[species_data$species_code == x][1]
   
   # extract parameters from mixture model fit
-  fit <- output$minpack.lm
+  fit <- output$model_fit
   params <- as.data.frame(summary(fit)$coefficients[,1])
   
   # temperature bounds for plots
-  temp <- seq(output$bounds[1], output$bounds[2], length.out = nrow(output$data))
+  temp <- seq(output$temp_bounds[1], output$temp_bounds[2], length.out = nrow(output$data))
   
   # isolate data
   data <- output$data
@@ -719,19 +719,19 @@ tga_plot <- function (species_code, species_deconvolved_list, species_data, lege
   
   if (output$n_peaks == 4) {
     
-    y1 <- deconvolve::fs_mixture(x = temp,
-                                 h1 = params['h1',], s1 = params['s1',],
-                                 p1 = params['p1',], w1 = params['w1',],
-                                 h2 = params['h2',], s2 = params['s2',],
-                                 p2 = params['p2',], w2 = params['w2',],
-                                 h3 = params['h3',], s3 = params['s3',],
-                                 p3 = params['p3',], w3 = params['w3',],
-                                 h0 = params['h0',], s0 = params['s0',],
-                                 p0 = params['p0',], w0 = params['w0',])
+    y1 <- mixchar::fs_mixture(temp = temp,
+                              height_1 = params['height_1',], skew_1 = params['skew_1',],
+                              position_1 = params['position_1',], width_1 = params['width_1',],
+                              height_2 = params['height_2',], skew_2 = params['skew_2',],
+                              position_2 = params['position_2',], width_2 = params['width_2',],
+                              height_3 = params['height_3',], skew_3 = params['skew_3',],
+                              position_3 = params['position_3',], width_3 = params['width_3',],
+                              height_0 = params['height_0',], skew_0 = params['skew_0',],
+                              position_0 = params['position_0',], width_0 = params['width_0',])
     
-    y5 <- deconvolve::fs_function(x = temp,
-                                  h = params['h0',], s = params['s0',],
-                                  p = params['p0',], w = params['w0',])
+    y5 <- mixchar::fs_function(temp = temp,
+                               height = params['height_0',], skew = params['skew_0',],
+                               position = params['position_0',], width = params['width_0',])
     
     lines(temp, y5, lty = 6, lwd = 2.5, col = '#33638DFF')
     
@@ -739,26 +739,26 @@ tga_plot <- function (species_code, species_deconvolved_list, species_data, lege
   
   if (output$n_peaks == 3) {
     
-    y1 <- deconvolve::fs_mixture(x = temp,
-                                 h1 = params['h1',], s1 = params['s1',],
-                                 p1 = params['p1',], w1 = params['w1',],
-                                 h2 = params['h2',], s2 = params['s2',],
-                                 p2 = params['p2',], w2 = params['w2',],
-                                 h3 = params['h3',], s3 = params['s3',],
-                                 p3 = params['p3',], w3 = params['w3',])
+    y1 <- mixchar::fs_mixture(temp = temp,
+                              height_1 = params['height_1',], skew_1 = params['skew_1',],
+                              position_1 = params['position_1',], width_1 = params['width_1',],
+                              height_2 = params['height_2',], skew_2 = params['skew_2',],
+                              position_2 = params['position_2',], width_2 = params['width_2',],
+                              height_3 = params['height_3',], skew_3 = params['skew_3',],
+                              position_3 = params['position_3',], width_3 = params['width_3',])
   }
   
-  y2 <- deconvolve::fs_function(x = temp,
-                                h = params['h1',], s = params['s1',],
-                                p = params['p1',], w = params['w1',])
+  y2 <- mixchar::fs_function(temp = temp,
+                             height = params['height_1',], skew = params['skew_1',],
+                             position = params['position_1',], width = params['width_1',])
   
-  y3 <- deconvolve::fs_function(x = temp,
-                                h = params['h2',], s = params['s2',],
-                                p = params['p2',], w = params['w2',])
+  y3 <- mixchar::fs_function(temp = temp,
+                             height = params['height_2',], skew = params['skew_2',],
+                             position = params['position_2',], width = params['width_2',])
   
-  y4 <- deconvolve::fs_function(x = temp,
-                                h = params['h3',], s = params['s3',],
-                                p = params['p3',], w = params['w3',])
+  y4 <- mixchar::fs_function(temp = temp,
+                             height = params['height_3',], skew = params['skew_3',],
+                             position = params['position_3',], width = params['width_3',])
   
   lines(temp, y1, lty = 1, lwd = 2)
   lines(temp, y2, lty = 3, lwd = 3.5, col = '#440154FF')
@@ -791,7 +791,7 @@ pca <- function (prin, df, species_data) {
        ylim = c(-4, 4), xlim = c(-4.2, 5), 
        cex.axis = 1, cex = 1.8, pch = c(2, 20, 8, 0)[as.numeric(pc12_labeled$gf)])
   plot(fit, cex = 2, col = 1, labels = list(vectors = c('LAM', 'DMC', 'N', 'C', 'HC', 'CL', 'LG')))
-
+  
   mtext(text = paste0('Axis 1 (', (100*round(prop_vars[[1]], 2)), '%)'), 
         side = 1, 
         line = 0, 
@@ -828,7 +828,7 @@ pca <- function (prin, df, species_data) {
   text(x = up_labels[, 'Comp.1'], y = up_labels[, 'Comp.2']+0.16, 
        labels = row.names(up_labels), vfont = c('sans serif', 'bold italic'), 
        cex = 1.5, pos = 4, col = 'black')
- 
+  
   down_labels <- pc12_labeled[c('Sph', 'P.pro'), ]
   
   text(x = down_labels[, 'Comp.1'], y = down_labels[, 'Comp.2']-0.16, 
@@ -871,7 +871,7 @@ legend_subfig <- function (subfig, cex = 2.2) {
 legend_four_curves_horizontal <- function () {
   
   plot(1, type = 'n', axes = FALSE, xlab = '', ylab = '')
-
+  
   legend(x = "top", inset = 0,
          legend = c('DTG data', 'DTG modelled', 'Hemicelluloses-1', 'Hemicelluloses-2', 'Cellulose', 'Lignin'),
          horiz = TRUE,

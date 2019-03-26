@@ -69,11 +69,11 @@ tga_deconvolve <- function (species_code, data_folder, ranseed) {
   three <- c('KK', 'M', 'X')
   
   if (x %in% three) {
-    n_curves <- 3
+    n_peaks <- 3
   } else if (x == 'CC') {
-    n_curves <- 4
+    n_peaks <- 4
   } else {
-    n_curves = NULL
+    n_peaks = NULL
   }
   
   # read raw TGA
@@ -81,7 +81,7 @@ tga_deconvolve <- function (species_code, data_folder, ranseed) {
   tmp <- process_raw_tga(file)
   
   # deconvolve TGA data
-  output <- deconvolve::deconvolve(tmp, upper_temp = 650, n_curves = n_curves, ranseed = ranseed)
+  output <- mixchar::deconvolve(tmp, upper_temp = 650, n_peaks = n_peaks, seed = ranseed)
   
   # extract weight estimates
   weights <- output$weights
@@ -97,15 +97,15 @@ tga_deconvolve <- function (species_code, data_folder, ranseed) {
   weights <- weights[, c('species_code', 'HC_1', 'HC_2', 'CL', 'LG', 'value_type')]
   
   # set species of parameter outputs and make data wide
-  params <- as.data.frame(summary(output$minpack.lm)$coefficients[,1])
+  params <- as.data.frame(summary(output$model_fit)$coefficients[,1])
   params$species_code <- x
   params$parameter <- row.names(params)
   colnames(params) <- c('coefficient', 'species_code', 'parameter')
   params <- tidyr::spread(params, parameter, coefficient)
   
   return(x = list(data = output$data,
-                  bounds = output$bounds,
-                  minpack.lm = output$minpack.lm,
+                  temp_bounds = output$temp_bounds,
+                  model_fit = output$model_fit,
                   n_peaks = output$n_peaks,
                   weights = weights,
                   params = params))
@@ -130,7 +130,7 @@ process_raw_tga <- function (raw_file) {
   df <- read.csv(raw_file, header = FALSE, skip = 29)
   names(df) <- c('temp', 'time', 'mass_loss')
   init_mass <- read.csv(raw_file, nrows = 1, header = FALSE, skip = 17)[1,2]
-  tmp <- deconvolve::process(df, 'temp', 'mass_loss', init_mass)
+  tmp <- mixchar::process(df, init_mass, temp = 'temp', mass_loss = 'mass_loss')
   
   tmp
   

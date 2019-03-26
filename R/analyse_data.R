@@ -14,10 +14,10 @@ traits_combine <- function (species_data, trt, cn, tga) {
 
 # Select mean of traits
 
-traits_mean_only <- function(traits) {
+traits_mean_only <- function (traits) {
   
   t_mean <- traits %>%
-    dplyr::filter(wt_type == 'mean') %>%
+    dplyr::filter(value_type == 'mean') %>%
     dplyr::mutate(HC = HC_1 + HC_2)
   
   t_mean$HC[is.na(t_mean$HC)] <- t_mean$HC_2[is.na(t_mean$HC)]
@@ -137,11 +137,11 @@ single_deconvolve <- function (raw_file) {
   ub <- c(0.1, 0.3, 900, 900)
   
   # fit model
-  frm <- deriv ~ deconvolve::fs_function(temp_C, h, s, p, w)
-  start_list <- list(h = start_vec[1], 
-                     s = start_vec[2], 
-                     p = start_vec[3], 
-                     w = start_vec[4])
+  frm <- deriv ~ mixchar::fs_function(temp_C, height, skew, position, width)
+  start_list <- list(height = start_vec[1], 
+                     skew = start_vec[2], 
+                     position = start_vec[3], 
+                     width = start_vec[4])
   
   fit <- minpack.lm::nlsLM(frm, 
                            start = start_list, 
@@ -153,13 +153,13 @@ single_deconvolve <- function (raw_file) {
   # extract 
   params <- as.data.frame(summary(fit)$coefficients[,1])
   
-  h <- params[row.names(params) == 'h', 1]
-  s <- params[row.names(params) == 's', 1]
-  p <- params[row.names(params) == 'p', 1]
-  w <- params[row.names(params) == 'w', 1]
+  height <- params[row.names(params) == 'height', 1]
+  skew <- params[row.names(params) == 'skew', 1]
+  position <- params[row.names(params) == 'position', 1]
+  width <- params[row.names(params) == 'width', 1]
   
   f_j <- function (x) {
-    deconvolve::fs_function(x, h, s, p, w)
+    mixchar::fs_function(x, height, skew, position, width)
   }
   
   # area under the curves
@@ -169,10 +169,10 @@ single_deconvolve <- function (raw_file) {
   return(list(weight = weight,
               temp = temp, 
               obs = obs, 
-              h = h, 
-              s = s,
-              p = p, 
-              w = w))
+              height = height, 
+              skew = skew,
+              position = position, 
+              width = width))
   
 }
 
@@ -186,19 +186,26 @@ extract_parameters <- function (species_deconvolved_list, species_data) {
   }))
   
   # set significant digits
-  parameter_estimates[, c('h1', 'h2', 'h3', 'h0')] <- round(parameter_estimates[, c('h1', 'h2', 'h3', 'h0')], 4)
-  parameter_estimates[, c('p1', 'p2', 'p3', 'p0')] <- round(parameter_estimates[, c('p1', 'p2', 'p3', 'p0')], 0)
-  parameter_estimates[, c('s1', 's2', 's3', 's0')] <- round(parameter_estimates[, c('s1', 's2', 's3', 's0')], 3)
-  parameter_estimates[, c('w1', 'w2', 'w3', 'w0')] <- round(parameter_estimates[, c('w1', 'w2', 'w3', 'w0')], 0)
+  parameter_estimates[, c('height_1', 'height_2', 'height_3', 'height_0')] <- 
+    round(parameter_estimates[, c('height_1', 'height_2', 'height_3', 'height_0')], 4)
+  
+  parameter_estimates[, c('position_1', 'position_2', 'position_3', 'position_0')] <- 
+    round(parameter_estimates[, c('position_1', 'position_2', 'position_3', 'position_0')], 0)
+  
+  parameter_estimates[, c('skew_1', 'skew_2', 'skew_3', 'skew_0')] <- 
+    round(parameter_estimates[, c('skew_1', 'skew_2', 'skew_3', 'skew_0')], 3)
+  
+  parameter_estimates[, c('width_1', 'width_2', 'width_3', 'width_0')] <- 
+    round(parameter_estimates[, c('width_1', 'width_2', 'width_3', 'width_0')], 0)
   
   # combine with species data
   parameters <- merge(parameter_estimates, species_data[,c('species_code', 'species', 'gf')])
   
   parameters <- parameters[ ,c('species', 'gf', 
-                               'h0', 'h1', 'h2', 'h3', 
-                               'p0', 'p1', 'p2', 'p3', 
-                               's0', 's1', 's2', 's3', 
-                               'w0', 'w1', 'w2', 'w3')]
+                               'height_0', 'height_1', 'height_2', 'height_3', 
+                               'position_0', 'position_1', 'position_2', 'position_3', 
+                               'skew_0', 'skew_1', 'skew_2', 'skew_3', 
+                               'width_0', 'width_1', 'width_2', 'width_3')]
   
   parameters
 }
