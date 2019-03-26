@@ -44,8 +44,9 @@ docker run -v /Users/path/to/biomass.carbon/:/home/biomass.carbon:/home/rstudio 
 docker run -v c:\path\to\biomass.carbon\:/home/biomass.carbon:/home/rstudio -p 8787:8787 smwindecker/biomass.carbon:latest
 ```
 
-2. Rerun the workflow:
+2. Access Rstudio within docker by opening your web browser and going to `localhost:8787/`. Username and password are both `rstudio`.
 
+3. Rerun the analysis:
 ```
 remake::make()
 ```

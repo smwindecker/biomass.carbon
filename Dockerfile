@@ -1,4 +1,4 @@
-FROM rocker/verse:3.5.0
+FROM rocker/verse:3.5.1
 LABEL maintainer="Saras Windecker"
 LABEL email="saras.windecker@gmail.com"
 
@@ -22,7 +22,7 @@ RUN mkdir -p $HOME/.R/ \
 ## Add in required R packages
 RUN . /etc/environment \
   && install2.r --error --repos $MRAN --deps TRUE \
-  dotCall64 spam ape rgl phylobase knitr minpack.lm phytools vegan xtable 
+  dotCall64 spam ape rgl phylobase knitr minpack.lm phytools vegan xtable
 
 ## Add in required R packages (without suggestions)
 RUN . /etc/environment \
@@ -32,7 +32,7 @@ RUN . /etc/environment \
 # Install github packages
 RUN installGithub.r \
     --deps "TRUE" \
-    smwindecker/deconvolve \
+    smwindecker/mixchar \
     richfitz/remake
 
 # Remove unnecessary tmp files
