@@ -8,3 +8,4 @@ manuscript.Rnw
 /.remake
 /figs
 .DS_Store
+*.svg
