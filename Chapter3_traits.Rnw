@@ -9,4 +9,4 @@ Understanding variation and covariation in plant morphological and chemical trai
 \end{localsize}
 
 \newpage
-\Sexpr{knitr::knit_child('chapters/Chapter3_traits/body.Rnw')}
+\Sexpr{knitr::knit_child('body.Rnw')}
