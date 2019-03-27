@@ -1,0 +1,144 @@
+\documentclass[12pt]{article}
+
+%%% PAGE DIMENSIONS
+\usepackage{geometry}
+\geometry{a4paper}
+\geometry{margin=2cm}
+
+%%% PACKAGES
+\usepackage[authoryear]{natbib}
+\bibliographystyle{besjournals}
+
+\usepackage{makecell,booktabs}
+
+\usepackage{setspace}
+\doublespacing
+% \linespread{1.25}
+
+\usepackage{graphicx}
+
+\usepackage{tabularx}
+\usepackage{adjustbox}
+
+\usepackage{multirow}
+
+\usepackage[running]{lineno}
+
+\usepackage{caption}
+\captionsetup{justification=raggedright, singlelinecheck=false}
+\usepackage[font=small,labelfont=bf,labelsep=space]{caption}
+
+\usepackage{subcaption}
+\captionsetup{justification=raggedright, singlelinecheck=false}
+\usepackage[font=small,labelfont=bf,labelsep=space]{subcaption}
+
+\usepackage{pgfplots}
+\pgfplotsset{width=16cm}
+
+\usepackage{authblk}
+
+\usepackage{amsmath}
+
+\usepackage{hyperref} % for \url
+
+\usepackage{pdflscape} %for landscape table
+
+\usepackage{afterpage} %for Table on next page
+
+%%% HEADERS and FOOTERS
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}
+\lhead{}\chead{}\rhead{}
+\lfoot{}\cfoot{\thepage}\rfoot{}
+
+%%% SECTION TITLE APPEARANCE
+\usepackage{sectsty}
+\setcounter{secnumdepth}{-1}
+\subsectionfont{\normalfont\fontsize{14}{15}\selectfont}
+\DeclareMathSizes{10}{11}{9}{7}
+
+%%% DEFINE NEW COMMANDS
+\newcommand{\B}{\textbf}
+\newcommand{\TL}{\textless}
+\newcommand{\PRZ}{\text{Pr}\bigl( >\mid Z \mid \bigr)}
+\newcommand{\head}[1]{\textnormal{\textbf{#1}}}
+
+\newenvironment{nscenter}
+ {\parskip=.75pt\par\nopagebreak\centering}
+ {\par\noindent\ignorespacesafterend}
+
+\makeatletter
+\renewcommand{\fnum@figure}{Fig. \thefigure.}
+\renewcommand{\fnum@table}{Table \thetable.}
+\makeatother
+
+\newcommand{\fillcaption}[1]{ %new command with the argument being the text of the caption
+\textbf{Fig. \arabic{figure}:} #1 %Makes main figure number, concatenates it to legend
+\addtocounter {figure} {1} %increments main figure count
+}
+
+%% FOR SUPPLEMENT SETTINGS
+\newcommand{\beginsupplement}{%
+        \setcounter{table}{0}
+        \renewcommand{\thetable}{S\arabic{table}}%
+        \setcounter{figure}{0}
+        \renewcommand{\thefigure}{S\arabic{figure}}%
+     }
+
+\begin{document}
+\linenumbers
+
+\pgfplotsset{width=16cm}
+
+%%% DOCUMENT CONTENT
+\title{Decoupling plant economics traits and biomass carbon composition in wetland litter}
+\author[*ab]{S. M. Windecker}
+\author[b]{S. M. Trevathan-Tackett}
+\author[a]{N. Golding}
+\author[acd]{J. A. Catford}
+\author[b]{P. I. Macreadie}
+\author[a]{P. A. Vesk}
+
+\affil[a]{School of BioSciences, University of Melbourne, Parkville VIC 3010, Australia}
+\affil[b]{Centre for Integrative Ecology, School of Life and Environmental Sciences, Deakin University, Burwood Campus, Burwood VIC 3125, Australia}
+\affil[c]{Biological Sciences, University of Southampton, Highfield Campus, Southampton SO17 1BJ, UK}
+\affil[d]{Fenner School of Environment and Society, Australian National University, Canberra ACT 2601, Australia}
+\affil[*]{Corresponding author: sm.windecker@unimelb.edu.au}
+\date{}
+\maketitle
+
+\newpage
+
+\section{Summary}
+
+Understanding variation and covariation in plant morphological and chemical traits is important for predicting plant species' effects on biogeochemical ecosystem processes. The `fast\textendash slow' economic spectrum identifies coordination of commonly measured traits between fast and slow extremes for a variety of ecosystem processes, including decomposition. Despite the relevance of litter carbon complexity to litter decomposability, coordination of biomass carbon traits along the fast\textendash slow spectrum has not been examined. This study aims to examine variation in biomass carbon traits in plant litter and their covariation with commonly measured plant economic spectrum traits. We used thermogravimetric analysis (TGA), a technique primarily used in the biofuels field, to estimate biomass carbon traits. We measured seven traits for 29 wetland plant species: four morphological and chemical traits associated with the plant economic spectrum (litter area per mass, dry matter content, nitrogen content, and carbon content) and three biomass carbon traits (hemicellulose, cellulose, and lignin content). We estimated biomass carbon traits by isolating individual peaks of the rate of mass loss curve derived from pyrolysis of plant litter during TGA. We used an open-source mixture model to estimate the peaks that we developed for this purpose. We found that biomass carbon traits varied perpendicularly to traits associated with the fast\textendash slow economic spectrum in multivariate trait space. In general, species invested in predominantly lignin- or cellulose- based tissue, and this investment was not correlated to fast\textendash slow litter nutrient uptake strategies. Biomass carbon traits varied by functional group, with terrestrial dry species showing highest lignin concentration and emergent amphibious and terrestrial damp species showing the highest cellulose concentration. This decoupling of plant economic spectrum and biomass carbon traits in our study suggests two independent aspects of litter recalcitrance. A multi-trait approach is therefore needed when predicting effects of plants on biogeochemical functions such as decomposition, because traits typically associated with the fast\textendash slow spectrum are not replacements for direct measures of biomass carbon.
+
+\section{Key-words}
+
+carbon, decomposition, functional traits, plant economics spectrum, thermogravimetric analysis, wetlands
+
+\Sexpr{knitr::knit_child('chapters/Chapter3_traits/body.Rnw')}
+
+\section{Author contributions}
+
+\begin{itemize}
+  \item{SW, PV, JC, PM, and STT conceived the ideas and designed methodology;}
+  \item{SW collected the data;}
+  \item{SW, PV, and NG analysed the data;}
+  \item{SM led the writing of the manuscript.}
+\end{itemize}
+All authors contributed critically to the drafts and gave final approval for publication.
+
+\section{Data accessibility}
+Authors intend to archive the data in the Dryad Digital Repository.
+
+\bibliography{bibliography_papers,bibliography_packages}
+
+\pagebreak
+\beginsupplement
+
+\Sexpr{knitr::knit_child('chapters/Chapter3_traits/supplement.Rnw')}
+
+\end{document}
+
