@@ -158,40 +158,40 @@ traits_table <- function (traits_df, output_file) {
   traits_df$gf_old[traits_df$gf_old == 'NV'] <- 'Non-vascular'
   traits_df$gf_old[traits_df$gf_old == 'S'] <- 'Shrub'
   traits_df$gf_old[traits_df$gf_old == 'T'] <- 'Tree'
- 
+  
   # round trait values
   traits_df$LAM <- sprintf("%.2f", round(traits_df$LAM, 2))
   traits_df$DMC <- sprintf("%.0f", round(traits_df$DMC, 0))
   traits_df[,c('N', 'C')] <- lapply(round(traits_df[,c('N', 'C')], 1), sprintf, fmt = "%.1f")
   traits_df[,c('HC_1', 'HC_2', 'CL', 'LG')] <- round(traits_df[,c('HC_1', 'HC_2', 'CL', 'LG')], 1)
-
+  
   # for each biomass trait, paste mean and ci of weights together
   for (i in c('HC_1', 'HC_2', 'CL', 'LG')) {
-
+    
     for (j in unique(as.character(traits_df$species))) {
-
-      if (!is.na(traits_df[(traits_df$wt_type == 'mean' & traits_df$species == j), i])) {
-
-        traits_df[(traits_df$wt_type == 'mean' & traits_df$species == j), i] <- paste0(
-          traits_df[(traits_df$wt_type == 'mean' & traits_df$species == j), i], ' [',
-          traits_df[(traits_df$wt_type == '2.5%' & traits_df$species == j), i], ', ',
-          traits_df[(traits_df$wt_type == '97.5%' & traits_df$species == j), i], ']')
-
+      
+      if (!is.na(traits_df[(traits_df$value_type == 'mean' & traits_df$species == j), i])) {
+        
+        traits_df[(traits_df$value_type == 'mean' & traits_df$species == j), i] <- paste0(
+          traits_df[(traits_df$value_type == 'mean' & traits_df$species == j), i], ' [',
+          traits_df[(traits_df$value_type == '2.5%' & traits_df$species == j), i], ', ',
+          traits_df[(traits_df$value_type == '97.5%' & traits_df$species == j), i], ']')
+        
       }
     }
   }
-
+  
   # subset to only include modified mean rows
-  trt_table <- traits_df[traits_df$wt_type == 'mean', ]
-  exclude_rows <- c('species_code', 'sp_abrev', 'wt_type')
+  trt_table <- traits_df[traits_df$value_type == 'mean', ]
+  exclude_rows <- c('species_code', 'sp_abrev', 'value_type')
   trt_table <- trt_table[, -which(names(trt_table) %in% exclude_rows)]
-
+  
   trt_table <- trt_table[c('family', 'species', 'gf', 'gf_old', 'LAM', 'DMC', 'N', 'C', 'HC_1', 'HC_2', 'CL', 'LG')]
   trt_table <- trt_table[with(trt_table, order(family, species)),]
   
   # add italics specification for latex
   trt_table$species <- paste0('\\textit{', trt_table$species, '}')
-
+  
   # create xtable
   trt_table <- xtable::xtable(trt_table)
   
