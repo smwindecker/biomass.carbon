@@ -2,10 +2,10 @@
 .Rhistory
 .RData
 .Ruserdata
-manuscript.tex
-manuscript.pdf
-manuscript.Rnw
+*.tex
+*.pdf
 /.remake
 /figs
 .DS_Store
 *.svg
+comments/
