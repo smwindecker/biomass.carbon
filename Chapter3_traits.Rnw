@@ -1,0 +1,231 @@
+\chapter{Decoupling plant economics traits and biomass carbon composition in wetland litter}\label{sec:traits}
+\newpage
+
+\begin{localsize}{11}
+\section*{\centering Abstract}
+
+Understanding variation and covariation in plant morphological and chemical traits is important for predicting plant species' effects on biogeochemical ecosystem processes. The `fast\textendash slow' economic spectrum identifies coordination of commonly measured traits between fast and slow extremes for a variety of ecosystem processes, including decomposition. Despite the relevance of litter carbon complexity to litter decomposability, coordination of biomass carbon traits along the fast\textendash slow spectrum has not been examined. This study aims to examine variation in biomass carbon traits in plant litter and their covariation with commonly measured plant economic spectrum traits. We used thermogravimetric analysis (TGA), a technique primarily used in the biofuels field, to estimate biomass carbon traits. We measured seven traits for 29 wetland plant species: four morphological and chemical traits associated with the plant economic spectrum (litter area per mass, dry matter content, nitrogen content, and carbon content) and three biomass carbon traits (hemicellulose, cellulose, and lignin content). We estimated biomass carbon traits by isolating individual peaks of the rate of mass loss curve derived from pyrolysis of plant litter during TGA. We used an open-source mixture model to estimate the peaks that we developed for this purpose. We found that biomass carbon traits varied perpendicularly to traits associated with the fast\textendash slow economic spectrum in multivariate trait space. In general, species invested in predominantly lignin- or cellulose- based tissue, and this investment was not correlated to fast\textendash slow litter nutrient uptake strategies. Biomass carbon traits varied by functional group, with terrestrial dry species showing highest lignin concentration and emergent amphibious and terrestrial damp species showing the highest cellulose concentration. This decoupling of plant economic spectrum and biomass carbon traits in our study suggests two independent aspects of litter recalcitrance. A multi-trait approach is therefore needed when predicting effects of plants on biogeochemical functions such as decomposition, because traits typically associated with the fast\textendash slow spectrum are not replacements for direct measures of biomass carbon.
+
+\end{localsize}
+
+\newpage
+\section{Introduction}
+
+Litter decomposition links plant biomass to the global carbon cycle. Plant litter can become more recalcitrant, or resistant to decay, due to a variety of abiotic and biotic conditions, such as oxygen availability, water levels, pH, ambient nutrients, and the presence of microbial and macroinvertebrate decomposer communities. However, the nutrient and carbon make-up of plant litter itself is strongly related to decay rates, which vary across biomes \citep{cornwell2008}. Litter of different quality will decompose to varying degrees and at different rates \citep{liao2008,valery2004}. Functional traits can be used to quantify litter quality, and have been tied to plant effects on ecosystem function more generally \citep{diaz2007,lavorel2002,violle2007}. 
+
+A variety of functional traits predict decomposition of both leaf litter \citetext{specific leaf area/leaf mass area and leaf nitrogen; \citealp{devries2012,cornwell2008}, and leaf carbon; \citealp{britson2016}} and plant litter more generally \citetext{litter carbon and dry matter content of all litter, including stems, leaves, roots etc; \citealp{freschet2012}}. Covariation among leaf traits defines a `leaf economic spectrum' of trait variation, in which nearly 3/4 of the total variation of key leaf traits is described by a single axis in multidimensional trait space \citep{wright2004}. This spectrum has since been described in wood \citep{chave2009}, roots \citep{roumet2016}, and across multiple plant organs \citep{freschet2012,reich2014}. Fast-growing, `nutrient acquisitive', species produce large quantities of high-quality litter, characterised by a high nitrogen content and high specific leaf area. Slow-growing, `nutrient conservative', plant species grow dense structural tissue that is high in dry matter content and carbon \citep{aerts2000}. This so-called `fast\textendash slow' spectrum of plant economic traits coordinates species' strategies for nutrient uptake, carbon cycling, and water use \citep{reich2014}, but has not yet been demonstrated in relation to litter carbon complexity.
+
+Plant economic traits are not themselves direct measures of the relative composition of carbon types in litter (Fig.~\ref{Fig:flowchart}). Although abiotic and biotic conditions can make even labile, or easily decomposed, litter recalcitrant, litter high in intrinsically complex carbons is more likely to become recalcitrant. It is well established that the amount of lignin, in particular, strongly predicts decay rates of plant litter \citep{britson2016,cornwell2008,makkonen2012,freschet2012}. Other carbon forms, such as hemicelluloses and cellulose, decompose at different rates under a range of conditions. Composed of heavily-linked benzene-propane monomers, lignin is thermally stable and slow to decompose in soils. Cellulose forms long, linear polymers of glucose units that are more easily decomposed, but more stable than simple sugars such as hemicelluloses that are most easily decomposed \citep{muller-hagedorn2007}. Despite the clear connection between litter carbon composition and rate of decomposition \citep{britson2016,lang2009}, there has not been much attempt to quantify the coordination between plant economic traits and direct measures of carbon complexity. 
+
+Traits related to the plant economic spectrum can be measured using standardised, widely reproducible methods \citep{perez-harguindeguy2013}. In contrast, wet chemistry assays for carbon component analysis are time-consuming and adversely impact the environment through use of sulfuric acid and acetic anhydride, among other chemicals. Thermogravimetric analysis (TGA) is an alternative method for biomass carbon estimation, which records mass loss during plant litter pyrolysis, or heating in a N$_2$ environment. Mass loss during pyrolysis can be regarded as the sum of the degradation of the main components of the sample \textemdash  hemicelluloses, cellulose, and lignin \citep{hu2016,cheng2015,perejon2011,orfao2001,muller-hagedorn2007}. Therefore, the multi-peaked rate of mass loss curve (derivative of mass loss curve) can be mathematically separated, or deconvolved, into individual peaks for estimation of the weight of each primary component. This method has been validated by studies comparing estimates to experimental measurements \citep{yang2006}. Much of the published literature use commercial software to deconvolve the rate of mass loss curve \citetext{for example OriginPro \citealp{chen2017}, PeakFit \citealp{perejon2011}, Fityk \citealp{perejon2011}, or Datafit \citealp{cheng2015}}, which are not accessible to everyone. Software accessibility may be one reason why thermogravimetric analysis has not been widely adopted by functional ecologists, despite being previously used to identify plant species' recalcitrance \citetext{for example in marine and coastal macrophytes \citealp{trevathan-tackett2015}, and eucaplyts \citealp{orfao2001}}.
+
+In this study, we examine and apply thermogravimetric analysis to estimate the partitioning of litter carbon, into what we call `biomass carbon traits', in 29 wetland plant species. We develop an open-source mixture model software implementation to deconvolve the rate of mass loss curves. We measure a range of morphological and chemical plant economic traits to examine coordination of biomass carbon traits with the fast\textendash slow economic spectrum. 
+
+\begin{figure}[ht]
+	\centering
+	\scalebox{0.9}
+	{\includegraphics[width=\textwidth]{chapters/Chapter3_traits/modified-figs/trait_flowchart.png}}
+	\caption{Breakdown of the relationships between functional traits (in ellipses) related to concepts of litter recalcitrance examined in this study: dry matter content (DMC), litter area per mass (LAM), litter nitrogen (N), litter carbon (C), litter hemicelluloses (HC), litter cellulose (CL), and litter lignin (LG).}
+	\label{Fig:flowchart}
+\end{figure}
+
+\section{Materials and Methods}
+
+\subsection*{Litter collection}
+
+In late austral summer 2016, we collected plant litter derived from photosynthetic tissue of 29 wetland plant species. Since the aim of our study was to examine traits related to litter recalcitrance, we measured aboveground plant biomass that would contribute to litter. For graminoids, litter included the culm and leaves, but not the inflorescence. For forbs and ferns, litter included the entire body of the plant excluding the flower. For tree species, leaves and petioles, leaflets and rachis, but not seeds, flowers, or stems were included. For the purposes of examining litter quality, empirical work has found that traits are reasonably coordinated among different plant parts \citep[for example, leaves and stem,][]{reich2014,jackson2013}.
+
+The target species represented a range of functional groups classified according to the \citet{brock1997} scheme. Functional groups included: terrestrial dry species (`Tdr'; n = 5), terrestrial damp species (`Tda'; n = 9), amphibious fluctuation-tolerators (`AT'; n = 10), and amphibious fluctuation-responders (`AR': n = 5). These groups classify species according to the water levels in which they germinate, grow, and reproduce, and were chosen because tolerance to flooding is an important characteristic for wetland and riparian species \citep[][; functional group descriptions in Table~\ref{apx:fxl_groups}]{catford2011}. 
+
+We collected species at three previously surveyed sites in Victoria, Australia (sites within 60 km of -37.455, 144.985): one riverbank, one floodplain wetland, and one shallow groundwater- and surfacewater- fed forbland. For each species, we collected ten robust individuals located at least 5 m apart along a linear transect at a single site \citep{perez-harguindeguy2013}. To avoid effects of seasonal variation, all litter was collected at the end of the growing season while plants were fully mature but not yet in senescence. Litter was placed in moist plastic bags and stored in dark coolers until transported to the lab, and then moved to a dark, refrigerated room. We measured the fresh weight of each sample within 24 hours of collection, dried the fresh litter at 60 $^{\circ}$C for 72 hours, and ground the dried litter to \textless $40 \mu m$ using a Retsch Centrifugal Mill ZM200.
+
+\begin{table}[!ht]
+	\caption{Selected traits and measurement methods.}
+	\label{Tab:traits}
+	\centering
+	\small
+	\begin{tabularx}{\textwidth}{lllX}
+        		\toprule
+        		Abbreviation & Trait & Units & Method \\
+        		\midrule
+		LAM & Litter area per mass & m$^2$/g & One-sided area of fresh litter (m$^2$) divided by its oven-dry mass (g) \\
+		DMC & Litter dry matter content & mg/g & Oven-dry litter mass (mg) divided by water-saturated fresh litter mass (g) \\
+		N & Litter nitrogen content & wt\% & Weight \% elemental N in dry litter mass measured with LECO Elemental Analyser \\
+		C & Litter carbon content & wt\% & Weight \% elemental C in dry litter mass measured with LECO Elemental Analyser \\
+		HC & Litter hemicelluloses & wt\% & Weight \% hemicelluloses in dry litter mass from thermogravimetric analysis \\
+		CL & Litter cellulose & wt\% & Weight \% cellulose in dry litter mass from thermogravimetric analysis \\
+		LG & Litter lignin & wt\% & Weight \% lignin in dry litter mass from thermogravimetric analysis \\
+        		\bottomrule
+	\end{tabularx}
+\end{table}
+
+\subsection*{Fast\textendash slow economic spectrum traits}
+
+We measured litter area per mass and litter dry matter content per published recommendations \citep{perez-harguindeguy2013}, presenting the average of ten replicates per species. Dried litter from all ten samples were then pooled and ground, and a subsample of approximately 150 mg was analysed for litter nitrogen and carbon content in a LECO Elemental Analyser (Department of Biomedical Engineering, University of Melbourne), using an EDTA standard (Table~\ref{Tab:traits}). 
+
+\subsection*{Lignocellulosic biomass method}
+
+\subsection{Lignocellulosic biomass method}
+We used 10\textendash20 mg subsamles of dry, ground litter of each species to estimate biomass carbon traits using thermogravimetric analysis (TGA). During TGA, biomass samples are pyrolysed, resulting in a graph of remaining weight in grams plotted against temperature (Fig.~\ref{Fig:TGAmethod}a).  Each sample was pyrolysed in an N$_2$ environment from 30\textendash800 $^{\circ}$C at a temperature ramp of 10 $^{\circ}$C/min using a Netzsch TGA-FTIR thermogravimetric analyser (Department of Biomedical Engineering, University of Melbourne). We ran identical analyses on cellulose (carboxy-methyl cellulose) and lignin samples (alkali lignin from Sigma Aldrich).  
+
+The negative first derivative of the thermogravimetric curve (`DTG curve'; Fig.~\ref{Fig:TGAmethod}b) describes the rate of mass loss. This multi-peaked plot has three main phases \citep{orfao2001}: 
+\begin{enumerate}
+	\item Phase 1: A short period with a pronounced peak of moisture evolution, up until approximately 120 $^{\circ}$C.
+	\item Phase 2: A wide mid-range of high mass loss, caused by devolatilisation of primary biomass carbon components, between approximately 120\textendash650 $^{\circ}$C.
+	\item Phase 3: A final period of little mass loss when carbonaceous material associated with the inorganic fraction decomposes, after approximately 650 $^{\circ}$C.
+\end{enumerate}
+Since the overall rate of mass loss (DTG) curve also represents the loss of extractives, water, inorganic matter, and volatiles \citep{hu2016}, we isolate mass loss from biomass components by cropping the DTG data to Phase 2 (120\textendash650 $^{\circ}$C). The cropped DTG curve can then be used to estimate mass fractions of the main biomass carbon components by mathematically deconvolving the multi-peaked curve (Fig.~\ref{Fig:TGAmethod}c). 
+
+\begin{figure}[ht]
+	\centering
+	% \scalebox{0.9}
+	{\includegraphics[width=\textwidth]{chapters/Chapter3_traits/figs/theory_plot.png}}
+	\caption{Detailed exploration of thermogravimetric analysis and mixture modelling (using data from \textit{Juncus amabilis}): (a) Mass loss curve, heating rate = 10$^\circ$C/min; (b) Negative first derivative thermogravimetric (DTG) curve displaying mass loss rate across temperature; (c) DTG curve overlaid with output of deconvolution. Rate of mass loss values (in b and c) scaled by initial mass of sample. Arrows on (a) and (c) indicate the locations of the peaks of the three deconolved curves. Line segments 1, 2, and 3 on (b) represent mass loss phases.}
+	\label{Fig:TGAmethod}
+\end{figure}
+
+Although the biomass deconvolution curves for the three primary components overlap in the DTG curve, research has found the biomass fractions do not interact much during thermal volatilisation, but decompose reasonably independently \citep{yang2006}. Because they decompose independently, the derivative mass loss equation ($\frac{dm}{dT}$) can be expressed as the sum of $n$ independent reactions (Eq.~\ref{eqn:mixture_model}), as follows \citep{orfao2001}:
+
+\begin{align}
+	-\frac{dm}{dT} &= \sum\limits_{i=1}^n c_i\frac{d\alpha_{i}}{dT} \label{eqn:mixture_model} \\
+	m &= \frac{M_T}{M_0} \label{eqn:fraction} \\
+	c_i &= M_{0i} - M_{\infty i} \label{eqn:decayed_mass} \\
+	\alpha_i &= \frac{M_{0i} - M_{Ti}}{M_{0i} - M_{\infty i}} \label{eqn:alpha}
+\end{align}
+
+where mass ($m$) is expressed as a fraction of mass at temperature $T$ ($M_T$) of the initial sample mass ($M_0$) (Eq.~\ref{eqn:fraction}), $c_i$ is the mass of component $i$ that is decayed (Eq.~\ref{eqn:decayed_mass}), and the mass loss curve of each individual component ($\frac{d\alpha_{i}}{dT}$) is the derivative of $\alpha_i$, the conversion of mass at a given temperature ($M_{Ti}$), from the initial ($M_{0i}$), given total mass lost between the initial and final ($M_{\infty i}$) temperature for each curve  (Eq.~\ref{eqn:alpha}). 
+
+Although most of our results can be described with only $n$ = 3 peaks, corresponding to a single peak each of hemicelluose, cellulose, and lignin, some species yield a second hemicellulose peak at a lower temperature, resulting in $n$ = 4 independent peaks. This is because the soluble carbohydrates in plant tissue can take many forms, including xylan, amylose, etc., which apparently degrade at different temperatures \citep[see also][]{chen2017,muller-hagedorn2007}. 
+
+In order to use DTG data to estimate the mass fractions of carbon forms, we must determine the shape of $\frac{d\alpha_{i}}{dT}$. Many different functions have been proposed: the asymmetric bi-Gaussian \citep{sun2015}, logistic \citep{barbadillo2007}, Weibull \citep{cai2007}, asymmetric double sigmoidal \citep{chen2017}, and the Fraser-Suzuki function \citep{perejon2011,hu2016}. Comparisons of several techniques \citep{svoboda2013,perejon2011,cheng2015} found that the Fraser-Suzuki function best fit these kinetic curves, since it allows for asymmetry (a parametric examination of the Fraser-Suzuki function can be found in Fig.~\ref{apx:fs_simulation}). We therefore use the Fraser-Suzuki function to describe the rate expression ($\frac{d\alpha_{i}}{dT}$; Eq.~\ref{eqn:fs_function}) as follows:
+
+\begin{gather}\label{eqn:fs_function}
+	\frac{d\alpha_i}{dT} = h_i\ exp\bigg\{-\frac{ln2}{s_i^2}\Big[ln\Big(1 + 2s_i \frac{T - p_i}{w_i}\Big)\Big]^2\bigg\}
+\end{gather}
+
+where T is temperature ($^\circ$C), and the parameters $h_i$, $s_i$, $p_i$, and $w_i$ are height, skew, position, and width of the curve, respectively. In total, our model estimates 12 or 16 parameters, one for each parameter of Eq.~\ref{eqn:fs_function} for either 3 or 4 primary components. 
+
+We used non-linear optimisation using residual sum of squares to fit the rate expression \citetext{as in \citealp{cheng2015}}. Starting values were selected based on curves depicted in the literature \citep{muller-hagedorn2007} and from the results of running an identical deconvolution on pure cellulose and lignin samples. Hemicelluloses decay in a reasonably narrow band beginning at a lower temperature \citep{muller-hagedorn2007}, so we used 270 for position and 50 for width. Linear cellulose crystals decay at a higher temperature, but decay more rapidly after peak temperatures are reached, so starting position was set to 310 and width to 30. Lignin typically decays beginning at a high temperature and over a wide interval \citep{chen2015}, so position and width began at 410 and 200, respectively. 
+
+Once each biomass carbon component's curve parameters have been fit, we can calculate the weight in the overall sample by integrating under the curve (expressed as weight \%; Eq.~\ref{eqn:integration}). To estimate the uncertainty of the weight predictions of the litter samples we calculated the 95\% interval of the weight estimates across a random sample of parameter estimates, drawn in proportion to their likelihood. We assumed a truncated multivariate normal distribution, since the parameters are constrained to positive values, using the modelling package \textit{tmvtnorm} \citep{tmvtnorm}. 
+
+\begin{gather}\label{eqn:integration}
+	\alpha_i = \int_{120}^{650} h_i\ exp\bigg\{-\frac{ln2}{s_i^2}\Big[ln\Big(1 + 2s_i \frac{T - p_i}{w_i}\Big)\Big]^2\bigg\} dT
+\end{gather}
+
+We interpret that the curve located around 250\textendash270 $^\circ$C corresponds to primary hemicelluloses (HC-2), around 310\textendash330 $^\circ$C to cellulose (CL), and around 330\textendash350 $^\circ$C to lignin (LG). If present, the fourth curve located below 200 $^\circ$C corresponds to the most simple hemicelluloses (HC-1). In our later analyses the hemicelluloses trait (HC) refers to the sum of HC-2 and, if present, HC-1. 
+
+\begin{figure}[!ht]
+	\centering
+	{\includegraphics[width=0.2\textwidth]{chapters/Chapter3_traits/modified-figs/tga_method.png}}
+	\caption{Data preparation and thermogravimetric analysis. We collected the litter from three freshwater wetlands surrounding Melbourne, Victoria (sites within 60 km of -37.455, 144.985). In the field, we placed the plant litter in moist plastic bags and stored them in dark coolers until we could transport them to the lab, where they were promptly dried at 60 $^{\circ}$C for 72 hours. We ground our dry litter to \textless 40 $\mu m$ using a Retsch Centrifugal Mill ZM200. We pyrolysed 10\textendash20 mg subsamples of dry, ground litter in an N$_2$ environment from 30\textendash800 $^{\circ}$C at a temperature ramp of 10 $^{\circ}$C/min using a Netzsch TGA-FTIR thermogravimetric analyser (Department of Biomedical Engineering, University of Melbourne).}
+	\label{Fig:litter_method}
+\end{figure}
+
+\subsection*{Data analysis}
+
+We fit the mixture model and associated analyses using functions available in our R package \textit{mixchar} \citep{mixchar}. We optimised our starting values using the package \textit{minpack.lm} \citep{minpack.lm}. We used a correlation-based Principal Components Analysis (PCA) and pair-wise linear regressions to compare the biomass carbon traits (HC, CL, and LG) with the plant economics traits (LAM, DMC, N, and C). 
+
+To examine evolutionary patterns in trait values among these species, we created a phylogeny, and compared branch length, `patristic', distance to trait distance using the Mantel Test. Genetic sequences for the rbcL and matK gene were accessed from GenBank (Table~\ref{apx:genbank}). In those cases where both gene regions are not available for a species, a sequence of a species from the same genus was used. Sequences for each gene were aligned in Geneious 10.2.3 \citep{kearse2012} using the MAFFT \citep{katoh2013} plugin, the alignments were trimmed to reduce missing data, and subsequently concatenated. We constructed the phylogeny with the MrBayes \citep{ronquist2012} plugin in Geneious using the following parameters: GTR+I+G model; genes partitions unlinked; and chain run for 1 million generations with a 100,000 generation burn-in. We obtained a 50\% majority rule consensus tree, which we used for subsequent analyses. 
+
+Our analyses were conducted within the statistical computing environment, R \citep{R}. 
+
+\section{Results}
+
+\subsection*{Partitioning of litter organic matter}
+
+Across all 29 species, the negative first derivative thermogravimetric deconvolution resulted in three or four consistent peaks (Fig.~\ref{Fig:tga_three}; all species in Fig.~\ref{apx:tga_ar}\textendash \ref{apx:tga_tdr}). Four species had a fourth peak, which represents an additional hemicellulose type that decayed below 220 $^{\circ}$C (\textit{Cycnogeton procerum}, \textit{Cyperus eragrostis}, \textit{Marsilea drumondii}, and \textit{Meuhlenbeckia florulenta}). The hemicellulose peak common to all samples occurred at a mean temperature of \Sexpr{extract(tga_params, 'position_1', 'mean')} $^{\circ}$C with a standard deviation of \Sexpr{extract(tga_params, 'position_1', 'sd')} $^{\circ}$C (Table~\ref{apx:parameters}). Cellulose curves across all species peaked at a mean of \Sexpr{extract(tga_params, 'position_2', 'mean')} $^{\circ}$C (SD \Sexpr{extract(tga_params, 'position_2', 'sd')} $^{\circ}$C) and had the narrowest width (\Sexpr{extract(tga_params, 'width_2', 'mean')} $^{\circ}$C), when we compare to the two hemicelluloses (\Sexpr{extract(tga_params, 'width_0', 'mean')} and \Sexpr{extract(tga_params, 'width_1', 'mean')} $^{\circ}$C, respectively) and to lignin (\Sexpr{extract(tga_params, 'width_3', 'mean')} $^{\circ}$C; Table~\ref{apx:parameters}). Lignin curves, in addition to being the widest, also occurred at the highest temperature (mean \Sexpr{extract(tga_params, 'position_3', 'mean')} $^{\circ}$C and SD \Sexpr{extract(tga_params, 'position_3', 'sd')} $^{\circ}$C; Table~\ref{apx:parameters}). 
+
+The data obtained from decomposing the raw cellulose were best predicted by a single Fraser-Suzuki curve with a mean position of \Sexpr{raw(raw_cl, param = 'position')} $^{\circ}$C, \Sexpr{raw(raw_cl, param = 'width')} $^{\circ}$C width, and \Sexpr{raw(raw_cl, param = 'height')} $^{\circ}C^{-1}$ height (Fig.~\ref{apx:tga_pure}). The lignin data were best predicted by a single curve with a mean position of \Sexpr{raw(raw_lg, param = 'position')} $^{\circ}$C, \Sexpr{raw(raw_lg, param = 'width')} $^{\circ}$C width, and \Sexpr{raw(raw_lg, param = 'height')} $^{\circ}C^{-1}$ height. 
+
+\begin{figure}[!ht]
+	\centering
+	{\includegraphics[width=\textwidth]{chapters/Chapter3_traits/figs/raw_tga_three.png}}
+	\caption{Output of deconvolution of thermogravimetric analysis curves for three example species (heating rate = 10$^\circ$C/min). Rate of mass loss (DTG) values scaled by initial mass of sample. (a) \textit{Nymphaea alba}, an amphibious fluctuation-responder forb; (b) \textit{Restio tetraphyllus}, an amphibious fluctuation-tolerator graminoid; and (c) \textit{Melaleuca squarrosa}, a terrestrial dry tree.}
+	\label{Fig:tga_three}
+\end{figure}
+
+Although the width and position parameters for individual biomass carbon curves were consistent among plant species, the height of the curves varied, changing the estimated weight of biomass components. Litter hemicelluloses and cellulose displayed a similar pattern by functional group. Amphibious fluctuation-tolerators and terrestrial damp species, the two intermediate functional groups along a spectrum of inundation tolerance, both had higher hemicelluloses and cellulose proportions than either amphibious fluctuation-responders or terrestrial dry species (Fig.~\ref{Fig:boxplots}e\textendash f). Lignin was highest in terrestrial dry species, which is predominantly composed of tree species. 
+
+Overall, we found the lowest weight of lignin in the diminutive aquatic grass, \textit{Paspalum distichum} (\Sexpr{extract(mean_traits, 'LG', 'min')} wt\%; Table~\ref{Tab:speciestraits}), and the highest in the woody acacia, \textit{Acacia dealbata} (\Sexpr{extract(mean_traits, 'LG', 'max')} wt\%; Table~\ref{Tab:speciestraits}). Hemicelluloses followed a reverse pattern, in which \textit{A. dealbata} had the lowest total weight and the exotic sedge \textit{C. eragrostis} the highest (\Sexpr{extract(mean_traits, 'HC', 'min')} and \Sexpr{extract(mean_traits, 'HC', 'max')} wt\%; Table~\ref{Tab:speciestraits}). Cellulose was lowest in the Australian river red gum, \textit{Eucalyptus camaldulensis} (\Sexpr{extract(mean_traits, 'CL', 'min')} wt\%; Table~\ref{Tab:speciestraits}), and highest again in \textit{P. distichum} (\Sexpr{extract(mean_traits, 'HC', 'max')} wt\%; Table~\ref{Tab:speciestraits}).
+
+\subsection*{Traits related to fast\textendash slow economic spectrum}
+
+Morphological and chemical traits related to the plant economic spectrum varied considerably among the 29 species studied. Despite the variation among amphibious fluctuation-responders, nearly all had higher LAM and N than other functional groups (Fig.~\ref{Fig:boxplots}a,c). Litter dry matter content (DMC) was lowest for the amphibious fluctuation-responders, and increased across functional groups as tolerance to inundation decreased (Fig.~\ref{Fig:boxplots}b). Litter C followed a fairly similar pattern to DMC (Fig.~\ref{Fig:boxplots}d).
+
+\begin{figure}[!ht]
+	\centering
+	{\includegraphics[width=\textwidth]{chapters/Chapter3_traits/figs/boxplot.png}}
+	\caption{Boxplots of traits by functional group: (a) litter area per mass (m$^2$/g); (b) dry matter content (mg/g); (c) nitrogen content (wt\%); (d) carbon content (wt\%); (e) hemicelluloses (wt\%); (f) cellulose (wt\%); and (g) lignin (wt\%) for amphibious fluctuation-responders (AR; n = 5), amphibious fluctuation-tolerators (AT; n = 11), terrestrial damp species (Tda; n = 8), and terrestrial dry species (Tdr; n = 5). Bold lines represent median values, boxes represent the interquartile range, and whiskers represent minimum and maximum values within 1.5 times the interquartile range.}
+	\label{Fig:boxplots}
+\end{figure}
+
+\newpage
+\begin{landscape}%
+	\centering
+		\begin{table}[!ht]
+		\caption{Trait values for all species. LAM and DMC values represent the average of 10 separate samples. Biomass carbon traits, N, and C values represent the estimates from a single subsample of the pooled biomass of all 10 litter samples. Biomass carbon traits are presented with lower and upper 95\% confidence intervals of model estimates in brackets. Not all species had a second hemicellulose peak (HC-1).}
+		\label{Tab:speciestraits}
+			\begin{adjustbox}{width=1.5\textwidth}
+			\begin{tabular}{l l l l r r r r r r r r}
+			\toprule
+			\multicolumn{4}{c}{} & \multicolumn{4}{l}{Economic spectrum traits} & \multicolumn{4}{l}{Biomass carbon traits}\\\cmidrule(lr){5-8}
+\cmidrule(lr){9-12}
+Family & Species & \thead{Functional\\ group} & \thead{Growth\\ form} & \thead{LAM\\ (m$^2$/g)} & \thead{DMC\\ (mg/g)} & \thead{N\\ (wt\%)} & \thead{C\\ (wt\%)} & \thead{HC-1\\ (wt\%)} & \thead{HC-2\\ (wt\%)} & \thead{CL\\ (wt\%)} & \thead{LG\\ (wt\%)} \\
+			\midrule
+\input{chapters/Chapter3_traits/figs/traits_table.tex}
+			\bottomrule
+			\end{tabular}
+		\end{adjustbox}
+	\end{table}
+\end{landscape}
+
+\begin{figure}[!ht]
+	\centering
+	{\includegraphics[width=0.7\textwidth]{chapters/Chapter3_traits/figs/raw_pca.png}}
+	\caption{Principal Component Analysis of traits. Species' labels are the genus abbrevation and first three letters of species name. Silhouettes are placed where growth forms are clustered (graminoids, forbs, and trees pictured; non-vascular and shrub omitted as only one of each type).}
+	\label{Fig:pca}
+\end{figure}
+
+\subsection*{Litter traits phylogeny}
+
+Only LAM was significantly (P = 0.01; Table~\ref{apx:mantel}) correlated with branch length distance, indicating that those species with closer relatives have more similar LAM (Fig.~\ref{apx:phylo}).
+
+\subsection*{Multivariate patterns between fast\textendash slow economic spectrum and biomass carbon traits}
+
+The first two axes of the PCA account for \Sexpr{loading(pca_output, 1) + loading(pca_output, 2)}\% of total variation among the species (\Sexpr{loading(pca_output, 1)}\% for axis 1 and \Sexpr{loading(pca_output, 2)}\% for axis 2; Table~\ref{apx:pca}). Economic spectrum traits (LAM, DMC, N, and C; represented in green) appear aligned, and correlate positively with one another. LAM and N ($R^2$ = \Sexpr{tcor(mean_traits, 'LAM', 'N')}) and DMC and C ($R^2$ = \Sexpr{tcor(mean_traits, 'DMC', 'C')}) are positively correlated with one another, although LAM is negatively correlated with DMC ($R^2$ = \Sexpr{tcor(mean_traits, 'LAM', 'DMC')}) and with C ($R^2$ = \Sexpr{tcor(mean_traits, 'LAM', 'C')}). N is however, negatively correlated with DMC ($R^2$ = \Sexpr{tcor(mean_traits, 'N', 'DMC')}; Fig.~\ref{apx:pairplot}). Biomass carbon traits (HC, CL, and LG; represented in blue; Fig.~\ref{Fig:pca}) also appear aligned, and correlate accordingly. HC is positively correlated with CL ($R^2$ = \Sexpr{tcor(mean_traits, 'HC', 'CL')}), and both HC and CL correlated negatively with LG ($R^2$ = \Sexpr{tcor(mean_traits, 'HC', 'LG')} and $R^2$ = \Sexpr{tcor(mean_traits, 'CL', 'LG')}, respectively; Fig.~\ref{apx:pairplot}). 
+
+Economic spectrum traits and biomass carbon traits lie perpendicular to one another in multivariate trait space (Fig.~\ref{Fig:pca}). While there is coordination within each of these groupings, this orthogonality suggests that variation in one is not coupled to variation in the other. Functional groups are dispersed widely throughout trait space, but growth forms are clustered, with tree species aligning with the LG vector, graminoids being characterised by higher DMC and CL, and forbs being clustered around high LAM and N. 
+
+\section{Discussion}
+
+In this study, we found that variation in species' biomass carbon composition is orthogonal to variation of other morphological and chemical traits characteristic of the fast\textendash slow economic spectrum. This independence suggests that commonly measured economic spectrum traits cannot wholly represent dynamics of biomass carbon; traits from both groups should be used in combination in order to predict trait effects on processes such as decomposition. We found that wetland plant species separate along a spectrum of biomass carbon complexity, wherein species build structural tissue that is either predominantly hemicellulose- and cellulose- based or lignin- based. 
+
+\subsection*{Orthogonality of nutrient and biomass carbon trait axes}
+
+Biomass carbon traits divide species by their investment in either inherently more labile carbons, such as hemicelluloses and cellulose, or more complex ones, such as lignin (Fig.~\ref{Fig:pca}). Cellulose and hemicelluloses positively correlate with one another, and both negatively correlate with lignin (Fig.~\ref{apx:pairplot}). We found that variation in this spectrum of carbon complexity is orthogonal to the nutrient strategy spectrum defined by economic traits (Fig.~\ref{Fig:pca}). \citet{eviner2004} similarly found labile carbon inputs and litter mass to be independent of each other, both of which relate to plant effects on soil carbon. Multidimensionality has also been observed in root traits: plants can construct roots with high or low specific root length of any tissue density \citep{kramer-walter2016}. 
+
+The orthogonality of these two axes in our data suggests a decoupling of, and degree of independence between, litter nutrient and biomass carbon investment. We observe in our study that `fast' plants, those well-suited to high resource environments \citep{reich2014}, can invest in nutrient rich tissue composed of either predominantly labile cellulose or recalcitrant lignin-based carbon. Growth forms cluster in multivariate trait space along these two spectra, reflecting a coupling between functional forms and traits as described in \citet{dedeyn2008}. Forb species tend to have nutrient-rich tissue with a relatively higher abundance of simple carbons. These species invest in short-lived nutrient-rich photosynthetic tissue. Photosynthetic tissue of grasses, sedges, and rushes must also provide structural support \textemdash composed of a high contribution of relatively labile cellulose, litter of graminoid species are still nutrient conservative, clustering toward high DMC, and low LAM and N. Tree species contain higher amounts of complex lignin and also exhibit a more nutrient conservative strategy (Fig.~\ref{Fig:pca}). These trait differences may reflect species' diverging strategies to respond to the same ecophysical structural requirements in wetland and riparian systems.
+
+Phylogenetic conservatism does not appear to explain the trait correlations and ordinations we found \citetext{as in phylogenetically structured fine root morphology traits in \citealp{valverde-barrantes2015}}, because only LAM was weakly correlated to phylogenetic tree distance (Table~\ref{apx:mantel}). 
+
+\subsection*{Implications for trait decomposition research}
+
+These orthogonal axes of nutrient and carbon strategy define two aspects of litter recalcitrance. The economic spectrum traits describe a nutrient strategy trade-off useful to predict a plant species' decay because high-nutrient litter is more bio-available \citep{cornwell2008}. Biomass carbon traits distinguish explicitly between labile and recalcitrant carbon forms. The independence of the nutrient and carbon complexity attributes of recalcitrance suggests that multiple traits are required to understand a plant species' effect on decay, as one spectrum alone is not a substitute for the other. Empirical decay research supports this conclusion, as frequently it is a combination of leaf economics and immobile carbon chemistry that drive decay \citep{britson2016,cornelissen2001,cornwell2008,cornwell2014,freschet2012,jackson2013}. Other work has found multiple dimensions in plant trait relationships as well \citep{wright2005,lavorel2002}. 
+
+\subsection*{Litter economic traits aligned along single axis}
+
+Morphological and chemical traits of our litter material align along one axis of variation, illustrating the tradeoff between species with nutrient-rich litter high in N and those with denser tissue, high in C (Fig.~\ref{Fig:pca}). These traits covary with one another as expected: LAM and N, as well as DMC and C, positively correlate with one another, LAM negatively correlates with DMC and C, and N negatively correlates with DMC (Fig.~\ref{apx:pairplot}). This coordination of economic spectrum traits for aboveground litter material matches results recorded for leaf material \citep{wright2004}, wood \citep{chave2009}, mixed plant organs \citep{freschet2012}, as well as roots \citep{roumet2016}. Our results suggest that the economic spectrum is retained when traits are measured on fresh litter material composed of a mixture of aboveground plant parts. This is unsurprising given others have observed a coordination of traits between plant parts \citep{jackson2013,maire2013}.
+
+\subsection{TGA holds great promise for biomass carbon trait estimation}
+The mixture model applied in our study produces DTG curves that match those presented in the literature for similar biomass samples, \citetext{for example in eucalypts \citealp{orfao2001}}. Weight estimates of biomass carbon traits derived from these predicted curves are also reasonable, but wide confidence intervals in some species suggest the DTG curve is not always confidently resolved (Fig.~\ref{apx:tga_ar}\textendash \ref{apx:tga_tdr}). In particular, DTG curves with a less defined cellulose peak appear more sensitive to starting values or specification of parameter distribution, despite use of starting values that well predicted pure cellulose and lignin mass loss data (Fig.~\ref{apx:tga_pure}). Considering the opportunities for rapid inter-species biomass carbon comparisons, we recommend further investigation to test and standardise the TGA methodology.
+
+Our study focused on wetland plant species because of relatively rapid sequestration of litter carbon in wetland systems and their relevance for global greenhouse gas emissions \citep{bridgham2006}. Due to both acknowledged heterogeneity in plant economic spectrum trends across biomes \citep{wright2005}, and to the specific set of constraints on a species' strategy in wetland systems \citep{moor2017}, these results may be particular to freshwater and/or riparian systems \citep{catford2014}. In the future, we recommend thermogravimetric analysis be applied to leaf material to examine coordination with the leaf economic spectrum more explicitly, and to root material given its relevance to plant impacts on soil carbon \citep{bardgett2014,valverde-barrantes2015}. 
+
+\section{Conclusion}
+
+We found that species vary in their investment in biomass carbon traits along a spectrum from complex lignin to simple cellulose and hemicellulose. This variation in carbon investment is perpendicular to variation in traits that reflect fast\textendash slow strategies for other ecosystem processes. This decoupling of attributes of litter recalcitrance suggests the most commonly measured traits are not substitutes for direct measures of biomass carbon. A multi-trait approach will therefore be essential for understanding species' litter recalcitrance and effects on ecosystem functions such as decomposition and soil carbon stock. 
+
+\section{Acknowledgements}
+
+The authors would like to thank volunteers Paula Sanchez, Abbey Kinnish, Kelsey Johnson, Francesca Dina, Madeline Brenker, and Urtzi Enriquez Urzelai for assistance in the field, Dr James Camac for assisting with the reproducible workflow, Dr Todd McLay for constructing the species' phylogeny, and the University of Melbourne Department of Chemical and Biomolecular Engineering for training and access to the TGA-FTIR and LECO Elemental Analyser. Vegetation collection was conducted under Victorian Department of Environment, Land, Water and Planning Permit No 10007429. We thank the Australian Research Council Centre of Excellence for Environmental Decisions, the Holsworth Wildlife Research Endowment \& the Ecological Society of Australia, and the Melbourne International Research Scholarship and Melbourne International Fee Remission Scholarship for support.
