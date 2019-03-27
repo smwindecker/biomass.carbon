@@ -1,13 +1,27 @@
 ## Manuscript functions
 
+# extract parameter or weight values
+raw <- function (df, param) {
+  
+  if (param %in% c('position', 'width')) digits <- 0
+  if (param == 'skew') digits <- 3
+  if (param == 'height') digits <- 4
+  if (param == 'weight') digits <- 1
+  
+  value <- round(df[[param]], digits = digits)
+  value
+  
+} 
+
 # Growth form mean and sd function for traits
 extract <- function (df, variable, fxn, gf = NULL) {
-
-  if (variable %in% c('p0', 'p1', 'p2', 'p3', 'w0', 'w1', 'w2', 'w3', 'DMC')) digits <- 0
+  
+  if (variable %in% c('position_0', 'position_1', 'position_2', 'position_3', 
+                      'width_0', 'width_1', 'width_2', 'width_3', 'DMC')) digits <- 0
   if (variable %in% c('N', 'C', 'HC_1', 'HC_2', 'HC', 'CL', 'LG')) digits <- 1
   if (variable %in% c('LAM')) digits <- 2
-  if (variable %in% c('s0', 's1', 's2', 's3')) digits <- 3
-  if (variable %in% c('h0', 'h1', 'h2', 'h3')) digits <- 4
+  if (variable %in% c('skew_0', 'skew_1', 'skew_2', 'skew_3')) digits <- 3
+  if (variable %in% c('height_0', 'height_1', 'height_2', 'height_3')) digits <- 4
   
   if (!is.null(gf)) subset <- df[df$gf == gf, variable]
   if (is.null(gf)) subset <- df[, variable]
@@ -44,17 +58,10 @@ tcor <- function (df, trait_1, trait_2) {
   value
 }
 
-# extract parameter or weight values
-raw <- function (df, param) {
+# Deviance for model
+dev <- function (model_file) {
   
-  if (param %in% c('p', 'w')) digits <- 0
-  if (param == 's') digits <- 3
-  if (param == 'h') digits <- 4
-  if (param == 'weight') digits <- 1
+  dev <- median(2*model_file$mod_specs$neg_loglik)
+  dev
   
-  value <- round(df[[param]], digits = digits)
-  value
-  
-}  
-  
-  
+}
