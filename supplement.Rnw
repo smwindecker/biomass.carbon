@@ -1,20 +1,3 @@
-\begin{table}[ht]
-	\caption{Hierarchical classification scheme of wetland plant species by habit and response to water. Devised by Brock and Casanova (1997).}
-	\label{apx:fxl_groups}
-	\centering
-	\small
-	\begin{tabularx}{\textwidth}{lllX}
-        		\toprule
-        		Abbreviation & Primary category & Secondary category & Description \\
-        		\midrule
-		AR & Amphibious & Fluctuation-responders & Species that germinate in flooded conditions, grow in both flooded and damp conditions, and reproduce above the surface of the water. \\
-		AT & Amphibious & Fluctuation-tolerators & Species that germinate in damp or flooded conditions and tolerate variation in water level. \\
-		Tda & Terrestrial & Damp species & Species that germinate, grow, and reproduce on saturated soil. \\
-		Tdr & Terrestrial & Dry species & Species that germinate, grow, and reproduce where there is no surface water and water table is below the soil surface. \\
-        		\bottomrule
-	\end{tabularx}
-\end{table}
-
 \begin{table}[ht] \centering
 	\caption{GenBank Accession codes.}
 	\label{apx:genbank}
