@@ -1,7 +1,4 @@
 
-library(mixchar)
-library(dplyr)
-
 R.utils::sourceDirectory('R/')
 
 # ------ load data --------
