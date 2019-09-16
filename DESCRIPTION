@@ -1,0 +1,49 @@
+Type: Compendium
+Package: biomass.carbon
+Title: Decoupling plant economics traits and biomass carbon composition in wetland litter
+Version: 1.0.0
+Authors@R: c(
+    person(given = "Saras",
+           family = "Windecker",
+           role = c("aut", "cre"),
+           email = "saras.windecker@gmail.com",
+           comment = c(ORCID = "0000-0002-4870-8353")),
+    person(given = "Stacey",
+           family = "Trevathan-Tackett",
+           role = c("aut")),
+    person(given = "Nick",
+           family = "Golding",
+           role = c("aut")),
+    person(given = "Jane",
+           family = "Catford",
+           role = c("aut")),
+    person(given = "Peter",
+           family = "Macreadie",
+           role = c("aut")),
+    person(given = "Peter",
+           family = "Vesk",
+           role = c("aut"))
+    )
+Description: This repository contains the code needed to reproduce "Decoupling plant economics traits and biomass carbon composition in wetland litter". 
+License: MIT + file LICENSE
+Depends: 
+    ade4,
+    adephylo,
+    ape,
+    devtools,
+    dplyr,
+    grDevices,
+    magrittr,
+    minpack.lm,
+    mixchar,
+    phytools,
+    R.utils,
+    reshape2,
+    roxygen2,
+    stats,
+    stringr,
+    tidyr,
+    vegan,
+    xtable
+Encoding: UTF-8
+LazyData: true
