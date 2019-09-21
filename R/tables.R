@@ -134,7 +134,7 @@ tga_param_table <- function (parameters, output_file) {
   
   # produce xtable
   parameters <- xtable::xtable(parameters)
-  digits(parameters) <- c(0, 0, 4, 4, 4, 4, 0, 0, 0, 0, 3, 3, 3, 3, 0, 0, 0, 0)
+  xtable::digits(parameters) <- c(0, 0, 4, 4, 4, 4, 0, 0, 0, 0, 3, 3, 3, 3, 0, 0, 0, 0)
   
   # save as .tex file
   print(parameters,
