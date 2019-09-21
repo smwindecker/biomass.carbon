@@ -1,42 +1,56 @@
-FROM rocker/verse:3.5.1
+FROM rocker/geospatial:3.5.1
 LABEL maintainer="Saras Windecker"
 LABEL email="saras.windecker@gmail.com"
 
-## Update and install extra packages
-RUN apt-get update \
-  && apt-get install -y --no-install-recommends \
-    clang \
-    mesa-common-dev\
-    libglu1-mesa-dev \
-    libgsl0-dev \
-    libomp-dev \
-  && apt-get clean \
-  && rm -rf /var/lib/apt/lists/
+# Install major libraries
+RUN    apt-get update \
+    && apt-get install -y --no-install-recommends \
+        zip \
+        unzip
 
-## Add in opts
-# Global site-wide config for clang
-RUN mkdir -p $HOME/.R/ \
-    && echo "\nCXX=clang++ -ftemplate-depth-256\n" >> $HOME/.R/Makevars \
-    && echo "CC=clang\n" >> $HOME/.R/Makevars
+# ---------------------------------------------
 
-## Add in required R packages
-RUN . /etc/environment \
-  && install2.r --error --repos $MRAN --deps TRUE \
-  dotCall64 spam ape rgl phylobase knitr minpack.lm phytools vegan xtable
+ENV NB_USER rstudio
+ENV NB_UID 1000
 
-## Add in required R packages (without suggestions)
-RUN . /etc/environment \
-  && install2.r --error --repos $MRAN --deps FALSE \
-  segmented sp seqinr igraph boot adegenet adephylo
+# And set ENV for R! It doesn't read from the environment...
+RUN echo "PATH=${PATH}" >> /usr/local/lib/R/etc/Renviron
+RUN echo "export PATH=${PATH}" >> ${HOME}/.profile
 
-# Install github packages
-RUN installGithub.r \
-    --deps "TRUE" \
-    smwindecker/mixchar \
-    richfitz/remake
+# The `rsession` binary that is called by nbrsessionproxy to start R doesn't seem to start
+# without this being explicitly set
+ENV LD_LIBRARY_PATH /usr/local/lib/R/lib
 
-# Remove unnecessary tmp files
-RUN rm -rf /tmp/downloaded_packages/ /tmp/*.rds
+ENV HOME /home/${NB_USER}
+WORKDIR ${HOME}
 
-# Set working directory
-WORKDIR /home/biomass.carbon
+# ---------------------------------------------
+
+# Install extra latex style files
+
+## Saves downloading whenever tinytex runs
+## Inspired by Yihui - https://github.com/yihui/tinytex/issues/135#issuecomment-514351695
+## NB: tinytex extras installed at  /opt/TinyTeX/tlpkg/TeXLive/
+
+RUN R --quiet -e 'tinytex::tlmgr_install(c("a4wide", "algorithms", "appendix", "babel-english", "bbm-macros", "beamer", "breakurl", "catoptions", "charter", "cite", "cleveref", "colortbl", "comment", "courier", "eepic", "enumitem", "eso-pic", "eurosym", "extsizes", "fancyhdr", "floatrow", "fontaxes", "fpl", "hardwrap", "koma-script", "lastpage", "lettrine", "libertine", "lineno", "lipsum",  "ltxkeys", "ly1", "mathalpha", "mathpazo", "mathtools", "mdframed", "mdwtools", "microtype", "morefloats", "ms", "multirow", "mweights", "ncctools", "ncntrsbk", "needspace", "newtx", "ntgclass", "numname", "palatino", "pbox", "pdfpages", "pgf", "picinpar", "preprint", "preview", "psnfss", "refstyle", "roboto", "sectsty", "setspace", "siunitx", "srcltx", "standalone", "stmaryrd", "sttools", "subfig", "subfigure", "symbol", "tabu", "textcase", "threeparttable", "thumbpdf", "titlesec", "tufte-latex", "ucs", "ulem", "units", "varwidth", "vmargin", "wallpaper", "wrapfig", "xargs", "xcolor", "xstring", "xwatermark"))';
+
+# ---------------------------------------------
+
+# Add custom installations here
+
+## Install packages based on DESCRIPTION file in repository.
+## Inspired from Holepunch package, by Karthik Ram: https://github.com/karthik/holepunch
+
+## Copies your description file into the Docker Container, specifying dependencies
+
+USER root
+COPY ./DESCRIPTION ${HOME}
+# The above line adds only the description file for the project
+# Uncomment the following line if you want the container to contain your entire repo
+
+#COPY . ${HOME}
+RUN chown -R ${NB_USER} ${HOME}
+
+RUN if [ -f DESCRIPTION ]; then R --quiet -e "options(repos = list(CRAN = 'http://mran.revolutionanalytics.com/snapshot/2019-08-26/')); devtools::install_deps()"; fi
+
+# Add further custom installations as needed
