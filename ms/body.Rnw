@@ -15,7 +15,7 @@ In this study we measured a range of morphological and chemical traits in 29 wet
 \begin{figure}[ht]
 	\centering
 	\scalebox{0.9}
-	{\includegraphics[width=\textwidth]{chapters/Chapter3_traits/modified-figs/trait_flowchart.png}}
+	{\includegraphics[width=\textwidth]{chapters/Chapter3_traits/img/trait_flowchart.png}}
 	\caption{Breakdown of the relationships between functional traits (in ellipses) related to concepts of litter recalcitrance examined in this study: dry matter content (DMC), litter area per mass (LAM), litter nitrogen (N), litter carbon (C), litter hemicelluloses (HC), litter cellulose (CL), and litter lignin (LG).}
 	\label{Fig:flowchart}
 \end{figure}
@@ -124,7 +124,7 @@ We interpret that the curve located around 250\textendash270 $^\circ$C correspon
 
 \begin{figure}[!ht]
 	\centering
-	{\includegraphics[width=0.2\textwidth]{chapters/Chapter3_traits/modified-figs/tga_method.png}}
+	{\includegraphics[width=0.2\textwidth]{chapters/Chapter3_traits/img/tga_method.png}}
 	\caption{Data preparation and thermogravimetric analysis. We collected the litter from three freshwater wetlands surrounding Melbourne, Victoria (sites within 60 km of -37.455, 144.985). In the field, we placed the plant litter in moist plastic bags and stored them in dark coolers until we could transport them to the lab, where they were promptly dried at 60 $^{\circ}$C for 72 hours. We ground our dry litter to \textless 40 $\mu m$ using a Retsch Centrifugal Mill ZM200. We pyrolysed 10\textendash20 mg subsamples of dry, ground litter in an N$_2$ environment from 30\textendash800 $^{\circ}$C at a temperature ramp of 10 $^{\circ}$C/min using a Netzsch TGA-FTIR thermogravimetric analyser (Department of Biomedical Engineering, University of Melbourne).}
 	\label{Fig:litter_method}
 \end{figure}

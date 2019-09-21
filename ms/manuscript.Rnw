@@ -118,7 +118,7 @@ Understanding variation and covariation in plant morphological and chemical trai
 
 carbon, decomposition, functional traits, plant economics spectrum, thermogravimetric analysis, wetlands
 
-\Sexpr{knitr::knit_child('chapters/Chapter3_traits/body.Rnw')}
+\Sexpr{knitr::knit_child('body.Rnw')}
 
 \section{Author contributions}
 
@@ -138,7 +138,7 @@ Authors intend to archive the data in the Dryad Digital Repository.
 \pagebreak
 \beginsupplement
 
-\Sexpr{knitr::knit_child('chapters/Chapter3_traits/supplement.Rnw')}
+\Sexpr{knitr::knit_child('supplement.Rnw')}
 
 \end{document}
 
