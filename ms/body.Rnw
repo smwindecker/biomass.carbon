@@ -15,7 +15,7 @@ In this study we measured a range of morphological and chemical traits in 29 wet
 \begin{figure}[ht]
 	\centering
 	\scalebox{0.9}
-	{\includegraphics[width=\textwidth]{chapters/Chapter3_traits/img/trait_flowchart.png}}
+	{\includegraphics[width=\textwidth]{img/trait_flowchart.png}}
 	\caption{Breakdown of the relationships between functional traits (in ellipses) related to concepts of litter recalcitrance examined in this study: dry matter content (DMC), litter area per mass (LAM), litter nitrogen (N), litter carbon (C), litter hemicelluloses (HC), litter cellulose (CL), and litter lignin (LG).}
 	\label{Fig:flowchart}
 \end{figure}
@@ -86,7 +86,7 @@ Since the overall rate of mass loss (DTG) curve also represents the loss of extr
 \begin{figure}[ht]
 	\centering
 	% \scalebox{0.9}
-	{\includegraphics[width=\textwidth]{chapters/Chapter3_traits/figs/theory_plot.png}}
+	{\includegraphics[width=\textwidth]{figs/theory_plot.png}}
 	\caption{Detailed exploration of thermogravimetric analysis and mixture modelling (using data from \textit{Juncus amabilis}): (a) Mass loss curve, heating rate = 10$^\circ$C/min; (b) Negative first derivative thermogravimetric (DTG) curve displaying mass loss rate across temperature; (c) DTG curve overlaid with output of deconvolution. Rate of mass loss values (in b and c) scaled by initial mass of sample. Arrows on (a) and (c) indicate the locations of the peaks of the three deconolved curves. Line segments 1, 2, and 3 on (b) represent mass loss phases.}
 	\label{Fig:TGAmethod}
 \end{figure}
@@ -124,7 +124,7 @@ We interpret that the curve located around 250\textendash270 $^\circ$C correspon
 
 \begin{figure}[!ht]
 	\centering
-	{\includegraphics[width=0.2\textwidth]{chapters/Chapter3_traits/img/tga_method.png}}
+	{\includegraphics[width=0.2\textwidth]{img/tga_method.png}}
 	\caption{Data preparation and thermogravimetric analysis. We collected the litter from three freshwater wetlands surrounding Melbourne, Victoria (sites within 60 km of -37.455, 144.985). In the field, we placed the plant litter in moist plastic bags and stored them in dark coolers until we could transport them to the lab, where they were promptly dried at 60 $^{\circ}$C for 72 hours. We ground our dry litter to \textless 40 $\mu m$ using a Retsch Centrifugal Mill ZM200. We pyrolysed 10\textendash20 mg subsamples of dry, ground litter in an N$_2$ environment from 30\textendash800 $^{\circ}$C at a temperature ramp of 10 $^{\circ}$C/min using a Netzsch TGA-FTIR thermogravimetric analyser (Department of Biomedical Engineering, University of Melbourne).}
 	\label{Fig:litter_method}
 \end{figure}
@@ -147,7 +147,7 @@ The data obtained from decomposing the raw cellulose were best predicted by a si
 
 \begin{figure}[!ht]
 	\centering
-	{\includegraphics[width=\textwidth]{chapters/Chapter3_traits/figs/raw_tga_three.png}}
+	{\includegraphics[width=\textwidth]{figs/raw_tga_three.png}}
 	\caption{Output of deconvolution of thermogravimetric analysis curves for three example species (heating rate = 10$^\circ$C/min). Rate of mass loss (DTG) values scaled by initial mass of sample. (a) \textit{Nymphaea alba}, an amphibious fluctuation-responder forb; (b) \textit{Restio tetraphyllus}, an amphibious fluctuation-tolerator graminoid; and (c) \textit{Melaleuca squarrosa}, a terrestrial dry tree.}
 	\label{Fig:tga_three}
 \end{figure}
@@ -162,7 +162,7 @@ Morphological and chemical traits related to the plant economics spectrum varied
 
 \begin{figure}[!ht]
 	\centering
-	{\includegraphics[width=\textwidth]{chapters/Chapter3_traits/figs/boxplot.png}}
+	{\includegraphics[width=\textwidth]{figs/boxplot.png}}
 	\caption{Boxplots of traits by functional group: (a) litter area per mass (m$^2$/g); (b) dry matter content (mg/g); (c) nitrogen content (wt\%); (d) carbon content (wt\%); (e) hemicelluloses (wt\%); (f) cellulose (wt\%); and (g) lignin (wt\%) for amphibious fluctuation-responders (AR; n = 5), amphibious fluctuation-tolerators (AT; n = 11), terrestrial damp species (Tda; n = 8), and terrestrial dry species (Tdr; n = 5). Bold lines represent median values, boxes represent the interquartile range, and whiskers represent minimum and maximum values within 1.5 times the interquartile range.}
 	\label{Fig:boxplots}
 \end{figure}
@@ -180,7 +180,7 @@ Morphological and chemical traits related to the plant economics spectrum varied
 \cmidrule(lr){9-12}
 Family & Species & \thead{Functional\\ group} & \thead{Growth\\ form} & \thead{LAM\\ (m$^2$/g)} & \thead{DMC\\ (mg/g)} & \thead{N\\ (wt\%)} & \thead{C\\ (wt\%)} & \thead{HC-1\\ (wt\%)} & \thead{HC-2\\ (wt\%)} & \thead{CL\\ (wt\%)} & \thead{LG\\ (wt\%)} \\
 			\midrule
-\input{chapters/Chapter3_traits/figs/traits_table.tex}
+\input{figs/traits_table.tex}
 			\bottomrule
 			\end{tabular}
 		\end{adjustbox}
@@ -189,7 +189,7 @@ Family & Species & \thead{Functional\\ group} & \thead{Growth\\ form} & \thead{L
 
 \begin{figure}[!ht]
 	\centering
-	{\includegraphics[width=0.7\textwidth]{chapters/Chapter3_traits/figs/raw_pca.png}}
+	{\includegraphics[width=0.7\textwidth]{figs/raw_pca.png}}
 	\caption{Principal Component Analysis of traits. Species' labels are the genus abbrevation and first three letters of species name.}
 	\label{Fig:pca}
 \end{figure}

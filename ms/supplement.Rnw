@@ -5,38 +5,38 @@
 	\toprule
 		Species & rbcl & matK \\
 		\midrule
-		\input{chapters/Chapter3_traits/figs/gen_bank_accessions.tex}
+		\input{figs/gen_bank_accessions.tex}
 		\bottomrule
 	\end{tabular}
 \end{table}
 
 \begin{figure}[ht]
 	\scalebox{0.5}
-	{\includegraphics{chapters/Chapter3_traits/figs/fs_simulate.png}}
+	{\includegraphics{figs/fs_simulate.png}}
 	\caption{Parametric study of the Fraser-Suzuki function for deconvolution of derivative thermogravimetric biomass curves: (a) Effect of modifying height; (b) skew; (c) position; and (d) width.}
 	\label{apx:fs_simulation}
 \end{figure}
 
 \begin{figure}[ht]
-	\includegraphics[width=\textwidth]{chapters/Chapter3_traits/figs/tga_ar.png}
+	\includegraphics[width=\textwidth]{figs/tga_ar.png}
 	\caption{First derivative thermogravimetric (DTG) deconvolution for amphibious fluctuation-responders (AR; n = 5).}
 	\label{apx:tga_ar}
 \end{figure}
 
 \begin{figure}[ht]
-	\includegraphics[width=\textwidth]{chapters/Chapter3_traits/figs/tga_at.png}
+	\includegraphics[width=\textwidth]{figs/tga_at.png}
 	\caption{First derivative thermogravimetric (DTG) deconvolution for amphibious fluctuation-tolerators (AT; n = 11).}
 	\label{apx:tga_at}
 \end{figure}
 
 \begin{figure}[ht]
-	\includegraphics[width=\textwidth]{chapters/Chapter3_traits/figs/tga_tda.png}
+	\includegraphics[width=\textwidth]{figs/tga_tda.png}
 	\caption{First derivative thermogravimetric (DTG) deconvolution for terrestrial damp species (Tda; n = 8).}
 	\label{apx:tga_tda}
 \end{figure}
 
 \begin{figure}[ht]
-	\includegraphics[width=\textwidth]{chapters/Chapter3_traits/figs/tga_tdr.png}
+	\includegraphics[width=\textwidth]{figs/tga_tdr.png}
 	\caption{First derivative thermogravimetric (DTG) deconvolution for terrestrial dry species (Tdr; n = 5).}
 	\label{apx:tga_tdr}
 \end{figure}
@@ -44,7 +44,7 @@
 \begin{figure}
 	\centering
 	\scalebox{0.3}
-	{\includegraphics{chapters/Chapter3_traits/figs/tga_pure_samples.png}}
+	{\includegraphics{figs/tga_pure_samples.png}}
 	\caption{Predicted negative derivative thermogravimetric for raw biomass samples: (a) carboxy-methyl cellulose; (b) alkali lignin.}
 	\label{apx:tga_pure}
 \end{figure}
@@ -64,7 +64,7 @@
 		\cmidrule(lr){14-17}
 		Species & HC-1 & HC-2 & CL & LG & HC-1 & HC-2 & CL & LG & HC-1 & HC-2 & CL & LG & HC-1 & HC-2 & CL & LG \\
 		\midrule
-		\input{chapters/Chapter3_traits/figs/tga_param_table.tex}
+		\input{figs/tga_param_table.tex}
 		\bottomrule
 		\end{tabular}
 		\end{adjustbox}
@@ -79,7 +79,7 @@
 	\toprule
 		Trait & Mantel Test observation & $P$-value \\
 		\midrule
-		\input{chapters/Chapter3_traits/figs/mantel_results.tex}
+		\input{figs/mantel_results.tex}
 		\bottomrule
 	\end{tabular}
 \end{table}
@@ -91,7 +91,7 @@
         		\toprule
         		Trait & Axis 1 & Axis 2 \\
         		\midrule
-		\input{chapters/Chapter3_traits/figs/pca_loadings.tex}
+		\input{figs/pca_loadings.tex}
         		\bottomrule
 	\end{tabular}
 \end{table}
@@ -100,7 +100,7 @@
 	\centering
 	\begin{figure}
 	\scalebox{0.4}
-	{\includegraphics{chapters/Chapter3_traits/figs/phylo_all.png}}
+	{\includegraphics{figs/phylo_all.png}}
 	\caption{Phylogenetic tree of species with traits. Tree at genus level where species level sequences for rcbL gene unavailable. If the branch represents more than one species, the trait value was averaged among species in that genus.}
 	\label{apx:phylo}
 \end{figure}
@@ -108,7 +108,7 @@
 
 \begin{figure}[!ht]
 	\scalebox{0.3}
-	{\includegraphics{chapters/Chapter3_traits/figs/pairplot.png}}
+	{\includegraphics{figs/pairplot.png}}
 	\caption{Correlations between traits. Size of $R^2$ listed on bottom panel proportional to weight of relationship, with star to indicate significance at P \textless 0.05.}
 	\label{apx:pairplot}
 \end{figure}

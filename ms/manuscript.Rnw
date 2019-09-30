@@ -138,7 +138,7 @@ Authors intend to archive the data in the Dryad Digital Repository.
 \pagebreak
 \beginsupplement
 
-\Sexpr{knitr::knit_child('supplement.Rnw')}
+% \Sexpr{knitr::knit_child('supplement.Rnw')}
 
 \end{document}
 
