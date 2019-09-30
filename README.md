@@ -7,65 +7,71 @@ Understanding variation and covariation in plant morphological and chemical trai
 * the variation in biomass carbon traits in plant litter 
 * the covariation of biomass carbon traits with commonly measured fast-slow plant economic spectrum traits
 
-## Reproducing analysis 
-In order to aid in the reproducibility of this work, our code was written using a [remake](https://github.com/richfitz/remake) framework. This allows others to reproduce easily our entire workflow by calling `remake()` in R. We have created a Docker image to enable others to reproduce these results using the same software and versions we used to conduct the original analysis. The steps to do so are outlined below.
+## Running the code
 
-### Clone the biomass carbon repository on Github
-First off, run the following line of code in the terminal to clone the project repository. 
+All analyses were done in `R`, and the paper is written in LaTeX. All code needed to reproduce the submitted products is included in this repository. To reproduce this paper, run the code contained in the `analysis.R` file. Figures will be output to a directory called `output` and the paper and supplementary materials to the directory `ms`.
+
+If you are reproducing these results on your own machine, first download the code and then install the required packages, listed under `Depends` in the `DESCRIPTION` file. This can be achieved by opening the Rstudio project and running:
+
+```{r}
+#install.packages("remotes")
+remotes::install_deps()
 ```
-git clone https://github.com/smwindecker/biomass.carbon /home/biomass.carbon
+
+You can access an interactive RStudio session with the required software pre-installed by opening a container hosted by [Binder](http://mybinder.org): 
+
+[![Launch Rstudio Binder](http://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/smwindecker/biomass.carbon/master?urlpath=rstudio)
+
+To ensure long-term [computational reproducibility](https://www.britishecologicalsociety.org/wp-content/uploads/2017/12/guide-to-reproducible-code.pdf) of this work, we have created a [Docker](http://dockerhub.com) image to enable others to reproduce these results on their local machines using the same software and versions we used to conduct the original analysis. Instructions for reproducing this work using the docker image are available at the bottom of the page. 
+
+A copy of the data has also been archived in Datadryad at [doi:10.5061/dryad.701q8](https://datadryad.org/resource/doi:10.5061/dryad.701q8). 
+
+## Material included in the repository include:
+
+- `data/`: Raw data
+- `R/`: directory containing functions used in analysis
+- `ms/`: directory containing manuscript in LaTeX and accompanying style files 
+- `img/`: images used in the manuscript, made with other tools
+- `figs/`: figures built with the R scripts for the manuscript
+- `DESCRIPTION`: A machine-readable [compendium]() file containing key metadata and dependencies 
+- `LICENSE`: License for the materials
+- `Dockerfile` & `.binder/Dockerfile`: files used to generate docker containers for long-term reproducibility
+
+## Running via Docker
+
+If you have Docker installed, you can recreate the computing environment as follows in the terminal. 
+
+From the directory you'd like this repo saved in, clone the repository:
+
+```
+git clone https://github.com/smwindecker/biomass.carbon.git
 ```
 
-### Set up Docker
-Docker sets up a virtual machine. This ensures you have the appropriate software and package versions installed to rerun this analysis without error. You'll first need to install [docker](https://www.docker.com/get-docker), and then install the image we have created. You can do this in two ways: 
+Then fetch the container:
 
-1. Pull the docker image we have already created by running the following in the terminal:
 ```
 docker pull smwindecker/biomass.carbon
 ```
 
-2. Rebuild the image from scratch (this option is slower) from the dockerfile included in this repository. To do this open a terminal, navigate to the repository for this project that you downloaded on your home computer, and run:
-```
-docker build -t biomass.carbon .
-```
-
-### Rerunning workflow
-To rerun the workflow we will run the docker image and open a new RStudio session. The flag `-v` mounts your local directory `/Users/path/to/biomass.carbon` (you'll have to put your respective path here), into the container at `/home/biomass.carbon`. Any results produced in the container will be automatically saved onto your local directory, so you can play with the results, data, and figures outside the docker container later.
-
-1. Run docker image:
-
-*For Mac & Linux users*
-```
-docker run -v /Users/path/to/biomass.carbon/:/home/biomass.carbon:/home/rstudio -p 8787:8787 smwindecker/biomass.carbon:latest
-```
-
-*For Windows users*
-```
-docker run -v c:\path\to\biomass.carbon\:/home/biomass.carbon:/home/rstudio -p 8787:8787 smwindecker/biomass.carbon:latest
-```
-
-2. Access Rstudio within docker by opening your web browser and going to `localhost:8787/`. Username and password are both `rstudio`.
-
-3. Rerun the analysis:
-```
-remake::make()
-```
-
-If you are interested in a particular component you can simply look at the `remake.yml` file find the appropriate component you want to run and simply run the relevant target name. It will build all the relevant dependencies needed to produce that particular component.
-
-For example if you were interested in just examining the mean values for the seven traits across all 29 species, you could extract that within the docker container by running:
+Navigate to the downloaded repo, then launch the container using the following code (it will map your current working directory inside the docker container): 
 
 ```
-trait_data <- remake::make("mean_traits")
+docker run --user root -v $(pwd):/home/rstudio/ -p 8787:8787 -e DISABLE_AUTH=true smwindecker/biomass.carbon
 ```
 
+The code above initialises a docker container, which runs an RStudio session accessed by pointing your browser to [localhost:8787](http://localhost:8787). For more instructions on running docker, see the info from [rocker](https://hub.docker.com/r/rocker/rstudio).
 
-## Docker Image metadata
-| Docker Hub Build Status and URL                                | Image Size
-| :-----------------------------------------                     | :--------------
-| [good](https://registry.hub.docker.com/u/smwindecker/biomass.carbon/)  | [![Layers and Size](https://images.microbadger.com/badges/image/smwindecker/biomass.carbon.svg)](https://registry.hub.docker.com/u/smwindecker/biomass.carbon/)
+### NOTE: Building the docker image
 
-Special thank you to [James Camac](https://github.com/jscamac) for assistance in setting up this reproducible workflow. 
+For posterity, the docker image was built off [`rocker/verse:3.6.1` container](https://hub.docker.com/r/rocker/verse) via the following command, in a terminal contained within the downloaded repo:
+
+```
+docker build -t smwindecker/biomass.carbon .
+```
+
+and was then pushed to [dockerhub](https://cloud.docker.com/u/traitecoevo/repository/docker/smwindecker/biomass.carbon). The image used by binder builds off this container, adding extra features needed by binder, as described in [rocker/binder](https://hub.docker.com/r/rocker/binder/dockerfile).
 
 ## Problems?
 If you have any problems getting the workflow to run please create an [issue](https://github.com/smwindecker/biomass.carbon/issues) and I will endevour to remedy it ASAP.
+
+Special thank you to [James Camac](https://github.com/jscamac) for assistance in setting up this reproducible workflow. 
