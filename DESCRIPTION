@@ -39,6 +39,9 @@ Depends:
     stringr,
     tidyr,
     vegan,
-    xtable
+    xtable, 
+    remake
+Remotes:
+    richfitz/remake
 Encoding: UTF-8
 LazyData: true
