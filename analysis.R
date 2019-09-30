@@ -1,4 +1,7 @@
 
+library(mixchar)
+library(dplyr)
+
 R.utils::sourceDirectory('R/')
 
 # ------ load data --------
@@ -88,7 +91,7 @@ tga_raw_plots(raw_cl, raw_lg)
 dev.off()
 
 # ----- tables ------
-tga_param_table(tga_parameters, 
+tga_param_table(tga_params, 
                 'figs/tga_param_table.tex')
 
 traits_table(traits_df = combined_traits, 
@@ -98,3 +101,10 @@ phylo_accessions("data-raw/GenBankAccessions.txt", 'figs/gen_bank_accessions.tex
 phylo_mantel(phylo_tree, phylo_trts, "figs/mantel_results.tex")
 
 pca_loadings(pca_output, 'figs/pca_loadings.tex')
+
+# ------ knit article ------
+knitr::knit("ms/manuscript.Rnw", output = "ms/manuscript.tex")
+tinytex::pdflatex("ms/manuscript.tex")
+
+knitr::knit("supplement.Rnw", output = "supplement.tex")
+tinytex::pdflatex("supplement.tex")
