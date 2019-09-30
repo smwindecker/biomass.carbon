@@ -30,7 +30,6 @@ targets:
       - figures
       - tables
       - manuscript.pdf
-      - supplement.pdf
       
   figures:
     depends:
@@ -241,28 +240,4 @@ targets:
       - figures
       - tables
 
-  # ------ supplemental material ---------
-  supplement.tex:
-    depends:
-      - species
-      - carbon_nitrogen
-      - economic_traits
-      - tga_output
-      - biomass_traits
-      - combined_traits
-      - mean_traits
-      - logged_trait_matrix
-      - pca_output
-      - phylo_tree
-      - phylo_trts
-      - raw_cl
-      - raw_lg
-      - tga_params
-    knitr: TRUE
-
-  supplement.pdf:
-    command: texi2pdf("supplement.tex", clean = TRUE)
-    depends:
-      - figures
-      - tables
       
