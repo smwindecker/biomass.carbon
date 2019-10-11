@@ -7,7 +7,7 @@
 
 %%% PACKAGES
 \usepackage[authoryear]{natbib}
-\bibliographystyle{besjournals}
+\bibliographystyle{ms/besjournals}
 
 \usepackage{makecell,booktabs}
 
@@ -133,7 +133,7 @@ All authors contributed critically to the drafts and gave final approval for pub
 \section{Data accessibility}
 Authors intend to archive the data in the Dryad Digital Repository.
 
-\bibliography{bibliography_papers,bibliography_packages}
+\bibliography{ms/bibliography_thesis_2019}
 
 \pagebreak
 \beginsupplement
