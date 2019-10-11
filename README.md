@@ -28,7 +28,7 @@ A copy of the data has also been archived in Datadryad at [doi:10.5061/dryad.701
 
 ## Material included in the repository include:
 
-- `data/`: Raw data
+- `data-raw/`: Raw data
 - `R/`: directory containing functions used in analysis
 - `ms/`: directory containing manuscript in LaTeX and accompanying style files 
 - `img/`: images used in the manuscript, made with other tools
