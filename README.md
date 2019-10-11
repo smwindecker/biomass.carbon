@@ -74,4 +74,4 @@ and was then pushed to [dockerhub](https://cloud.docker.com/u/traitecoevo/reposi
 ## Problems?
 If you have any problems getting the workflow to run please create an [issue](https://github.com/smwindecker/biomass.carbon/issues) and I will endevour to remedy it ASAP.
 
-Special thank you to [James Camac](https://github.com/jscamac) for assistance in setting up this reproducible workflow. 
+Special thank you to [James Camac](https://github.com/jscamac) and [Daniel Falster](https://github.com/dfalster) for assistance in setting up this reproducible workflow. 
