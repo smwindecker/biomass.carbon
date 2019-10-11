@@ -133,7 +133,7 @@ All authors contributed critically to the drafts and gave final approval for pub
 \section{Data accessibility}
 Authors intend to archive the data in the Dryad Digital Repository.
 
-\bibliography{ms/bibliography_thesis_2019}
+\bibliography{ms/bibliography_thesis_2019,ms/bibliography_packages}
 
 \pagebreak
 \beginsupplement
